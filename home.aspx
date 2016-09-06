@@ -30,7 +30,7 @@
     <img src="lashon.png" style="right: 425px; top: 483px; position:absolute; height: 248px; width: 689px;" />
     <img src="lion.jpg" class="img-circle" alt="Cinque Terre" width="150" height="150" style=" position:absolute;top:176px; right: 214px">
 
-    <div id="profile" style="position:center;">
+    <div id="profile" style="text-align:center;">
  <div style="position:absolute; top:366px; right: 160px; height: 82px; width: 275px; bottom: 39px;">
     <span style="font-size:40px; font-weight:bold"> <%=Session["name"]%></span><br>
      <span style="font-size:30px; line-height:80%"> <%=Session["team"]%></span><br>
