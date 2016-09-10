@@ -28,10 +28,12 @@
             top:225px;
             right: 700px;
         }
-        #img-circle{
+        .img-circle{
             position:absolute;
             top:176px; 
-            right: 214px;           
+            right: 214px;   
+            width:150px;
+            height:150px;        
         }
         #pd{
             text-align:center;
@@ -59,7 +61,7 @@
     <img src="lashon.png" style="right: 425px; top: 483px; position:absolute; height: 248px; width: 689px;" />
 
     <div class="profile">
-          <img src="lion.jpg" id="img-circle" alt="Cinque Terre" width="150"; height="150">
+          <img src="lion.jpg" class="img-circle">
          <div id="pd">
             <span style="font-size:40px; font-weight:bold"> <%=Session["name"]%></span><br>
             <span style="font-size:30px; line-height:80%"> <%=Session["team"]%></span><br>
@@ -81,7 +83,6 @@
          <a href="economy.aspx" ><img src="sequense.png" style="height: 145px; width: 398px; position:absolute; right:1100px; top:0px" /></a>
         </div>
 
- 
 
 </body>
 </html>

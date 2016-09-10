@@ -45,7 +45,6 @@ li.a{
 </style>
 </head>
 <body>
-    <header>
     <ul>
   <li><a href="/home.aspx"><img name="logo" src="LOGO.png" style="height: 66px; width: 203px" /></a></li>
   <li class ="a"><a href="/home.aspx">בית</a>
@@ -56,6 +55,5 @@ li.a{
   <li class ="a" style="float:left"><a class="active" href="/login.aspx">התחברות</a></li>
   <li class ="a" style="float:left"><a class="active" href="/signup.aspx">הרשמה</a></li>  
 </ul>
-    </header>
     </body>
 </html>
