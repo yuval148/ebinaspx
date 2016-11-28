@@ -16,7 +16,6 @@
   <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/normalize.css">
 
-
   
     <title></title>
     <style>
@@ -52,10 +51,10 @@
             right: 214px;
 
        }
-       .card card--medium{
+       .card-medium{
            position:absolute;
-           top:225px;
-           right: 800px;
+           top:175px;
+           right: 500px;
        }
   
        
@@ -84,13 +83,13 @@
   
    
 <!-- Cards-->
-    <div class="ccard">
+    <div class="card-medium">
 <div class="card card--medium">
   <h2 class="card__title">פרבולות</h2>
   <p class="card__text">פרבולות. הם מחייכות? עצובות? בוא נגלה יחדיו בחוויה המיוחדת והחדשה הזאת.</p>
   <div class="card__action-bar">
-    <button class="card__button">לא מבין בזה כלום עזוב</button>
-    <button class="card__button">יאללה</button>
+     <button class="card__button">לא מבין בזה כלום עזוב</button>
+   <a href="/economy.aspx"> <button class="card__button">יאללה</button></a>
   </div>
 </div>
         </div>
