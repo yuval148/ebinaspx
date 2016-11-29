@@ -7,6 +7,19 @@
 <html dir="rtl">
     <head> 
         <title></title>
+        <style>
+            .math{
+                display:none;
+            }
+        </style>
+        <script>
+            var name='<%=Session["name"]%>';//להחליף בסשיין של נושא
+            $(document).ready(function () {
+                if(name=="יובל מרגלית")//ליצור אינדקס נושאים
+                $('.math').show();
+            });
+
+        </script>
        </head>
     <body>
   <main class="mdl-layout__content">
@@ -26,7 +39,7 @@
             }
 </style>
 
-<div class="demo-card-square2 mdl-card mdl-shadow--2dp">
+<div id="bio" class="demo-card-square2 mdl-card mdl-shadow--2dp">
   <div class="mdl-card__title mdl-card--expand">
     <h2 class="mdl-card__title-text">Update</h2>
   </div>
@@ -59,8 +72,9 @@
                 background: url('../assets/demos/dog.png') bottom right 15% no-repeat #46B6AC;
             }
         </style>
+<div class="math">
 
-<div class="demo-card-square mdl-card mdl-shadow--2dp">
+<div  class="demo-card-square mdl-card mdl-shadow--2dp ">
   <div class="mdl-card__title mdl-card--expand">
     <h2 class="mdl-card__title-text">פרבולות</h2>
   </div>
@@ -74,8 +88,9 @@
     </a>
   </div>
 </div></div>
+        </div>
+
   </main>
-</div>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script src="js/circle.js"></script>
