@@ -1,4 +1,4 @@
-ο»Ώ<%@ Page Language="C#" CodeFile="home.aspx.cs" Inherits="home" %>
+<%@ Page Language="C#" CodeFile="home.aspx.cs" Inherits="home" %>
 <%@ Import Namespace="System.Data" %>
 <%@ Import Namespace="System.Data.OleDb" %>
 <!--#include file="upper.aspx"-->
@@ -8,18 +8,11 @@
     <head> 
         <title></title>
         <style>
-            .math{
+            .sub{
                 display:none;
             }
         </style>
-        <script>
-            var name='<%=Session["name"]%>';//ΧΧ”Χ—ΧΧ™Χ£ Χ‘Χ΅Χ©Χ™Χ™Χ Χ©Χ Χ Χ•Χ©Χ
-            $(document).ready(function () {
-                if(name=="Χ™Χ•Χ‘Χ ΧΧ¨Χ’ΧΧ™Χª")//ΧΧ™Χ¦Χ•Χ¨ ΧΧ™Χ Χ“Χ§Χ΅ Χ Χ•Χ©ΧΧ™Χ
-                $('.math').show();
-            });
-
-        </script>
+        
        </head>
     <body>
   <main class="mdl-layout__content">
@@ -39,7 +32,7 @@
             }
 </style>
 
-<div id="bio" class="demo-card-square2 mdl-card mdl-shadow--2dp">
+<div id="1" class="sub demo-card-square2 mdl-card mdl-shadow--2dp ">
   <div class="mdl-card__title mdl-card--expand">
     <h2 class="mdl-card__title-text">Update</h2>
   </div>
@@ -65,18 +58,15 @@
                 top:50px;
                 right:350px;
                 position:absolute;
-
              }
             .demo-card-square > .mdl-card__title {
                 color: #fff;
                 background: url('../assets/demos/dog.png') bottom right 15% no-repeat #46B6AC;
             }
         </style>
-<div class="math">
-
-<div  class="demo-card-square mdl-card mdl-shadow--2dp ">
+<div id="12"class="sub demo-card-square mdl-card mdl-shadow--2dp ">
   <div class="mdl-card__title mdl-card--expand">
-    <h2 class="mdl-card__title-text">Χ¤Χ¨Χ‘Χ•ΧΧ•Χª</h2>
+    <h2 class="mdl-card__title-text">τψαεμεϊ</h2>
   </div>
   <div class="mdl-card__supporting-text">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -84,14 +74,12 @@
   </div>
   <div class="mdl-card__actions mdl-card--border">
     <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-      Χ”ΧΧ©Χ
+      δξωκ
     </a>
   </div>
 </div></div>
-        </div>
 
   </main>
-
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script src="js/circle.js"></script>
 
@@ -120,9 +108,9 @@
          <div id="pd">
             <span style="font-size:40px; font-weight:bold"> <%=Session["name"]%></span><br>
             <span style="font-size:30px; line-height:80%"> <%=Session["team"]%></span><br>
-            <span style="font-size:25px;line-height:200%"> <%=Session["xpp"]%> Χ Χ§Χ•Χ“Χ•Χª</span> <br>
-            <span style="font-size:40px; line-height:80%" >Χ©ΧΧ‘  <%=Session["level"]%> </span> <br>
-             <span style="font-size:40px; line-height:80%" >Χ©ΧΧ‘  <%=Session["group"]%> </span> <br>
+            <span style="font-size:25px;line-height:200%"> <%=Session["xpp"]%> πχεγεϊ</span> <br>
+            <span style="font-size:40px; line-height:80%" >ωμα  <%=Session["level"]%> </span> <br>
+             <span style="font-size:40px; line-height:80%" >ωμα  <%=Session["group"]%> </span> <br>
         </div>
         <div class="progbar">
             <div class="progress">
@@ -135,5 +123,41 @@
     </div>
     </div>
    -->
+        <script type="text/javascript">
+            function cleanArray(actual) {
+                var newArray = new Array();
+                for (var i = 0; i < actual.length; i++) {
+                    if (actual[i]) {
+                        newArray.push(actual[i]);
+                    }
+                }
+                return newArray;
+            }
+            var str = "3.12";//μδημισ αξωϊπδ μΰ ρθθι
+            var arr = [];
+            for (var i = 0; i < str.length; i++) {
+                if (String(str).charAt(i) != "." && String(str).charAt(i + 1) != ".") {
+                    arr[i] = String(str).charAt(i) + String(str).charAt(i + 1);
+                    i++;
+                }
+                else if (String(str).charAt(i) != ".") {
+                    arr[i] = String(str).charAt(i);
+                }
+            }
+            arr = cleanArray(arr);
+            var vr = document.querySelectorAll(".sub");
+            alert(vr.length+"length");
+            for (var i = 0; i < vr.length; i++) {
+                alert(vr[i].id+("id"));
+                alert(arr[i]+"arr");
+                if (vr[i].id == arr[i]) {
+                    alert("if");
+                    alert(vr[i].style.display);
+                    vr[i].style.display = "block";
+                    alert(vr[i].style.display);
+                }
+            }
+
+        </script>
 </body>
 </html>
