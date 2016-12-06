@@ -34,10 +34,9 @@ public partial class culture : System.Web.UI.Page
                 sql = "select * from " + tableName;//sql  יצירת מחרוזת שליפה מטבלה ואיחסונה במשתנה
                 dt = MyAdoHelper.ExecuteDataTable(fileName, sql);
                 //foreach(DataRow dr in dt.Rows)
-                //{
+                //
                     foreach(DataRow Row in dt.Rows)
                     {
-                        
                     sumtemp = dt.Rows[f][4].ToString();
                     sum += int.Parse(sumtemp);
                     f++;

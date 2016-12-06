@@ -14,7 +14,7 @@ public partial class login : System.Web.UI.Page
         Session["userName"] = null;
         string tableName = "table1";//שם הטבלה
         string userName, userPass, name, team, xpp;
-        string userName2, ID;
+        string userName2, ID, group;
         int level = 0;
   
         
@@ -44,6 +44,8 @@ public partial class login : System.Web.UI.Page
                 xpp = dt.Rows[0]["xpp"].ToString();
                 Session["team"] = dt.Rows[0]["team"].ToString();
                 team = dt.Rows[0]["team"].ToString();
+                Session["group"] = dt.Rows[0]["group"].ToString();
+                group = dt.Rows[0]["group"].ToString();
                 Session["ID"] = dt.Rows[0]["ID"].ToString();
                 ID = dt.Rows[0]["ID"].ToString();
                 Session["level"] = xpstuf.level(Int32.Parse(xpp));
@@ -69,4 +71,3 @@ public partial class login : System.Web.UI.Page
     }
 
 
-//קואלות
