@@ -48,6 +48,4 @@ public class xpstuf
         //}
         return r;
     }
-    }
-
-//קואלות
+}

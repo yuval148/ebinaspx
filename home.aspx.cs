@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+
 
 public partial class home : System.Web.UI.Page
 {
@@ -20,7 +22,12 @@ public partial class home : System.Web.UI.Page
             double curxp = Double.Parse(Session["xpp"].ToString()) - 250;
             prog = (curxp / 250) * 100;
             refali.Style["width"] = String.Format("{0}%", (int)prog);
+       }
+         protected void BtnSubmit_Click(object sender, EventArgs e)
+    {
+        String str = "";
 
+       
 
     }
 }
