@@ -59,6 +59,10 @@
       <td>קבוצה</td>
       <td><input type="text" id="team" name="team" maxlength="16" size="15"/></td>
        </tr>
+           <tr>
+      <td>כיתה</td>
+      <td><input type="text" id="kita" name="kita" maxlength="4" size="15"/></td>
+       </tr>
           <tr>
       <td>מספר ת.ז</td>
       <td><input type="text" id="ID" name="ID" maxlength="9" size="9"/></td>

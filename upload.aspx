@@ -14,12 +14,27 @@
     </style>
   </head>
 <body style="font-family:Arial, Helvetica, Sans-Serif; text-align:center;">
-    <form name="f" method="post" onsubmit="return check();">
+    <form name="f" id="f" method="post" onsubmit="return check();">
      
      <table align=center>
      <tr>
      <td>subject  </td>
-      <td><input type="text" id="subject" name="subject" maxlength="50" size="15"/></td>
+      <td>
+         <select id="subject" name="subject">
+             <option value="מקצוע">בחר מקצוע</option>
+           <option value="אנגלית">אנגלית</option>
+             <option value="מדעי המחשב">מדעי המחשב</option>
+             <option value="מתמטיקה">מתמטיקה</option>
+            <option value="ערבית">ערבית</option>
+             <option value="פיזיקה">פיזיקה</option>
+             <option value="אזרחות">אזרחות</option>
+             <option value="היסטוריה">היסטוריה</option>
+             <option value="לשון">לשון</option>
+             <option value="ספרות">ספרות</option>
+              <option value="כימיה">כימיה</option>
+             <option value="סוציולוגיה">סוציולוגיה</option>
+                </select> 
+                </td>
       </tr>
        <tr>
       <td>tat</td>

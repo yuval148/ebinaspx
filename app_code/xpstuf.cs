@@ -48,4 +48,24 @@ public class xpstuf
         //}
         return r;
     }
+
+    public static int subjectID(string subject)
+    {
+        switch (subject)
+        {
+            case "מקצוע": return 0;
+            case "אנגלית": return 1;
+            case "מדעי המחשב": return 2;
+            case "מתמטיקה": return 3;
+            case "ערבית": return 4;
+            case "פיזיקה": return 5;
+            case "אזרחות": return 6;
+            case "היסטוריה": return 7;
+            case "לשון": return 8;
+            case "ספרות": return 9;
+            case "כימיה": return 10;
+            case "סוציולוגיה": return 11;
+            default: return 0;
+        }
+    }
 }

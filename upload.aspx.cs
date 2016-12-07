@@ -42,7 +42,7 @@ public partial class upload : System.Web.UI.Page
                 {
 
                     ID = dt.Rows[i]["ID"].ToString();
-                    sql = "insert into ID" + ID + "(subject, tat, link, cou, ctargil, xp, iscomplete)values('" + subject + "','" + tat + "','" + link + "','" + "0" + "','" + ctargil.ToString() + "'," + xp + "," + iscomplete + ")";
+                    sql = "insert into ID" + ID + "(subject, subjectID, tat, tatID, link, cou, ctargil, xp, iscomplete)values('" + subject + "','" + xpstuf.subjectID(subject) + "','" + tat + "','" +   "0"   + "','" + link + "','" + "0" + "','" + ctargil.ToString() + "'," + xp + "," + iscomplete + ")";
                     MyAdoHelper.DoQuery(fileName, sql);
                     i++;
                 }

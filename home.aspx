@@ -64,9 +64,9 @@
                 background: url('../assets/demos/dog.png') bottom right 15% no-repeat #46B6AC;
             }
         </style>
-<div id="12"class="sub demo-card-square mdl-card mdl-shadow--2dp ">
+<div id="3"class="sub demo-card-square mdl-card mdl-shadow--2dp ">
   <div class="mdl-card__title mdl-card--expand">
-    <h2 class="mdl-card__title-text">פרבולות</h2>
+    <h2 class="mdl-card__title-text">מתמטיקה</h2>
   </div>
   <div class="mdl-card__supporting-text">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -78,6 +78,51 @@
     </a>
   </div>
 </div></div>
+
+      <div id="2"class="sub demo-card-square mdl-card mdl-shadow--2dp ">
+  <div class="mdl-card__title mdl-card--expand">
+    <h2 class="mdl-card__title-text">מדעי המחשב</h2>
+  </div>
+  <div class="mdl-card__supporting-text">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Aenan convallis.
+  </div>
+  <div class="mdl-card__actions mdl-card--border">
+    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+      המשך
+    </a>
+  </div>
+</div>
+
+      <div id="9"class="sub demo-card-square mdl-card mdl-shadow--2dp ">
+  <div class="mdl-card__title mdl-card--expand">
+    <h2 class="mdl-card__title-text">ספרות</h2>
+  </div>
+  <div class="mdl-card__supporting-text">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Aenan convallis.
+  </div>
+  <div class="mdl-card__actions mdl-card--border">
+    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+      המשך
+    </a>
+  </div>
+</div>
+
+      <div id="4"class="sub demo-card-square mdl-card mdl-shadow--2dp ">
+  <div class="mdl-card__title mdl-card--expand">
+    <h2 class="mdl-card__title-text">ערבית</h2>
+  </div>
+  <div class="mdl-card__supporting-text">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Aenan convallis.
+  </div>
+  <div class="mdl-card__actions mdl-card--border">
+    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+      המשך
+    </a>
+  </div>
+</div>
 
   </main>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -133,7 +178,8 @@
                 }
                 return newArray;
             }
-            var str = "3.12";//להחליף במשתנה לא סטטי
+            var str = <%=Session["sendr"]%>;
+            alert(str);
             var arr = [];
             for (var i = 0; i < str.length; i++) {
                 if (String(str).charAt(i) != "." && String(str).charAt(i + 1) != ".") {
