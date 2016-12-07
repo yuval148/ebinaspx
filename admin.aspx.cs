@@ -38,6 +38,8 @@ public partial class admin : System.Web.UI.Page
                     printDataStr += "<th> סיסמה</th>";
                     printDataStr += "<th> קבוצה</th>";
                     printDataStr += "<th> נקודות</th>";
+                    printDataStr += "<th> כיתה</th>";
+                    printDataStr += "<th> ת.ז</th>";
                     printDataStr += "</tr>";
                     MyAdoHelper.ExecuteDataTable(fileName, sql);
                 for (int i=0;i<length;i++)
@@ -48,6 +50,8 @@ public partial class admin : System.Web.UI.Page
                     printDataStr += "<td>" + dt.Rows[i]["userPass"] + "</td>";
                     printDataStr += "<td>" + dt.Rows[i]["team"] + "</td>";
                     printDataStr += "<td>" + dt.Rows[i]["xpp"] + "</td>";
+                    printDataStr += "<td>" + dt.Rows[i]["kita"] + "</td>";
+                    printDataStr += "<td>" + dt.Rows[i]["ID"] + "</td>";
                     printDataStr += "</tr>";
                 }
                 printDataStr += "</table><form action='' method='post'> <input  type='submit' name='close' id='close' value='סגור '  /></form>";

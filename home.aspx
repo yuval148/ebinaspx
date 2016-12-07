@@ -8,7 +8,12 @@
     <head> 
         <title></title>
         <style>
-           
+           body {
+                background: url("/media/bg5.jpg");
+                background-size: 100%, 100%;
+                background-repeat: no-repeat;
+            }
+
             .sub{
                 width:320px;
                 height:320px;
@@ -52,7 +57,7 @@
      
     
   <main class="mdl-layout__content">
-      <div class="left-pro">
+      <div class="left-pro" style="font-family:'Heebo'">
               <div id="pro" class=" mdl-card mdl-shadow--2dp">
              <img src="media/lion.jpg" class="img-circle">
        <div id="pd">
