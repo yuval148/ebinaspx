@@ -69,3 +69,5 @@ public class xpstuf
         }
     }
 }
+
+//TODO: add public static int tatID(string tat)

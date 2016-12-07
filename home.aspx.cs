@@ -45,6 +45,7 @@ public partial class home : System.Web.UI.Page
                     f++;
                 }
             }
+            sendr=sendr.Remove(sendr.Length - 1);
             Session["sendr"] = sendr;
 
     }

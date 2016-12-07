@@ -1,4 +1,4 @@
-<%@ Page Language="C#" CodeFile="home.aspx.cs" Inherits="home" %>
+ן»¿<%@ Page Language="C#" CodeFile="home.aspx.cs" Inherits="home" %>
 <%@ Import Namespace="System.Data" %>
 <%@ Import Namespace="System.Data.OleDb" %>
 <!--#include file="upper.aspx"-->
@@ -32,7 +32,7 @@
             }
 </style>
 
-<div id="1" class="sub demo-card-square2 mdl-card mdl-shadow--2dp ">
+<div id="2" class="sub demo-card-square2 mdl-card mdl-shadow--2dp ">
   <div class="mdl-card__title mdl-card--expand">
     <h2 class="mdl-card__title-text">Update</h2>
   </div>
@@ -66,7 +66,7 @@
         </style>
 <div id="3"class="sub demo-card-square mdl-card mdl-shadow--2dp ">
   <div class="mdl-card__title mdl-card--expand">
-    <h2 class="mdl-card__title-text">מתמטיקה</h2>
+    <h2 class="mdl-card__title-text">ֳ´ֵ™ֳ¡ִ÷ִ›ִ÷ֳ÷</h2>
   </div>
   <div class="mdl-card__supporting-text">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -74,55 +74,10 @@
   </div>
   <div class="mdl-card__actions mdl-card--border">
     <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-      המשך
+      ֳ₪ֳ®ֵ¯ִ™
     </a>
   </div>
 </div></div>
-
-      <div id="2"class="sub demo-card-square mdl-card mdl-shadow--2dp ">
-  <div class="mdl-card__title mdl-card--expand">
-    <h2 class="mdl-card__title-text">מדעי המחשב</h2>
-  </div>
-  <div class="mdl-card__supporting-text">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    Aenan convallis.
-  </div>
-  <div class="mdl-card__actions mdl-card--border">
-    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-      המשך
-    </a>
-  </div>
-</div>
-
-      <div id="9"class="sub demo-card-square mdl-card mdl-shadow--2dp ">
-  <div class="mdl-card__title mdl-card--expand">
-    <h2 class="mdl-card__title-text">ספרות</h2>
-  </div>
-  <div class="mdl-card__supporting-text">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    Aenan convallis.
-  </div>
-  <div class="mdl-card__actions mdl-card--border">
-    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-      המשך
-    </a>
-  </div>
-</div>
-
-      <div id="4"class="sub demo-card-square mdl-card mdl-shadow--2dp ">
-  <div class="mdl-card__title mdl-card--expand">
-    <h2 class="mdl-card__title-text">ערבית</h2>
-  </div>
-  <div class="mdl-card__supporting-text">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    Aenan convallis.
-  </div>
-  <div class="mdl-card__actions mdl-card--border">
-    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-      המשך
-    </a>
-  </div>
-</div>
 
   </main>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -153,9 +108,9 @@
          <div id="pd">
             <span style="font-size:40px; font-weight:bold"> <%=Session["name"]%></span><br>
             <span style="font-size:30px; line-height:80%"> <%=Session["team"]%></span><br>
-            <span style="font-size:25px;line-height:200%"> <%=Session["xpp"]%> נקודות</span> <br>
-            <span style="font-size:40px; line-height:80%" >שלב  <%=Session["level"]%> </span> <br>
-             <span style="font-size:40px; line-height:80%" >שלב  <%=Session["group"]%> </span> <br>
+            <span style="font-size:25px;line-height:200%"> <%=Session["xpp"]%> ִ‘ֳ·ִ÷ִƒִ÷ֳ÷</span> <br>
+            <span style="font-size:40px; line-height:80%" >ֵ¯ִ›ֳ¡  <%=Session["level"]%> </span> <br>
+             <span style="font-size:40px; line-height:80%" >ֵ¯ִ›ֳ¡  <%=Session["group"]%> </span> <br>
         </div>
         <div class="progbar">
             <div class="progress">
@@ -178,8 +133,7 @@
                 }
                 return newArray;
             }
-            var str = <%=Session["sendr"]%>;
-            alert(str);
+            var str = <%=Session["sendr"]%>; //FIX!
             var arr = [];
             for (var i = 0; i < str.length; i++) {
                 if (String(str).charAt(i) != "." && String(str).charAt(i + 1) != ".") {
@@ -203,7 +157,7 @@
                     alert(vr[i].style.display);
                 }
             }
-
         </script>
+        <%=Session["sendr"]%>
 </body>
 </html>
