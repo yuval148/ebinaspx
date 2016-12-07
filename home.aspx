@@ -8,6 +8,11 @@
     <head> 
         <title></title>
         <style>
+            body {
+                background: url("/media/bg5.jpg");
+                background-size: 100%, 100%;
+                background-repeat: no-repeat;
+            }
             .sub{
                 width:320px;
                 height:320px;

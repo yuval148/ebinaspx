@@ -3,13 +3,12 @@
 <html>
 <head>
     <title></title>
-    <style>
-        body
-        {
-            background: url("bg2.jpg");
-            background-size: 100%, 100%;
-            background-repeat:no-repeat;
-        }
+ <style>
+            body {
+                background: url("/media/bg5.jpg");
+                background-size: 100%, 100%;
+                background-repeat: no-repeat;
+            }
     </style>
 
 </head>
@@ -20,7 +19,7 @@
     <form action="" method="post">
     <input type="submit" name="submit" id="Submit" value="צפייה בלוח המובילים " />
     </form>
-    <div style="width: 50%; margin: 0 auto;">
+    <div style="width: 50%; margin:0 auto;">
     <%=printDataStr%>
     <%=Session["printDataStr"]%>
         </div>

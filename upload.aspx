@@ -5,12 +5,11 @@
   <head>
   <title>דף העלאה</title>
   <style>
-        body
-        {
-            background: url("bg2.jpg");
-            background-size: 100%, 100%;
-            background-repeat:no-repeat;
-        }
+        body {
+                background: url("/media/bg5.jpg");
+                background-size: 100%, 100%;
+                background-repeat: no-repeat;
+            }
     </style>
   </head>
 <body style="font-family:Arial, Helvetica, Sans-Serif; text-align:center;">

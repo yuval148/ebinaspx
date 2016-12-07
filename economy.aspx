@@ -43,12 +43,11 @@
             }
         </script>
   <style>
-         body
-        {
-            background: url("bg2.jpg");
-            background-size: 100%, 100%;
-            background-repeat:no-repeat;
-        }
+         body {
+                background: url("/media/bg5.jpg");
+                background-size: 100%, 100%;
+                background-repeat: no-repeat;
+            }
          #qu{
              position:absolute;
              top:150px;
@@ -81,7 +80,7 @@
     <%=Session["group"] %>
     <h1>פרבולות</h1><!--קבוצת תרגילים -->
     <div class="q&a">
-    <img id="qu" src="targil1.png" />
+    <img id="qu" src="media/targil1.png" />
 
        <form id="right" action="http://google.com">
     <input type="submit" value="התרגיל הבא" />

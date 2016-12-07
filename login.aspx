@@ -3,13 +3,12 @@
   <html>  
   <head>
   <title> התחברות</title>
-  <style>
-        body
-        {
-            background: url("bg2.jpg");
-            background-size: 100%, 100%;
-            background-repeat:no-repeat;
-        }
+   <style>
+            body {
+                background: url("/media/bg5.jpg");
+                background-size: 100%, 100%;
+                background-repeat: no-repeat;
+            }
     </style>
   </head>
     <body style="font-family:Arial; text-align:center;">
