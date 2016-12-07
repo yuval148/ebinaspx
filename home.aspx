@@ -8,11 +8,7 @@
     <head> 
         <title></title>
         <style>
-            body {
-                background: url("/media/bg5.jpg");
-                background-size: 100%, 100%;
-                background-repeat: no-repeat;
-            }
+           
             .sub{
                 width:320px;
                 height:320px;
@@ -28,13 +24,21 @@
                 top: 50px;
                 width: 320px;
                 height: 700px;
-                margin: 10px 20px 10px 10px;
+                                margin: 10px 10px 10px 10px;
+
             }
             .img-circle {
                 border-radius: 50%;
                 width:150px;
                 height:150px;
-}
+                align-self:center;
+                margin-top:50px;
+                margin-bottom:50px;
+                
+            }
+            #pd{
+                text-align:center;
+            }
 .demo-card-square > .mdl-card__title {
   color: #fff;
   background:
@@ -49,20 +53,24 @@
     
   <main class="mdl-layout__content">
       <div class="left-pro">
-              <div id="pro" class="demo-card-square mdl-card mdl-shadow--2dp">
-  <div class="mdl-card__title mdl-card--expand">
-       <div class="mdl-card__supporting-text">
+              <div id="pro" class=" mdl-card mdl-shadow--2dp">
              <img src="media/lion.jpg" class="img-circle">
-
-  </div>
-  </div>
- 
-  <div class="mdl-card__actions mdl-card--border">
-    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-      View Updates
-    </a>
-  </div>
-</div>
+       <div id="pd">
+            <span style="font-size:40px; line-height:80%" >קבוצת  <%=Session["team"]%> </span><hr /> <br>
+            <span style="font-size:40px; font-weight:bold"> <%=Session["name"]%></span><hr /><br>
+            <!-- Simple MDL Progress Bar -->
+<div id="p1" class="mdl-progress mdl-js-progress"></div>
+<script>
+    document.querySelector('#p1').addEventListener('mdl-componentupgraded', function () {
+        this.MaterialProgress.setProgress(44);
+    });
+</script>
+            <span style="font-size:25px;line-height:200%"> <%=Session["xpp"]%> נקודות</span><hr /> <br>
+            <span style="font-size:40px; line-height:80%" >שלב  <%=Session["level"]%> </span><hr /> <br>
+          
+    
+        </div>
+        </div>
       </div>
     <div class="page-content">
     
@@ -133,7 +141,7 @@
       המשך
     </a>
   </div>
-</div></div>
+</div>
 
       <div id="3" class="sub demo-card-square2 mdl-card mdl-shadow--2dp ">
   <div class="mdl-card__title mdl-card--expand">
@@ -254,6 +262,7 @@
     </a>
   </div>
 </div>
+        </div>
   </main>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script src="js/circle.js"></script>
@@ -287,14 +296,7 @@
             <span style="font-size:40px; line-height:80%" >שלב  <%=Session["level"]%> </span> <br>
              <span style="font-size:40px; line-height:80%" >שלב  <%=Session["group"]%> </span> <br>
         </div>
-        <div class="progbar">
-            <div class="progress">
-            <div class="progress-bar" ID="refali" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"  style="width:70%" runat="server">
-                <span class="sr-only">70% Complete</span>
-            </div>
-            </div>
-    
-        </div>
+       
     </div>
     </div>
    -->

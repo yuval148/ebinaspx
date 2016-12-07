@@ -32,7 +32,7 @@
     <header class="mdl-layout__header">
     <div class="mdl-layout__header-row" style="font-family: 'Heebo', sans-serif; font-weight:300;">
       <!-- Title -->
-      <span class="mdl-layout-title"><img src="media/LOGO.png" style="height:10% ; width: 10%; position:absolute;"/></span>
+      <span class="mdl-layout-title"></span><img src="media/LOGO.png" style="height:50% ; width: 10%;"/>
       <!-- Add spacer, to align navigation to the right -->
       <!-- Navigation. We hide it in small screens. -->
       <nav class="mdl-navigation mdl-layout--large-screen-only">
