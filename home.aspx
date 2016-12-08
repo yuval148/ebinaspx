@@ -47,7 +47,7 @@
 .demo-card-square > .mdl-card__title {
   color: #fff;
   background:
-    url('../assets/demos/dog.png') bottom right 15% no-repeat #46B6AC;
+    url('/media/math.png') bottom right  no-repeat #283593;
 }
         </style>
         
@@ -120,7 +120,7 @@
         <!-- Square card -->
 <div id="1" class="sub demo-card-square2 mdl-card mdl-shadow--2dp ">
   <div class="mdl-card__title mdl-card--expand">
-    <h2 class="mdl-card__title-text">Update</h2>
+    <h2 class="mdl-card__title-text" style="font-family:'Heebo';font-weight:300;font-size:35px">אנגלית</h2>
   </div>
   <div class="mdl-card__supporting-text">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -133,9 +133,24 @@
   </div>
 </div>
 
-<div id="2"class="sub demo-card-square mdl-card mdl-shadow--2dp ">
+      <div id="2" class="sub demo-card-square2 mdl-card mdl-shadow--2dp ">
   <div class="mdl-card__title mdl-card--expand">
-    <h2 class="mdl-card__title-text">פרבולות</h2>
+    <h2 class="mdl-card__title-text" style="font-family:'Heebo';font-weight:300;font-size:35px">מדעי המחשב</h2>
+  </div>
+  <div class="mdl-card__supporting-text">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Aenan convallis.
+  </div>
+  <div class="mdl-card__actions mdl-card--border">
+    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+      View Updates
+    </a>
+  </div>
+</div>
+
+<div id="3"class="sub demo-card-square mdl-card mdl-shadow--2dp ">
+  <div class="mdl-card__title mdl-card--expand">
+    <h2 class="mdl-card__title-text" style="font-family:'Heebo';font-weight:300;font-size:35px">מתמטיקה</h2>
   </div>
   <div class="mdl-card__supporting-text">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -148,24 +163,10 @@
   </div>
 </div>
 
-      <div id="3" class="sub demo-card-square2 mdl-card mdl-shadow--2dp ">
-  <div class="mdl-card__title mdl-card--expand">
-    <h2 class="mdl-card__title-text">Update</h2>
-  </div>
-  <div class="mdl-card__supporting-text">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    Aenan convallis.
-  </div>
-  <div class="mdl-card__actions mdl-card--border">
-    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-      View Updates
-    </a>
-  </div>
-</div>
 
       <div id="4" class="sub demo-card-square2 mdl-card mdl-shadow--2dp ">
   <div class="mdl-card__title mdl-card--expand">
-    <h2 class="mdl-card__title-text">Update</h2>
+    <h2 class="mdl-card__title-text"style="font-family:'Heebo';font-weight:300;font-size:35px">ערבית</h2>
   </div>
   <div class="mdl-card__supporting-text">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -180,7 +181,7 @@
 
       <div id="5" class="sub demo-card-square2 mdl-card mdl-shadow--2dp ">
   <div class="mdl-card__title mdl-card--expand">
-    <h2 class="mdl-card__title-text">Update</h2>
+    <h2 class="mdl-card__title-text" style="font-family:'Heebo';font-weight:300;font-size:35px">פיזיקה</h2>
   </div>
   <div class="mdl-card__supporting-text">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -195,7 +196,7 @@
 
       <div id="6" class="sub demo-card-square2 mdl-card mdl-shadow--2dp ">
   <div class="mdl-card__title mdl-card--expand">
-    <h2 class="mdl-card__title-text">Update</h2>
+    <h2 class="mdl-card__title-text"style="font-family:'Heebo';font-weight:300;font-size:35px">אזרחות</h2>
   </div>
   <div class="mdl-card__supporting-text">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -210,7 +211,7 @@
 
       <div id="7" class="sub demo-card-square2 mdl-card mdl-shadow--2dp ">
   <div class="mdl-card__title mdl-card--expand">
-    <h2 class="mdl-card__title-text">Update</h2>
+    <h2 class="mdl-card__title-text"style="font-family:'Heebo';font-weight:300;font-size:35px">היסטוריה</h2>
   </div>
   <div class="mdl-card__supporting-text">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -225,7 +226,7 @@
 
       <div id="8" class="sub demo-card-square2 mdl-card mdl-shadow--2dp ">
   <div class="mdl-card__title mdl-card--expand">
-    <h2 class="mdl-card__title-text">Update</h2>
+    <h2 class="mdl-card__title-text"style="font-family:'Heebo';font-weight:300;font-size:35px">לשון</h2>
   </div>
   <div class="mdl-card__supporting-text">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -240,7 +241,7 @@
 
       <div id="9" class="sub demo-card-square2 mdl-card mdl-shadow--2dp ">
   <div class="mdl-card__title mdl-card--expand">
-    <h2 class="mdl-card__title-text">Update</h2>
+    <h2 class="mdl-card__title-text" style="font-family:'Heebo';font-weight:300;font-size:35px">ספרות</h2>
   </div>
   <div class="mdl-card__supporting-text">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -255,7 +256,7 @@
 
 <div id="10" class="sub demo-card-square mdl-card mdl-shadow--2dp">
   <div class="mdl-card__title mdl-card--expand">
-    <h2 class="mdl-card__title-text">Update</h2>
+    <h2 class="mdl-card__title-text" style="font-family:'Heebo';font-weight:300;font-size:35px">כימיה</h2>
   </div>
   <div class="mdl-card__supporting-text">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -267,6 +268,7 @@
     </a>
   </div>
 </div>
+
         </div>
   </main>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
