@@ -50,23 +50,23 @@ public partial class culture : System.Web.UI.Page
                 if (length > 0)
                 {
                     //הכנת מחרוזת המכילה את נתוני הטבלה שיש להציג
-                    printDataStr += "<table   border='1'>";
-                    printDataStr += "<tr>";
-                    printDataStr += "<th>שם</th>";
+                    printDataStr += "<table class='mdl - data - table mdl - js - data - table mdl - data - table- mdl-shadow--2dp'>";
+                    printDataStr += "<thead> <tr>";
+                    printDataStr += "<th  class='mdl - data - table__cell--non - numeric'>שם</th>";
                     printDataStr += "<th> קבוצה</th>";
                     printDataStr += "<th> נקודות</th>";
-                    printDataStr += "</tr>";
+                    printDataStr += "</tr></thead><tbody>";
                     MyAdoHelper.ExecuteDataTable(fileName, sql);
                     for (int i = 0; i < length; i++)
                     {
                         printDataStr += "<tr>";
-                        printDataStr += "<td>" + dt.Rows[i]["name"] + "</td>";                //TODO: Arreange by xpp
+                        printDataStr += "<td  class='mdl - data - table__cell--non - numeric'>" + dt.Rows[i]["name"] + "</td>";                //TODO: Arreange by xpp
                         printDataStr += "<td>" + dt.Rows[i]["team"] + "</td>";
                         printDataStr += "<td>" + dt.Rows[i]["xpp"] + "</td>";         // foreach 
                         printDataStr += "</tr>";
                     }
-                    printDataStr += "<tr><td>ממוצע הנקודות</td><td></td><td>" + sum +"</td>";
-                    printDataStr += "</table><form action='' method='post'> <input  type='submit' name='close' id='close' value='סגור '  /></form>";
+                    printDataStr += "<tr><td  class=' mdl - data - table__cell--non - numeric'>ממוצע הנקודות</td><td></td><td>" + sum +"</td>";
+                    printDataStr += "</tbody> </table><form action='' method='post'> <input  type='submit' name='close' id='close' value='סגור '  /></form>";
                     string userCount = length.ToString();
                 }
 

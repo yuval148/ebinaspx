@@ -20,10 +20,10 @@
     <title></title>
     <style>
         body {
-            background: url("bg2.jpg");
-            background-size: 100%, 100%;
-            background-repeat: no-repeat;
-        }
+                background: url("/media/bg5.jpg");
+                background-size: 100%, 100%;
+                background-repeat: no-repeat;
+            }
        
                
         

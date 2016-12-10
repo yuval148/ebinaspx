@@ -1,4 +1,4 @@
-<%@ Page Language="C#" CodeFile="home.aspx.cs" Inherits="home" %>
+﻿<%@ Page Language="C#" CodeFile="home.aspx.cs" Inherits="home" %>
 <%@ Import Namespace="System.Data" %>
 <%@ Import Namespace="System.Data.OleDb" %>
 <!--#include file="upper.aspx"-->
@@ -8,33 +8,138 @@
     <head> 
         <title></title>
         <style>
-            .sub{
-                display:none;
+           body {
+                background: url("/media/bg5.jpg");
+                background-size: 100%, 100%;
+                background-repeat: no-repeat;
             }
-        </style>
-        
-       </head>
-    <body>
-  <main class="mdl-layout__content">
-    <div class="page-content">
-        <!-- Square card -->
-<style>
-.demo-card-square2.mdl-card {
-  width: 320px;
-  height: 320px;
-  position:absolute;
-  top:50px;
-  right:10px;
-}
- .demo-card-square > .mdl-card__title {
-                color: #fff;
-                background: url('../assets/demos/dog.png') bottom right 15% no-repeat #46B6AC;
-            }
-</style>
 
-<div id="1" class="sub demo-card-square2 mdl-card mdl-shadow--2dp ">
+            .sub{
+                width:320px;
+                height:320px;
+                display:none;
+                float: right;
+                right:390px;
+                top:-650px;
+                margin: 10px 10px 10px 10px;
+
+
+            }
+            #pro {
+                top: 50px;
+                width: 320px;
+                height: 700px;
+                                margin: 10px 10px 10px 10px;
+
+            }
+            .img-circle {
+                border-radius: 50%;
+                width:150px;
+                height:150px;
+                align-self:center;
+                margin-top:50px;
+                margin-bottom:50px;
+                
+            }
+            #pd{
+                text-align:center;
+            }
+            .demo-card-square1 > .mdl-card__title {
+                color: #fff;background: url('/media/404.png') bottom right  no-repeat #283593;
+            }
+            .demo-card-square2 > .mdl-card__title {
+                color: #fff;background: url('/media/code.png') bottom right  no-repeat #283593;
+            }
+            .demo-card-square3 > .mdl-card__title {
+                color: #fff;background: url('/media/math.png') bottom right  no-repeat #283593;
+            }
+            .demo-card-square4 > .mdl-card__title {
+                color: #fff;background: url('/media/404.png') bottom right  no-repeat #283593;
+            }
+            .demo-card-square5 > .mdl-card__title {
+                color: #fff;background: url('/media/404.png') bottom right  no-repeat #283593;
+            }
+            .demo-card-square6 > .mdl-card__title {
+                color: #fff;background: url('/media/404.png') bottom right  no-repeat #283593;
+            }
+            .demo-card-square7 > .mdl-card__title {
+                color: #fff;background: url('/media/404.png') bottom right  no-repeat #283593;
+            }
+            .demo-card-square8 > .mdl-card__title {
+                color: #fff;background: url('/media/404.png') bottom right  no-repeat #283593;
+            }
+            .demo-card-square9 > .mdl-card__title {
+                color: #fff;background: url('/media/book.png') bottom right  no-repeat #283593;
+            }
+            .demo-card-square10 > .mdl-card__title {
+                color: #fff;background: url('/media/404.png') bottom right  no-repeat #283593;
+            }
+        </style> 
+    </head>
+    <body>
+
+     
+    
+  <main class="mdl-layout__content">
+       <div class="left-pro" style="font-family:'Heebo'">
+                <div id="pro" class=" mdl-card mdl-shadow--2dp">
+                    <img src="media/lion.jpg" class="img-circle">
+                    <div id="pd">
+                        <span style="font-size:40px; line-height:80%" >קבוצת  <%=Session["team"]%> </span><hr /> <br>
+                        <span style="font-size:40px; font-weight:bold"> <%=Session["name"]%></span><hr /><br>
+                        <!-- Simple MDL Progress Bar -->
+                        <div id="p1" class="mdl-progress mdl-js-progress"></div>
+                        <script>
+                            document.querySelector('#p1').addEventListener('mdl-componentupgraded', function () {
+                            this.MaterialProgress.setProgress('<%=Session["prog"]%>');
+                            });
+                        </script>
+                        <span style="font-size:25px;line-height:200%"> <%=Session["xpp"]%> נקודות</span><hr /> <br>
+                        <span style="font-size:40px; line-height:80%" >שלב  <%=Session["level"]%> </span><hr /> <br>
+                        <span style="font-size:40px; line-height:80%" ><%=Session["kita"]%> </span> <br>
+                    </div>
+                </div>
+            </div>
+    <div class="page-content">
+    
+           <!-- Wide card with share menu button -->
+<style>
+.demo-card-wide.mdl-card {
+  width: 1000px;
+  right:400px;
+  display:block;
+  top:-660px;
+}
+.demo-card-wide > .mdl-card__title {
+  color: #fff;
+  height: 176px;
+  background: url('/media/widelogo.jpg') center / cover;
+}
+.demo-card-wide > .mdl-card__menu {
+  color: #fff;
+}
+</style>
+        
+
+<div class="demo-card-wide mdl-card mdl-shadow--2dp">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text" style=" font-family:'Heebo';font-weight:700;font-size:35px">ברוכים הבאים</h2>
+  </div>
+  <div class="mdl-card__supporting-text">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Mauris sagittis pellentesque lacus eleifend lacinia...
+  </div>
+  <div class="mdl-card__actions mdl-card--border">
+    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+      Get Started
+    </a>
+  </div>
+
+</div>
+        <!-- Square card -->
+<div id="1" class="sub demo-card-square1 mdl-card mdl-shadow--2dp ">
   <div class="mdl-card__title mdl-card--expand">
-    <h2 class="mdl-card__title-text">Update</h2>
+    <h2 class="mdl-card__title-text" style="font-family:'Heebo';font-weight:300;font-size:35px">אנגלית</h2>
   </div>
   <div class="mdl-card__supporting-text">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -46,27 +151,10 @@
     </a>
   </div>
 </div>
-        <!-- Colored FAB button -->
-<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
-  <i class="material-icons">add</i>
-</button>
-        <!-- Square card -->
-        <style>
-            .demo-card-square.mdl-card {
-                width: 320px;
-                height: 320px;
-                top:50px;
-                right:350px;
-                position:absolute;
-             }
-            .demo-card-square > .mdl-card__title {
-                color: #fff;
-                background: url('../assets/demos/dog.png') bottom right 15% no-repeat #46B6AC;
-            }
-        </style>
-<div id="12"class="sub demo-card-square mdl-card mdl-shadow--2dp ">
+
+      <div id="2" class="sub demo-card-square2 mdl-card mdl-shadow--2dp ">
   <div class="mdl-card__title mdl-card--expand">
-    <h2 class="mdl-card__title-text">�������</h2>
+    <h2 class="mdl-card__title-text" style="font-family:'Heebo';font-weight:300;font-size:35px">מדעי המחשב</h2>
   </div>
   <div class="mdl-card__supporting-text">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -74,11 +162,133 @@
   </div>
   <div class="mdl-card__actions mdl-card--border">
     <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-      ����
+      View Updates
     </a>
   </div>
-</div></div>
+</div>
 
+    <div id="3"class="sub demo-card-square3 mdl-card mdl-shadow--2dp ">
+  <div class="mdl-card__title mdl-card--expand">
+    <h2 class="mdl-card__title-text" style=" font-family:'Heebo';font-weight:300;font-size:35px">מתמטיקה</h2>
+  </div>
+  <div class="mdl-card__supporting-text">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Aenan convallis.
+  </div>
+  <div class="mdl-card__actions mdl-card--border">
+    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+      המשך
+    </a>
+  </div>
+</div>
+
+
+      <div id="4" class="sub demo-card-square4 mdl-card mdl-shadow--2dp ">
+  <div class="mdl-card__title mdl-card--expand">
+    <h2 class="mdl-card__title-text"style="font-family:'Heebo';font-weight:300;font-size:35px">ערבית</h2>
+  </div>
+  <div class="mdl-card__supporting-text">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Aenan convallis.
+  </div>
+  <div class="mdl-card__actions mdl-card--border">
+    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+      View Updates
+    </a>
+  </div>
+</div>
+
+      <div id="5" class="sub demo-card-square5 mdl-card mdl-shadow--2dp ">
+  <div class="mdl-card__title mdl-card--expand">
+    <h2 class="mdl-card__title-text" style="font-family:'Heebo';font-weight:300;font-size:35px">פיזיקה</h2>
+  </div>
+  <div class="mdl-card__supporting-text">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Aenan convallis.
+  </div>
+  <div class="mdl-card__actions mdl-card--border">
+    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+      View Updates
+    </a>
+  </div>
+</div>
+
+      <div id="6" class="sub demo-card-square6 mdl-card mdl-shadow--2dp ">
+  <div class="mdl-card__title mdl-card--expand">
+    <h2 class="mdl-card__title-text"style="font-family:'Heebo';font-weight:300;font-size:35px">אזרחות</h2>
+  </div>
+  <div class="mdl-card__supporting-text">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Aenan convallis.
+  </div>
+  <div class="mdl-card__actions mdl-card--border">
+    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+      View Updates
+    </a>
+  </div>
+</div>
+
+      <div id="7" class="sub demo-card-square7 mdl-card mdl-shadow--2dp ">
+  <div class="mdl-card__title mdl-card--expand">
+    <h2 class="mdl-card__title-text"style="font-family:'Heebo';font-weight:300;font-size:35px">היסטוריה</h2>
+  </div>
+  <div class="mdl-card__supporting-text">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Aenan convallis.
+  </div>
+  <div class="mdl-card__actions mdl-card--border">
+    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+      View Updates
+    </a>
+  </div>
+</div>
+
+      <div id="8" class="sub demo-card-square8 mdl-card mdl-shadow--2dp ">
+  <div class="mdl-card__title mdl-card--expand">
+    <h2 class="mdl-card__title-text"style="font-family:'Heebo';font-weight:300;font-size:35px">לשון</h2>
+  </div>
+  <div class="mdl-card__supporting-text">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Aenan convallis.
+  </div>
+  <div class="mdl-card__actions mdl-card--border">
+    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+      View Updates
+    </a>
+  </div>
+</div>
+
+      <div id="9" class="sub demo-card-square9 mdl-card mdl-shadow--2dp ">
+  <div class="mdl-card__title mdl-card--expand">
+    <h2 class="mdl-card__title-text" style="font-family:'Heebo';font-weight:300;font-size:35px">ספרות</h2>
+  </div>
+  <div class="mdl-card__supporting-text">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Aenan convallis.
+  </div>
+  <div class="mdl-card__actions mdl-card--border">
+    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+      View Updates
+    </a>
+  </div>
+</div>
+
+<div id="10" class="sub demo-card-square10 mdl-card mdl-shadow--2dp">
+  <div class="mdl-card__title mdl-card--expand">
+    <h2 class="mdl-card__title-text" style="font-family:'Heebo';font-weight:300;font-size:35px">כימיה</h2>
+  </div>
+  <div class="mdl-card__supporting-text">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Aenan convallis.
+  </div>
+  <div class="mdl-card__actions mdl-card--border">
+    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+      View Updates
+    </a>
+  </div>
+</div>
+
+        </div>
   </main>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script src="js/circle.js"></script>
@@ -86,7 +296,7 @@
 <div id="circle">
     <style>
         #circle{
-            position:absolute;
+            display:none;
             top:150px;
             right:400px;
         }
@@ -102,27 +312,6 @@
         }
     });
 </script>
-         <!--
-    <div class="profile">
-          <img src="lion.jpg" class="img-circle">
-         <div id="pd">
-            <span style="font-size:40px; font-weight:bold"> <%=Session["name"]%></span><br>
-            <span style="font-size:30px; line-height:80%"> <%=Session["team"]%></span><br>
-            <span style="font-size:25px;line-height:200%"> <%=Session["xpp"]%> ������</span> <br>
-            <span style="font-size:40px; line-height:80%" >���  <%=Session["level"]%> </span> <br>
-             <span style="font-size:40px; line-height:80%" >���  <%=Session["group"]%> </span> <br>
-        </div>
-        <div class="progbar">
-            <div class="progress">
-            <div class="progress-bar" ID="refali" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"  style="width:70%" runat="server">
-                <span class="sr-only">70% Complete</span>
-            </div>
-            </div>
-    
-        </div>
-    </div>
-    </div>
-   -->
         <script type="text/javascript">
             function cleanArray(actual) {
                 var newArray = new Array();
@@ -133,7 +322,7 @@
                 }
                 return newArray;
             }
-            var str = "3.12";//������ ������ �� ����
+            var str = '<%=Session["sendr"]%>';
             var arr = [];
             for (var i = 0; i < str.length; i++) {
                 if (String(str).charAt(i) != "." && String(str).charAt(i + 1) != ".") {
@@ -145,19 +334,16 @@
                 }
             }
             arr = cleanArray(arr);
+            arr = arr.sort(function (a, b) { return a - b });
             var vr = document.querySelectorAll(".sub");
-            alert(vr.length+"length");
             for (var i = 0; i < vr.length; i++) {
-                alert(vr[i].id+("id"));
-                alert(arr[i]+"arr");
-                if (vr[i].id == arr[i]) {
-                    alert("if");
-                    alert(vr[i].style.display);
-                    vr[i].style.display = "block";
-                    alert(vr[i].style.display);
+                for (var v = 0; v < arr.length; v++) {
+                    if (vr[i].id == arr[v]) {
+                        vr[i].style.display = "inline-flex";
+                    }
                 }
+                
             }
-
         </script>
 </body>
 </html>

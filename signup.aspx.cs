@@ -10,8 +10,7 @@ public partial class signup : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         Session["ErrIsertForm"] = "";//משתנה שיציג הודעה ללקוח אם סיסמה או שם משתמש קיימים
-
-        string name = "", userPass = "", userName = "", team = "", group = "", ID = "";
+        string name = "", userPass = "", userName = "", team = "", kita = "", ID = "";
         int xpp = 0;
         if (Request.Form["submit"] != null)
         {
@@ -19,7 +18,7 @@ public partial class signup : System.Web.UI.Page
             userName = Request.Form["userName"];
             userPass = Request.Form["userPass"];
             team = Request.Form["team"];
-            group = Request.Form["group"];
+            kita = Request.Form["kita"];
             ID = Request.Form["ID"];
 
             if (name == "" || userPass == "" || ID=="")
@@ -55,11 +54,11 @@ public partial class signup : System.Web.UI.Page
 
                 else
                 {
-                    sql = "insert into table1 (name,userName,userPass,team,xpp,group, ID)values('" + name + "','" + userName + "','" + userPass + "','" + team + "','" + xpp + "','" + group  +"','" + ID + "')";
+                    sql = "insert into Table1(name, userName, userPass, team, xpp, kita, ID)values('" + name + "','" + userName + "','" + userPass + "','" + team + "','" + xpp + "','" + kita  +"','" + ID + "');";
                     Session["ErrIsertForm"] = "   שלום  " + name + " מקבוצת " + team + ". יש לך " + xpp + " נקודות";
                     MyAdoHelper.DoQuery(fileName, sql);
                     // Response.Redirect("form.aspx");
-                    string sql2 = "CREATE TABLE ID" + ID + " (subject varchar(255), tat varchar(255), link varchar(255), cou varchar(255), ctargil varchar(255), xp int, iscomplete bit);"; //TODO: FIX.
+                    string sql2 = "CREATE TABLE ID" + ID + " (subject varchar(255), subjectID varchar(255), tat varchar(255), tatID varchar(255), link varchar(255), cou varchar(255), ctargil varchar(255), xp int, iscomplete bit);"; //TODO: FIX.
                     MyAdoHelper.DoQuery(fileName, sql2);
                     Session["ErrIsertForm"] += "<br> ההרשמה בוצעה בהצלחה";
                 }
