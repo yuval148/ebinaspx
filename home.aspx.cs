@@ -18,11 +18,11 @@ public partial class home : System.Web.UI.Page
             Response.Redirect("login.aspx");
         }
 
-        double prog = 50;
-        int level = Int32.Parse(Session["level"].ToString());
-        double curxp = Double.Parse(Session["xpp"].ToString()) - 250;
-        prog = (curxp / 250) * 100;
-        Session["prog"] = prog;
+        //double prog = 50;
+        //int level = Int32.Parse(Session["level"].ToString());
+        //double curxp = Double.Parse(Session["xpp"].ToString()) - 250;
+        //prog = (curxp / 250) * 100;
+        //refali.Style["width"] = String.Format("{0}%", (int)prog);
 
             DataTable dt;
             Session["sendr"] = "";
