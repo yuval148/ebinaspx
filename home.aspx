@@ -44,39 +44,62 @@
             #pd{
                 text-align:center;
             }
-.demo-card-square > .mdl-card__title {
-  color: #fff;
-  background:
-    url('/media/math.png') bottom right  no-repeat #283593;
-}
-        </style>
-        
-       </head>
+            .demo-card-square1 > .mdl-card__title {
+                color: #fff;background: url('/media/404.png') bottom right  no-repeat #283593;
+            }
+            .demo-card-square2 > .mdl-card__title {
+                color: #fff;background: url('/media/code.png') bottom right  no-repeat #283593;
+            }
+            .demo-card-square3 > .mdl-card__title {
+                color: #fff;background: url('/media/math.png') bottom right  no-repeat #283593;
+            }
+            .demo-card-square4 > .mdl-card__title {
+                color: #fff;background: url('/media/404.png') bottom right  no-repeat #283593;
+            }
+            .demo-card-square5 > .mdl-card__title {
+                color: #fff;background: url('/media/404.png') bottom right  no-repeat #283593;
+            }
+            .demo-card-square6 > .mdl-card__title {
+                color: #fff;background: url('/media/404.png') bottom right  no-repeat #283593;
+            }
+            .demo-card-square7 > .mdl-card__title {
+                color: #fff;background: url('/media/404.png') bottom right  no-repeat #283593;
+            }
+            .demo-card-square8 > .mdl-card__title {
+                color: #fff;background: url('/media/404.png') bottom right  no-repeat #283593;
+            }
+            .demo-card-square9 > .mdl-card__title {
+                color: #fff;background: url('/media/book.png') bottom right  no-repeat #283593;
+            }
+            .demo-card-square10 > .mdl-card__title {
+                color: #fff;background: url('/media/404.png') bottom right  no-repeat #283593;
+            }
+        </style> 
+    </head>
     <body>
 
      
     
   <main class="mdl-layout__content">
-      <div class="left-pro" style="font-family:'Heebo'">
-              <div id="pro" class=" mdl-card mdl-shadow--2dp">
-             <img src="media/lion.jpg" class="img-circle">
-       <div id="pd">
-            <span style="font-size:40px; line-height:80%" >קבוצת  <%=Session["team"]%> </span><hr /> <br>
-            <span style="font-size:40px; font-weight:bold"> <%=Session["name"]%></span><hr /><br>
-            <!-- Simple MDL Progress Bar -->
-<div id="p1" class="mdl-progress mdl-js-progress"></div>
-<script>
-    document.querySelector('#p1').addEventListener('mdl-componentupgraded', function () {
-        this.MaterialProgress.setProgress(44);
-    });
-</script>
-            <span style="font-size:25px;line-height:200%"> <%=Session["xpp"]%> נקודות</span><hr /> <br>
-            <span style="font-size:40px; line-height:80%" >שלב  <%=Session["level"]%> </span><hr /> <br>
-          
-    
-        </div>
-        </div>
-      </div>
+       <div class="left-pro" style="font-family:'Heebo'">
+                <div id="pro" class=" mdl-card mdl-shadow--2dp">
+                    <img src="media/lion.jpg" class="img-circle">
+                    <div id="pd">
+                        <span style="font-size:40px; line-height:80%" >קבוצת  <%=Session["team"]%> </span><hr /> <br>
+                        <span style="font-size:40px; font-weight:bold"> <%=Session["name"]%></span><hr /><br>
+                        <!-- Simple MDL Progress Bar -->
+                        <div id="p1" class="mdl-progress mdl-js-progress"></div>
+                        <script>
+                            document.querySelector('#p1').addEventListener('mdl-componentupgraded', function () {
+                            this.MaterialProgress.setProgress('<%=Session["prog"]%>');
+                            });
+                        </script>
+                        <span style="font-size:25px;line-height:200%"> <%=Session["xpp"]%> נקודות</span><hr /> <br>
+                        <span style="font-size:40px; line-height:80%" >שלב  <%=Session["level"]%> </span><hr /> <br>
+                        <span style="font-size:40px; line-height:80%" ><%=Session["kita"]%> </span> <br>
+                    </div>
+                </div>
+            </div>
     <div class="page-content">
     
            <!-- Wide card with share menu button -->
@@ -90,7 +113,7 @@
 .demo-card-wide > .mdl-card__title {
   color: #fff;
   height: 176px;
-  background: url('../assets/demos/welcome_card.jpg') center / cover;
+  background: url('/media/widelogo.jpg') center / cover;
 }
 .demo-card-wide > .mdl-card__menu {
   color: #fff;
@@ -100,7 +123,7 @@
 
 <div class="demo-card-wide mdl-card mdl-shadow--2dp">
   <div class="mdl-card__title">
-    <h2 class="mdl-card__title-text">Welcome</h2>
+    <h2 class="mdl-card__title-text" style=" font-family:'Heebo';font-weight:700;font-size:35px">ברוכים הבאים</h2>
   </div>
   <div class="mdl-card__supporting-text">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -111,14 +134,10 @@
       Get Started
     </a>
   </div>
-  <div class="mdl-card__menu">
-    <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-      <i class="material-icons">share</i>
-    </button>
-  </div>
+
 </div>
         <!-- Square card -->
-<div id="1" class="sub demo-card-square2 mdl-card mdl-shadow--2dp ">
+<div id="1" class="sub demo-card-square1 mdl-card mdl-shadow--2dp ">
   <div class="mdl-card__title mdl-card--expand">
     <h2 class="mdl-card__title-text" style="font-family:'Heebo';font-weight:300;font-size:35px">אנגלית</h2>
   </div>
@@ -148,9 +167,9 @@
   </div>
 </div>
 
-<div id="3"class="sub demo-card-square mdl-card mdl-shadow--2dp ">
+    <div id="3"class="sub demo-card-square3 mdl-card mdl-shadow--2dp ">
   <div class="mdl-card__title mdl-card--expand">
-    <h2 class="mdl-card__title-text" style="font-family:'Heebo';font-weight:300;font-size:35px">מתמטיקה</h2>
+    <h2 class="mdl-card__title-text" style=" font-family:'Heebo';font-weight:300;font-size:35px">מתמטיקה</h2>
   </div>
   <div class="mdl-card__supporting-text">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -164,7 +183,7 @@
 </div>
 
 
-      <div id="4" class="sub demo-card-square2 mdl-card mdl-shadow--2dp ">
+      <div id="4" class="sub demo-card-square4 mdl-card mdl-shadow--2dp ">
   <div class="mdl-card__title mdl-card--expand">
     <h2 class="mdl-card__title-text"style="font-family:'Heebo';font-weight:300;font-size:35px">ערבית</h2>
   </div>
@@ -179,7 +198,7 @@
   </div>
 </div>
 
-      <div id="5" class="sub demo-card-square2 mdl-card mdl-shadow--2dp ">
+      <div id="5" class="sub demo-card-square5 mdl-card mdl-shadow--2dp ">
   <div class="mdl-card__title mdl-card--expand">
     <h2 class="mdl-card__title-text" style="font-family:'Heebo';font-weight:300;font-size:35px">פיזיקה</h2>
   </div>
@@ -194,7 +213,7 @@
   </div>
 </div>
 
-      <div id="6" class="sub demo-card-square2 mdl-card mdl-shadow--2dp ">
+      <div id="6" class="sub demo-card-square6 mdl-card mdl-shadow--2dp ">
   <div class="mdl-card__title mdl-card--expand">
     <h2 class="mdl-card__title-text"style="font-family:'Heebo';font-weight:300;font-size:35px">אזרחות</h2>
   </div>
@@ -209,7 +228,7 @@
   </div>
 </div>
 
-      <div id="7" class="sub demo-card-square2 mdl-card mdl-shadow--2dp ">
+      <div id="7" class="sub demo-card-square7 mdl-card mdl-shadow--2dp ">
   <div class="mdl-card__title mdl-card--expand">
     <h2 class="mdl-card__title-text"style="font-family:'Heebo';font-weight:300;font-size:35px">היסטוריה</h2>
   </div>
@@ -224,7 +243,7 @@
   </div>
 </div>
 
-      <div id="8" class="sub demo-card-square2 mdl-card mdl-shadow--2dp ">
+      <div id="8" class="sub demo-card-square8 mdl-card mdl-shadow--2dp ">
   <div class="mdl-card__title mdl-card--expand">
     <h2 class="mdl-card__title-text"style="font-family:'Heebo';font-weight:300;font-size:35px">לשון</h2>
   </div>
@@ -239,7 +258,7 @@
   </div>
 </div>
 
-      <div id="9" class="sub demo-card-square2 mdl-card mdl-shadow--2dp ">
+      <div id="9" class="sub demo-card-square9 mdl-card mdl-shadow--2dp ">
   <div class="mdl-card__title mdl-card--expand">
     <h2 class="mdl-card__title-text" style="font-family:'Heebo';font-weight:300;font-size:35px">ספרות</h2>
   </div>
@@ -254,7 +273,7 @@
   </div>
 </div>
 
-<div id="10" class="sub demo-card-square mdl-card mdl-shadow--2dp">
+<div id="10" class="sub demo-card-square10 mdl-card mdl-shadow--2dp">
   <div class="mdl-card__title mdl-card--expand">
     <h2 class="mdl-card__title-text" style="font-family:'Heebo';font-weight:300;font-size:35px">כימיה</h2>
   </div>
@@ -293,20 +312,6 @@
         }
     });
 </script>
-         <!--
-    <div class="profile">
-          <img src="lion.jpg" class="img-circle">
-         <div id="pd">
-            <span style="font-size:40px; font-weight:bold"> <%=Session["name"]%></span><br>
-            <span style="font-size:30px; line-height:80%"> <%=Session["team"]%></span><br>
-            <span style="font-size:25px;line-height:200%"> <%=Session["xpp"]%> נקודות</span> <br>
-            <span style="font-size:40px; line-height:80%" >שלב  <%=Session["level"]%> </span> <br>
-             <span style="font-size:40px; line-height:80%" >שלב  <%=Session["group"]%> </span> <br>
-        </div>
-       
-    </div>
-    </div>
-   -->
         <script type="text/javascript">
             function cleanArray(actual) {
                 var newArray = new Array();
@@ -329,9 +334,7 @@
                 }
             }
             arr = cleanArray(arr);
-            alert(arr);
             arr = arr.sort(function (a, b) { return a - b });
-            alert(arr);
             var vr = document.querySelectorAll(".sub");
             for (var i = 0; i < vr.length; i++) {
                 for (var v = 0; v < arr.length; v++) {
