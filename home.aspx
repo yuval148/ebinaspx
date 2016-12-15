@@ -20,7 +20,6 @@
                 display:none;
                 float: right;
                 right:390px;
-                top:-650px;
                 margin: 10px 10px 10px 10px;
 
 
@@ -334,16 +333,44 @@
                 }
             }
             arr = cleanArray(arr);
+            var counter = 0;
+            var arrL=[]
             arr = arr.sort(function (a, b) { return a - b });
             var vr = document.querySelectorAll(".sub");
             for (var i = 0; i < vr.length; i++) {
                 for (var v = 0; v < arr.length; v++) {
                     if (vr[i].id == arr[v]) {
                         vr[i].style.display = "inline-flex";
+                        arrL[v] = vr[i];
+                        counter++;
+                        switch (counter) {
+                            case 1:
+                            case 2:
+                            case 3:
+                                arrL[v].style.top = "-650px";
+                                alert("1");
+                                break;
+                            case 4:
+                            case 5:
+                            case 6:
+                                arrL[v].style.top = "-320px";
+                                arrL[v].style.right = "-630px";
+                                alert("2");
+                                break;
+                            case 7:
+                            case 8:
+                            case 9:
+                                arrL[v].style.top = "-10px";
+                                alert("3");
+
+                        }
                     }
-                }
-                
+                }   
             }
+            for (var i = 0; i < arrL.length; i++) {
+               
+            }
+            
         </script>
 </body>
 </html>
