@@ -89,7 +89,7 @@
   <p class="card__text">פרבולות. הם מחייכות? עצובות? בוא נגלה יחדיו בחוויה המיוחדת והחדשה הזאת.</p>
   <div class="card__action-bar">
      <button class="card__button">לא מבין בזה כלום עזוב</button>
-   <a href="/economy.aspx"> <button class="card__button">יאללה</button></a>
+   <a href="/targil.aspx"> <button class="card__button">יאללה</button></a>
   </div>
 </div>
         </div>

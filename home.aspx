@@ -102,20 +102,7 @@
                                 <span style="font-size:20px; line-height:80%" ><%=Session["kita"]%> </span> <br>
                         </div>
                     </div>
-                    <div class="demo-card-square mdl-card mdl-shadow--2dp">
-                <div class="mdl-card__title mdl-card--expand">
-                    <h2 class="mdl-card__title-text" style="font-family:'Heebo';font-weight:300;font-size:35px">אנגלית</h2>
-                </div>
-                <div class="mdl-card__supporting-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Aenan convallis.
-                </div>
-                <div class="mdl-card__actions mdl-card--border">
-                    <a class="mdl-button mdl-button--colored mdl-js-button">
-                        View Updates
-                    </a>
-                </div>
-            </div>
+                    
                 </div> 
                 <!-- Wide card with share menu button -->
                 <div class="demo-card-wide mdl-card mdl-shadow--2dp" >
@@ -178,7 +165,7 @@
                 </div>
             </div>
 
-            <div id="4"class="sub demo-card-square3 mdl-card mdl-shadow--2dp ">
+            <div id="4"class="sub demo-card-square4 mdl-card mdl-shadow--2dp ">
                 <div class="mdl-card__title mdl-card--expand">
                     <h2 class="mdl-card__title-text" style="font-family:'Heebo';font-weight:300;font-size:35px">ערבית</h2>
                 </div>
@@ -193,7 +180,7 @@
                 </div>
             </div>
 
-            <div id="5"class="sub demo-card-square3 mdl-card mdl-shadow--2dp ">
+            <div id="5"class="sub demo-card-square5 mdl-card mdl-shadow--2dp ">
                 <div class="mdl-card__title mdl-card--expand">
                     <h2 class="mdl-card__title-text" style="font-family:'Heebo';font-weight:300;font-size:35px">פיזיקה</h2>
                 </div>
@@ -208,7 +195,7 @@
                 </div>
             </div>
 
-            <div id="6"class="sub demo-card-square3 mdl-card mdl-shadow--2dp ">
+            <div id="6"class="sub demo-card-square6 mdl-card mdl-shadow--2dp ">
                 <div class="mdl-card__title mdl-card--expand">
                     <h2 class="mdl-card__title-text" style="font-family:'Heebo';font-weight:300;font-size:35px">אזרחות</h2>
                 </div>
