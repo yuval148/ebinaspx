@@ -27,7 +27,8 @@
                       alert("there cant be signs in the ID number who are not numbers or dashes");
                       break;
                   }
-                }
+              }
+
               userPass = document.f.userPass.value;
               if (userPass.length <= 2) {
                   formValid = false;
