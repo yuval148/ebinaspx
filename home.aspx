@@ -12,7 +12,7 @@
                 background: url("/media/bg5.jpg");
                 background-size: 100%, 100%;
                 background-repeat: no-repeat;
-                width:100%;
+                
             }
             .sub{
                 width:300px;
@@ -71,15 +71,32 @@
             }
 
             .demo-card-wide.mdl-card {
-                width: 75%; 
-   
+                width: 950px;
             }
-            .demo-card-wide > .mdl-card__title {
-                color: #fff;
-                height: 176px;
-                background: url('/media/widelogo.jpg') center / cover;
+            
+            .widecard{
+                width:314px;
+                height:200px;
+                float:right;
             }
-        </style> 
+            #a,#b{
+                border-left: solid gray;
+            }
+            #container {
+  margin: 20px;
+  width: 200px;
+  height: 200px;
+  position: relative;
+}
+            #p1{
+                margin-bottom:10px;
+            }
+            .demo-list-icon {
+            width: 300px;
+            }
+
+</style>
+        
     </head>
     <body>
         <main class="mdl-layout__content">;
@@ -88,7 +105,7 @@
                     <div id="pro" class=" mdl-card mdl-shadow--2dp">
                         <img src="media/lion.jpg" class="img-circle">
                         <div id="pd">
-                            <span style="font-size:20px; line-height:80%" >קבוצת  <%=Session["team"]%> </span><hr /> <br>
+                            <span style="font-size:20px; line-height:70%" >קבוצת  <%=Session["team"]%> </span><hr /> <br>
                             <span style="font-size:20px; font-weight:bold"> <%=Session["name"]%></span><hr /><br>
                             <!-- Simple MDL Progress Bar -->
                             <div id="p1" class="mdl-progress mdl-js-progress"></div>
@@ -97,7 +114,7 @@
                                     this.MaterialProgress.setProgress('<%=Session["prog"]%>');
                                     });
                                 </script>
-                                <span style="font-size:25px;line-height:20%"> <%=Session["xpp"]%> נקודות</span><hr /> <br>
+                                <span style="font-size:20px;line-height:20%"> <%=Session["xpp"]%> נקודות</span><hr /> <br>
                                 <span style="font-size:20px; line-height:80%" >שלב  <%=Session["level"]%> </span><hr /> <br>
                                 <span style="font-size:20px; line-height:80%" ><%=Session["kita"]%> </span> <br>
                         </div>
@@ -105,19 +122,45 @@
                     
                 </div> 
                 <!-- Wide card with share menu button -->
-                <div class="demo-card-wide mdl-card mdl-shadow--2dp" >
-                    <div class="mdl-card__title">
-                        <h2 class="mdl-card__title-text" style=" font-family:'Heebo';font-weight:700;font-size:35px">ברוכים הבאים</h2>
+                <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+                    <div class="float">
+                    <div class="widecard" id="a">
+<!-- Icon List -->
+
+
+<ul class="demo-list-icon mdl-list">
+  <li class="mdl-list__item">
+    <span class="mdl-list__item-primary-content">
+    <i class="material-icons mdl-list__item-icon">info</i>
+    המבחן הקרוב ביותר: מתמטיקה-24.1.17
+</span>
+  </li>
+  <li class="mdl-list__item">
+    <span class="mdl-list__item-primary-content">
+    <i class="material-icons mdl-list__item-icon">today</i>
+    הגשת העבודה באזרחות הועברה ליום רביעי.
+  </span>
+  </li>
+  <li class="mdl-list__item">
+    <span class="mdl-list__item-primary-content">
+    <i class="material-icons mdl-list__item-icon">person</i>
+        הניקוד שלך עלה ב-50 נקודות!
+  </span>
+  </li>
+</ul>                                          
                     </div>
-                    <div class="mdl-card__supporting-text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Mauris sagittis pellentesque lacus eleifend lacinia...
+                    <div class="widecard" id="b">
+                        <div id="container"></div>
+                        
                     </div>
-                    <div class="mdl-card__actions mdl-card--border">
-                        <a class="mdl-button mdl-button--colored mdl-js-button">
-                            Get Started
-                        </a>
+                    <div class="widecard"  id="c">
+                        <div style="align-self:auto">
+                            80
+                        </div>
+                        <div id="circleL"></div>
                     </div>
+                        </div>
+                </div>             
                 </div>
                         <!-- Square card -->
             <div id="1" class="sub demo-card-square1 mdl-card mdl-shadow--2dp ">
@@ -152,15 +195,15 @@
 
             <div id="3"class="sub demo-card-square3 mdl-card mdl-shadow--2dp ">
                 <div class="mdl-card__title mdl-card--expand">
-                    <h2 class="mdl-card__title-text" style="font-family:'Heebo';font-weight:300;font-size:35px">מדעי המחשב</h2>
+                    <h2 class="mdl-card__title-text" style="font-family:'Heebo';font-weight:300;font-size:35px">מתמטיקה</h2>
                 </div>
                 <div class="mdl-card__supporting-text">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Aenan convallis.
                 </div>
                 <div class="mdl-card__actions mdl-card--border">
-                    <a class="mdl-button mdl-button--colored mdl-js-button">
-                        View Updates
+                    <a class="mdl-button mdl-button--colored mdl-js-button" style="float:left" href="targil.aspx">
+                        לתרגילים
                     </a>
                 </div>
             </div>
@@ -269,31 +312,10 @@
     </a>
   </div>
 </div>
-
+                
         </div>
   </main>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-<script src="js/circle.js"></script>
-
-<div id="circle">
-    <style>
-        #circle{
-            display:none;
-            top:150px;
-            right:400px;
-        }
-    </style>
-</div>
-
-<script>
-    $('#circle').circleProgress({
-        value: 0.8,
-        size: 150,
-        fill: {
-            gradient: ["red", "orange"]
-        }
-    });
-</script>
         <script type="text/javascript">
             function cleanArray(actual) {
                 var newArray = new Array();
@@ -330,5 +352,41 @@
             }
             
         </script>
+        <script>
+            // progressbar.js@1.0.0 version is used
+            // Docs: http://progressbarjs.readthedocs.org/en/1.0.0/
+
+            var bar = new ProgressBar.Circle(container, {
+                color: '#aaa',
+                // This has to be the same size as the maximum width to
+                // prevent clipping
+                strokeWidth: 4,
+                trailWidth: 1,
+                easing: 'easeInOut',
+                duration: 1400,
+                text: {
+                    autoStyleContainer: false
+                },
+                from: { color: '#aaa', width: 1 },
+                to: { color: '#333', width: 4 },
+                // Set default step function for all animate calls
+                step: function (state, circle) {
+                    circle.path.setAttribute('stroke', state.color);
+                    circle.path.setAttribute('stroke-width', state.width);
+
+                    var value = Math.round(circle.value() * 100);
+                    if (value === 0) {
+                        circle.setText('');
+                    } else {
+                        circle.setText(value);
+                    }
+
+                }
+            });
+            bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
+            bar.text.style.fontSize = '2rem';
+
+            bar.animate(0.5);  // Number from 0.0 to 1.0
+</script>
 </body>
 </html>
