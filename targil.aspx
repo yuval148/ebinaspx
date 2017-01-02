@@ -7,23 +7,7 @@
 <html dir="rtl">
 <head>
     <title></title>
-        <script type="text/javascript">
-            function check() {
-                var formValid = true;
-                answ1 = document.f.answ1.value;
-                if (answ1 != 22 || answ.charAt(i) <= '0' && ID.charAt(i) >= '9')
-                {
-                    formValid = false;
-                    alert("סעיף 1 שגוי.");
-                }
-                else if (answ1 == 22) {
-                    
-                }
-
-                
-                return formValid;
-            }
-        </script>
+       
   <style>
          body {
                 background: url("/media/bg5.jpg");
@@ -48,6 +32,25 @@
 <style>
 .demo-list-icon {
   width: 300px;
+  display:inline-block;
+}
+.demo-card-image.mdl-card {
+  bottom:300px;
+  width: 600px;
+  height: 300px;
+  background: url('media/png.png') center no-repeat,white;
+  float:left;
+  margin-left:50px;
+}
+.demo-card-image > .mdl-card__actions {
+  height: 52px;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.2);
+}
+.demo-card-image__filename {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
 }
 </style>
 
@@ -71,10 +74,52 @@
   </span>
   </li>
 </ul>
+              
             </div>
+
         </div>
+         <div class="demo-card-image mdl-card mdl-shadow--2dp">
+  <div class="mdl-card__title mdl-card--expand"></div>
+  <div class="mdl-card__actions">
+    <span class="demo-card-image__filename">צריך עזרה?</span>
+  </div>
+</div>
+         <form>
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="numb">
+    <label class="mdl-textfield__label" for="sample4">Number...</label>
+    <span class="mdl-textfield__error">Input is not a number!</span>
+  </div>
+</form>
+        <!-- Colored raised button -->
+         <button id="demo-show-toast" class="mdl-button mdl-js-button mdl-button--raised"  onclick="check()" type="button">Show Toast</button>
+<div id="demo-toast-example" class="mdl-js-snackbar mdl-snackbar">
+  <div class="mdl-snackbar__text"></div>
+  <button class="mdl-snackbar__action" type="button"></button>
+</div>
+
 
      </main>
+     <script type="text/javascript">
+         (function check () {
+             'use strict';
+            
+             var snackbarContainer = document.querySelector('#demo-toast-example');
+             var showToastButton = document.querySelector('#demo-show-toast');
+             showToastButton.addEventListener('click', function () {
+                 'use strict';
+                 var x = document.getElementById("numb").value;
+                 if (x == 2) {
+                     var text = "תשובה נכונה, כל הכבוד!";
+                 }
+                 else {
+                     var text = "טעות, נסה שוב!";
+                 }
+                 var data = { message: text};
+                 snackbarContainer.MaterialSnackbar.showSnackbar(data);
+             });
+         }());
+        </script>
 </body>
 
 </html>
