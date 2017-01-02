@@ -44,10 +44,10 @@
                 color: #fff;background: url('/media/404.png') bottom right  no-repeat #283593;
             }
             .demo-card-square2 > .mdl-card__title {
-                color: #fff;background: url('/media/code.png') bottom right  no-repeat #283593;
+                color: #fff;background: url('/media/new/para.png') bottom right  no-repeat #283593;
             }
             .demo-card-square3 > .mdl-card__title {
-                color: #fff;background: url('/media/math.png') bottom right  no-repeat #283593;
+                color: #fff;background: url('/media/new/algeb.png') bottom right  no-repeat #283593;
             }
             .demo-card-square4 > .mdl-card__title {
                 color: #fff;background: url('/media/404.png') bottom right  no-repeat #283593;
@@ -65,7 +65,7 @@
                 color: #fff;background: url('/media/404.png') bottom right  no-repeat #283593;
             }
             .demo-card-square9 > .mdl-card__title {
-                color: #fff;background: url('/media/book.png') bottom right  no-repeat #283593;
+                color: #fff;background: url('/media/new/trig.png') bottom right  no-repeat #283593;
             }
             .demo-card-square10 > .mdl-card__title {
                 color: #fff;background: url('/media/404.png') bottom right  no-repeat #283593;
@@ -132,13 +132,13 @@
 <ul class="demo-list-icon mdl-list">
   <li class="mdl-list__item">
     <span class="mdl-list__item-primary-content">
-    <i class="material-icons mdl-list__item-icon">info</i>
+    <i class="material-icons mdl-list__item-icon">today</i>
     המבחן הקרוב ביותר: מתמטיקה-24.1.17
 </span>
   </li>
   <li class="mdl-list__item">
     <span class="mdl-list__item-primary-content">
-    <i class="material-icons mdl-list__item-icon">today</i>
+    <i class="material-icons mdl-list__item-icon">info</i>
     הגשת העבודה באזרחות הועברה ליום רביעי.
   </span>
   </li>
@@ -151,43 +151,49 @@
 </ul>                                          
                     </div>
                     <div class="widecard" id="b">
-                        <div class="c100 p80 green" style="float:right;margin-top:40px">
-                    <span>80%</span>
+                        <div class="c100 p86 green" style="float:right;margin-top:40px">
+                    <span>86%</span>
                     <div class="slice">
                         <div class="bar"></div>
                         <div class="fill"></div>
                     </div>
                 </div>
-                        <h2 class="mdl-card__title-text" style="float:left;margin-left:45px;margin-top:20px">כל הכבוד!</h2>
-                         <div class="mdl-card__supporting-text" style="clear:left">
+                        <h2 class="mdl-card__title-text" style="float:left;margin-left:45px;margin-top:10px;font-family:'Heebo';font-weight:500;">כל הכבוד!</h2>
+                         <div class="mdl-card__supporting-text" style="clear:left;font-family:'Heebo'">
                              אתה שולט ב86% <br />מהחומר בשברים!
+                             <br /> 
+                             אולי תעזור לחבריך בפורום?
                          </div>
-                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="float:left;top:40px;left:50px">
-                            Button
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="float:left;top:27px;left:50px;font-family:'Heebo'">
+                            כניסה לפורום
                         </button>
                             
 
                     </div>
                         
                     <div class="widecard"  id="c">
-                <div class="c100 p23 orange"style="float:right;margin-top:40px">
+                <div class="c100 p23 red" style="float:right;margin-top:40px">
                     <span>23%</span>
                     <div class="slice">
                         <div class="bar"></div>
                         <div class="fill"></div>
                     </div>
                 </div>
-                        <h2 class="mdl-card__title-text" style="float:left;margin-left:45px;margin-top:20px">מפגר</h2>
-                         <div class="mdl-card__supporting-text" style="clear:left">
-                             אתה שולט ביכולת לחרטט די  <br />טוב, לפחות תעבור!
+                        <h2 class="mdl-card__title-text" style="float:left;margin-left:45px;margin-top:10px; font-family:'Heebo';font-weight:500;">צריך עזרה?</h2>
+                         <div class="mdl-card__supporting-text" style="clear:left; font-family:'Heebo'">
+                             שמנו לב שאתה שולט ב23% <br />מהחומר באלגברה. <br />
+                             צריך עזרה? <br />
+                             פנה למורה או לפורום!
                          </div>
-                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="float:left;top:40px;left:50px">
-                            Button
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="float:left;top:10px;left:50px;font-family:'Heebo'">
+                            כניסה לפורום
                         </button>
                     </div>
                         
                 </div>             
                 </div>
+                <br />
+                <hr /><h2 style="font-family:'Heebo';font-weight:700;font-size:45px">נושאים</h2>
                         <!-- Square card -->
             <div id="1" class="sub demo-card-square1 mdl-card mdl-shadow--2dp ">
                 <div class="mdl-card__title mdl-card--expand">
@@ -206,7 +212,7 @@
 
             <div id="2" class="sub demo-card-square2 mdl-card mdl-shadow--2dp ">
                 <div class="mdl-card__title mdl-card--expand">
-                    <h2 class="mdl-card__title-text" style="font-family:'Heebo';font-weight:300;font-size:35px">מדעי המחשב</h2>
+                    <h2 class="mdl-card__title-text" style="font-family:'Heebo';font-weight:300;font-size:35px">חדו"א</h2>
                 </div>
                 <div class="mdl-card__supporting-text">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -221,7 +227,7 @@
 
             <div id="3"class="sub demo-card-square3 mdl-card mdl-shadow--2dp ">
                 <div class="mdl-card__title mdl-card--expand">
-                    <h2 class="mdl-card__title-text" style="font-family:'Heebo';font-weight:300;font-size:35px">מתמטיקה</h2>
+                    <h2 class="mdl-card__title-text" style="font-family:'Heebo';font-weight:300;font-size:35px">אלגברה</h2>
                 </div>
                 <div class="mdl-card__supporting-text">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -311,7 +317,7 @@
 
       <div id="9" class="sub demo-card-square9 mdl-card mdl-shadow--2dp ">
   <div class="mdl-card__title mdl-card--expand">
-    <h2 class="mdl-card__title-text" style="font-family:'Heebo';font-weight:300;font-size:35px">ספרות</h2>
+    <h2 class="mdl-card__title-text" style="font-family:'Heebo';font-weight:300;font-size:35px">טריגונומטריה</h2>
   </div>
   <div class="mdl-card__supporting-text">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
