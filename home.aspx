@@ -6,6 +6,7 @@
 <!doctype html>
 <html dir="rtl">
     <head> 
+         <link rel="stylesheet" href="js/circle.css">
         <title></title>
         <style>
            body {
@@ -80,7 +81,7 @@
                 float:right;
             }
             #a,#b{
-                border-left: solid gray;
+                border-left: solid #DCDCDC;
             }
             #container {
   margin: 20px;
@@ -150,16 +151,41 @@
 </ul>                                          
                     </div>
                     <div class="widecard" id="b">
-                        <div id="container"></div>
+                        <div class="c100 p80 green" style="float:right;margin-top:40px">
+                    <span>80%</span>
+                    <div class="slice">
+                        <div class="bar"></div>
+                        <div class="fill"></div>
+                    </div>
+                </div>
+                        <h2 class="mdl-card__title-text" style="float:left;margin-left:45px;margin-top:20px">כל הכבוד!</h2>
+                         <div class="mdl-card__supporting-text" style="clear:left">
+                             אתה שולט ב86% <br />מהחומר בשברים!
+                         </div>
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="float:left;top:40px;left:50px">
+                            Button
+                        </button>
+                            
+
+                    </div>
                         
-                    </div>
                     <div class="widecard"  id="c">
-                        <div style="align-self:auto">
-                            80
-                        </div>
-                        <div id="circleL"></div>
+                <div class="c100 p23 orange"style="float:right;margin-top:40px">
+                    <span>23%</span>
+                    <div class="slice">
+                        <div class="bar"></div>
+                        <div class="fill"></div>
                     </div>
-                        </div>
+                </div>
+                        <h2 class="mdl-card__title-text" style="float:left;margin-left:45px;margin-top:20px">מפגר</h2>
+                         <div class="mdl-card__supporting-text" style="clear:left">
+                             אתה שולט ביכולת לחרטט די  <br />טוב, לפחות תעבור!
+                         </div>
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="float:left;top:40px;left:50px">
+                            Button
+                        </button>
+                    </div>
+                        
                 </div>             
                 </div>
                         <!-- Square card -->
