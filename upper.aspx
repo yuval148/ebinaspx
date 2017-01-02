@@ -1,5 +1,4 @@
 ﻿
-
 <!doctype html>
 <html dir="rtl">
     <head> 
@@ -38,7 +37,7 @@
       <nav class="mdl-navigation mdl-layout--large-screen-only">
         <a class="mdl-navigation__link" href="home.aspx">בית</a>
         <a class="mdl-navigation__link" href="culture.aspx">המובילים</a>
-        <a class="mdl-navigation__link" href="economy.aspx">לא ברור</a>
+        <a class="mdl-navigation__link" href="targil.aspx">תרגיל</a>
         <a class="mdl-navigation__link" href="upload.aspx">העלאת תרגיל </a> 
         <a class="mdl-navigation__link" href="login.aspx">התחברות</a>
         <a class="mdl-navigation__link" href="signup.aspx">הרשמה</a>
@@ -50,7 +49,7 @@
     <nav class="mdl-navigation">
       <a class="mdl-navigation__link" href="home.aspx">בית</a>
         <a class="mdl-navigation__link" href="culture.aspx">המובילים</a>
-        <a class="mdl-navigation__link" href="economy.aspx">לא ברור</a>
+        <a class="mdl-navigation__link" href="targil.aspx">תרגיל</a>
         <a class="mdl-navigation__link" href="upload.aspx">העלאת תרגיל </a> 
         <a class="mdl-navigation__link" href="login.aspx">התחברות</a>
         <a class="mdl-navigation__link" href="signup.aspx">הרשמה</a>
