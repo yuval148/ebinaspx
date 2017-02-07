@@ -6,7 +6,7 @@
 <!doctype html>
 <html dir="rtl">
     <head> 
-         <link rel="stylesheet" href="js/circle.css">
+         <link rel="stylesheet" href="css/circle.css">
         <title></title>
         <style>
            body {
@@ -139,7 +139,7 @@
   <li class="mdl-list__item">
     <span class="mdl-list__item-primary-content">
     <i class="material-icons mdl-list__item-icon">info</i>
-    הגשת העבודה באזרחות הועברה ליום רביעי.
+    הגשת העבודה הועברה ליום רביעי.
   </span>
   </li>
   <li class="mdl-list__item">
@@ -193,7 +193,7 @@
                 </div>             
                 </div>
                 <br />
-                <hr /><h2 style="font-family:'Heebo';font-weight:700;font-size:45px">נושאים</h2>
+                <h2 style="font-family:'Heebo';font-weight:700;font-size:45px">נושאים</h2><hr />
                         <!-- Square card -->
             <div id="1" class="sub demo-card-square1 mdl-card mdl-shadow--2dp ">
                 <div class="mdl-card__title mdl-card--expand">

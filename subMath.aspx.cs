@@ -4,20 +4,34 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Newtonsoft.Json;
+using System.Data.SqlClient;
+using System.Data;
+
 
 public partial class subMath : System.Web.UI.Page
 {
+    public string json = "";
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Session["userName"] == null)
-        {
-            Response.Redirect("login.aspx");
-        }
-
-        double prog = 50;
-        int level = Int32.Parse(Session["level"].ToString());
-        double curxp = Double.Parse(Session["xpp"].ToString()) - 250;
-        prog = (curxp / 250) * 100;
-        refali.Style["width"] = String.Format("{0}%", (int)prog);
+        string sql = "";
+        string tableName = "ID" + Session["ID"];
+        string fileName = "db1.mdb"; //שם המסד
+        sql = "select * from " + tableName;
+        DataTable dt;
+        dt = MyAdoHelper.ExecuteDataTable(fileName, sql);
+        json = Json(dt);
     }
+    public string Json(DataTable table)
+    {
+        {
+            string JSONString = string.Empty
+                ;
+            JSONString = Newtonsoft.Json.JsonConvert.SerializeObject(new { sub = table });
+            return JSONString;
+        }
+    }
+
 }
+
+

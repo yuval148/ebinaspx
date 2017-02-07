@@ -1,6 +1,7 @@
 ﻿<%@ Page Language="C#" %>
 <%@ Import Namespace="System.Data" %>
 <%@ Import Namespace="System.Data.OleDb" %>
+<%@ Import Namespace="Newtonsoft" %>
 <!--#include file="upper.aspx"-->
 
 <!doctype html>
@@ -81,18 +82,18 @@
          <div class="demo-card-image mdl-card mdl-shadow--2dp">
   <div class="mdl-card__title mdl-card--expand"></div>
   <div class="mdl-card__actions">
-    <span class="demo-card-image__filename">צריך עזרה?</span>
+    <span class="demo-card-image__filename"><a  target="_blank" href="https://youtu.be/umRfjSqHyQs?t=1m51s">צריך עזרה?</a></span>
   </div>
 </div>
          <form>
   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
     <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="numb">
-    <label class="mdl-textfield__label" for="sample4">Number...</label>
-    <span class="mdl-textfield__error">Input is not a number!</span>
+    <label class="mdl-textfield__label" for="sample4">הכנס ערך X</label>
+    <span class="mdl-textfield__error">X צריך להיות מספר</span>
   </div>
 </form>
         <!-- Colored raised button -->
-         <button id="demo-show-toast" class="mdl-button mdl-js-button mdl-button--raised"  onclick="check()" type="button">Show Toast</button>
+         <button id="demo-show-toast" class="mdl-button mdl-js-button mdl-button--raised"  onclick="check()" type="button">בדוק תשובה</button>
 <div id="demo-toast-example" class="mdl-js-snackbar mdl-snackbar">
   <div class="mdl-snackbar__text"></div>
   <button class="mdl-snackbar__action" type="button"></button>
