@@ -4,16 +4,34 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Newtonsoft.Json;
+using System.Data.SqlClient;
+using System.Data;
+
 
 public partial class targil : System.Web.UI.Page
 {
+    public string json = "";
     protected void Page_Load(object sender, EventArgs e)
     {
-        string fileName = "db1.mdb";
-        string sql;
-        string name = "ספרות";
-        string tableName = "Table1";
-        MyAdoHelper.DoQuery(fileName, sql);
-
+        string sql = "";
+        string tableName = "sub" + Session["subjectID"];
+        string fileName = "db1.mdb"; //שם המסד
+        sql = "select * from " + tableName;
+        DataTable dt;
+        dt = MyAdoHelper.ExecuteDataTable(fileName, sql);
+        json = Json(dt);
     }
+    public string Json(DataTable table)
+    {
+        {
+            string JSONString = string.Empty
+                ;
+            JSONString = Newtonsoft.Json.JsonConvert.SerializeObject(new { targil = table });
+            return JSONString;
+        }
+    }
+
 }
+
+
