@@ -24,14 +24,14 @@
             }
             #pro {
                 width: 20%;
-                height: 500px;
+                height: 530px;
                 margin: 10px 10px 10px 10px;
                 float:right;
             }
             .img-circle {
                 border-radius: 50%;
-                width:100px;
-                height:100px;
+                width:120px;
+                height:120px;
                 align-self:center;
                 margin-top:20px;
                 margin-bottom:50px;
@@ -104,10 +104,10 @@
             <div class="page-content">
                 <div class="left-pro" style="font-family:'Heebo'">
                     <div id="pro" class=" mdl-card mdl-shadow--2dp">
-                        <img src="media/lion.jpg" class="img-circle">
+                        <img src="media/<%=Session["pic"]%>" class="img-circle">
                         <div id="pd">
-                            <span style="font-size:20px; line-height:70%" >קבוצת  <%=Session["team"]%> </span><hr /> <br>
                             <span style="font-size:20px; font-weight:bold"> <%=Session["name"]%></span><hr /><br>
+                            <span style="font-size:20px; line-height:70%" >קבוצת  <%=Session["team"]%> </span><hr /> <br>
                             <!-- Simple MDL Progress Bar -->
                             <div id="p1" class="mdl-progress mdl-js-progress"></div>
                                 <script>
@@ -116,8 +116,8 @@
                                     });
                                 </script>
                                 <span style="font-size:20px;line-height:20%"> <%=Session["xpp"]%> נקודות</span><hr /> <br>
-                                <span style="font-size:20px; line-height:80%" >שלב  <%=Session["level"]%> </span><hr /> <br>
-                                <span style="font-size:20px; line-height:80%" ><%=Session["kita"]%> </span> <br>
+                                <span style="font-size:20px; line-height:80%" >שלב  <span class="mdl-badge" data-badge="<%=Session["level"]%>"></span> </span><hr /> <br>
+                                <span style="font-size:20px; line-height:80%" ><%=Session["kita"]%><br><br></span>
                         </div>
                     </div>
                     
@@ -205,7 +205,7 @@
                 </div>
                 <div class="mdl-card__actions mdl-card--border">
                     <a class="mdl-button mdl-button--colored mdl-js-button">
-                        View Updates
+                        לתרגילים
                     </a>
                 </div>
             </div>
@@ -220,7 +220,7 @@
                 </div>
                 <div class="mdl-card__actions mdl-card--border">
                     <a class="mdl-button mdl-button--colored mdl-js-button">
-                        View Updates
+                        לתרגילים
                     </a>
                 </div>
             </div>
@@ -250,7 +250,7 @@
                 </div>
                 <div class="mdl-card__actions mdl-card--border">
                     <a class="mdl-button mdl-button--colored mdl-js-button">
-                        View Updates
+                        לתרגילים
                     </a>
                 </div>
             </div>
@@ -265,7 +265,7 @@
                 </div>
                 <div class="mdl-card__actions mdl-card--border">
                     <a class="mdl-button mdl-button--colored mdl-js-button">
-                        View Updates
+                        לתרגילים
                     </a>
                 </div>
             </div>
@@ -280,7 +280,7 @@
                 </div>
                 <div class="mdl-card__actions mdl-card--border">
                     <a class="mdl-button mdl-button--colored mdl-js-button">
-                        View Updates
+                        לתרגילים
                     </a>
                 </div>
             </div>
@@ -295,7 +295,7 @@
   </div>
   <div class="mdl-card__actions mdl-card--border">
                     <a class="mdl-button mdl-button--colored mdl-js-button">
-      View Updates
+      לתרגילים
     </a>
   </div>
 </div>
@@ -310,7 +310,7 @@
   </div>
   <div class="mdl-card__actions mdl-card--border">
                     <a class="mdl-button mdl-button--colored mdl-js-button">
-      View Updates
+      לתרגילים
     </a>
   </div>
 </div>
@@ -325,7 +325,7 @@
   </div>
   <div class="mdl-card__actions mdl-card--border">
                     <a class="mdl-button mdl-button--colored mdl-js-button">
-      View Updates
+      לתרגילים
     </a>
   </div>
 </div>
@@ -340,7 +340,7 @@
   </div>
   <div class="mdl-card__actions mdl-card--border">
                     <a class="mdl-button mdl-button--colored mdl-js-button">
-      View Updates
+      לתרגילים
     </a>
   </div>
 </div>

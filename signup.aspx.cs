@@ -54,7 +54,7 @@ public partial class signup : System.Web.UI.Page
 
                 else
                 {
-                    sql = "insert into Table1(name, userName, userPass, team, xpp, kita, ID)values('" + name + "','" + userName + "','" + userPass + "','" + team + "','" + xpp + "','" + kita  +"','" + ID + "');";
+                    sql = "insert into Table1(name, userName, userPass, team, xpp, ID, kita, pic)values('" + name + "','" + userName + "','" + userPass + "','" + team + "','" + xpp + "','"+ID + "','" + kita  +"','" + "123456782.png" + "');";
                     Session["ErrIsertForm"] = "   שלום  " + name + " מקבוצת " + team + ". יש לך " + xpp + " נקודות";
                     MyAdoHelper.DoQuery(fileName, sql);
                     // Response.Redirect("form.aspx");
