@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="targil.aspx.cs" Inherits="targil" %>
 <%@ Import Namespace="System.Data" %>
 <%@ Import Namespace="System.Data.OleDb" %>
 <%@ Import Namespace="Newtonsoft" %>
@@ -6,6 +6,7 @@
 
 <!doctype html>
 <html dir="rtl">
+   
 <head>
     <title></title>
        
@@ -19,12 +20,15 @@
                 margin-top:50px;
                 margin-right:20px;
          }
-     
+         #photo{
+             width:400px;
+             height:400px;
+         }
     </style>  
 </head>
 <body>
-     <main class="mdl-layout__content">
-         <div id="info" class="demo-card-square mdl-card mdl-shadow--2dp">
+     <main class="mdl-layout__content" id="container" >
+         <div class="demo-card-square mdl-card mdl-shadow--2dp">
             <div class="mdl-card__title mdl-card--expand">
                 <h2 class="mdl-card__title-text">מידע שימושי</h2>
             </div>
@@ -79,12 +83,14 @@
             </div>
 
         </div>
+         <!--
          <div class="demo-card-image mdl-card mdl-shadow--2dp">
   <div class="mdl-card__title mdl-card--expand"></div>
   <div class="mdl-card__actions">
     <span class="demo-card-image__filename"><a  target="_blank" href="https://youtu.be/umRfjSqHyQs?t=1m51s">צריך עזרה?</a></span>
   </div>
 </div>
+         -->
          <form>
   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
     <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="numb">
@@ -98,28 +104,53 @@
   <div class="mdl-snackbar__text"></div>
   <button class="mdl-snackbar__action" type="button"></button>
 </div>
-
+         <div id="img"></div>
+<button id="next">Next</button>
 
      </main>
-     <script type="text/javascript">
-         (function check () {
-             'use strict';
+    
+          
+   <script type="text/javascript">
+       var images = '';
+       var button = document.querySelector("#next");
+       var imagePointer = 0;
+       var data = (<%=this.json%>); var count = data.sub.length;
+       var ans = data.sub[imagePointer].cou;
+
+       function updateImage() {
+           if(imagePointer >= count) imagePointer = 0;
+           images = '<img src="' + data.sub[imagePointer].photo+'" />';
+           document.getElementById( 'img' ).innerHTML = images;
+           alert(img.innerHTML)
+       }
+       button.addEventListener('click', function() {
+           imagePointer++;
+           updateImage();
+       });
+       (function check () {
+           'use strict';
             
-             var snackbarContainer = document.querySelector('#demo-toast-example');
-             var showToastButton = document.querySelector('#demo-show-toast');
-             showToastButton.addEventListener('click', function () {
-                 'use strict';
-                 var x = document.getElementById("numb").value;
-                 if (x == 2) {
-                     var text = "תשובה נכונה, כל הכבוד!";
-                 }
-                 else {
-                     var text = "טעות, נסה שוב!";
-                 }
-                 var data = { message: text};
-                 snackbarContainer.MaterialSnackbar.showSnackbar(data);
-             });
-         }());
+           var snackbarContainer = document.querySelector('#demo-toast-example');
+           var showToastButton = document.querySelector('#demo-show-toast');
+           showToastButton.addEventListener('click', function () {
+               'use strict';
+               
+               var x = document.getElementById("numb").value;
+               if (x == ans) {
+                   var text = "תשובה נכונה, כל הכבוד!";
+               }
+               else {
+                   var text = "טעות, נסה שוב!";
+               }
+               var data = { message: text};
+               snackbarContainer.MaterialSnackbar.showSnackbar(data);
+               
+           });
+       }());
+  </script>
+ 
+     <script type="text/javascript">
+         
         </script>
 </body>
 

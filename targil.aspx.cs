@@ -15,7 +15,7 @@ public partial class targil : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         string sql = "";
-        string tableName = "sub" + Session["subjectID"];
+        string tableName = "ID" + Session["ID"];
         string fileName = "db1.mdb"; //שם המסד
         sql = "select * from " + tableName;
         DataTable dt;
@@ -27,7 +27,7 @@ public partial class targil : System.Web.UI.Page
         {
             string JSONString = string.Empty
                 ;
-            JSONString = Newtonsoft.Json.JsonConvert.SerializeObject(new { targil = table });
+            JSONString = Newtonsoft.Json.JsonConvert.SerializeObject(new { sub = table });
             return JSONString;
         }
     }
