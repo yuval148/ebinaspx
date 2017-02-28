@@ -14,7 +14,7 @@ public partial class login : System.Web.UI.Page
         Session["userName"] = null;
         string tableName = "table1";//שם הטבלה
         string userName, userPass, name, team, xpp;
-        string userName2, ID, kita;
+        string userName2, ID, kita, pic;
         int level = 0;
   
         
@@ -40,14 +40,17 @@ public partial class login : System.Web.UI.Page
                 userName2 = dt.Rows[0]["userName"].ToString();
                 Session["name"] = dt.Rows[0]["name"].ToString(); ;     
                 name = dt.Rows[0]["name"].ToString();
-                Session["xpp"] = dt.Rows[0]["xpp"].ToString();
-                xpp = dt.Rows[0]["xpp"].ToString();
                 Session["team"] = dt.Rows[0]["team"].ToString();
                 team = dt.Rows[0]["team"].ToString();
-                Session["kita"] = dt.Rows[0]["kita"].ToString();
-                kita = dt.Rows[0]["kita"].ToString();
+                Session["xpp"] = dt.Rows[0]["xpp"].ToString();
+                xpp = dt.Rows[0]["xpp"].ToString();
                 Session["ID"] = dt.Rows[0]["ID"].ToString();
                 ID = dt.Rows[0]["ID"].ToString();
+                Session["kita"] = dt.Rows[0]["kita"].ToString();
+                kita = dt.Rows[0]["kita"].ToString();
+                Session["pic"] = dt.Rows[0]["pic"].ToString();
+                pic = dt.Rows[0]["pic"].ToString();
+
                 Session["level"] = xpstuf.level(Int32.Parse(xpp));
                 level = xpstuf.level(Int32.Parse(xpp));
                 Session["ErrLogin"] = " שלום "+ name + " מקבוצת "+ team + " יש לך " + xpp + " נקודות " +"  ואתה בשלב " + level.ToString();
