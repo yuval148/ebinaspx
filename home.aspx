@@ -24,7 +24,7 @@
             }
             #pro {
                 width: 20%;
-                height: 530px;
+                height: 550px;
                 margin: 10px 10px 10px 10px;
                 float:right;
             }
