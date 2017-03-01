@@ -5,7 +5,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head >
-    <title></title>
+    <title>tirgulit הגישה נדחתה</title>
+    <meta name="theme-color" content="#3f51b5"/>
     <style>
         body {
                 background: url("/media/bg5.jpg");
@@ -18,7 +19,7 @@
     <form id="form1" runat="server" dir="rtl"  >
    
     <div  align="center">
-    <img src="restricted.png" />
+    <img src="media/restricted.png" style="width:50%;"/>
     </div>
     </form>
 </body>

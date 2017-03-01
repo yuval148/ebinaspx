@@ -7,6 +7,7 @@
 <html dir="rtl">
     <head> 
          <link rel="stylesheet" href="css/circle.css">
+        <meta name="theme-color" content="#3f51b5"/>
         <title></title>
         <style>
            body {

@@ -96,7 +96,7 @@ public class MyAdoHelper
         conn.Open();
         OleDbDataAdapter tableAdapter = new OleDbDataAdapter(sql, conn);
         DataTable dt = new DataTable();
-       tableAdapter.Fill(dt);
+        tableAdapter.Fill(dt);
         return dt;
     }
 
