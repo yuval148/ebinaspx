@@ -12,7 +12,7 @@ public partial class login : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         Session["userName"] = null;
-        string tableName = "table1";//שם הטבלה
+        string tableName = "users";//שם הטבלה
         string userName, userPass, name, team, xpp;
         string userName2, ID, kita, pic;
         int level = 0;
@@ -29,7 +29,7 @@ public partial class login : System.Web.UI.Page
         else
         {
             string fileName ="db1.mdb";
-            string sql = "select * from table1 where userName='" + Request.Form["userName"] + "'";
+            string sql = "select * from "+ tableName + " where userName='" + Request.Form["userName"] + "'";
             sql += "AND userPass ='" + Request.Form["userPass"] + "'";
             if (MyAdoHelper.IsExist(fileName, sql)) //שימוש בפעולה אם המשתמש קיים 
             {

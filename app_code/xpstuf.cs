@@ -68,6 +68,47 @@ public class xpstuf
             default: return 0;
         }
     }
+    // DEFINE RETURN VALUES
+
+    public enum TzStatus
+    {
+        R_NOT_VALID = -2,
+        R_ELEGAL_INPUT = -1,
+        R_VALID = 1
+    };
+
+    public static TzStatus ValidateID(string IDNum)
+    {
+
+        // Validate correct input
+        if (!System.Text.RegularExpressions.Regex.IsMatch(IDNum, @"^\d{5,9}$"))
+            return TzStatus.R_ELEGAL_INPUT;
+
+        // The number is too short - add leading 0000
+        if (IDNum.Length < 9)
+        {
+            while (IDNum.Length < 9)
+            {
+                IDNum = '0' + IDNum;
+            }
+        }
+
+        // CHECK THE ID NUMBER
+        int mone = 0;
+        int incNum;
+        for (int i = 0; i < 9; i++)
+        {
+            incNum = Convert.ToInt32(IDNum[i].ToString());
+            incNum *= (i % 2) + 1;
+            if (incNum > 9)
+                incNum -= 9;
+            mone += incNum;
+        }
+        if (mone % 10 == 0)
+            return TzStatus.R_VALID;
+        else
+            return TzStatus.R_NOT_VALID;
+    }
 }
 
 //TODO: add public static int tatID(string tat)

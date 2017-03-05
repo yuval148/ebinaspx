@@ -115,11 +115,11 @@
        var button = document.querySelector("#next");
        var imagePointer = 0;
        var data = (<%=this.json%>); var count = data.sub.length;
-       var ans = data.sub[imagePointer].cou;
+       var ans = data.sub[imagePointer].answ;
 
        function updateImage() {
            if(imagePointer >= count) imagePointer = 0;
-           images = '<img src="' + data.sub[imagePointer].photo+'" />';
+           images = '<img src="' + data.sub[imagePointer].location+'" />';
            document.getElementById( 'img' ).innerHTML = images;
            alert(img.innerHTML)
        }

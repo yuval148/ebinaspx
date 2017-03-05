@@ -23,7 +23,7 @@ public partial class culture : System.Web.UI.Page
         {
             //הגדרת צורת ההתחברות 
             string sql = "";
-            string tableName = "table1";//שם הטבלה
+            string tableName = "users";//שם הטבלה
             string fileName = "db1.mdb"; //שם המסד
 
 

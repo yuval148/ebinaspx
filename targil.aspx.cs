@@ -14,8 +14,12 @@ public partial class targil : System.Web.UI.Page
     public string json = "";
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Session["userName"] == null)
+        {
+            Response.Redirect("login.aspx");
+        }
         string sql = "";
-        string tableName = "ID" + Session["ID"];
+        string tableName = "TAT"+ "3-" + Session["ID"];
         string fileName = "db1.mdb"; //שם המסד
         sql = "select * from " + tableName;
         DataTable dt;

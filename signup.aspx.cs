@@ -30,7 +30,7 @@ public partial class signup : System.Web.UI.Page
             {
 
                 string fileName = "db1.mdb";
-                string tableName = "Table1";
+                string tableName = "users";
                 string sql;
                 string sql3;
 
@@ -43,22 +43,26 @@ public partial class signup : System.Web.UI.Page
 
                 if (MyAdoHelper.IsExist(fileName, sql)) //שימוש בפעולה לבדיקה אם המשתמש קיים 
                 {
-                    Session["ErrIsertForm"] = "  משתמש  או סיסמה קיימים";
+                    Session["ErrIsertForm"] = "משתמש קיים";
                     // Response.Redirect("form.aspx");
 
                 }
                 else if (MyAdoHelper.IsExist(fileName, sql3))
                 {
-                    Session["ErrIsertForm"] = "  משתמש  או סיסמה קיימים";
+                    Session["ErrIsertForm"] = "משתמש קיים";
+                }
+                else if(xpstuf.ValidateID(ID) == xpstuf.TzStatus.R_NOT_VALID || xpstuf.ValidateID(ID) == xpstuf.TzStatus.R_ELEGAL_INPUT)
+                {
+                    Session["ErrIsertForm"] = "מספר ת.ז לא תקין";
                 }
 
                 else
                 {
-                    sql = "insert into Table1(name, userName, userPass, team, xpp, ID, kita, pic)values('" + name + "','" + userName + "','" + userPass + "','" + team + "','" + xpp + "','"+ID + "','" + kita  +"','" + "123456782.png" + "');";
-                    Session["ErrIsertForm"] = "   שלום  " + name + " מקבוצת " + team + ". יש לך " + xpp + " נקודות";
+                    sql = "insert into users(name, userName, userPass, team, xpp, ID, kita, pic)values('" + name + "','" + userName + "','" + userPass + "','" + team + "','" + xpp + "','"+ID + "','" + kita  +"','" + "123456782.png" + "');";
                     MyAdoHelper.DoQuery(fileName, sql);
+                    Session["ErrIsertForm"] = "   שלום  " + name + " מקבוצת " + team + ". יש לך " + xpp + " נקודות";
                     // Response.Redirect("form.aspx");
-                    string sql2 = "CREATE TABLE ID" + ID + " (subject varchar(255), subjectID varchar(255), tat varchar(255), tatID varchar(255), link varchar(255), cou varchar(255), ctargil varchar(255), xp int, iscomplete bit);"; //TODO: FIX.
+                    string sql2 = "CREATE TABLE ID" + ID + " (subject varchar(255), subjectID varchar(255), ctargil varchar(255), diff varchar(255));";
                     MyAdoHelper.DoQuery(fileName, sql2);
                     Session["ErrIsertForm"] += "<br> ההרשמה בוצעה בהצלחה";
                 }

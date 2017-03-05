@@ -38,7 +38,7 @@
       <!-- Navigation. We hide it in small screens. -->
       <nav class="mdl-navigation mdl-layout--large-screen-only">
         <a class="mdl-navigation__link" href="home.aspx">בית</a>
-        <a class="mdl-navigation__link" href="culture.aspx">המובילים</a>
+        <a class="mdl-navigation__link" href="tops.aspx">המובילים</a>
         <a class="mdl-navigation__link" href="targil.aspx">תרגיל</a>
         <a class="mdl-navigation__link" href="upload.aspx">העלאת תרגיל </a> 
         <a class="mdl-navigation__link" href="login.aspx">התחברות</a>
@@ -50,7 +50,7 @@
     <span class="mdl-layout-title"><img src="media/LOGO.png" style="height:10% ; width: 10%; position:absolute;"/></span>
     <nav class="mdl-navigation">
       <a class="mdl-navigation__link" href="home.aspx">בית</a>
-        <a class="mdl-navigation__link" href="culture.aspx">המובילים</a>
+        <a class="mdl-navigation__link" href="tops.aspx">המובילים</a>
         <a class="mdl-navigation__link" href="targil.aspx">תרגיל</a>
         <a class="mdl-navigation__link" href="upload.aspx">העלאת תרגיל </a> 
         <a class="mdl-navigation__link" href="login.aspx">התחברות</a>

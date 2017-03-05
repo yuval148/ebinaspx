@@ -12,8 +12,8 @@ public partial class upload : System.Web.UI.Page
     {
         Session["ErrIsertForm"] = "";//משתנה שיציג הודעה ללקוח אם סיסמה או שם משתמש קיימים
 
-        string subject = "", tat = "", link = "", team = "", ctargil = "", ID; ;
-        int xp;
+        string subject = "", tat = "", link = "", team = "", ctargil = "", ID; ; // חייב תיקון דחוף!
+        int xp;                                                                  // יגריל וייצור טבלאת תלמיד וישים תרגיגילים מהמאגר בנושא
         bool iscomplete = false;
         if (Request.Form["submit"] != null)
         {
@@ -46,13 +46,11 @@ public partial class upload : System.Web.UI.Page
                     MyAdoHelper.DoQuery(fileName, sql);
                     i++;
                 }
-                    // Response.Redirect("form.aspx");
-                    //ring sql2 = "CREATE TABLE ID" + ID + " (subject varchar(255), tat varchar(255), link varchar(255), cou varchar(255), ctargil varchar(255), xp int, iscomplete bit);"; //TODO: FIX.
-                    //AdoHelper.DoQuery(fileName, sql2);
-                   //ession["ErrIsertForm"] += "<br> ההרשמה בוצעה בהצלחה";
-                }
-
+                //sring MAAGARSQL = "CREATE TABLE TAT" + TAT + " (ID varchar(255), location varchar(255), answ varchar(255), diff varchar(255));";
+                //sring TALMIDMAAGARSQL = "CREATE TABLE TAT" + TAT + "-"+ID+" (ID varchar(255), location varchar(255), answ varchar(255), iscomplete bit);";
             }
+
+        }
         }
     }
        

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="culture.aspx.cs" Inherits="culture" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="tops.aspx.cs" Inherits="culture" %>
 <!--#include file="upper.aspx"-->
 <html>
 <head>
