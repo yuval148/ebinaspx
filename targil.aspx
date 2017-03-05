@@ -114,18 +114,27 @@
        var images = '';
        var button = document.querySelector("#next");
        var imagePointer = 0;
+       var answerPointer = 0;
        var data = (<%=this.json%>); var count = data.sub.length;
-       var ans = data.sub[imagePointer].answ;
+       var ans = data.sub[answerPointer].answ;
 
        function updateImage() {
            if(imagePointer >= count) imagePointer = 0;
            images = '<img src="' + data.sub[imagePointer].location+'" />';
            document.getElementById( 'img' ).innerHTML = images;
-           alert(img.innerHTML)
+           alert(img.innerHTML);
+       }
+       function updateAnswer() {
+           if(answerPointer >= count) answerPointer = 0;
+           answers = data.sub[answerPointer].answ ; 
+           ans = answers;
+           alert(ans);
        }
        button.addEventListener('click', function() {
            imagePointer++;
+           answerPointer++;
            updateImage();
+           updateAnswer();
        });
        (function check () {
            'use strict';
