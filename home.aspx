@@ -101,7 +101,7 @@
         
     </head>
     <body>
-        <main class="mdl-layout__content">;
+        <main class="mdl-layout__content">
             <div class="page-content">
                 <div class="left-pro" style="font-family:'Heebo'">
                     <div id="pro" class=" mdl-card mdl-shadow--2dp">
