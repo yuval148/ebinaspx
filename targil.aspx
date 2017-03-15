@@ -8,13 +8,13 @@
 <html dir="rtl">
    
 <head>
-    <title></title>
+    <title></title> 
        
   <style>
          body {
                 background: url("/media/bg5.jpg");
                 background-size: 100%, 100%;
-                background-repeat: no-repeat;
+                background-repeat: no-repeat; /*יש לך למטה*/
             }
          #info{
                 margin-top:50px;
@@ -24,28 +24,8 @@
              width:400px;
              height:400px;
          }
-    </style>  
-</head>
-<body>
-     <main class="mdl-layout__content" id="container" >
-         <div class="demo-card-square mdl-card mdl-shadow--2dp">
-            <div class="mdl-card__title mdl-card--expand">
-                <h2 class="mdl-card__title-text">מידע שימושי</h2>
-            </div>
-            <div class="mdl-card__supporting-text">
-                <!-- Icon List -->
-<style>
-.demo-list-icon {
+         .demo-list-icon {
   width: 300px;
-  display:inline-block;
-}
-.demo-card-image.mdl-card {
-  bottom:300px;
-  width: 600px;
-  height: 300px;
-  background: url('media/png.png') center no-repeat,white;
-  float:left;
-  margin-left:50px;
 }
 .demo-card-image > .mdl-card__actions {
   height: 52px;
@@ -57,7 +37,59 @@
   font-size: 14px;
   font-weight: 500;
 }
-</style>
+#infoDiv{
+    display:block;
+    margin-right:60%; /*עוד*/
+    margin-top:10px;
+}
+
+             #infoDiv{
+             }
+             img.img {
+			      width: 65%; /*Tells image to fit to width of parent container*/
+                  display:block;
+                          margin: auto;
+
+			}
+    #exercise {
+        width: 75%; /*Use this to control width of the parent container, hence the image*/
+        margin: auto;
+        margin-top: 45px;
+    }
+    #ansBtn{
+        margin-right:54%;
+    }
+    #ans{
+        display:inline-block;
+    }
+    
+    </style>  
+</head>
+<body>
+     <main class="mdl-layout__content" id="container" >
+                  <div id="exercise" class="demo-card-square mdl-card mdl-shadow--2dp"></div>
+         <div  id="ansBtn">
+         <form id="ans">
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="numb">
+    <label class="mdl-textfield__label" for="sample4">הכנס ערך X</label>
+    <span class="mdl-textfield__error">X צריך להיות מספר</span> <!--עודדדדדד!-->
+  </div>
+</form>
+         <button id="Btn" class="mdl-button mdl-js-button mdl-button--raised"  onclick="check()" type="button">בדוק תשובה</button>
+<div id="demo-toast-example" class="mdl-js-snackbar mdl-snackbar">
+  <div class="mdl-snackbar__text"></div>
+  <button class="mdl-snackbar__action" type="button"></button>
+</div>
+             </div>
+
+         <div id="infoDiv" class="demo-card-square mdl-card mdl-shadow--2dp">
+            <div class="mdl-card__title mdl-card--expand">
+                <h2 class="mdl-card__title-text">מידע שימושי</h2>
+            </div>
+
+            <div class="mdl-card__supporting-text">
+                <!-- Icon List -->
 
 <ul class="demo-list-icon mdl-list">
   <li class="mdl-list__item">
@@ -74,7 +106,7 @@
   </li>
   <li class="mdl-list__item">
     <span class="mdl-list__item-primary-content">
-    <i class="material-icons mdl-list__item-icon">info</i>
+    <i class="material-icons mdl-list__item-icon">info</i> <!--למטה אחי זה בסוף!-->
     אל תשכח לקנות חלב
   </span>
   </li>
@@ -91,20 +123,10 @@
   </div>
 </div>
          -->
-         <form>
-  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="numb">
-    <label class="mdl-textfield__label" for="sample4">הכנס ערך X</label>
-    <span class="mdl-textfield__error">X צריך להיות מספר</span>
-  </div>
-</form>
+         
         <!-- Colored raised button -->
-         <button id="demo-show-toast" class="mdl-button mdl-js-button mdl-button--raised"  onclick="check()" type="button">בדוק תשובה</button>
-<div id="demo-toast-example" class="mdl-js-snackbar mdl-snackbar">
-  <div class="mdl-snackbar__text"></div>
-  <button class="mdl-snackbar__action" type="button"></button>
-</div>
-         <div id="img"></div>
+         
+         
 <button id="next">Next</button>
 
      </main>
@@ -117,12 +139,13 @@
        var answerPointer = 0;
        var data = (<%=this.json%>); var count = data.sub.length;
        var ans = data.sub[answerPointer].answ;
+       var isC = false;
 
        function updateImage() {
            if(imagePointer >= count) imagePointer = 0;
-           images = '<img src="' + data.sub[imagePointer].location+'" />';
-           document.getElementById( 'img' ).innerHTML = images;
-           alert(img.innerHTML);
+           images = '<img class="img" src="' + data.sub[imagePointer].location+'" />';
+           document.getElementById( 'exercise' ).innerHTML = images;
+           alert(exercise.innerHTML);
        }
        function updateAnswer() {
            if(answerPointer >= count) answerPointer = 0;
@@ -140,27 +163,23 @@
            'use strict';
             
            var snackbarContainer = document.querySelector('#demo-toast-example');
-           var showToastButton = document.querySelector('#demo-show-toast');
+           var showToastButton = document.querySelector('#Btn');
            showToastButton.addEventListener('click', function () {
                'use strict';
                
                var x = document.getElementById("numb").value;
                if (x == ans) {
                    var text = "תשובה נכונה, כל הכבוד!";
+                   isC = true; // פההההההההההההההה, תכניס את המשתנה הזה
                }
                else {
                    var text = "טעות, נסה שוב!";
                }
                var data = { message: text};
                snackbarContainer.MaterialSnackbar.showSnackbar(data);
-               
            });
        }());
   </script>
- 
-     <script type="text/javascript">
-         
-        </script>
 </body>
 
 </html>
