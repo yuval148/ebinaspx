@@ -7,6 +7,8 @@ using System.Web.UI.WebControls;
 using Newtonsoft.Json;
 using System.Data.SqlClient;
 using System.Data;
+using System.Web.Services;
+
 
 
 public partial class targil : System.Web.UI.Page
@@ -19,7 +21,7 @@ public partial class targil : System.Web.UI.Page
             Response.Redirect("login.aspx");
         }
         string sql = "";
-        string tableName = "TAT"+ "3-" + Session["ID"];
+        string tableName = "TAT" + "3_" + Session["ID"];
         string fileName = "db1.mdb"; //שם המסד
         sql = "select * from " + tableName;
         DataTable dt;
@@ -35,7 +37,18 @@ public partial class targil : System.Web.UI.Page
             return JSONString;
         }
     }
+    [WebMethod]
+    public static void change(string tatID, string ID)
+    {
+        string tableName = "TAT" + "3_" + ID;
+        string fileName = "db1.mdb";
+        string sql = "UPDATE " + tableName + " SET iscomplete='1' WHERE ID='" + tatID + "';";
+        MyAdoHelper.DoQuery(fileName, sql);
+    }
+    [System.Web.Services.WebMethod]
+    public static string Fuck(string name)
+    {
+        return ("your name is" + name);
+    }
 
 }
-
-

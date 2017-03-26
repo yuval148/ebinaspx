@@ -126,12 +126,9 @@
          
         <!-- Colored raised button -->
          
-         
-<button id="next">Next</button>
-
-     </main>
     
-          
+   <button id="next">Next</button>      
+   </main>  
    <script type="text/javascript">
        var images = '';
        var button = document.querySelector("#next");
@@ -140,12 +137,14 @@
        var data = (<%=this.json%>); var count = data.sub.length;
        var ans = data.sub[answerPointer].answ;
        var isC = false;
+       var id=(data.sub[imagePointer].ID);
 
        function updateImage() {
            if(imagePointer >= count) imagePointer = 0;
            images = '<img class="img" src="' + data.sub[imagePointer].location+'" />';
            document.getElementById( 'exercise' ).innerHTML = images;
            alert(exercise.innerHTML);
+           id =(data.sub[imagePointer].ID);
        }
        function updateAnswer() {
            if(answerPointer >= count) answerPointer = 0;
@@ -154,10 +153,11 @@
            alert(ans);
        }
        button.addEventListener('click', function() {
-           imagePointer++;
-           answerPointer++;
            updateImage();
            updateAnswer();
+           imagePointer++;
+           answerPointer++;
+
        });
        (function check () {
            'use strict';
@@ -169,8 +169,20 @@
                
                var x = document.getElementById("numb").value;
                if (x == ans) {
+                  
                    var text = "תשובה נכונה, כל הכבוד!";
-                   isC = true; // פההההההההההההההה, תכניס את המשתנה הזה
+                   $.ajax({
+                    type: "POST",
+                    url: "targil.aspx/change",
+                    data:'{"tatID":"35","ID":"314668690" }',
+                    contentType: "application/json; charset=utf-8",
+                    success: function() {
+                        alert("yayyyy");
+                    },
+                    failure: function() {
+                        alert("oy");
+                    }
+                });
                }
                else {
                    var text = "טעות, נסה שוב!";
