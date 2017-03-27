@@ -47,7 +47,7 @@
       <button class="mdl-button mdl-js-button mdl-button--accent">
           <a style="text-decoration:none" href="/loginT.aspx"> מורה? כנס כאן!</a>
        </button>
-          <div class="mdl-components__warning">בבקשה, תמות.</div>
+          <div class="mdl-components__warning"><%=Session["ErrLogin"] %>.</div>
 </form>
         
     

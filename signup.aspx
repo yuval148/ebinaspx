@@ -74,7 +74,7 @@
     
 
 
-<p align="center" style="height: 96px ;font-size:50px">
-<%=Session["ErrIsertForm"]%>
+<p align="center" style="height: 96px ;font-size:50px"></p>
+<div class="mdl-components__warning"><%=Session["ErrIsertForm"] %></div>
 </body>
 </html>
