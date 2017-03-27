@@ -1,15 +1,14 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="login.aspx.cs" Inherits="login" %>
-<!--#include file="upper.aspx"-->
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="loginT.aspx.cs" Inherits="login" %>
+<!--#include file="upperT.aspx"-->
   <html>  
   <head>
   <title> התחברות</title>
    <style>
             body {
-                background: url("/media/bg5.jpg");
+                background: url("/media/bfg5.jpg");
                 background-size: 100%, 100%;
                 background-repeat: no-repeat;
             }
-            
             .mdl-components__warning {
     width: 100%;
     max-width: 640px;
@@ -36,20 +35,18 @@
     <label class="mdl-textfield__label" for="sample3">סיסמה</label>
   </div>
       <br />
-     
       <!-- Colored raised button -->
 <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"type="submit" name="submit">
   היכנס
 </button>
       <br />
       <br />
-       
-      <button class="mdl-button mdl-js-button mdl-button--accent">
-          <a style="text-decoration:none" href="/loginT.aspx"> מורה? כנס כאן!</a>
+       <button class="mdl-button mdl-js-button mdl-button--accent">
+          <a style="text-decoration:none" href="/login.aspx">תלמיד? כנס כאן!</a>
        </button>
-          <div class="mdl-components__warning">בבקשה, תמות.</div>
+                <div class="mdl-components__warning">סתם, לא.</div>
+
 </form>
-        
     
     </body>
    </html> 
