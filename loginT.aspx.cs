@@ -12,10 +12,9 @@ public partial class login : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         Session["userName"] = null;
-        string tableName = "users";//שם הטבלה
-        string userName, userPass, name, team, xpp;
-        string userName2, ID, kita, pic;
-        int level = 0;
+        string tableName = "morim";//שם הטבלה
+        string userName, userPass, name;
+        string userName2, ID, pic;
   
         
         
@@ -36,25 +35,16 @@ public partial class login : System.Web.UI.Page
                 DataTable dt;
                 dt = MyAdoHelper.ExecuteDataTable(fileName, sql);
 
-                Session["userName"] = dt.Rows[0]["userName"].ToString();
+                Session["userNameT"] = dt.Rows[0]["userName"].ToString();
                 userName2 = dt.Rows[0]["userName"].ToString();
-                Session["name"] = dt.Rows[0]["name"].ToString(); ;     
+                Session["nameT"] = dt.Rows[0]["name"].ToString(); ;     
                 name = dt.Rows[0]["name"].ToString();
-                Session["team"] = dt.Rows[0]["team"].ToString();
-                team = dt.Rows[0]["team"].ToString();
-                Session["xpp"] = dt.Rows[0]["xpp"].ToString();
-                xpp = dt.Rows[0]["xpp"].ToString();
-                Session["ID"] = dt.Rows[0]["ID"].ToString();
+                Session["IDT"] = dt.Rows[0]["ID"].ToString();
                 ID = dt.Rows[0]["ID"].ToString();
-                Session["kita"] = dt.Rows[0]["kita"].ToString();
-                kita = dt.Rows[0]["kita"].ToString();
-                Session["pic"] = dt.Rows[0]["pic"].ToString();
+                Session["picT"] = dt.Rows[0]["pic"].ToString();
                 pic = dt.Rows[0]["pic"].ToString();
-
-                Session["level"] = xpstuf.level(Int32.Parse(xpp));
-                level = xpstuf.level(Int32.Parse(xpp));
-                Session["ErrLogin"] = " שלום "+ name + " מקבוצת "+ team + " יש לך " + xpp + " נקודות " +"  ואתה בשלב " + level.ToString();
-                Response.Redirect("home.aspx");
+                Session["ErrLogin"] = " שלום " + name;
+                Response.Redirect("homeT.aspx");
             }
             else if (userName == "yuval" && userPass == "1234")
             {

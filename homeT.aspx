@@ -11,7 +11,7 @@
         <title></title>
         <style>
            body {
-                background: url("/media/bg5.jpg");
+                background: url("/media/bfg5.jpg");
                 background-size: 100%, 100%;
                 background-repeat: no-repeat;
                 
@@ -105,20 +105,10 @@
             <div class="page-content">
                 <div class="left-pro" style="font-family:'Heebo'">
                     <div id="pro" class=" mdl-card mdl-shadow--2dp">
-                        <img src="media/<%=Session["pic"]%>" class="img-circle">
+                        <img src="media/<%=Session["picT"]%>" class="img-circle">
                         <div id="pd">
-                            <span style="font-size:20px; font-weight:bold"> <%=Session["name"]%></span><hr /><br>
-                            <span style="font-size:20px; line-height:70%" >קבוצת  <%=Session["team"]%> </span><hr /> <br>
+                            <span style="font-size:20px; font-weight:bold"> <%=Session["nameT"]%></span><hr /><br>
                             <!-- Simple MDL Progress Bar -->
-                            <div id="p1" class="mdl-progress mdl-js-progress"></div>
-                                <script>
-                                    document.querySelector('#p1').addEventListener('mdl-componentupgraded', function () {
-                                    this.MaterialProgress.setProgress('<%=Session["prog"]%>');
-                                    });
-                                </script>
-                                <span style="font-size:20px;line-height:20%"> <%=Session["xpp"]%> נקודות</span><hr /> <br>
-                                <span style="font-size:20px; line-height:80%" >שלב  <span class="mdl-badge" data-badge="<%=Session["level"]%>"></span> </span><hr /> <br>
-                                <span style="font-size:20px; line-height:80%" ><%=Session["kita"]%><br><br></span>
                         </div>
                     </div>
                     

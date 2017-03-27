@@ -174,7 +174,7 @@
                    $.ajax({
                     type: "POST",
                     url: "targil.aspx/change",
-                    data:'{"tatID":"35","ID":"314668690" }',
+                    data:'{"tatID":'+id+',"ID":'+<%=Session["ID"]%>+' }',
                     contentType: "application/json; charset=utf-8",
                     success: function() {
                         alert("yayyyy");
