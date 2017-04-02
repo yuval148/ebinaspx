@@ -229,26 +229,52 @@
             #a,#b{
                 border-left: solid #DCDCDC;
             }
-     
+            #iddk{
+                margin-top:-20px;
+            }
+            #p2{
+                width:90%;
+                height:10px;
+                margin:auto;
+                margin-top:30px;
+            }
+            #targilP{
+                text-align:center;
+                margin:auto;
+            }
         </style>
             <div class="demo-card-wide mdl-card mdl-shadow--2dp">
                 <div class="float">
                     <div class="tank" id="a">
-                        <h3 style="text-align:center">כותרת</h3>
-                        <div class="c100 p23 red" style="margin-top:42.5px;margin-left:25%;">
+                        <div id="iddk">
+                        <h4 style="text-align:center">אלגברה</h4>
+                        <div class="c100 p23 red" style="margin-left:25%;">
                             <span>23%</span>
                             <div class="slice">
                                 <div class="bar"></div>
                                 <div class="fill"></div>
                             </div>
-                        </div>                               
+                        </div>
+                            </div>                               
                     </div>
                     <div class="widecarda" id="b">
-                            
+                            <div id="p2" class="mdl-progress mdl-js-progress"></div>
+                            <script>
+                                document.querySelector('#p2').addEventListener('mdl-componentupgraded', function() {
+                                this.MaterialProgress.setProgress(40); 
+                                });
+                            </script>
+                            <h4 style="text-align:center">נותרו 6 תרגילים</h4> 
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="display:block;margin:auto;" font-family:'Heebo'>
+                            כניסה לפורום
+                        </button>
                     </div>
                         
                     <div class="tank" id="c">
-                
+                        <h4>רצף של 5 תשובות נכונות</h4>
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="display:block;margin:auto;" font-family:'Heebo'>
+                            שחק
+                        </button>
                     </div>
 
                 </div>             
