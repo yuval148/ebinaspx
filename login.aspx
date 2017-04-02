@@ -18,6 +18,7 @@
     padding: 16px;
     border-radius: 2px;
     color: #212121;
+    opacity:0;
 }
     </style>
   </head>
@@ -38,7 +39,7 @@
       <br />
      
       <!-- Colored raised button -->
-<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"type="submit" name="submit">
+<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" type="submit" id="loginbtn" name="submit">
   היכנס
 </button>
       <br />
@@ -47,10 +48,12 @@
       <button class="mdl-button mdl-js-button mdl-button--accent">
           <a style="text-decoration:none" href="/loginT.aspx"> מורה? כנס כאן!</a>
        </button>
-          <div class="mdl-components__warning"><%=Session["ErrLogin"] %>.</div>
+          <div id="errorDiv" class="mdl-components__warning"><%=Session["ErrLogin"] %></div>
 </form>
-        
-    
+        <script type="text/javascript">
+            var opc = <%=opc%>;
+            document.getElementById( 'errorDiv' ).style.opacity = opc;
+        </script>
     </body>
    </html> 
 

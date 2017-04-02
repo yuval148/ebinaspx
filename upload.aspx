@@ -57,9 +57,25 @@
     </table>
     </form>
     
-
+    <div id="class_selection"></div>
 
 <p align="center" style="height: 96px ;font-size:50px">
 <%=Session["ErrIsertForm"]%>
+    </p>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var newSelect = document.createElement('select');
+            var selectHTML = "";
+            var choices =["יב4","יב3","יב2"] //להחליף במתשנים לא סטטים
+            for (i = 0; i < choices.length; i = i + 1) {
+                selectHTML += "<option value='" + choices[i] + "'>" + choices[i] + "</option>";
+            }
+            selectHTML += "</option>";
+
+            newSelect.innerHTML = selectHTML;
+            document.getElementById('class_selection').appendChild(newSelect);
+
+        });
+    </script>
 </body>
 </html>

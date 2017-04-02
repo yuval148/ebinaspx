@@ -9,19 +9,22 @@ using System.Data;
 
 public partial class login : System.Web.UI.Page
 {
+    public int opc;
     protected void Page_Load(object sender, EventArgs e)
     {
         Session["userName"] = null;
         string tableName = "morim";//שם הטבלה
         string userName, userPass, name;
         string userName2, ID, pic;
-  
-        
-        
+        opc = 0;
+
+
+
         userName = Request.Form["userName"];
         userPass = Request.Form["userPass"];
         if (Request.Form["userName"] == "" || Request.Form["userPass"] == "")
         {
+            opc = 100;
             Session["ErrLogin"] = "יש למלא שם וסיסמה";
             
         }
@@ -43,6 +46,7 @@ public partial class login : System.Web.UI.Page
                 ID = dt.Rows[0]["ID"].ToString();
                 Session["picT"] = dt.Rows[0]["pic"].ToString();
                 pic = dt.Rows[0]["pic"].ToString();
+                opc = 100;
                 Session["ErrLogin"] = " שלום " + name;
                 Response.Redirect("homeT.aspx");
             }
@@ -56,7 +60,8 @@ public partial class login : System.Web.UI.Page
 
             else
             {
-                Session["ErrLogin"] = " עליך להרשם כדי לצפות באתר";
+                opc = 0;
+                Session["ErrLogin"] = "";
                 
             }
         }
