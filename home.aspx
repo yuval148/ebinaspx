@@ -123,7 +123,8 @@
                     </div>
                     
                 </div> 
-                <!-- Wide card with share menu button -->
+                <!-- Wide card with share menu button -->.
+                <br />
                 <div class="demo-card-wide mdl-card mdl-shadow--2dp">
                     <div class="float">
                     <div class="widecard" id="a">
@@ -210,143 +211,49 @@
                     </a>
                 </div>
             </div>
-
-            <div id="2" class="sub demo-card-square2 mdl-card mdl-shadow--2dp ">
-                <div class="mdl-card__title mdl-card--expand">
-                    <h2 class="mdl-card__title-text" style="font-family:'Heebo';font-weight:300;font-size:35px">חדו"א</h2>
-                </div>
-                <div class="mdl-card__supporting-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Aenan convallis.
-                </div>
-                <div class="mdl-card__actions mdl-card--border">
-                    <a class="mdl-button mdl-button--colored mdl-js-button">
-                        לתרגילים
-                    </a>
-                </div>
-            </div>
-
-            <div id="3"class="sub demo-card-square3 mdl-card mdl-shadow--2dp ">
-                <div class="mdl-card__title mdl-card--expand">
-                    <h2 class="mdl-card__title-text" style="font-family:'Heebo';font-weight:300;font-size:35px">אלגברה</h2>
-                </div>
-                <div class="mdl-card__supporting-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Aenan convallis.
-                </div>
-                <div class="mdl-card__actions mdl-card--border">
-                    <a class="mdl-button mdl-button--colored mdl-js-button" style="float:left" href="targil.aspx">
-                        לתרגילים
-                    </a>
-                </div>
-            </div>
-
-            <div id="4"class="sub demo-card-square4 mdl-card mdl-shadow--2dp ">
-                <div class="mdl-card__title mdl-card--expand">
-                    <h2 class="mdl-card__title-text" style="font-family:'Heebo';font-weight:300;font-size:35px">ערבית</h2>
-                </div>
-                <div class="mdl-card__supporting-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Aenan convallis.
-                </div>
-                <div class="mdl-card__actions mdl-card--border">
-                    <a class="mdl-button mdl-button--colored mdl-js-button">
-                        לתרגילים
-                    </a>
-                </div>
-            </div>
-
-            <div id="5"class="sub demo-card-square5 mdl-card mdl-shadow--2dp ">
-                <div class="mdl-card__title mdl-card--expand">
-                    <h2 class="mdl-card__title-text" style="font-family:'Heebo';font-weight:300;font-size:35px">פיזיקה</h2>
-                </div>
-                <div class="mdl-card__supporting-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Aenan convallis.
-                </div>
-                <div class="mdl-card__actions mdl-card--border">
-                    <a class="mdl-button mdl-button--colored mdl-js-button">
-                        לתרגילים
-                    </a>
-                </div>
-            </div>
-
-            <div id="6"class="sub demo-card-square6 mdl-card mdl-shadow--2dp ">
-                <div class="mdl-card__title mdl-card--expand">
-                    <h2 class="mdl-card__title-text" style="font-family:'Heebo';font-weight:300;font-size:35px">אזרחות</h2>
-                </div>
-                <div class="mdl-card__supporting-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Aenan convallis.
-                </div>
-                <div class="mdl-card__actions mdl-card--border">
-                    <a class="mdl-button mdl-button--colored mdl-js-button">
-                        לתרגילים
-                    </a>
-                </div>
-            </div>
-
-      <div id="7" class="sub demo-card-square7 mdl-card mdl-shadow--2dp ">
-  <div class="mdl-card__title mdl-card--expand">
-    <h2 class="mdl-card__title-text"style="font-family:'Heebo';font-weight:300;font-size:35px">היסטוריה</h2>
-  </div>
-  <div class="mdl-card__supporting-text">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    Aenan convallis.
-  </div>
-  <div class="mdl-card__actions mdl-card--border">
-                    <a class="mdl-button mdl-button--colored mdl-js-button">
-      לתרגילים
-    </a>
-  </div>
-</div>
-
-      <div id="8" class="sub demo-card-square8 mdl-card mdl-shadow--2dp ">
-  <div class="mdl-card__title mdl-card--expand">
-    <h2 class="mdl-card__title-text"style="font-family:'Heebo';font-weight:300;font-size:35px">לשון</h2>
-  </div>
-  <div class="mdl-card__supporting-text">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    Aenan convallis.
-  </div>
-  <div class="mdl-card__actions mdl-card--border">
-                    <a class="mdl-button mdl-button--colored mdl-js-button">
-      לתרגילים
-    </a>
-  </div>
-</div>
-
-      <div id="9" class="sub demo-card-square9 mdl-card mdl-shadow--2dp ">
-  <div class="mdl-card__title mdl-card--expand">
-    <h2 class="mdl-card__title-text" style="font-family:'Heebo';font-weight:300;font-size:35px">טריגונומטריה</h2>
-  </div>
-  <div class="mdl-card__supporting-text">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    Aenan convallis.
-  </div>
-  <div class="mdl-card__actions mdl-card--border">
-                    <a class="mdl-button mdl-button--colored mdl-js-button">
-      לתרגילים
-    </a>
-  </div>
-</div>
-
-<div id="10" class="sub demo-card-square10 mdl-card mdl-shadow--2dp">
-  <div class="mdl-card__title mdl-card--expand">
-    <h2 class="mdl-card__title-text" style="font-family:'Heebo';font-weight:300;font-size:35px">כימיה</h2>
-  </div>
-  <div class="mdl-card__supporting-text">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    Aenan convallis.
-  </div>
-  <div class="mdl-card__actions mdl-card--border">
-                    <a class="mdl-button mdl-button--colored mdl-js-button">
-      לתרגילים
-    </a>
-  </div>
-</div>
                 
         </div>
+            <style>
+           .tank{
+                width:25%;
+                height:200px;
+                float:right;
+                position: relative;
+
+            }
+           .widecarda{
+                width:45%;
+                height:200px;
+                float:right;
+            }
+            #a,#b{
+                border-left: solid #DCDCDC;
+            }
+     
+        </style>
+            <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+                <div class="float">
+                    <div class="tank" id="a">
+                        <h3 style="text-align:center">כותרת</h3>
+                        <div class="c100 p23 red" style="margin-top:42.5px;margin-left:25%;">
+                            <span>23%</span>
+                            <div class="slice">
+                                <div class="bar"></div>
+                                <div class="fill"></div>
+                            </div>
+                        </div>                               
+                    </div>
+                    <div class="widecarda" id="b">
+                            
+                    </div>
+                        
+                    <div class="tank" id="c">
+                
+                    </div>
+
+                </div>             
+
+            </div>
   </main>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
         <script type="text/javascript">
@@ -421,5 +328,7 @@
 
             bar.animate(0.5);  // Number from 0.0 to 1.0
 </script>
+        
+            
 </body>
 </html>
