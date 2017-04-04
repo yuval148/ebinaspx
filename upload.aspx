@@ -2,7 +2,36 @@
 <!--#include file="upper.aspx"-->
 
 <html>
-  <head>
+  <head>    
+      <script type ="text/javascript">
+    var validFilesTypes=["bmp","gif","png","jpg","jpeg"];
+    function ValidateFile()
+    {
+      var file = document.getElementById("<%=FileUpload1.ClientID%>");
+      var label = document.getElementById("<%=Label1.ClientID%>");
+      var path = file.value;
+      var ext=path.substring(path.lastIndexOf(".")+1,path.length).toLowerCase();
+      var isValidFile = false;
+      for (var i=0; i<validFilesTypes.length; i++)
+      {
+        if (ext==validFilesTypes[i])
+        {
+            isValidFile=true;
+            break;
+        }
+      }
+      if (!isValidFile)
+      {
+        label.style.color="red";
+        label.innerHTML="Invalid File. Please upload a File with" +
+         " extension:\n\n"+validFilesTypes.join(", ");
+      }
+      if(isValidFile) {
+         alert("התמונה הועלתה בהצלחה!")
+      }
+      return isValidFile;
+     }
+</script>
   <title>דף העלאה</title>
   <style>
         body {
@@ -14,15 +43,20 @@
   </head>
 <body style="font-family:Arial, Helvetica, Sans-Serif; text-align:center;">
     <form runat="server">
-    <asp:FileUpload ID="FileUpload1" runat="server" />
-<asp:Button ID="btnUpload" runat="server" Text="Upload" OnClick="Upload" />
+    <asp:FileUpload ID="FileUpload1" runat="server" EnableViewState="false"/>
+<asp:Button ID="btnUpload" runat="server" Text="Upload"  
+           OnClientClick = "return ValidateFile()"  OnClick="Upload"  />
+
 <hr />
+
 <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false" ShowHeader="false">
     <Columns>
         <asp:BoundField DataField="Text" />
         <asp:ImageField DataImageUrlField="Value" ControlStyle-Height="100" ControlStyle-Width="100" />
     </Columns>
 </asp:GridView>
+<asp:Label ID="Label1" runat="server" Text="" />
+
         </form>
             <h1>התמונות נמצאות בImages </h1>
 
