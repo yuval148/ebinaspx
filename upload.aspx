@@ -13,6 +13,21 @@
     </style>
   </head>
 <body style="font-family:Arial, Helvetica, Sans-Serif; text-align:center;">
+    <form runat="server">
+    <asp:FileUpload ID="FileUpload1" runat="server" />
+<asp:Button ID="btnUpload" runat="server" Text="Upload" OnClick="Upload" />
+<hr />
+<asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false" ShowHeader="false">
+    <Columns>
+        <asp:BoundField DataField="Text" />
+        <asp:ImageField DataImageUrlField="Value" ControlStyle-Height="100" ControlStyle-Width="100" />
+    </Columns>
+</asp:GridView>
+        </form>
+            <h1>התמונות נמצאות בImages </h1>
+
+
+
     <form name="f" id="f" method="post" onsubmit="return check();">
      
      <table align=center>
@@ -60,7 +75,7 @@
     <div id="class_selection"></div>
 
 <p align="center" style="height: 96px ;font-size:50px">
-<%=Session["ErrIsertForm"]%>
+
     </p>
     <script type="text/javascript">
         $(document).ready(function () {
@@ -77,5 +92,7 @@
 
         });
     </script>
+
+    
 </body>
 </html>
