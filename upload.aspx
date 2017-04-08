@@ -59,29 +59,15 @@
 
         </form>
             <h1>התמונות נמצאות בImages </h1>
-
-
-
-    <form name="f" id="f" method="post" onsubmit="return check();">
+    
+    <div id="class_selection">
+         <form name="f" id="f" method="post" onsubmit="return check();">
      
      <table align=center>
      <tr>
      <td>subject  </td>
       <td>
-         <select id="subject" name="subject">
-             <option value="מקצוע">בחר מקצוע</option>
-           <option value="אנגלית">אנגלית</option>
-             <option value="מדעי המחשב">מדעי המחשב</option>
-             <option value="מתמטיקה">מתמטיקה</option>
-            <option value="ערבית">ערבית</option>
-             <option value="פיזיקה">פיזיקה</option>
-             <option value="אזרחות">אזרחות</option>
-             <option value="היסטוריה">היסטוריה</option>
-             <option value="לשון">לשון</option>
-             <option value="ספרות">ספרות</option>
-              <option value="כימיה">כימיה</option>
-             <option value="סוציולוגיה">סוציולוגיה</option>
-                </select> 
+         
                 </td>
       </tr>
        <tr>
@@ -101,19 +87,14 @@
       <td>xp</td>
       <td><input type="text" id="xp" name="xp" maxlength="9" size="9"/></td>
        </tr>
-       
          <td> <input type="submit" value="שלח" name="submit"/></td>  
     </table>
     </form>
-    
-    <div id="class_selection"></div>
-
-<p align="center" style="height: 96px ;font-size:50px">
-
-    </p>
+    </div>
     <script type="text/javascript">
         $(document).ready(function () {
             var newSelect = document.createElement('select');
+            newSelect.id="subject";
             var selectHTML = "";
             var choices =["יב4","יב3","יב2"] //להחליף במתשנים לא סטטים
             for (i = 0; i < choices.length; i = i + 1) {
@@ -123,6 +104,7 @@
 
             newSelect.innerHTML = selectHTML;
             document.getElementById('class_selection').appendChild(newSelect);
+
 
         });
     </script>
