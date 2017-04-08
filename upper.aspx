@@ -2,12 +2,12 @@
 <!doctype html>
 <html dir="rtl">
     <head> 
-        <title></title>
         <!--mobile confg-->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <!--handlebars-->
-        <script src="js/main.js"></script>
         <script src="js/handlebars-v4.0.5.js"></script>
+        <script src="js/main.js"></script>
         <!--javascript & css-->
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Heebo:300,500,700,900&amp;subset=hebrew">
@@ -17,11 +17,6 @@
         <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-blue.min.css" /> 
         <!--rtl-->
         <link rel="stylesheet" href="css/style.css">
-
-        <style>
-
-        </style>
-
         <!--rtl script-->
         <script>
             $(document).click(function () {if ($(".mdl-layout__drawer").hasClass("is-visible")) {$(".mdl-layout__drawer").removeClass("hide-drawer");$(".mdl-layout__drawer").addClass("right-drawer");}else {$(".mdl-layout__drawer").removeClass("right-drawer");$(".mdl-layout__drawer").addClass("hide-drawer");}});

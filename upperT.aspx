@@ -2,7 +2,6 @@
 <!doctype html>
 <html dir="rtl">
     <head> 
-        <title></title>
         <!--mobile confg-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--handlebars-->

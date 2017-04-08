@@ -1,0 +1,82 @@
+#page-wrap {
+     width: 1200px;
+     margin: 0 auto;
+}
+#Data{
+    width:1000px;
+}
+body {
+	background: url("/media/bg5.jpg");
+	background-size: 100%, 100%;
+    background-repeat: no-repeat;
+	}
+.sub{
+	margin:2px;
+	}
+#pro {
+	height: 550px;
+	}
+.img-circle {
+	border-radius: 50%;
+	width:120px;
+	height:120px;
+	align-self:center;
+	margin-top:20px;
+	margin-bottom:50px;
+	}
+#pd{
+	text-align:center;
+	}
+.demo-card-square1 > .mdl-card__title {
+	color: #fff;background: url('/media/404.png') bottom right  no-repeat #283593;
+	}
+.demo-card-square2 > .mdl-card__title {
+	color: #fff;background: url('/media/new/para.png') bottom right  no-repeat #283593;
+	}
+.demo-card-square3 > .mdl-card__title {
+	color: #fff;background: url('/media/new/algeb.png') bottom right  no-repeat #283593;
+}
+.demo-card-square4 > .mdl-card__title {
+	color: #fff;background: url('/media/404.png') bottom right  no-repeat #283593;
+}
+.demo-card-square5 > .mdl-card__title {
+	color: #fff;background: url('/media/404.png') bottom right  no-repeat #283593;
+	}
+.demo-card-square6 > .mdl-card__title {
+	color: #fff;background: url('/media/404.png') bottom right  no-repeat #283593;
+	}
+.demo-card-square7 > .mdl-card__title {
+	color: #fff;background: url('/media/404.png') bottom right  no-repeat #283593;
+}
+.demo-card-square8 > .mdl-card__title {
+	color: #fff;background: url('/media/404.png') bottom right  no-repeat #283593;
+}
+.demo-card-square9 > .mdl-card__title {
+	color: #fff;background: url('/media/new/trig.png') bottom right  no-repeat #283593;
+}
+.demo-card-square10 > .mdl-card__title {
+	color: #fff;background: url('/media/404.png') bottom right  no-repeat #283593;
+}
+.demo-card-wide.mdl-card {
+	width: 950px;
+}
+.widecard{
+	width:314px;
+	height:200px;
+	float:right;
+}
+#a,#b{
+	border-left: solid #DCDCDC;
+}
+#container {
+	margin: 20px;
+	width: 200px;
+	height: 200px;
+	position: relative;
+}
+#p1{
+	margin-bottom:10px;
+}
+.demo-list-icon {
+	width: 300px;
+}
