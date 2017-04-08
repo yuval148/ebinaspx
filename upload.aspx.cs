@@ -13,39 +13,36 @@ public partial class upload : System.Web.UI.Page
     {
         Session["ErrIsertForm"] = "";//משתנה שיציג הודעה ללקוח אם סיסמה או שם משתמש קיימים
 
-        string subject = "", tat = "", link = "", team = "", ctargil = "", ID; ; // חייב תיקון דחוף!
-        int xp;                                                                  // יגריל וייצור טבלאת תלמיד וישים תרגיגילים מהמאגר בנושא
+        string subject = "", answ = "", diff = "", pic = ""; // חייב תיקון דחוף!                                                                // יגריל וייצור טבלאת תלמיד וישים תרגיגילים מהמאגר בנושא
         bool iscomplete = false;
         if (Request.Form["submit"] != null)
         {
             subject = Request.Form["subject"];
-            tat = Request.Form["tat"];
-            link = Request.Form["link"];
-            team = Request.Form["team"];
-            ctargil = Request.Form["ctargil"];
-            xp = Int32.Parse(Request.Form["xp"]);
+            answ = Request.Form["answ"];
+            diff = Request.Form["diff"];
+            pic = Request.Form["pic"];
 
-            if (subject == "" || tat == "" || ctargil == "")
+            if (subject == "0" || answ == "" || diff == "0" || pic == "")
             {
                 Session["ErrIsertForm"] = "נתונים לא מולאו כשורה";
                 // Response.Redirect("form.aspx");
             }
             else
             {
-
+                //check if TAT3 IS EXIST, IF exixst 
                 string fileName = "db1.mdb";
                 string sql;
-                string sql2 = "select * from table1";
-                DataTable dt;
-                dt = MyAdoHelper.ExecuteDataTable(fileName, sql2);
+                string sql2 = "select * from users ";
+                DataTable dt1;
+                dt1 = MyAdoHelper.ExecuteDataTable(fileName, sql2);
                 int i = 0;
-                foreach (DataRow Row in dt.Rows)
+                foreach (DataRow Row in dt1.Rows)
                 {
 
-                    ID = dt.Rows[i]["ID"].ToString();
-                    sql = "insert into ID" + ID + "(subject, subjectID, tat, tatID, link, cou, ctargil, xp, iscomplete)values('" + subject + "','" + xpstuf.subjectID(subject) + "','" + tat + "','" +   "0"   + "','" + link + "','" + "0" + "','" + ctargil.ToString() + "'," + xp + "," + iscomplete + ")";
-                    MyAdoHelper.DoQuery(fileName, sql);
-                    i++;
+                    //ID = dt1.Rows[i]["ID"].ToString();
+                   //sql = "insert into ID" + ID + "(subject, subjectID, tat, tatID, link, cou, ctargil, xp, iscomplete)values('" + subject + "','" + xpstuf.subjectID(subject) + "','" + tat + "','" + "0" + "','" + link + "','" + "0" + "','" + ctargil.ToString() + "'," + xp + "," + iscomplete + ")";
+                    //MyAdoHelper.DoQuery(fileName, sql);
+                    //i++;
                 }
                 //sring MAAGARSQL = "CREATE TABLE TAT" + TAT + " (ID varchar(255), location varchar(255), answ varchar(255), diff varchar(255));";
                 //sring TALMIDMAAGARSQL = "CREATE TABLE TAT" + TAT + "-"+ID+" (ID varchar(255), location varchar(255), answ varchar(255), iscomplete bit);";
@@ -54,12 +51,13 @@ public partial class upload : System.Web.UI.Page
         }
         if (!IsPostBack)
         {
-            string[] filePaths = Directory.GetFiles(Server.MapPath("~/Images/"));
+            string path = "~/t/" + subject + "/";
+            string[] filePaths = Directory.GetFiles(Server.MapPath(path));
             List<ListItem> files = new List<ListItem>();
             foreach (string filePath in filePaths)
             {
                 string fileName = Path.GetFileName(filePath);
-                files.Add(new ListItem(fileName, "~/Images/" + fileName));
+                files.Add(new ListItem(fileName, path + fileName));
             }
             GridView1.DataSource = files;
             GridView1.DataBind();
@@ -75,5 +73,5 @@ public partial class upload : System.Web.UI.Page
         }
     }
 }
-       
-    
+
+

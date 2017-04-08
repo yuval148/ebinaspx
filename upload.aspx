@@ -58,40 +58,51 @@
 <asp:Label ID="Label1" runat="server" Text="" />
 
         </form>
-            <h1>התמונות נמצאות בImages </h1>
-    
     <div id="class_selection">
          <form name="f" id="f" method="post" onsubmit="return check();">
      
      <table align=center>
      <tr>
-     <td>subject  </td>
+     <td>נושא  </td>
       <td>
-         
+         <select id="subject" name="subject">
+             <option value="0">בחר נושא</option>
+           <option value="1">אנגלית</option>
+             <option value="2">מדעי המחשב</option>
+             <option value="3">מתמטיקה</option>
+            <option value="4">ערבית</option>
+             <option value="5">פיזיקה</option>
+             <option value="6">אזרחות</option>
+             <option value="7">היסטוריה</option>
+             <option value="8">לשון</option>
+             <option value="9">ספרות</option>
+              <option value="10">כימיה</option>
+             <option value="11">סוציולוגיה</option>
+                </select> 
                 </td>
       </tr>
        <tr>
-      <td>tat</td>
-      <td><input type="text" id="tat" name="tat" maxlength="145" size="15"/></td>
+      <td>תשובה</td>
+      <td><input type="text" id="tat" name="answ" maxlength="145" size="15"/></td>
        </tr>
-       <tr>
-       <td>link</td>
-       <td><input type="text" id="link" name="link"  maxlength="16" 
-               size="15" /></td>
-       </tr>
-        <tr>
-      <td>ctargil</td>
-      <td><input type="text" id="ctargil" name="ctargil" maxlength="16" size="15"/></td>
-       </tr>
-          <tr>
-      <td>xp</td>
-      <td><input type="text" id="xp" name="xp" maxlength="9" size="9"/></td>
-       </tr>
-         <td> <input type="submit" value="שלח" name="submit"/></td>  
+         <tr>
+       <td>זרגשת קושי</td>
+       <td><select id="diff" name="digg">
+             <option value="0">בחר דרגת קושי</option>
+             <option value="3">3 יחידות</option>
+            <option value="4">4 יחידות</option>
+           <option value="5">5 יחידות</option>
+           </select> 
+           </td>
+           </tr>
+         <tr>
+         <td> <input type="submit" value="שלח" name="submit" /></td>  
+             </tr>
     </table>
     </form>
     </div>
     <script type="text/javascript">
+        /*
         $(document).ready(function () {
             var newSelect = document.createElement('select');
             newSelect.id="subject";
@@ -107,6 +118,7 @@
 
 
         });
+        */
     </script>
 
     
