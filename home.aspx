@@ -104,7 +104,7 @@
                 </div>
                 <br />
                 <h2 style="font-family:'Heebo';font-weight:700;font-size:45px">נושאים</h2><hr />
-                <div class="w3-row" id="Data"></div>
+                <div class="w3-row" id="subDiv"></div>
                 <script src="js/handlebars-v4.0.5.js"></script>
                 <script id="sub-temp" type="text/x-handlebars-template">
                     {{#each sub}}
@@ -113,8 +113,16 @@
                             <h2 style="font-family:'Heebo';font-weight:300;font-size:35px">{{subject}}</h2>
                         </header>
                         <div class="w3-container">
-                            {{subjectID}}
+                            <br />
+                            <div class="c100 p{{master}} {{GetMasterPrecent master}}">
+                                <span>{{master}}%</span>
+                                <div class="slice">
+                                    <div class="bar"></div>
+                                    <div class="fill"></div>
+                                </div>
+                            </div>
                         </div>
+
                         <footer class="w3-container">
                            <a href="targil.aspx" class="w3-button">Link Button</a>
                          </footer>
@@ -122,10 +130,24 @@
                     {{/each}}
                 </script>
                 <script type="text/javascript">
-                    var subInfo = document.getElementById("sub-temp").innerHTML;
-                    var template = Handlebars.compile(subInfo);
-                    var data = template(<%=this.json%>);
-                    document.getElementById("Data").innerHTML += data;
+                    Handlebars.registerHelper('GetMasterPrecent', function(master) {
+                            if (master<25){
+                                return "red";
+                            }
+                            else if (master<50){
+                                return "orange";
+                            }
+                            else if (master<75){
+                                return "yellow";
+                            }
+                            else if (master>=75){
+                                return "green";
+                            }
+                        });
+                        var subInfo = document.getElementById("sub-temp").innerHTML;
+                        var template = Handlebars.compile(subInfo);
+                        var data = template(<%=this.json%>);
+                        document.getElementById("subDiv").innerHTML += data;
                 </script>                
         </div>
             <style>

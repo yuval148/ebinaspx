@@ -2,8 +2,9 @@
      width: 1200px;
      margin: 0 auto;
 }
-#Data{
+#subDiv{
     width:1000px;
+    margin-left:-25%;
 }
 body {
 	background: url("/media/bg5.jpg");

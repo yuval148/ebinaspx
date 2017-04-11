@@ -1063,6 +1063,13 @@
 .c100.orange.dark:hover > span {
   color: #e08833;
 }
+.c100.yellow .bar,
+.c100.yellow .fill {
+  border-color: #FDD835 !important;
+}
+.c100.yellow:hover > span {
+  color: #FDD835;
+}
 .c100.red .bar,
 .c100.red .fill {
   border-color: #e53935 !important;
@@ -1077,3 +1084,4 @@
 .c100.red.dark:hover > span {
   color: #d32f2f;
 }
+
