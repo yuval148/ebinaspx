@@ -2,108 +2,16 @@
 <%@ Import Namespace="System.Data" %>
 <%@ Import Namespace="System.Data.OleDb" %>
 <!--#include file="upper.aspx"-->
-
 <!doctype html>
 <html dir="rtl">
-    <head> 
-         <link rel="stylesheet" href="css/circle.css">
-        <meta name="theme-color" content="#3f51b5"/>
-        <title></title>
-        <style>
-           body {
-                background: url("/media/bg5.jpg");
-                background-size: 100%, 100%;
-                background-repeat: no-repeat;
-                
-            }
-            .sub{
-                width:300px;
-                height:300px;
-                display:none;
-                float: right;
-                margin: 10px 10px 10px 10px;
-            }
-            #pro {
-                width: 20%;
-                height: 550px;
-                margin: 10px 10px 10px 10px;
-                float:right;
-            }
-            .img-circle {
-                border-radius: 50%;
-                width:120px;
-                height:120px;
-                align-self:center;
-                margin-top:20px;
-                margin-bottom:50px;
-                
-            }
-            #pd{
-                text-align:center;
-            }
-            .demo-card-square1 > .mdl-card__title {
-                color: #fff;background: url('/media/404.png') bottom right  no-repeat #283593;
-            }
-            .demo-card-square2 > .mdl-card__title {
-                color: #fff;background: url('/media/new/para.png') bottom right  no-repeat #283593;
-            }
-            .demo-card-square3 > .mdl-card__title {
-                color: #fff;background: url('/media/new/algeb.png') bottom right  no-repeat #283593;
-            }
-            .demo-card-square4 > .mdl-card__title {
-                color: #fff;background: url('/media/404.png') bottom right  no-repeat #283593;
-            }
-            .demo-card-square5 > .mdl-card__title {
-                color: #fff;background: url('/media/404.png') bottom right  no-repeat #283593;
-            }
-            .demo-card-square6 > .mdl-card__title {
-                color: #fff;background: url('/media/404.png') bottom right  no-repeat #283593;
-            }
-            .demo-card-square7 > .mdl-card__title {
-                color: #fff;background: url('/media/404.png') bottom right  no-repeat #283593;
-            }
-            .demo-card-square8 > .mdl-card__title {
-                color: #fff;background: url('/media/404.png') bottom right  no-repeat #283593;
-            }
-            .demo-card-square9 > .mdl-card__title {
-                color: #fff;background: url('/media/new/trig.png') bottom right  no-repeat #283593;
-            }
-            .demo-card-square10 > .mdl-card__title {
-                color: #fff;background: url('/media/404.png') bottom right  no-repeat #283593;
-            }
-
-            .demo-card-wide.mdl-card {
-                width: 950px;
-            }
-            
-            .widecard{
-                width:314px;
-                height:200px;
-                float:right;
-            }
-            #a,#b{
-                border-left: solid #DCDCDC;
-            }
-            #container {
-  margin: 20px;
-  width: 200px;
-  height: 200px;
-  position: relative;
-}
-            #p1{
-                margin-bottom:10px;
-            }
-            .demo-list-icon {
-            width: 300px;
-            }
-
-</style>
-        
+    <head>
+        <title>תרגולית-בית</title>         
+        <link rel="stylesheet" href="css/circle.css">
+        <link href="css/home.css" rel="stylesheet" />
     </head>
     <body>
-        <main class="mdl-layout__content">
-            <div class="page-content">
-                <div class="left-pro" style="font-family:'Heebo'">
+            <div id="page-wrap">
+                <div id="left-pro" style="font-family:'Heebo'">
                     <div id="pro" class=" mdl-card mdl-shadow--2dp">
                         <img src="media/<%=Session["pic"]%>" class="img-circle">
                         <div id="pd">
@@ -196,22 +104,51 @@
                 </div>
                 <br />
                 <h2 style="font-family:'Heebo';font-weight:700;font-size:45px">נושאים</h2><hr />
-                        <!-- Square card -->
-            <div id="1" class="sub demo-card-square1 mdl-card mdl-shadow--2dp ">
-                <div class="mdl-card__title mdl-card--expand">
-                    <h2 class="mdl-card__title-text" style="font-family:'Heebo';font-weight:300;font-size:35px">אנגלית</h2>
-                </div>
-                <div class="mdl-card__supporting-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Aenan convallis.
-                </div>
-                <div class="mdl-card__actions mdl-card--border">
-                    <a class="mdl-button mdl-button--colored mdl-js-button">
-                        לתרגילים
-                    </a>
-                </div>
-            </div>
-                
+                <div class="w3-row" id="subDiv"></div>
+                <script src="js/handlebars-v4.0.5.js"></script>
+                <script id="sub-temp" type="text/x-handlebars-template">
+                    {{#each sub}}
+                    <div class="sub w3-card w3-quarter w3-white">
+                        <header class="w3-container">
+                            <h2 style="font-family:'Heebo';font-weight:300;font-size:35px">{{subject}}</h2>
+                        </header>
+                        <div class="w3-container">
+                            <br />
+                            <div class="c100 p{{master}} {{GetMasterPrecent master}}">
+                                <span>{{master}}%</span>
+                                <div class="slice">
+                                    <div class="bar"></div>
+                                    <div class="fill"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <footer class="w3-container">
+                           <a href="targil.aspx" class="w3-button">Link Button</a>
+                         </footer>
+                    </div>
+                    {{/each}}
+                </script>
+                <script type="text/javascript">
+                    Handlebars.registerHelper('GetMasterPrecent', function(master) {
+                            if (master<25){
+                                return "red";
+                            }
+                            else if (master<50){
+                                return "orange";
+                            }
+                            else if (master<75){
+                                return "yellow";
+                            }
+                            else if (master>=75){
+                                return "green";
+                            }
+                        });
+                        var subInfo = document.getElementById("sub-temp").innerHTML;
+                        var template = Handlebars.compile(subInfo);
+                        var data = template(<%=this.json%>);
+                        document.getElementById("subDiv").innerHTML += data;
+                </script>                
         </div>
             <style>
            .tank{
@@ -280,7 +217,6 @@
                 </div>             
 
             </div>
-  </main>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
         <script type="text/javascript">
             function cleanArray(actual) {
@@ -292,7 +228,7 @@
                 }
                 return newArray;
             }
-            var str = '<%=Session["sendr"]%>';
+            var str = (<%=this.json%>);
             var arr = [];
             for (var i = 0; i < str.length; i++) {
                 if (String(str).charAt(i) != "." && String(str).charAt(i + 1) != ".") {
