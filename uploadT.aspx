@@ -1,5 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="upload.aspx.cs" Inherits="upload" %>
-<!--#include file="upper.aspx"-->
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="uploadT.aspx.cs" Inherits="upload" %>
+<!--#include file="upperT.aspx"-->
 
 <html>
   <head>    
@@ -35,7 +35,7 @@
   <title>דף העלאה</title>
   <style>
         body {
-                background: url("/media/bg5.jpg");
+                background: url("/media/bfg5.jpg");
                 background-size: 100%, 100%;
                 background-repeat: no-repeat;
             }
@@ -43,25 +43,8 @@
   </head>
 <body style="font-family:Arial, Helvetica, Sans-Serif; text-align:center;">
     <form runat="server">
-    <asp:FileUpload ID="FileUpload1" runat="server" EnableViewState="false"/>
-<asp:Button ID="btnUpload" runat="server" Text="Upload"  
-           OnClientClick = "return ValidateFile()"  OnClick="Upload"  />
-
-<hr />
-
-<asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false" ShowHeader="false">
-    <Columns>
-        <asp:BoundField DataField="Text" />
-        <asp:ImageField DataImageUrlField="Value" ControlStyle-Height="100" ControlStyle-Width="100" />
-    </Columns>
-</asp:GridView>
-<asp:Label ID="Label1" runat="server" Text="" />
-
-        </form>
-    <div id="class_selection">
-         <form name="f" id="f" method="post" onsubmit="return check();">
-     
-     <table align=center>
+        <asp:FileUpload ID="FileUpload1" runat="server" EnableViewState="false"/>
+        <table align=center>
      <tr>
      <td>נושא  </td>
       <td>
@@ -87,7 +70,7 @@
        </tr>
          <tr>
        <td>זרגשת קושי</td>
-       <td><select id="diff" name="digg">
+       <td><select id="diff" name="diff">
              <option value="0">בחר דרגת קושי</option>
              <option value="3">3 יחידות</option>
             <option value="4">4 יחידות</option>
@@ -95,10 +78,16 @@
            </select> 
            </td>
            </tr>
-         <tr>
-         <td> <input type="submit" value="שלח" name="submit" /></td>  
-             </tr>
+
     </table>
+        <asp:Button ID="btnUpload" runat="server" Text="Upload"  
+           OnClientClick = "return ValidateFile()" type="submit" value="שלח" name="submit"  />
+        <hr />
+        <asp:Label ID="Label1" runat="server" Text="" />
+    </form>
+    <div id="class_selection">
+         <form name="f" id="f" method="post"> 
+     
     </form>
     </div>
     <script type="text/javascript">
@@ -121,6 +110,6 @@
         */
     </script>
 
-    
+    <%=Session["ErrIsertForm"] %>
 </body>
 </html>
