@@ -2,18 +2,18 @@
      width: 1200px;
      margin: 0 auto;
 }
-#subDiv{
-    width:1000px;
-    margin-left:-25%;
-}
 body {
 	background: url("/media/bg5.jpg");
 	background-size: 100%, 100%;
     background-repeat: no-repeat;
 	}
 .sub{
-	margin:2px;
+	margin:2px
 	}
+.c100{
+    float:none;
+    margin:auto;
+}
 #pro {
 	height: 550px;
 	}
@@ -80,4 +80,11 @@ body {
 }
 .demo-list-icon {
 	width: 300px;
+}
+@media screen and (max-width: 400px) {
+    .c100 {
+        float:right;
+        margin-right:5%;
+    }
+    
 }
