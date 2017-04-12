@@ -51,7 +51,7 @@
       <td><input type="text" id="numof" name="numof" maxlength="145" size="15"onkeypress='validate(event)'/></td>
        </tr>
          <tr>
-       <td>זרגשת קושי</td>
+       <td>דרגת קושי</td>
        <td><select id="diff" name="diff">
              <option value="0">בחר דרגת קושי</option>
              <option value="3">3 יחידות</option>
@@ -68,9 +68,12 @@
             var newSelect = document.createElement('select');
             newSelect.id="kita";
             var selectHTML = "";
-            var choices =["יא4","יב5","י7","ט00"] //להחליף במתשנים לא סטטים
+            var data = (<%=this.json%>);
+            var choices = $.map(data, function(el) { return el; })
             for (i = 0; i < choices.length; i = i + 1) {
-                selectHTML += "<option value='" + choices[i] + "'>" + choices[i] + "</option>";
+                var x = choices[i]["kita"];
+                alert(x);
+                selectHTML += "<option value='" + x + "'>" + x + "</option>";
             }
             selectHTML += "</select>";
 

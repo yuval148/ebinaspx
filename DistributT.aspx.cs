@@ -178,9 +178,8 @@ public partial class Distribut : System.Web.UI.Page
     public string Json(DataTable table)
     {
         {
-            string JSONString = string.Empty
-                ;
-            JSONString = Newtonsoft.Json.JsonConvert.SerializeObject(new { sub = table });
+            string JSONString = string.Empty;
+            JSONString = Newtonsoft.Json.JsonConvert.SerializeObject(new { Class=table });
             return JSONString;
         }
     }
