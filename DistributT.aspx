@@ -67,12 +67,12 @@
         $(document).ready(function () {
             var newSelect = document.createElement('select');
             newSelect.id="kita";
-            newSelect.name="kita";
             var selectHTML = "";
             var data = (<%=this.json%>);
             var choices = $.map(data, function(el) { return el; })
             for (i = 0; i < choices.length; i = i + 1) {
                 var x = choices[i]["kita"];
+                alert(x);
                 selectHTML += "<option value='" + x + "'>" + x + "</option>";
             }
             selectHTML += "</select>";

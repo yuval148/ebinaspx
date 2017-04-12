@@ -69,7 +69,7 @@
       <td><input type="text" id="tat" name="answ" maxlength="145" size="15"/></td>
        </tr>
          <tr>
-       <td>דרגשת קושי</td>
+       <td>זרגשת קושי</td>
        <td><select id="diff" name="diff">
              <option value="0">בחר דרגת קושי</option>
              <option value="3">3 יחידות</option>
