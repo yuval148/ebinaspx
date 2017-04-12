@@ -9,6 +9,7 @@ using System.IO;
 
 public partial class Distribut : System.Web.UI.Page
 {
+    public string json = "";
     protected void Page_Load(object sender, EventArgs e)
     {
         Session["ErrIsertForm"] = "";//משתנה שיציג הודעה ללקוח אם סיסמה או שם משתמש קיימים
@@ -20,6 +21,7 @@ public partial class Distribut : System.Web.UI.Page
         int numof;
         string sqlkita = "SELECT DISTINCT kita FROM users;";
         DataTable dtkita = MyAdoHelper.ExecuteDataTable("db1.mdb", sqlkita); //יונתן תציל אותי ותעביר לפרונט
+        json = Json(dtkita);
         if (Request.Form["submit"] != null)
         {
             subject = Request.Form["subject"];
@@ -173,7 +175,16 @@ public partial class Distribut : System.Web.UI.Page
         }
        
     }
-   
+    public string Json(DataTable table)
+    {
+        {
+            string JSONString = string.Empty
+                ;
+            JSONString = Newtonsoft.Json.JsonConvert.SerializeObject(new { sub = table });
+            return JSONString;
+        }
+    }
+
 }
 
 
