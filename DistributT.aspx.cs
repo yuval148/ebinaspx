@@ -17,7 +17,7 @@ public partial class Distribut : System.Web.UI.Page
         {
             Response.Redirect("loginT.aspx");
         }
-        string subject = "", diff = "", kita="";
+        string subject = "", diff = "", kita="", numof1;
         int numof;
         string sqlkita = "SELECT DISTINCT kita FROM users;";
         DataTable dtkita = MyAdoHelper.ExecuteDataTable("db1.mdb", sqlkita); //יונתן תציל אותי ותעביר לפרונט
@@ -25,15 +25,16 @@ public partial class Distribut : System.Web.UI.Page
         if (Request.Form["submit"] != null)
         {
             subject = Request.Form["subject"];
-            numof = int.Parse(Request.Form["numof"]);
+            numof1 = Request.Form["numof"];
             diff = Request.Form["diff"];
             kita= Request.Form["kita"];
-            if (subject == "0" || numof == 0 || diff == "0")
+            if (subject == "0" || numof1 == "" || numof1=="0" || diff == "0")
             {
                 Session["ErrIsertForm"] = "נתונים לא מולאו כשורה";
             }
             else
             {
+                numof = int.Parse(numof1);
                 string fileName7 = "db1.mdb";       //SQLSTUF START
                 string sql2 = "select * from users WHERE kita='"+kita+"';";
                 DataTable dt1;
