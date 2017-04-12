@@ -68,6 +68,25 @@ public class xpstuf
             default: return 0;
         }
     }
+    public static string IDsubject(string subject)
+    {
+        switch (subject)
+        {
+            case "0": return "מקצוע";
+            case "1": return "אנגלית";
+            case "2": return "מדעי המחשב";
+            case "3": return "מתמטיקה";
+            case "4": return "ערבית";
+            case "5": return "פיזיקה";
+            case "6": return "אזרחות";
+            case "7": return "היסטוריה";
+            case "8": return "לשון";
+            case "9": return "ספרות";
+            case "10": return "כימיה";
+            case "11": return "סוציולוגיה";
+            default: return "מקצוע";
+        }
+    }
     // DEFINE RETURN VALUES
 
     public enum TzStatus

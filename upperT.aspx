@@ -38,10 +38,9 @@
       <nav class="mdl-navigation mdl-layout--large-screen-only">
         <a class="mdl-navigation__link" href="homeT.aspx">בית</a>
         <a class="mdl-navigation__link" href="topsT.aspx">המובילים</a>
-        <a class="mdl-navigation__link" href="targilT.aspx">תרגיל</a>
+        <a class="mdl-navigation__link" href="DistributT.aspx">הפצת תרגילים</a>
         <a class="mdl-navigation__link" href="uploadT.aspx">העלאת תרגיל </a> 
         <a class="mdl-navigation__link" href="loginT.aspx">התחברות</a>
-        <a class="mdl-navigation__link" href="signupT.aspx">הרשמה</a>
       </nav>
     </div>
   </header>
@@ -50,10 +49,9 @@
     <nav class="mdl-navigation">
       <a class="mdl-navigation__link" href="homeT.aspx">בית</a>
         <a class="mdl-navigation__link" href="topsT.aspx">המובילים</a>
-        <a class="mdl-navigation__link" href="targilT.aspx">תרגיל</a>
+        <a class="mdl-navigation__link" href="DistributT.aspx">הפצת תרגילים</a>
         <a class="mdl-navigation__link" href="uploadT.aspx">העלאת תרגיל </a> 
         <a class="mdl-navigation__link" href="loginT.aspx">התחברות</a>
-        <a class="mdl-navigation__link" href="signupT.aspx">הרשמה</a>
     </nav>
   </div>
     </body>
