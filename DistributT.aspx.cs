@@ -36,100 +36,113 @@ public partial class Distribut : System.Web.UI.Page
             {
                 numof = int.Parse(numof1);
                 string fileName7 = "db1.mdb";       //SQLSTUF START
-                string sql2 = "select * from users WHERE kita='"+kita+"';";
+                string sql2 = "SELECT * FROM users WHERE kita='" + kita +"';";
                 DataTable dt1;
                 DataTable dtu;
                 DataTable dtat;
                 DataTable dtatu;
                 dt1 = MyAdoHelper.ExecuteDataTable(fileName7, sql2);//users
-                int i = 0,x,f,rand;
+                int i = 0,x,f,rand,b=0;
                 Random rnd = new Random();
-                string ID,sql1,sql3,sql4,sql5,sql6;
+                string ID,sql1,sql3,sql4,sql5,sql6,sql7;
                 string TALMIDMAAGARSQL;
                 bool found = false;
-                sql3 = "select * from TAT" + subject + " WHERE diff='" + diff + "';"; //מאגר
+                sql3 = "SELECT * FROM TAT" + subject + " WHERE diff='" + diff + "';"; //מאגר
                 dtat = MyAdoHelper.ExecuteDataTable(fileName7, sql3);
                 if (dtat.Rows.Count > 0)
                 {
                     foreach (DataRow Row in dt1.Rows)  /////////foreach////////////
                     {
                         ID = dt1.Rows[i][5].ToString();
-                        sql1 = "selcet * from ID" + ID + " WHERE subjectID='" + subject + "';";   //טבלה אישית
+                        sql1 = "SELECT * FROM ID" + ID + " WHERE subjectID='" + subject + "';";   //טבלה אישית
                         dtu = MyAdoHelper.ExecuteDataTable(fileName7, sql1);
-                        if (dtu.Rows[0][3].ToString() == diff) //אם כבר קיימת רשומה וטבלה והכל כיף
+                        if (dtu.Rows.Count > 0)
                         {
-                            if (dtat.Rows.Count <= numof)
+                            if (dtu.Rows[0][3].ToString() == diff) //אם כבר קיימת רשומה וטבלה והכל כיף
                             {
-                                //sendthemall
-                                sql5 = "select * from TAT" + subject + "_" + ID + ";";  //מאגר אישי
-                                dtatu = MyAdoHelper.ExecuteDataTable(fileName7, sql5);
-                                x = 0;
-                                f = 0;
-                                while (x < dtat.Rows.Count)//עבור כל תרגיל
+                                if (dtat.Rows.Count <= numof)
                                 {
-                                    while (f < dtatu.Rows.Count) //בדיקה האם התרגיל קיים עובר על כל המאגר האישי
-                                    {
-                                        if (dtat.Rows[x][0].ToString() == dtatu.Rows[f][0].ToString())
-                                        {
-                                            found = true;
-                                            break; //תפסיק את החיפוש
-                                        }
-                                        f++;
-                                    }
-                                    if (!found)
-                                    {
-                                        sql6 = "insert into TAT" + subject + "_" + ID + " (ID, location, answ, iscomplete)values('" + dtat.Rows[x][0].ToString() + "'," + dtat.Rows[x][1].ToString() + "','" + dtat.Rows[x][2].ToString() + "','0');";
-                                        MyAdoHelper.DoQuery(fileName7, sql6);
-                                    }
-                                    x++;
-                                }
-
-                            }
-                            else
-                            {
-                                //random
-                                sql5 = "select * from TAT" + subject + "_" + ID + ";";  //מאגר אישי
-                                dtatu = MyAdoHelper.ExecuteDataTable(fileName7, sql5);
-                                x = 0;
-                                f = 0;
-                                while (x < numof)//עבור כל תרגיל
-                                {
-                                    sql5 = "select * from TAT" + subject + "_" + ID + ";";  //מאגר אישי מעודכן למניעת כפילויות
+                                    //sendthemall
+                                    sql5 = "SELECT * FROM TAT" + subject + "_" + ID + ";";  //מאגר אישי
                                     dtatu = MyAdoHelper.ExecuteDataTable(fileName7, sql5);
-                                    rand = rnd.Next(0, numof);//אקראי, הגרלה
-                                    while (f < dtatu.Rows.Count) //בדיקה האם התרגיל קיים עובר על כל המאגר האישי
+                                    x = 0;
+                                    f = 0;
+                                    b = 0;
+                                    while (x < dtat.Rows.Count)//עבור כל תרגיל
                                     {
-                                        if (dtat.Rows[rand][0].ToString() == dtatu.Rows[f][0].ToString())
+                                        while (f < dtatu.Rows.Count) //בדיקה האם התרגיל קיים עובר על כל המאגר האישי
                                         {
-                                            rand = rnd.Next(0, numof); //אם נמצא, תרגיל חדש
-                                            f = 0;
+                                            if (dtat.Rows[x][0].ToString() == dtatu.Rows[f][0].ToString())
+                                            {
+                                                found = true;
+                                                break; //תפסיק את החיפוש
+                                            }
+                                            f++;
                                         }
-                                        f++;
+                                        if (!found)
+                                        {
+                                            b++;
+                                            sql6 = "INSERT INTO TAT" + subject + "_" + ID + " (ID, location, answ, iscomplete)values('" + dtat.Rows[x][0].ToString() + "'," + dtat.Rows[x][1].ToString() + "','" + dtat.Rows[x][2].ToString() + "','0');";
+                                            MyAdoHelper.DoQuery(fileName7, sql6);
+                                        }
+                                        x++;
                                     }
-                                    sql6 = "insert into TAT" + subject + "_" + ID + " (ID, location, answ, iscomplete)values('" + dtat.Rows[rand][0].ToString() + "'," + dtat.Rows[rand][1].ToString() + "','" + dtat.Rows[rand][2].ToString() + "','0');";
-                                    MyAdoHelper.DoQuery(fileName7, sql6);
-                                    x++;
+                                    b = b + int.Parse(dtu.Rows[0][2].ToString());
+                                    sql7 = "UPDATE ID" + ID + "SET ctargil='" + b.ToString() + "' WHERE subjectID='" + subject + "';";//הוספת התרגילים החדשים לסיתרגיל
+                                    MyAdoHelper.DoQuery(fileName7, sql7);
+
+                                }
+                                else
+                                {
+                                    //random
+                                    sql5 = "SELECT * FROM TAT" + subject + "_" + ID + ";";  //מאגר אישי
+                                    dtatu = MyAdoHelper.ExecuteDataTable(fileName7, sql5);
+                                    x = 0;
+                                    f = 0;
+                                    b = 0;
+                                    while (x < numof)//עבור כל תרגיל
+                                    {
+                                        sql5 = "SELECT * FROM TAT" + subject + "_" + ID + ";";  //מאגר אישי מעודכן למניעת כפילויות
+                                        dtatu = MyAdoHelper.ExecuteDataTable(fileName7, sql5);
+                                        rand = rnd.Next(0, numof);//אקראי, הגרלה
+                                        while (f < dtatu.Rows.Count) //בדיקה האם התרגיל קיים עובר על כל המאגר האישי
+                                        {
+                                            if (dtat.Rows[rand][0].ToString() == dtatu.Rows[f][0].ToString())
+                                            {
+                                                rand = rnd.Next(0, numof); //אם נמצא, תרגיל חדש
+                                                f = 0;
+                                            }
+                                            f++;
+                                        }
+                                        sql6 = "INSERT INTO TAT" + subject + "_" + ID + " (ID, location, answ, iscomplete)values('" + dtat.Rows[rand][0].ToString() + "','" + dtat.Rows[rand][1].ToString() + "','" + dtat.Rows[rand][2].ToString() + "','0');";
+                                        MyAdoHelper.DoQuery(fileName7, sql6);
+                                        b++;
+                                        x++;
+                                    }
+                                    b = b + int.Parse(dtu.Rows[0][2].ToString());
+                                    sql7 = "UPDATE ID" + ID + "SET ctargil='" + b.ToString() + "' WHERE subjectID='" + subject + "';";//הוספת התרגילים החדשים לסיתרגיל
+                                    MyAdoHelper.DoQuery(fileName7, sql7);
                                 }
                                 i++;
                             }
-                        }
-                        else if (dtu.Rows[0][3].ToString() != diff) //אם קיימת רשומה אבל ברמה שונה, נדלג.
-                        {
-                            i++;
+                            else if (dtu.Rows[0][3].ToString() != diff) //אם קיימת רשומה אבל ברמה שונה, נדלג.
+                            {
+                                i++;
+                            }
                         }
                         else //אם אין טבלה ורשומה, ניצור חדשה.
                         {
                             TALMIDMAAGARSQL = "CREATE TABLE TAT" + subject + "_" + ID + " (ID varchar(255), location varchar(255), answ varchar(255), iscomplete bit);";
                             MyAdoHelper.DoQuery(fileName7, TALMIDMAAGARSQL);//טבלה נוצרה
-                            Session["ErrIsertForm"] += "טבלה נוצרה";
                             if (dtat.Rows.Count <= numof)
                             {
-                                sql4 = "insert into ID" + ID + " (subject, subjectID, ctargil, diff, master)values('" + xpstuf.IDsubject(subject) + "','" + subject + "','" + dtat.Rows.Count.ToString() + "','" + diff + "','0';";
+                                sql4 = "INSERT INTO ID" + ID + " (subject, subjectID, ctargil, diff, master)values('" + xpstuf.IDsubject(subject) + "','" + subject + "','" + dtat.Rows.Count.ToString() + "','" + diff + "','0');";
+                                MyAdoHelper.DoQuery(fileName7, sql4);
                                 //sendthemall
                                 x = 0;
                                 while (x < dtat.Rows.Count)//עבור כל תרגיל
                                 {
-                                    sql6 = "insert into TAT" + subject + "_" + ID + " (ID, location, answ, iscomplete)values('" + dtat.Rows[x][0].ToString() + "','" + dtat.Rows[x][1].ToString() + "','" + dtat.Rows[x][2].ToString() + "','0');";
+                                    sql6 = "INSERT INTO TAT" + subject + "_" + ID + " (ID, location, answ, iscomplete)values('" + dtat.Rows[x][0].ToString() + "','" + dtat.Rows[x][1].ToString() + "','" + dtat.Rows[x][2].ToString() + "','0');";
                                     MyAdoHelper.DoQuery(fileName7, sql6);
                                     x++;
                                 }
@@ -137,15 +150,16 @@ public partial class Distribut : System.Web.UI.Page
                             else
                             {
                                 x = 0;
-                                sql4 = "insert into ID" + ID + " (subject, subjectID, ctargil, diff, master)values('" + xpstuf.IDsubject(subject) + "','" + subject + "','" + numof + "','" + diff + "','0';";
+                                sql4 = "INSERT INTO ID" + ID + " (subject, subjectID, ctargil, diff, master)values('" + xpstuf.IDsubject(subject) + "','" + subject + "','" + numof1 + "','" + diff + "','0');";
+                                MyAdoHelper.DoQuery(fileName7, sql4);
                                 //random
-                                sql5 = "select * from TAT" + subject + "_" + ID + ";";  //מאגר אישי
+                                sql5 = "SELECT * FROM TAT" + subject + "_" + ID + ";";  //מאגר אישי
                                 dtatu = MyAdoHelper.ExecuteDataTable(fileName7, sql5);
                                 x = 0;
                                 f = 0;
                                 while (x < numof)//עבור כל תרגיל
                                 {
-                                    sql5 = "select * from TAT" + subject + "_" + ID + ";";  //מאגר אישי מעודכן למניעת כפילויות
+                                    sql5 = "SELECT * FROM TAT" + subject + "_" + ID + ";";  //מאגר אישי מעודכן למניעת כפילויות
                                     dtatu = MyAdoHelper.ExecuteDataTable(fileName7, sql5);
                                     rand = rnd.Next(0, numof);//אקראי, הגרלה
                                     while (f < dtatu.Rows.Count) //בדיקה האם התרגיל קיים עובר על כל המאגר האישי
@@ -157,7 +171,7 @@ public partial class Distribut : System.Web.UI.Page
                                         }
                                         f++;
                                     }
-                                    sql6 = "insert into TAT" + subject + "_" + ID + " (ID, location, answ, iscomplete)values('" + dtat.Rows[rand][0].ToString() + "'," + dtat.Rows[rand][1].ToString() + "','" + dtat.Rows[rand][2].ToString() + "','0');";
+                                    sql6 = "INSERT INTO TAT" + subject + "_" + ID + "(ID, location, answ, iscomplete)values('" + dtat.Rows[rand][0].ToString() + "','" + dtat.Rows[rand][1].ToString() + "','" + dtat.Rows[rand][2].ToString() + "','0');";
                                     MyAdoHelper.DoQuery(fileName7, sql6);
                                     x++;
                                 }
@@ -166,6 +180,7 @@ public partial class Distribut : System.Web.UI.Page
                         }
 
                     }
+                    Session["ErrIsertForm"] = "הפעולה הושלמה בהצלחה!";
                 }
                 else
                 {
