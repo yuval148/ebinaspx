@@ -127,7 +127,7 @@ public partial class Distribut : System.Web.UI.Page
                                         x++;
                                     }
                                     b = b + int.Parse(dtu.Rows[0][2].ToString());
-                                    sql7 = "UPDATE ID" + ID + "SET ctargil='" + b.ToString() + "' WHERE subjectID='" + subject + "';";//הוספת התרגילים החדשים לסיתרגיל
+                                    sql7 = "UPDATE ID" + ID + " SET ctargil='" + b.ToString() + "' WHERE subjectID='" + subject + "';";//הוספת התרגילים החדשים לסיתרגיל
                                     MyAdoHelper.DoQuery(fileName7, sql7);
                                 }
                                 i++;
