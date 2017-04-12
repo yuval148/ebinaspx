@@ -13,11 +13,14 @@ public partial class Distribut : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         Session["ErrIsertForm"] = "";//משתנה שיציג הודעה ללקוח אם סיסמה או שם משתמש קיימים
+        DateTime today = DateTime.Today;
+        string datec = today.ToString("dd/MM/yyyy");
         if (Session["userNameT"] == null)
         {
             Response.Redirect("loginT.aspx");
         }
         string subject = "", diff = "", kita="", numof1;
+        string dd, mm, yyyy, exp;
         int numof;
         string sqlkita = "SELECT DISTINCT kita FROM users;";
         DataTable dtkita = MyAdoHelper.ExecuteDataTable("db1.mdb", sqlkita); //יונתן תציל אותי ותעביר לפרונט
@@ -28,6 +31,10 @@ public partial class Distribut : System.Web.UI.Page
             numof1 = Request.Form["numof"];
             diff = Request.Form["diff"];
             kita= Request.Form["kita"];
+            dd = Request.Form["dd"];
+            mm = Request.Form["mm"];
+            yyyy = Request.Form["yyyy"];
+            exp = dd + "/" + mm + "/" + yyyy;
             if (subject == "0" || numof1 == "" || numof1=="0" || diff == "0")
             {
                 Session["ErrIsertForm"] = "נתונים לא מולאו כשורה";
@@ -82,7 +89,7 @@ public partial class Distribut : System.Web.UI.Page
                                         if (!found)
                                         {
                                             b++;
-                                            sql6 = "INSERT INTO TAT" + subject + "_" + ID + " (ID, location, answ, iscomplete)values('" + dtat.Rows[x][0].ToString() + "'," + dtat.Rows[x][1].ToString() + "','" + dtat.Rows[x][2].ToString() + "','0');";
+                                            sql6 = "INSERT INTO TAT" + subject + "_" + ID + " (ID, location, answ, iscomplete, datec, exp)values('" + dtat.Rows[x][0].ToString() + "'," + dtat.Rows[x][1].ToString() + "','" + dtat.Rows[x][2].ToString() + "','0','"+datec+"','"+exp+"');";
                                             MyAdoHelper.DoQuery(fileName7, sql6);
                                         }
                                         x++;
@@ -114,7 +121,7 @@ public partial class Distribut : System.Web.UI.Page
                                             }
                                             f++;
                                         }
-                                        sql6 = "INSERT INTO TAT" + subject + "_" + ID + " (ID, location, answ, iscomplete)values('" + dtat.Rows[rand][0].ToString() + "','" + dtat.Rows[rand][1].ToString() + "','" + dtat.Rows[rand][2].ToString() + "','0');";
+                                        sql6 = "INSERT INTO TAT" + subject + "_" + ID + " (ID, location, answ, iscomplete, datec, exp)values('" + dtat.Rows[rand][0].ToString() + "','" + dtat.Rows[rand][1].ToString() + "','" + dtat.Rows[rand][2].ToString() + "','0','"+datec+"','"+exp+"');";
                                         MyAdoHelper.DoQuery(fileName7, sql6);
                                         b++;
                                         x++;
@@ -132,7 +139,7 @@ public partial class Distribut : System.Web.UI.Page
                         }
                         else //אם אין טבלה ורשומה, ניצור חדשה.
                         {
-                            TALMIDMAAGARSQL = "CREATE TABLE TAT" + subject + "_" + ID + " (ID varchar(255), location varchar(255), answ varchar(255), iscomplete bit);";
+                            TALMIDMAAGARSQL = "CREATE TABLE TAT" + subject + "_" + ID + " (ID varchar(255), location varchar(255), answ varchar(255), iscomplete bit, datec varchar(255), exp varchar(255));";
                             MyAdoHelper.DoQuery(fileName7, TALMIDMAAGARSQL);//טבלה נוצרה
                             if (dtat.Rows.Count <= numof)
                             {
@@ -142,7 +149,7 @@ public partial class Distribut : System.Web.UI.Page
                                 x = 0;
                                 while (x < dtat.Rows.Count)//עבור כל תרגיל
                                 {
-                                    sql6 = "INSERT INTO TAT" + subject + "_" + ID + " (ID, location, answ, iscomplete)values('" + dtat.Rows[x][0].ToString() + "','" + dtat.Rows[x][1].ToString() + "','" + dtat.Rows[x][2].ToString() + "','0');";
+                                    sql6 = "INSERT INTO TAT" + subject + "_" + ID + " (ID, location, answ, iscomplete, datec, exp)values('" + dtat.Rows[x][0].ToString() + "','" + dtat.Rows[x][1].ToString() + "','" + dtat.Rows[x][2].ToString() + "','0','"+datec+"','"+exp+"');";
                                     MyAdoHelper.DoQuery(fileName7, sql6);
                                     x++;
                                 }
@@ -171,7 +178,7 @@ public partial class Distribut : System.Web.UI.Page
                                         }
                                         f++;
                                     }
-                                    sql6 = "INSERT INTO TAT" + subject + "_" + ID + "(ID, location, answ, iscomplete)values('" + dtat.Rows[rand][0].ToString() + "','" + dtat.Rows[rand][1].ToString() + "','" + dtat.Rows[rand][2].ToString() + "','0');";
+                                    sql6 = "INSERT INTO TAT" + subject + "_" + ID + "(ID, location, answ, iscomplete, datec, exp)values('" + dtat.Rows[rand][0].ToString() + "','" + dtat.Rows[rand][1].ToString() + "','" + dtat.Rows[rand][2].ToString() + "','0','"+datec+"','"+exp+"');";
                                     MyAdoHelper.DoQuery(fileName7, sql6);
                                     x++;
                                 }

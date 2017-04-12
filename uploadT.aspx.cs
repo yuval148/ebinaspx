@@ -22,6 +22,7 @@ public partial class upload : System.Web.UI.Page
             subject = Request.Form["subject"];
             answ = Request.Form["answ"];
             diff = Request.Form["diff"];
+
             Session["ErrIsertForm"] = diff + " " + answ + " " + subject;
             path = "~/t/" + subject + "/";
 
@@ -74,23 +75,11 @@ public partial class upload : System.Web.UI.Page
                     string fileName = Path.GetFileName(FileUpload1.PostedFile.FileName);
                     string extension = Path.GetExtension(FileUpload1.PostedFile.FileName);
                     FileUpload1.SaveAs(uploadFolder + ID + extension);
-                    location = "t/" + ID + extension;
-                    sqldo = "insert into TAT" + subject + "(ID, location, answ, diff)values('" + ID + "','" + location + "','" + answ + "','" + diff + "');";
+                    location = "t/" +subject+"/" + ID + extension;
+                    sqldo = "insert into TAT" + subject + "(ID, location, answ, diff)values('" + ID + "','" + location + "','" + answ + "','" + diff +"');";
                     MyAdoHelper.DoQuery(fileName7, sqldo);
                     Response.Redirect(Request.Url.AbsoluteUri);
                 }
-
-                
-                //foreach (DataRow Row in dt1.Rows)
-                //{
-
-                    //ID = dt1.Rows[i]["ID"].ToString();
-                   //sql = "insert into ID" + ID + "(subject, subjectID, tat, tatID, link, cou, ctargil, xp, iscomplete)values('" + subject + "','" + xpstuf.subjectID(subject) + "','" + tat + "','" + "0" + "','" + link + "','" + "0" + "','" + ctargil.ToString() + "'," + xp + "," + iscomplete + ")";
-                    //MyAdoHelper.DoQuery(fileName, sql);
-                    //i++;
-                //}
-                //sring MAAGARSQL = "CREATE TABLE TAT" + TAT + " (ID varchar(255), location varchar(255), answ varchar(255), diff varchar(255));";
-                //sring TALMIDMAAGARSQL = "CREATE TABLE TAT" + TAT + "-"+ID+" (ID varchar(255), location varchar(255), answ varchar(255), iscomplete bit);";
             }
 
         }

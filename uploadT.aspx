@@ -78,37 +78,13 @@
            </select> 
            </td>
            </tr>
-
+     
     </table>
         <asp:Button ID="btnUpload" runat="server" Text="Upload"  
            OnClientClick = "return ValidateFile()" type="submit" value="שלח" name="submit"  />
         <hr />
         <asp:Label ID="Label1" runat="server" Text="" />
     </form>
-    <div id="class_selection">
-         <form name="f" id="f" method="post"> 
-     
-    </form>
-    </div>
-    <script type="text/javascript">
-        /*
-        $(document).ready(function () {
-            var newSelect = document.createElement('select');
-            newSelect.id="subject";
-            var selectHTML = "";
-            var choices =["יב4","יב3","יב2"] //להחליף במתשנים לא סטטים
-            for (i = 0; i < choices.length; i = i + 1) {
-                selectHTML += "<option value='" + choices[i] + "'>" + choices[i] + "</option>";
-            }
-            selectHTML += "</option>";
-
-            newSelect.innerHTML = selectHTML;
-            document.getElementById('class_selection').appendChild(newSelect);
-
-
-        });
-        */
-    </script>
 
     <%=Session["ErrIsertForm"] %>
 </body>
