@@ -26,22 +26,21 @@
     <br />
     <br /><!-- Textfield with Floating Label -->
 
-  <form id="myform1" method="post" dir="rtl">
+  <form id="myform1" runat="server" method="post" dir="rtl">
   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-    <input class="mdl-textfield__input" type="text" id="userName" name="userName">
+        <asp:TextBox class="mdl-textfield__input" id="username" name="userName" runat="server"></asp:TextBox><br />
     <label class="mdl-textfield__label" for="sample3">שם משתמש</label>
   </div>
       <br />
       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-    <input class="mdl-textfield__input" type="password"id="userPass" name="userPass" >
+       <asp:TextBox class="mdl-textfield__input" type="password" id="userpass" name="userPass"  TextMode="Password" runat="server"></asp:TextBox><br />
     <label class="mdl-textfield__label" for="sample3">סיסמה</label>
   </div>
       <br />
-     
-      <!-- Colored raised button -->
-<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" type="submit" id="loginbtn" name="submit">
-  היכנס
-</button>
+      זכור אותי
+      <asp:CheckBox ID="chkRememberMe" runat="server" /><br />
+   
+    <asp:Button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" OnClick="Login_Click" type="submit" id="loginbtn" name="submit" runat="server" Text="Login"  /></asp:TextBox>
       <br />
       <br />
        
