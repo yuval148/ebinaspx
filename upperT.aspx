@@ -4,6 +4,7 @@
     <head> 
         <!--mobile confg-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <!--handlebars-->
         <script src="js/main.js"></script>
         <script src="js/handlebars-v4.0.5.js"></script>

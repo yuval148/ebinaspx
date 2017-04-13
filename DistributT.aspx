@@ -25,12 +25,13 @@
               </script>
   </head>
 <body style="font-family:Arial, Helvetica, Sans-Serif; text-align:center;">
+    <h3 style="font-family:Heebo;">מערכת הפצת תרגילים</h3>
     <form method="post">
         <table align=center>
      <tr>
      <td>נושא  </td>
       <td>
-         <select id="subject" name="subject">
+         <select id="subject" name="subject" class="w3-select">
              <option value="0">בחר נושא</option>
            <option value="1">אנגלית</option>
              <option value="2">מדעי המחשב</option>
@@ -48,11 +49,11 @@
       </tr>
        <tr>
       <td>מספר התרגילים למשיכה</td>
-      <td><input type="text" id="numof" name="numof" maxlength="145" size="15"onkeypress='validate(event)'/></td>
+      <td><input type="text" id="numof" name="numof" class="w3-input" maxlength="145" size="15"onkeypress='validate(event)'/></td>
        </tr>
          <tr>
        <td>דרגת קושי</td>
-       <td><select id="diff" name="diff">
+       <td><select id="diff" name="diff" class="w3-select">
              <option value="0">בחר דרגת קושי</option>
              <option value="3">3 יחידות</option>
             <option value="4">4 יחידות</option>
@@ -61,8 +62,34 @@
            </td>
            </tr>
                      <tr>
+                         
        <td>תאריך תפוגה</td>
-       <td><select id="dd" name="dd">
+                         <td class="w3-third"><select id="yyyy" name="yyyy" class="w3-select">
+               <option value="0">שנה</option>
+               <option>2017</option>       
+               <option>2018</option> 
+               <option>2019</option>       
+               <option>2020</option>
+               <option>2021</option>       
+               <option>2022</option>  
+               </select>
+       
+           <td class="w3-third"><select id="mm" name="mm" class="w3-select">
+               <option value="0">חודש</option>
+                <option>1</option>       
+            <option>2</option>       
+            <option>3</option>       
+            <option>4</option>       
+            <option>5</option>       
+            <option>6</option>       
+            <option>7</option>       
+            <option>8</option>       
+            <option>9</option>       
+            <option>10</option>       
+            <option>11</option>       
+            <option>12</option>  
+               </select></td>
+                             <td class="w3-third"><select id="dd" name="dd" class="w3-select">
             <option value="0">יום</option>
             <option>1</option>       
             <option>2</option>       
@@ -95,31 +122,8 @@
             <option>29</option>       
             <option>30</option>       
             <option>31</option>   
-                   </select> 
-           <select id="mm" name="mm">
-               <option value="0">חודש</option>
-                <option>1</option>       
-            <option>2</option>       
-            <option>3</option>       
-            <option>4</option>       
-            <option>5</option>       
-            <option>6</option>       
-            <option>7</option>       
-            <option>8</option>       
-            <option>9</option>       
-            <option>10</option>       
-            <option>11</option>       
-            <option>12</option>  
-               </select>
-           <select id="yyyy" name="yyyy">
-               <option value="0">שנה</option>
-               <option>2017</option>       
-               <option>2018</option> 
-               <option>2019</option>       
-               <option>2020</option>
-               <option>2021</option>       
-               <option>2022</option>  
-               </select>
+                   </select></td> 
+           
 
            </td>
            </tr>
@@ -132,6 +136,7 @@
             var newSelect = document.createElement('select');
             newSelect.id="kita";
             newSelect.name="kita";
+            newSelect.className="w3-select"
             var selectHTML = "";
             var data = (<%=this.json%>);
             var choices = $.map(data, function(el) { return el; })
@@ -150,12 +155,13 @@
     </script>
                     <div id="class_selection">
     </div>
-                    </td></tr><tr>
-            <td> <input type="submit" value="שלח" name="submit"/></td>  </tr>
+                    </td></tr>
     </table>
+        <br />
+        <input type="submit" value="שלח" name="submit"/>
     </form>
     
-  
+  <br />
 
     <%=Session["ErrIsertForm"] %>
 </body>

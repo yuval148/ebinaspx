@@ -42,13 +42,15 @@
     </style>
   </head>
 <body style="font-family:Arial, Helvetica, Sans-Serif; text-align:center;">
+
+    <h3 style="font-family:Heebo;">מערכת העלאת תרגיל</h3>
     <form runat="server">
-        <asp:FileUpload ID="FileUpload1" runat="server" EnableViewState="false"/>
         <table align=center>
+            <tr><td></td><td>        <asp:FileUpload ID="FileUpload1" runat="server" EnableViewState="false"/></td></tr>
      <tr>
      <td>נושא  </td>
       <td>
-         <select id="subject" name="subject">
+         <select id="subject" name="subject" class="w3-select">
              <option value="0">בחר נושא</option>
            <option value="1">אנגלית</option>
              <option value="2">מדעי המחשב</option>
@@ -66,11 +68,11 @@
       </tr>
        <tr>
       <td>תשובה</td>
-      <td><input type="text" id="tat" name="answ" maxlength="145" size="15"/></td>
+      <td><input type="text" id="tat" name="answ"  class="w3-input" maxlength="255" size="15"/></td>
        </tr>
          <tr>
        <td>דרגשת קושי</td>
-       <td><select id="diff" name="diff">
+       <td><select id="diff" name="diff" class="w3-select">
              <option value="0">בחר דרגת קושי</option>
              <option value="3">3 יחידות</option>
             <option value="4">4 יחידות</option>
@@ -80,12 +82,13 @@
            </tr>
      
     </table>
-        <asp:Button ID="btnUpload" runat="server" Text="Upload"  
+        <br />
+        <asp:Button ID="btnUpload" runat="server" Text="העלה"  
            OnClientClick = "return ValidateFile()" type="submit" value="שלח" name="submit"  />
-        <hr />
+
         <asp:Label ID="Label1" runat="server" Text="" />
     </form>
-
+    <br />
     <%=Session["ErrIsertForm"] %>
 </body>
 </html>
