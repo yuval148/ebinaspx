@@ -77,6 +77,7 @@ public partial class Distribut : System.Web.UI.Page
                                     b = 0;
                                     while (x < dtat.Rows.Count)//עבור כל תרגיל
                                     {
+                                        found = false;
                                         while (f < dtatu.Rows.Count) //בדיקה האם התרגיל קיים עובר על כל המאגר האישי
                                         {
                                             if (dtat.Rows[x][0].ToString() == dtatu.Rows[f][0].ToString())
@@ -89,13 +90,13 @@ public partial class Distribut : System.Web.UI.Page
                                         if (!found)
                                         {
                                             b++;
-                                            sql6 = "INSERT INTO TAT" + subject + "_" + ID + " (ID, location, answ, iscomplete, datec, exp)values('" + dtat.Rows[x][0].ToString() + "'," + dtat.Rows[x][1].ToString() + "','" + dtat.Rows[x][2].ToString() + "','0','"+datec+"','"+exp+"');";
+                                            sql6 = "INSERT INTO TAT" + subject + "_" + ID + " (ID, location, answ, iscomplete, datec, exp)values('" + dtat.Rows[x][0].ToString() + "','" + dtat.Rows[x][1].ToString() + "','" + dtat.Rows[x][2].ToString() + "','0','"+datec+"','"+exp+"');";
                                             MyAdoHelper.DoQuery(fileName7, sql6);
                                         }
                                         x++;
                                     }
                                     b = b + int.Parse(dtu.Rows[0][2].ToString());
-                                    sql7 = "UPDATE ID" + ID + "SET ctargil='" + b.ToString() + "' WHERE subjectID='" + subject + "';";//הוספת התרגילים החדשים לסיתרגיל
+                                    sql7 = "UPDATE ID" + ID + " SET ctargil='" + b.ToString() + "' WHERE subjectID='" + subject + "';";//הוספת התרגילים החדשים לסיתרגיל
                                     MyAdoHelper.DoQuery(fileName7, sql7);
 
                                 }
