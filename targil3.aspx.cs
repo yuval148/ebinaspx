@@ -46,7 +46,7 @@ public partial class targil3 : System.Web.UI.Page
         //לעדכן בטבלה אישית ++ 
         //לבדוק שהיה אפס קודם
         string sql1 = "SELECT * FROM ID" + ID +" WHERE subjectID='3';";  //עדכון טבלה אישית מרכזית
-        string sql2 = "SELECT * FROM TAT3_" + ID + "WHERE ID='" + tatID + "';"; //בדיקה האם התרגיל כבר בוצע
+        string sql2 = "SELECT * FROM TAT3_" + ID + " WHERE ID='" + tatID + "';"; //בדיקה האם התרגיל כבר בוצע
         
         dtID = MyAdoHelper.ExecuteDataTable(fileName, sql1);
         dtat = MyAdoHelper.ExecuteDataTable(fileName, sql2);
