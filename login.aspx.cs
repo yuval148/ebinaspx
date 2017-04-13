@@ -12,15 +12,6 @@ public partial class login : System.Web.UI.Page
     public int opc;
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (!IsPostBack)
-        {
-            if (Request.Cookies["UserName"] != null && Request.Cookies["Password"] != null)// בודק אם יש עוגיות בצנצנת
-            {
-                username.Text = Request.Cookies["UserName"].Value; // גונב עוגיית name 
-                userpass.Attributes["value"] = Request.Cookies["Password"].Value;// גונב עוגיית pass
-            }
-        }
-
         Session["userName"] = null;
         string tableName = "users";//שם הטבלה
         string userName, userPass, name, team;
@@ -28,6 +19,8 @@ public partial class login : System.Web.UI.Page
         int level = 0;
         opc = 0;
   
+        
+        
         userName = Request.Form["userName"];
         userPass = Request.Form["userPass"];
         if (Request.Form["userName"] == "" || Request.Form["userPass"] == "")
@@ -95,23 +88,6 @@ public partial class login : System.Web.UI.Page
             }
         }
         }
-    protected void Login_Click(object sender, EventArgs e)
-    {
-        if (chkRememberMe.Checked)
-        {
-            Response.Cookies["UserName"].Expires = DateTime.Now.AddDays(30);//משאיר עוגיות ל30 יום
-            Response.Cookies["Password"].Expires = DateTime.Now.AddDays(30);
-        }
-        else
-        {
-            Response.Cookies["UserName"].Expires = DateTime.Now.AddDays(-1);// מוחק עוגייה
-            Response.Cookies["Password"].Expires = DateTime.Now.AddDays(-1);
-
-        }
-        Response.Cookies["UserName"].Value = username.Text.Trim();
-        Response.Cookies["Password"].Value = userpass.Text.Trim();
     }
-
-}
 
 
