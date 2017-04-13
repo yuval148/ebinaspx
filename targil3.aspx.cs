@@ -52,7 +52,8 @@ public partial class targil3 : System.Web.UI.Page
         dtat = MyAdoHelper.ExecuteDataTable(fileName, sql2);
         int cou = int.Parse(dtID.Rows[0][4].ToString());
         cou++;
-        if (int.Parse(dtat.Rows[0][3].ToString()) == 0)
+        bool iff = Convert.ToBoolean(dtat.Rows[0][3].ToString());
+        if (!iff)
             {
             string sql = "UPDATE " + tableName + " SET iscomplete='1' WHERE ID='" + tatID + "';";
             MyAdoHelper.DoQuery(fileName, sql);
