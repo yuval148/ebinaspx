@@ -11,7 +11,7 @@ using System.Web.Services;
 
 
 
-public partial class targil : System.Web.UI.Page
+public partial class targil3 : System.Web.UI.Page
 {
     public string json = "";
     protected void Page_Load(object sender, EventArgs e)

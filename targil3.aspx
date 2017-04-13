@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="targil3.aspx.cs" Inherits="targil" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="targil3.aspx.cs" Inherits="targil3" %>
 <%@ Import Namespace="System.Data" %>
 <%@ Import Namespace="System.Data.OleDb" %>
 <%@ Import Namespace="Newtonsoft" %>
@@ -173,7 +173,7 @@
                    var text = "תשובה נכונה, כל הכבוד!";
                    $.ajax({
                     type: "POST",
-                    url: "targil.aspx/change",
+                    url: "targil3.aspx/change",
                     data:'{"tatID":'+id+',"ID":'+<%=Session["ID"]%>+' }',
                     contentType: "application/json; charset=utf-8",
                     success: function() {
