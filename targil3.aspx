@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="targil.aspx.cs" Inherits="targil" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="targil3.aspx.cs" Inherits="targil" %>
 <%@ Import Namespace="System.Data" %>
 <%@ Import Namespace="System.Data.OleDb" %>
 <%@ Import Namespace="Newtonsoft" %>

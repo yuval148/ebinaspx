@@ -42,8 +42,23 @@ public partial class targil : System.Web.UI.Page
     {
         string tableName = "TAT" + "3_" + ID;
         string fileName = "db1.mdb";
-        string sql = "UPDATE " + tableName + " SET iscomplete='1' WHERE ID='" + tatID + "';";
-        MyAdoHelper.DoQuery(fileName, sql);
+        DataTable dtID, dtat;
+        //לעדכן בטבלה אישית ++ 
+        //לבדוק שהיה אפס קודם
+        string sql1 = "SELECT * FROM ID" + ID +" WHERE subjectID='3';";  //עדכון טבלה אישית מרכזית
+        string sql2 = "SELECT * FROM TAT3_" + ID + "WHERE ID='" + tatID + "';"; //בדיקה האם התרגיל כבר בוצע
+        
+        dtID = MyAdoHelper.ExecuteDataTable(fileName, sql1);
+        dtat = MyAdoHelper.ExecuteDataTable(fileName, sql2);
+        int cou = int.Parse(dtID.Rows[0][4].ToString());
+        cou++;
+        if (int.Parse(dtat.Rows[0][3].ToString()) == 0)
+            {
+            string sql = "UPDATE " + tableName + " SET iscomplete='1' WHERE ID='" + tatID + "';";
+            MyAdoHelper.DoQuery(fileName, sql);
+            string sql3 = "UPDATE ID" + ID + " SET cou='" +cou +"' WHERE subjectID='3';";
+            MyAdoHelper.DoQuery(fileName, sql3);
+            }
     }
     [System.Web.Services.WebMethod]
     public static string Fuck(string name)

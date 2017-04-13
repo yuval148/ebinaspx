@@ -18,7 +18,17 @@ public partial class home : System.Web.UI.Page
         {
             Response.Redirect("login.aspx");
         }
+        //חישוב XP TODO
+        //חיבור כל הCOU
+        //ללא עמודת XPP בטבלה USERS
 
+        //חישוב שליטה בחומר
+        //COU
+        //לחלק
+        //בCTARGIL
+        // *100
+
+        //TODO!
         double prog = 50;
         int level = Int32.Parse(Session["level"].ToString());
         double curxp = Double.Parse(Session["xpp"].ToString()) - 250;
@@ -50,6 +60,7 @@ public partial class home : System.Web.UI.Page
             }
             sendr=sendr.Remove(sendr.Length - 1);
             json = Json(dt2);
+            
 
 
     }

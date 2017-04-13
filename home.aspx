@@ -114,8 +114,8 @@
                         </header>
                         <div class="w3-container">
                             <br />
-                            <div class="c100 p{{master}} {{GetMasterPrecent master}}">
-                                <span>{{master}}%</span>
+                            <div class="c100 p{{cou}} {{GetMasterPrecent cou}}"> <!-- צריך לחלק פה סאיו בסיתרגיל! !-->
+                                <span>{{cou}}%</span>
                                 <div class="slice">
                                     <div class="bar"></div>
                                     <div class="fill"></div>
@@ -124,7 +124,7 @@
                         </div>
 
                         <footer class="w3-container">
-                           <a href="targil.aspx" class="w3-button">Link Button</a>
+                           <a href="targil3.aspx" class="w3-button">Link Button</a>
                          </footer>
                     </div>
                     {{/each}}

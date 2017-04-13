@@ -143,7 +143,7 @@ public partial class Distribut : System.Web.UI.Page
                             MyAdoHelper.DoQuery(fileName7, TALMIDMAAGARSQL);//טבלה נוצרה
                             if (dtat.Rows.Count <= numof)
                             {
-                                sql4 = "INSERT INTO ID" + ID + " (subject, subjectID, ctargil, diff, master)values('" + xpstuf.IDsubject(subject) + "','" + subject + "','" + dtat.Rows.Count.ToString() + "','" + diff + "','0');";
+                                sql4 = "INSERT INTO ID" + ID + " (subject, subjectID, ctargil, diff, cou)values('" + xpstuf.IDsubject(subject) + "','" + subject + "','" + dtat.Rows.Count.ToString() + "','" + diff + "','0');";
                                 MyAdoHelper.DoQuery(fileName7, sql4);
                                 //sendthemall
                                 x = 0;
@@ -157,7 +157,7 @@ public partial class Distribut : System.Web.UI.Page
                             else
                             {
                                 x = 0;
-                                sql4 = "INSERT INTO ID" + ID + " (subject, subjectID, ctargil, diff, master)values('" + xpstuf.IDsubject(subject) + "','" + subject + "','" + numof1 + "','" + diff + "','0');";
+                                sql4 = "INSERT INTO ID" + ID + " (subject, subjectID, ctargil, diff, cou)values('" + xpstuf.IDsubject(subject) + "','" + subject + "','" + numof1 + "','" + diff + "','0');";
                                 MyAdoHelper.DoQuery(fileName7, sql4);
                                 //random
                                 sql5 = "SELECT * FROM TAT" + subject + "_" + ID + ";";  //מאגר אישי
