@@ -168,13 +168,13 @@ public partial class Distribut : System.Web.UI.Page
                                 {
                                     sql5 = "SELECT * FROM TAT" + subject + "_" + ID + ";";  //מאגר אישי מעודכן למניעת כפילויות
                                     dtatu = MyAdoHelper.ExecuteDataTable(fileName7, sql5);
-                                    rand = rnd.Next(0, numof);//אקראי, הגרלה
+                                    rand = rnd.Next(0, dtat.Rows.Count);//אקראי, הגרלה
                                     while (f < dtatu.Rows.Count) //בדיקה האם התרגיל קיים עובר על כל המאגר האישי
                                     {
                                         if (dtat.Rows[rand][0].ToString() == dtatu.Rows[f][0].ToString())
                                         {
-                                            rand = rnd.Next(0, numof); //אם נמצא, תרגיל חדש
-                                            f = 0;
+                                            rand = rnd.Next(0, dtat.Rows.Count); //אם נמצא, תרגיל חדש
+                                            f = -1;
                                         }
                                         f++;
                                     }
