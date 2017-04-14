@@ -69,12 +69,11 @@
                 <script src="js/handlebars-v4.0.5.js"></script>
                 <script id="sub-temp" type="text/x-handlebars-template">
                     {{#each sub}}
-                    <div class="sub w3-quarter w3-card w3-container w3-cell w3-center w3-mobile w3-white" style="border-top:solid {{GetMasterColor (GetMasterPrecent cou ctargil)}} 7.5px">
-                        <header class="w3-container  w3-center">
-                            <h2 style="font-family:'Heebo';font-weight:300;font-size:35px">{{subject}}</h2>
+                    <div class="sub w3-quarter w3-card w3-container w3-cell w3-center w3-mobile w3-white" style="background-size:100% 100%;background-image: url(../media/new/{{subjectID}}.png);border-top:solid {{GetMasterColor (GetMasterPrecent cou ctargil)}} 7.5px">
+                        <header class="w3-container w3-center">
+                            <h2 style="font-family:'Heebo';font-weight:300;font-size:35px;color:white">{{subject}}</h2>
                         </header>
-                        <div class="w3-container  w3-center">
-                            <br />
+                        <div class="w3-container w3-center">                            
                             <div class="c100 small p{{GetMasterPrecent cou ctargil}} {{GetMasterColor (GetMasterPrecent cou ctargil)}} center"> <!-- צריך לחלק פה סאיו בסיתרגיל! !-->
                                 <span>{{GetMasterPrecent cou ctargil}}%</span>
                                 <div class="slice">
@@ -84,7 +83,7 @@
                             </div>
                         </div>
                         <footer class="w3-container w3-center">
-                           <a href="targil3.aspx" class="w3-button">Link Button</a>
+                           <a href="targil3.aspx" style="color:white" class="w3-button">Link Button</a>
                          </footer>
                     </div>
                     {{/each}}
