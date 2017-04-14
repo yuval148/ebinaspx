@@ -13,7 +13,7 @@ body {
     width:24%;
 	}
 #subs{
-    margin-top:-30%;
+    margin-top:-25%;
 }
 #welcome{
     width:74%;
@@ -48,6 +48,12 @@ body {
 .demo-list-icon {
 	width: 300px;
 }
+.subH{
+     font-family:'Heebo';
+     font-weight:300;
+     color:white;
+     font-size:2.1vw;
+}
 @media screen and (max-width: 480px) {
     .c100{
         float: right;
@@ -67,6 +73,9 @@ body {
     }
     .sub{
         margin-bottom:10px;
+    }
+    .subH{
+        font-size:35px;
     }
 }
 @media screen and (max-width: 1280px) {

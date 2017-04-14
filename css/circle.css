@@ -282,7 +282,30 @@
   display: block;
   content: " ";
   border-radius: 50%;
-  background-color: #f5f5f5;
+  background-color: #3b4caf;
+  width: 0.84em;
+  height: 0.84em;
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 0.2s;
+  -moz-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  -webkit-transition-timing-function: ease-in;
+  -moz-transition-timing-function: ease-in;
+  -o-transition-timing-function: ease-in;
+  transition-timing-function: ease-in;
+}
+.c100:after {
+  position: absolute;
+  top: 0.08em;
+  left: 0.08em;
+  display: block;
+  content: " ";
+  border-radius: 50%;
+  background-color: #3b4caf;
   width: 0.84em;
   height: 0.84em;
   -webkit-transition-property: all;
@@ -1042,6 +1065,7 @@
 .c100.green:hover > span {
   color: #4db53c;
 }
+
 .c100.green.dark .bar,
 .c100.green.dark .fill {
   border-color: #5fd400 !important;
@@ -1051,10 +1075,10 @@
 }
 .c100.orange .bar,
 .c100.orange .fill {
-  border-color: #dd9d22 !important;
+  border-color: #ff6d00 !important;
 }
 .c100.orange:hover > span {
-  color: #dd9d22;
+  color: #ff6d00;
 }
 .c100.orange.dark .bar,
 .c100.orange.dark .fill {
@@ -1065,10 +1089,10 @@
 }
 .c100.yellow .bar,
 .c100.yellow .fill {
-  border-color: #FDD835 !important;
+  border-color: #fbc02d !important;
 }
 .c100.yellow:hover > span {
-  color: #FDD835;
+  color: #fbc02d;
 }
 .c100.red .bar,
 .c100.red .fill {
