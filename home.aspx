@@ -10,7 +10,7 @@
         <link href="css/home.css" rel="stylesheet" />
     </head>
     <body>
-        <div class="w3-row w3-mobile" id="page-wrap"><!-- נותן מסגרת לאתר, !-->
+        <div class="w3-row w3-mobile" id="page-wrap"><!-- נותן מסגרת לאתר !-->
             <div id="welcome" class="w3-container w3-row w3-mobile w3-white w3-card w3-cell w3-quarter">              
                 <div id="c" class="w3-third w3-center">    
                     <header class="w3-container">
@@ -61,18 +61,22 @@
                         </footer>        
                     </div>     
                 </div>             
-                <div id="pro-div" style="font-family:'Heebo'">
-                       
-                </div> 
+                <div id="pro-div" style="font-family:'Heebo'"></div> 
                 <br />
                 
                 <br />
+            <!--מכאן!-->
+            <div id="subs" class="w3-container w3-mobile w3-threequarter">
                 <h2 style="font-family:'Heebo';font-weight:700;font-size:45px">נושאים</h2><hr />
                 <div class="w3-cell-row" id="sub-div"></div>
+            </div>
+               
+                        <!--מכאן!-->
+
                 <script src="js/handlebars-v4.0.5.js"></script>
                 <script id="sub-temp" type="text/x-handlebars-template">
                     {{#each sub}}
-                    <div class="sub w3-quarter w3-card w3-container w3-cell w3-center w3-mobile w3-white">
+                    <div class="sub w3-quarter w3-card w3-container w3-cell w3-center w3-mobile w3-white" style="border-top:solid {{GetMasterColor (GetMasterPrecent cou ctargil)}} 7.5px">
                         <header class="w3-container  w3-center">
                             <h2 style="font-family:'Heebo';font-weight:300;font-size:35px">{{subject}}</h2>
                         </header>
@@ -99,9 +103,9 @@
                         <div>
                             <span style="font-size:20px; font-weight:bold"> {{name}} </span><hr /><br>
                             <span style="font-size:20px; line-height:70%" >קבוצת  {{team}} </span><hr /> <br>
-                            <div class="w3-light-grey w3-round">
-                                <div class="w3-container w3-round w3-indigo" style="width:25%">25%</div>
-                            </div>                                
+                            <div class="w3-light-grey w3-round-xlarge">
+                                <div class="w3-container w3-indigo w3-round-xlarge" style="width:25%">25%</div>
+                            </div><br />                                
                             <span style="font-size:20px;line-height:20%"> {{xpp}} נקודות</span><hr /> <br>
                             <span style="font-size:20px; line-height:80%" >שלב  <span class="mdl-badge" data-badge="{{GetLevel xpp}}"></span> </span><hr /> <br>
                             <span style="font-size:20px; line-height:80%" >{{kita}}<br><br></span>

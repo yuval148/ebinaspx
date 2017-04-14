@@ -46,7 +46,10 @@
     <h3 style="font-family:Heebo;">מערכת העלאת תרגיל</h3>
     <form runat="server">
         <table align=center>
-            <tr><td></td><td>        <asp:FileUpload ID="FileUpload1" runat="server" EnableViewState="false"/></td></tr>
+            <tr>
+                <td></td>
+                <td><asp:FileUpload ID="FileUpload1" runat="server" EnableViewState="false" /></td>
+            </tr>
      <tr>
      <td>נושא  </td>
       <td>
@@ -84,7 +87,7 @@
     </table>
         <br />
         <asp:Button ID="btnUpload" runat="server" Text="העלה"  
-           OnClientClick = "return ValidateFile()" type="submit" value="שלח" name="submit"  />
+           OnClientClick = "return ValidateFile()" class="w3-button w3-red" type="submit" value="שלח" name="submit"  />
 
         <asp:Label ID="Label1" runat="server" Text="" />
     </form>

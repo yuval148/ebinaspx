@@ -158,7 +158,7 @@
                     </td></tr>
     </table>
         <br />
-        <input type="submit" value="שלח" name="submit"/>
+        <input class="w3-button w3-red" type="submit" value="שלח" name="submit"/>
     </form>
     
   <br />

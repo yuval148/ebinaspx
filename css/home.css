@@ -1,5 +1,5 @@
 #page-wrap {
-     width: 1200px;
+     width:80%;
      margin: 0 auto;
      margin-top:10px;
 }
@@ -12,10 +12,14 @@ body {
 	margin:2px;
     width:24%;
 	}
+#subs{
+    margin-top:-20%;
+}
 #welcome{
     width:73%;
     margin-right:2%;
 }
+
 .img-circle {
 	border-radius: 50%;
 	width:120px;
@@ -24,9 +28,13 @@ body {
 	margin-top:20px;
 	margin-bottom:50px;
 	}
-
-#a,#b{
+.w3-button{
+    margin-bottom:10px;
+}
+#b{
 	border-left: solid #DCDCDC;
+    border-right: solid #DCDCDC;
+
 }
 #container {
 	margin: 20px;
@@ -45,13 +53,19 @@ body {
         float: right;
         margin-right: 5%;
     }
-    #a,#b{
-    border-left: none;
+    #b{
+    border: none;
     }
     #b,#c{
     border-bottom: solid #DCDCDC;
     }
     #welcome{
-    margin-bottom:2%;
+    margin-bottom:5%;
+    }
+    #subs{
+        margin-top:auto;
+    }
+    .sub{
+        margin-bottom:10px;
     }
 }
