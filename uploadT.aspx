@@ -55,10 +55,10 @@
       <td>
          <select id="subject" name="subject" class="w3-select">
              <option value="0">בחר נושא</option>
-           <option value="1">אנגלית</option>
-             <option value="2">מדעי המחשב</option>
-             <option value="3">מתמטיקה</option>
-            <option value="4">ערבית</option>
+           <option value="1">פרבולות</option>
+             <option value="2">טריגונומטריה</option>
+             <option value="3">אלגברה</option>
+            <option value="4">סטטיסטיקה והסתברות</option>
              <option value="5">פיזיקה</option>
              <option value="6">אזרחות</option>
              <option value="7">היסטוריה</option>
