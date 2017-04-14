@@ -34,8 +34,23 @@
       <nav class="mdl-navigation mdl-layout--large-screen-only">
         <a class="mdl-navigation__link" href="home.aspx">בית</a>
         <a class="mdl-navigation__link" href="tops.aspx">המובילים</a>
-        <a class="mdl-navigation__link" href="targil3.aspx">3תרגיל</a>
-        <a class="mdl-navigation__link" href="upload.aspx">העלאת תרגיל </a> 
+           <div class="w3-dropdown-hover w3-right" >
+               <button class="w3-button" style="font-family:Heebo; font-weight:500">תרגילים</button>
+                    <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                        
+                        <a class="w3-bar-item w3-button" href="targil1.aspx">1תרגיל</a>
+                        <a class="w3-bar-item w3-button" href="targil2.aspx">2תרגיל</a>
+                        <a class="w3-bar-item w3-button" href="targil3.aspx">3תרגיל</a>
+                        <a class="w3-bar-item w3-button" href="targil4.aspx">4תרגיל</a>
+                        <a class="w3-bar-item w3-button" href="targil5.aspx">5תרגיל</a>
+                        <a class="w3-bar-item w3-button" href="targil6.aspx">6תרגיל</a>
+                        <a class="w3-bar-item w3-button" href="targil7.aspx">7תרגיל</a>
+                        <a class="w3-bar-item w3-button" href="targil8.aspx">8תרגיל</a>
+                        <a class="w3-bar-item w3-button" href="targil9.aspx">9תרגיל</a>
+                        <a class="w3-bar-item w3-button" href="targil10.aspx">10תרגיל</a>
+                        <a class="w3-bar-item w3-button" href="targil11.aspx">11תרגיל</a>
+                    </div>
+               </div>
         <a class="mdl-navigation__link" href="login.aspx">התחברות</a>
         <a class="mdl-navigation__link" href="signup.aspx">הרשמה</a>
       </nav>
@@ -46,8 +61,23 @@
     <nav class="mdl-navigation">
       <a class="mdl-navigation__link" href="home.aspx">בית</a>
         <a class="mdl-navigation__link" href="tops.aspx">המובילים</a>
-        <a class="mdl-navigation__link" href="targil3.aspx">3תרגיל</a>
-        <a class="mdl-navigation__link" href="upload.aspx">העלאת תרגיל </a> 
+         <div class="w3-dropdown-hover w3-right" >
+               <button class="w3-button" style="font-family:Heebo; font-weight:500">תרגילים</button>
+                    <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                        
+                        <a class="w3-bar-item w3-button" href="targil1.aspx">1תרגיל</a>
+                        <a class="w3-bar-item w3-button" href="targil2.aspx">2תרגיל</a>
+                        <a class="w3-bar-item w3-button" href="targil3.aspx">3תרגיל</a>
+                        <a class="w3-bar-item w3-button" href="targil4.aspx">4תרגיל</a>
+                        <a class="w3-bar-item w3-button" href="targil5.aspx">5תרגיל</a>
+                        <a class="w3-bar-item w3-button" href="targil6.aspx">6תרגיל</a>
+                        <a class="w3-bar-item w3-button" href="targil7.aspx">7תרגיל</a>
+                        <a class="w3-bar-item w3-button" href="targil8.aspx">8תרגיל</a>
+                        <a class="w3-bar-item w3-button" href="targil9.aspx">9תרגיל</a>
+                        <a class="w3-bar-item w3-button" href="targil10.aspx">10תרגיל</a>
+                        <a class="w3-bar-item w3-button" href="targil11.aspx">11תרגיל</a>
+                    </div>
+               </div>
         <a class="mdl-navigation__link" href="login.aspx">התחברות</a>
         <a class="mdl-navigation__link" href="signup.aspx">הרשמה</a>
     </nav>

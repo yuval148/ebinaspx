@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="targil3.aspx.cs" Inherits="targil3" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="targil1.aspx.cs" Inherits="targil1" %>
 <%@ Import Namespace="System.Data" %>
 <%@ Import Namespace="System.Data.OleDb" %>
 <%@ Import Namespace="Newtonsoft" %>
@@ -85,7 +85,7 @@
 
          <div id="infoDiv" class="demo-card-square mdl-card mdl-shadow--2dp">
             <div class="mdl-card__title mdl-card--expand">
-                <h2 class="mdl-card__title-text">מידע שימושי</h2>
+                <h2 class="mdl-card__title-text">1מידע שימושי</h2>
             </div>
 
             <div class="mdl-card__supporting-text">
