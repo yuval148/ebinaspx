@@ -10,7 +10,7 @@ using System.Data;
 
 public partial class home : System.Web.UI.Page
 {
-    public string json = "";
+    public string json = "", jsonPro = "";
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -35,34 +35,33 @@ public partial class home : System.Web.UI.Page
         prog = (curxp / 250) * 100;
         Session["prog"] = prog;
 
-            DataTable dt, dt2;
-            Session["sendr"] = "";
-            string sendr = "";
-            int f = 0;
-            string sql = "", sql2 = "";
-            string tableName = "ID" + Session["ID"];//שם הטבלה
-            string fileName = "db1.mdb"; //שם המסד
-
-            //טעינת הנתונים ממסד הנתונים
-            sql = "select DISTINCT subjectID from " + tableName;//sql  יצירת מחרוזת שליפה מטבלה ואיחסונה במשתנה
-            sql2 = "select *from " + tableName;
-            dt = MyAdoHelper.ExecuteDataTable(fileName, sql);
-            dt2= MyAdoHelper.ExecuteDataTable(fileName, sql2);
+        DataTable dt, dt2, dtPro;
+        Session["sendr"] = "";
+        string sendr = "";
+        int f = 0;
+        string sql = "", sql2 = "", sqlPro = "";
+        string tableName = "ID" + Session["ID"];//שם הטבלה
+        string fileName = "db1.mdb"; //שם המסד
+        //טעינת הנתונים ממסד הנתונים
+        sql = "select DISTINCT subjectID from " + tableName;//sql  יצירת מחרוזת שליפה מטבלה ואיחסונה במשתנה
+        sql2 = "select *from " + tableName;
+        sqlPro = "SELECT * FROM users WHERE ID='" + Session["ID"] + "';";
+        dt = MyAdoHelper.ExecuteDataTable(fileName, sql);
+        dt2 = MyAdoHelper.ExecuteDataTable(fileName, sql2);
+        dtPro = MyAdoHelper.ExecuteDataTable(fileName, sqlPro);
         foreach (DataRow Row in dt.Rows)
+        {
+            if (dt.Rows[f][0].ToString() == "0")
+                f++;
+            else
             {
-                if (dt.Rows[f][0].ToString() == "0")
-                    f++;
-                else
-                {
-                    sendr = sendr + dt.Rows[f][0].ToString() + ".";
-                    f++;
-                }
+                sendr = sendr + dt.Rows[f][0].ToString() + ".";
+                f++;
             }
-            sendr=sendr.Remove(sendr.Length - 1);
-            json = Json(dt2);
-            
-
-
+        }
+        sendr = sendr.Remove(sendr.Length - 1);
+        json = Json(dt2);
+        jsonPro = Json(dtPro);
     }
     public string Json(DataTable table)
     {

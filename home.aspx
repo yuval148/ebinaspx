@@ -11,8 +11,8 @@
     </head>
     <body>
         <div class="w3-row w3-mobile" id="page-wrap"><!-- נותן מסגרת לאתר, !-->
-            <div id="welcome" class="w3-container w3-row w3-mobile w3-white w3-card w3-cell w3-threequarter">              
-                <div class="w3-third w3-center">    
+            <div id="welcome" class="w3-container w3-row w3-mobile w3-white w3-card w3-cell w3-quarter">              
+                <div id="c" class="w3-third w3-center">    
                     <header class="w3-container">
                         <h5>צריך עזרה?</h5>
                     </header> 
@@ -61,30 +61,14 @@
                         </footer>        
                     </div>     
                 </div>             
-                <div id="left-pro" style="font-family:'Heebo'">
-                    <div id="pro" class="w3-container w3-mobile w3-white w3-card w3-cell w3-quarter">
-                        <img src="media/<%=Session["pic"]%>" class="img-circle">
-                        <div id="pd">
-                            <span style="font-size:20px; font-weight:bold"> <%=Session["name"]%></span><hr /><br>
-                            <span style="font-size:20px; line-height:70%" >קבוצת  <%=Session["team"]%> </span><hr /> <br>
-                            <!-- Simple MDL Progress Bar -->
-                            <div id="p1" class="mdl-progress mdl-js-progress"></div>
-                                <script>
-                                    document.querySelector('#p1').addEventListener('mdl-componentupgraded', function () {
-                                    this.MaterialProgress.setProgress('<%=Session["prog"]%>');
-                                    });
-                                </script>
-                                <span style="font-size:20px;line-height:20%"> <%=Session["xpp"]%> נקודות</span><hr /> <br>
-                                <span style="font-size:20px; line-height:80%" >שלב  <span class="mdl-badge" data-badge="<%=Session["level"]%>"></span> </span><hr /> <br>
-                                <span style="font-size:20px; line-height:80%" ><%=Session["kita"]%><br><br></span>
-                        </div>
-                    </div>   
+                <div id="pro-div" style="font-family:'Heebo'">
+                       
                 </div> 
                 <br />
                 
                 <br />
                 <h2 style="font-family:'Heebo';font-weight:700;font-size:45px">נושאים</h2><hr />
-                <div class="w3-cell-row" id="subDiv"></div>
+                <div class="w3-cell-row" id="sub-div"></div>
                 <script src="js/handlebars-v4.0.5.js"></script>
                 <script id="sub-temp" type="text/x-handlebars-template">
                     {{#each sub}}
@@ -94,8 +78,8 @@
                         </header>
                         <div class="w3-container  w3-center">
                             <br />
-                            <div class="c100 small p{{cou}} {{GetMasterPrecent cou}} center"> <!-- צריך לחלק פה סאיו בסיתרגיל! !-->
-                                <span>{{cou}}%</span>
+                            <div class="c100 small p{{GetMasterPrecent cou ctargil}} {{GetMasterColor (GetMasterPrecent cou ctargil)}} center"> <!-- צריך לחלק פה סאיו בסיתרגיל! !-->
+                                <span>{{GetMasterPrecent cou ctargil}}%</span>
                                 <div class="slice">
                                     <div class="bar"></div>
                                     <div class="fill"></div>
@@ -108,8 +92,25 @@
                     </div>
                     {{/each}}
                 </script>
+                <script id="pro-temp" type="text/x-handlebars-template">
+                    {{#each sub}}
+                    <div class="w3-container w3-mobile w3-center w3-white w3-card w3-cell w3-quarter">
+                        <img src="media/{{pic}}" class="img-circle">
+                        <div>
+                            <span style="font-size:20px; font-weight:bold"> {{name}} </span><hr /><br>
+                            <span style="font-size:20px; line-height:70%" >קבוצת  {{team}} </span><hr /> <br>
+                            <div class="w3-light-grey w3-round">
+                                <div class="w3-container w3-round w3-indigo" style="width:25%">25%</div>
+                            </div>                                
+                            <span style="font-size:20px;line-height:20%"> {{xpp}} נקודות</span><hr /> <br>
+                            <span style="font-size:20px; line-height:80%" >שלב  <span class="mdl-badge" data-badge="{{GetLevel xpp}}"></span> </span><hr /> <br>
+                            <span style="font-size:20px; line-height:80%" >{{kita}}<br><br></span>
+                        </div>
+                    </div>
+                    {{/each}}
+                </script>
                 <script type="text/javascript">
-                    Handlebars.registerHelper('GetMasterPrecent', function(master) {
+                    Handlebars.registerHelper('GetMasterColor', function(master) {
                             if (master<25){
                                 return "red";
                             }
@@ -122,12 +123,47 @@
                             else if (master>=75){
                                 return "green";
                             }
-                        });
+                    });
+                    Handlebars.registerHelper('GetMasterPrecent', function (cou, ctargil) {
+                        var pre = parseInt(cou) / parseInt(ctargil);
+                        var final = pre * 100;
+                        return parseInt(final);
+
+                    });
+                    Handlebars.registerHelper('GetLevel', function (xp) {
+                        if (xp >= 0 && xp < 100)
+                        {
+                            r = 1;
+                        }
+                        if (xp >= 100 && xp < 250)
+                        {
+                            r = 2;
+                        }
+                        if (xp >= 250 && xp < 500)
+                        {
+                            r = 3;
+                        }
+                        if (xp >= 500 && xp < 900)
+                        {
+                            r = 4;
+                        }
+                        if (xp >= 1250 && xp < 1450)
+                        {
+                            r = 5;
+                        }
+                        return r;
+                    });
                         var subInfo = document.getElementById("sub-temp").innerHTML;
-                        var template = Handlebars.compile(subInfo);
-                        var data = template(<%=this.json%>);
-                        document.getElementById("subDiv").innerHTML += data;
+                        var subTemplate = Handlebars.compile(subInfo);
+                        var subData = subTemplate(<%=this.json%>);
+                        document.getElementById("sub-div").innerHTML += subData;
+                        
+                        var proInfo = document.getElementById("pro-temp").innerHTML;
+                        var proTemplate = Handlebars.compile(proInfo);
+                        var proData = proTemplate(<%=this.jsonPro%>);
+                        document.getElementById("pro-div").innerHTML += proData;
                 </script>                
+               
         </div>    
 </body>
 </html>

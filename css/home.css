@@ -1,9 +1,10 @@
 #page-wrap {
      width: 1200px;
      margin: 0 auto;
+     margin-top:10px;
 }
 body {
-	background: url("media/bg5.jpg");
+	background: url("/media/bg5.jpg");
 	background-size: 100%, 100%;
     background-repeat: no-repeat;
 	}
@@ -11,7 +12,10 @@ body {
 	margin:2px;
     width:24%;
 	}
-
+#welcome{
+    width:73%;
+    margin-right:2%;
+}
 .img-circle {
 	border-radius: 50%;
 	width:120px;
@@ -20,9 +24,7 @@ body {
 	margin-top:20px;
 	margin-bottom:50px;
 	}
-#pd{
-	text-align:center;
-	}
+
 #a,#b{
 	border-left: solid #DCDCDC;
 }
@@ -38,9 +40,18 @@ body {
 .demo-list-icon {
 	width: 300px;
 }
-@media screen and (max-width: 400px) {
-    .c100 {
+@media screen and (max-width: 480px) {
+    .c100{
         float: right;
         margin-right: 5%;
+    }
+    #a,#b{
+    border-left: none;
+    }
+    #b,#c{
+    border-bottom: solid #DCDCDC;
+    }
+    #welcome{
+    margin-bottom:2%;
     }
 }
