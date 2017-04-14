@@ -38,23 +38,16 @@
                         </div>
                         <p>מילים מילים מילים מילים מילים מילים?</p>
                     </div>
-                    <footer class="w3-container">
-                        <button class="w3-button w3-indigo">כניסה לפורום    </button>
+                    <footer class="w3-container w3-center">
+                        <button class="w3-button w3-indigo">הזין של יונתן</button>
                     </footer>
                 </div>
-                    <div id="a" class="w3-third w3-center">    
-                        <header class="w3-container">
+                    <div id="a" class="w3-third">    
+                        <header class="w3-container  w3-center">
                             <h5>צריך עזרה?</h5>
                         </header> 
                         <div class="w3-container">
-                            <ul class="demo-list-icon mdl-list">
-                            <li class="mdl-list__item">
-                                <span class="mdl-list__item-primary-content">
-                                    <i class="material-icons mdl-list__item-icon">today</i>
-                                    המבחן הקרוב ביותר: מתמטיקה-24.1.17
-                                </span>
-                            </li>
-                        </ul>
+                            משהו משהו משהו משהו
                          </div>
                         <footer class="w3-container">
                             
