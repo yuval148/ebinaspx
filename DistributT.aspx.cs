@@ -51,7 +51,7 @@ public partial class Distribut : System.Web.UI.Page
                 dt1 = MyAdoHelper.ExecuteDataTable(fileName7, sql2);//users
                 int i = 0,x,f,rand,b=0;
                 Random rnd = new Random();
-                string ID,sql1,sql3,sql4,sql5,sql6,sql7;
+                string ID,sql1,sql3,sql4,sql5,sql6,sql7,sql8;
                 string TALMIDMAAGARSQL;
                 bool found = false;
                 sql3 = "SELECT * FROM TAT" + subject + " WHERE diff='" + diff + "';"; //מאגר
@@ -81,6 +81,12 @@ public partial class Distribut : System.Web.UI.Page
                                         while (f < dtatu.Rows.Count) //בדיקה האם התרגיל קיים עובר על כל המאגר האישי
                                         {
                                             if (dtat.Rows[x][0].ToString() == dtatu.Rows[f][0].ToString())
+                                            {
+                                                found = true;
+                                                break; //תפסיק את החיפוש
+                                            }
+                                            sql8 = "SELECT * FROM TAT" + subject + "_" + ID + " WHERE ID='" + dtat.Rows[x][0].ToString() + "';";
+                                            if (MyAdoHelper.IsExist(fileName7, sql8))
                                             {
                                                 found = true;
                                                 break; //תפסיק את החיפוש
@@ -116,6 +122,12 @@ public partial class Distribut : System.Web.UI.Page
                                         while (f < dtatu.Rows.Count) //בדיקה האם התרגיל קיים עובר על כל המאגר האישי
                                         {
                                             if (dtat.Rows[rand][0].ToString() == dtatu.Rows[f][0].ToString())
+                                            {
+                                                rand = rnd.Next(0, numof); //אם נמצא, תרגיל חדש
+                                                f = 0;
+                                            }
+                                            sql8 = "SELECT * FROM TAT" + subject + "_" + ID + " WHERE ID='" + dtat.Rows[rand][0].ToString() + "';";
+                                            if (MyAdoHelper.IsExist(fileName7, sql8))
                                             {
                                                 rand = rnd.Next(0, numof); //אם נמצא, תרגיל חדש
                                                 f = 0;
