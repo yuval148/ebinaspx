@@ -101,7 +101,7 @@ public partial class login : System.Web.UI.Page
         {
             exp = table.Rows[i]["exp"].ToString();
             DateTime dt = DateTime.ParseExact(exp,"dd/MM/yyyy", null);
-            if (DateTime.Now > dt)
+            if (DateTime.Now >= dt)
             {
                 string sqlDel = "DELETE FROM MSG WHERE title='" + table.Rows[i]["title"].ToString() + "' AND datec='" + table.Rows[i]["datec"].ToString() + "' AND exp='" + table.Rows[i]["exp"].ToString() + "';";
                 MyAdoHelper.DoQuery(fileName, sqlDel);
