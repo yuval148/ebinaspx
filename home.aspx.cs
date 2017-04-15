@@ -52,7 +52,6 @@ public partial class home : System.Web.UI.Page
         dt2 = MyAdoHelper.ExecuteDataTable(fileName, sql2);
         dtPro = MyAdoHelper.ExecuteDataTable(fileName, sqlPro);
         dtMes = MyAdoHelper.ExecuteDataTable(fileName, sqlMes);
-        CheckDate(dtMes);//קורא לפעולה
         foreach (DataRow Row in dt.Rows)
         {
             if (dt.Rows[f][0].ToString() == "0")
@@ -76,19 +75,5 @@ public partial class home : System.Web.UI.Page
             return JSONString;
         }
     }
-    public void CheckDate(DataTable table)
-    {
-        string exp;
-        string fileName = "db1.mdb";
-        for (int i = 0; i < table.Rows.Count; i++)
-        {
-            exp = table.Rows[i]["exp"].ToString();
-            DateTime dt = Convert.ToDateTime(exp);
-            if (DateTime.Now > dt)
-            {
-                string sqlDel = "DELETE FROM MSG WHERE title='" + table.Rows[i]["title"].ToString() + "' AND datec='" + table.Rows[i]["datec"].ToString() + "' AND exp='" + table.Rows[i]["exp"].ToString() + "';";
-                MyAdoHelper.DoQuery(fileName, sqlDel);
-            }
-        }
-    }
+
 }

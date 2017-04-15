@@ -55,7 +55,10 @@ public partial class login : System.Web.UI.Page
                 //פעולת xpp
                 //חשב את כל הcou מהטבלה האישית והשם בXPP
                 string sql1 = "SELECT * FROM ID" + ID + ";";
+                string sqlMes = "SELECT * FROM MSG;";
                 DataTable dtid = MyAdoHelper.ExecuteDataTable(fileName, sql1);
+                DataTable dtMes = MyAdoHelper.ExecuteDataTable(fileName, sqlMes);
+                CheckDatemsg(dtMes);//קורא לפעולה
                 int xpp1=0;
                 for(int i=0;i<dtid.Rows.Count;i++)
                     {
@@ -90,6 +93,21 @@ public partial class login : System.Web.UI.Page
             }
         }
         }
+    public void CheckDatemsg(DataTable table)
+    {
+        string exp;
+        string fileName = "db1.mdb";
+        for (int i = 0; i < table.Rows.Count; i++)
+        {
+            exp = table.Rows[i]["exp"].ToString();
+            DateTime dt = Convert.ToDateTime(exp);
+            if (DateTime.Now > dt)
+            {
+                string sqlDel = "DELETE FROM MSG WHERE title='" + table.Rows[i]["title"].ToString() + "' AND datec='" + table.Rows[i]["datec"].ToString() + "' AND exp='" + table.Rows[i]["exp"].ToString() + "';";
+                MyAdoHelper.DoQuery(fileName, sqlDel);
+            }
+        }
     }
+}
 
 
