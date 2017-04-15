@@ -61,7 +61,7 @@
                 <br />
             <!--מכאן!-->
             <div id="subs" class="w3-container w3-mobile w3-threequarter">
-                <h2 style="font-family:'Heebo';font-weight:700;font-size:45px">נושאים</h2><hr />
+                <h2 style="font-family:'Heebo';font-weight:900;font-size:45px">נושאים</h2><hr />
                 <div class="w3-cell-row" id="sub-div"></div>
             </div>
                
@@ -110,7 +110,7 @@ background-image: url(../media/new/{{subjectID}}.png);border-top:solid #{{GetMas
                 </script>
                 <script id="mes-temp" type="text/x-handlebars-template">
                     <div style="float:right;margin-top:10px;margin-bottom:10px" class="w3-container w3-white w3-card w3-quarter">
-                        <h3>הודעות</h3>
+                        <h3 style="font-family:'Heebo';font-weight:700; text-align:center;">הודעות</h3>
                         <hr>
                         <ul class="w3-ul">
                         {{#each sub}}
