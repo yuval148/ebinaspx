@@ -16,17 +16,26 @@ public partial class targil3 : System.Web.UI.Page
     public string json = "";
     protected void Page_Load(object sender, EventArgs e)
     {
+        string fileName = "db1.mdb"; //שם המסד
+        string check = "SELECT * FROM ID" + Session["ID"] + " WHERE subjectID='3';";
         if (Session["userName"] == null)
         {
             Response.Redirect("login.aspx");
         }
-        string sql = "";
-        string tableName = "TAT" + "3_" + Session["ID"];
-        string fileName = "db1.mdb"; //שם המסד
-        sql = "select * from " + tableName;
-        DataTable dt;
-        dt = MyAdoHelper.ExecuteDataTable(fileName, sql);
-        json = Json(dt);
+        else if (MyAdoHelper.IsExist(fileName, check))
+        {
+            string sql = "";
+            string tableName = "TAT" + "3_" + Session["ID"];
+
+            sql = "select * from " + tableName;
+            DataTable dt;
+            dt = MyAdoHelper.ExecuteDataTable(fileName, sql);
+            json = Json(dt);
+        }
+        else
+        {
+            Response.Redirect("dinial.aspx");
+        }
     }
     public string Json(DataTable table)
     {

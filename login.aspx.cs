@@ -62,13 +62,15 @@ public partial class login : System.Web.UI.Page
                     xpp1 += int.Parse(dtid.Rows[i]["cou"].ToString());
                     }
                 xpp1 = xpp1 * 10;
-                string sql2 = "UPDATE users SET xpp='" + xpp1.ToString() +"' WHERE userName='"+userName+"' AND ID='"+ID+"';" ;
+                string sql2 = "UPDATE users SET xpp='" + xpp1.ToString() + "' WHERE userName='" + userName + "' AND ID='" + ID+"';" ;
                 MyAdoHelper.DoQuery(fileName, sql2);
+                
                 //סוף הפעולה
                 Session["xpp"] = xpp1.ToString();
                 Session["level"] = xpstuf.level(xpp1);
                 level = xpstuf.level(xpp1);
                 opc = 100;
+                Session["ErrLogin"] = sql2;
                 Session["ErrLogin"] = " שלום " + name + " מקבוצת " + team + " יש לך " + xpp1.ToString() + " נקודות " + "  ואתה בשלב " + level.ToString();
                 Response.Redirect("home.aspx");
             }

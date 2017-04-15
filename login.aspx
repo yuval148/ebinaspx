@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="login.aspx.cs" Inherits="login" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="login.aspx.cs" Inherits="login" Debug="true" %>
 <!--#include file="upper.aspx"-->
   <html>  
   <head>
@@ -46,7 +46,7 @@
       <br />
        
       <button class="mdl-button mdl-js-button mdl-button--accent">
-          <a style="text-decoration:none" href="/loginT.aspx"> מורה? כנס כאן!</a>
+          <a style="text-decoration:none" href="loginT.aspx"> מורה? כנס כאן!</a>
        </button>
           <div id="errorDiv" class="mdl-components__warning"><%=Session["ErrLogin"] %></div>
 </form>
