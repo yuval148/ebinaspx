@@ -125,9 +125,39 @@
          -->
          
         <!-- Colored raised button -->
-         
-    
-   <button id="next">Next</button>      
+            <button id="next">דלג</button>      
+
+    <div id="id01" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-teal"> 
+        <span onclick="document.getElementById('id01').style.display='none'" 
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>תשובה נכונה!</h2>
+      </header>
+      <div class="w3-container">
+        <p>כל הכבוד! אני בטוח שאמא גאה</p>
+      </div>
+      <footer class="w3-container w3-teal">
+   <button id="next">לתרגיל הבא</button>      
+      </footer>
+    </div>
+  </div>
+         <div id="id02" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red"> 
+        <span onclick="document.getElementById('id02').style.display='none'" 
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>אוי לא!</h2>
+      </header>
+      <div class="w3-container">
+        <p>על יוסיברטיסה כבר שמעת?</p>
+      </div>
+      <footer class="w3-container w3-red">
+        <span onclick="document.getElementById('id01').style.display='none'" 
+      class="w3-button w3-display-bottomleft">נסה שוב</span>
+      </footer>
+    </div>
+  </div>
    </main>  
    <script type="text/javascript">
        var images = '';
@@ -169,8 +199,7 @@
                
                var x = document.getElementById("numb").value;
                if (x == ans) {
-                  
-                   var text = "תשובה נכונה, כל הכבוד!";
+                   document.getElementById('id01').style.display='block';
                    $.ajax({
                     type: "POST",
                     url: "targil3.aspx/change",
@@ -185,10 +214,10 @@
                 });
                }
                else {
-                   var text = "טעות, נסה שוב!";
+                   document.getElementById('id02').style.display='block';
+
                }
-               var data = { message: text};
-               snackbarContainer.MaterialSnackbar.showSnackbar(data);
+
            });
        }());
   </script>

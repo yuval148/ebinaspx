@@ -10,20 +10,27 @@ using System.Data;
 
 public partial class home : System.Web.UI.Page
 {
-
+    public string json = "";
     protected void Page_Load(object sender, EventArgs e)
     {
         if (Session["userNameT"] == null)
         {
             Response.Redirect("loginT.aspx");
         }
+        DataTable dt;
+        string sql = "";
+        string fileName = "db1.mdb"; //שם המסד
+        sql = "select * from users";
+        dt = MyAdoHelper.ExecuteDataTable(fileName, sql);
+        json = Json(dt);
 
     }
-protected void BtnSubmit_Click(object sender, EventArgs e)
+    public string Json(DataTable table)
     {
-        String str = "";
-
-       
-
+        {
+            string JSONString = string.Empty;
+            JSONString = Newtonsoft.Json.JsonConvert.SerializeObject(new { stu = table });
+            return JSONString;
+        }
     }
 }

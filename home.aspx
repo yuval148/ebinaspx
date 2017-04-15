@@ -32,14 +32,14 @@
                         <h5>צריך עזרה?</h5>
                     </header> 
                     <div class="w3-container">
-                        <div class="c100 small p23 red">
-                            <span>23%</span>
+                        <div class="c100 small p89 green">
+                            <span>89%</span>
                             <div class="slice"><div class="bar"></div><div class="fill"></div></div>
                         </div>
                         <p>מילים מילים מילים מילים מילים מילים?</p>
                     </div>
                     <footer class="w3-container w3-center">
-                        <button class="w3-button w3-indigo">הזין של יונתן</button>
+                        <button class="w3-button w3-indigo">שתף</button>
                     </footer>
                 </div>
                     <div id="a" class="w3-third">    
@@ -69,7 +69,8 @@
                 <script src="js/handlebars-v4.0.5.js"></script>
                 <script id="sub-temp" type="text/x-handlebars-template">
                     {{#each sub}}
-                    <div class="sub w3-quarter w3-card w3-container w3-cell w3-center w3-mobile w3-white" style="background-size:100% 100%;background-image: url(../media/new/{{subjectID}}.png);border-top:solid #{{GetMasterColor2 (GetMasterPrecent cou ctargil)}} 7.5px">
+                    <div class="sub w3-quarter w3-card w3-container w3-cell w3-center w3-mobile w3-white" style="background-size:cover; background-position: center; 
+background-image: url(../media/new/{{subjectID}}.png);border-top:solid #{{GetMasterColor2 (GetMasterPrecent cou ctargil)}} 7.5px">
                         <header class="w3-container w3-center">
                             <h2 class="subH">{{subject}}</h2>
                         </header>
