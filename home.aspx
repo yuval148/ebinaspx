@@ -54,9 +54,10 @@
                         </footer>        
                     </div>     
                 </div>             
-                <div id="pro-div" style="font-family:'Heebo'"></div> 
+                <div id="pro-div" style="font-family:'Heebo'">
+                   
+                </div>
                 <br />
-                
                 <br />
             <!--מכאן!-->
             <div id="subs" class="w3-container w3-mobile w3-threequarter">
@@ -106,6 +107,22 @@ background-image: url(../media/new/{{subjectID}}.png);border-top:solid #{{GetMas
                         </div>
                     </div>
                     {{/each}}
+                </script>
+                <script id="mes-temp" type="text/x-handlebars-template">
+                    <div style="float:right;margin-top:10px;margin-bottom:10px" class="w3-container w3-white w3-card w3-quarter">
+                        <h3>הודעות</h3>
+                        <hr>
+                        <ul class="w3-ul">
+                        {{#each sub}}
+                            <li class="w3-padding-16">
+                                <i class="material-icons">announcement</i>
+                                <span class="w3-large">מחר פסח</span><br>
+                                <span>נא להגיע עם חולצות לבנות</span>,
+                                <span style="color:#3f51b5">שכבת יב</span>
+                            </li>
+                        {{/each}}
+                        </ul>
+                    </div> 
                 </script>
                 <script type="text/javascript">
                     Handlebars.registerHelper('GetMasterColor', function(master) {
@@ -174,6 +191,11 @@ background-image: url(../media/new/{{subjectID}}.png);border-top:solid #{{GetMas
                         var proTemplate = Handlebars.compile(proInfo);
                         var proData = proTemplate(<%=this.jsonPro%>);
                         document.getElementById("pro-div").innerHTML += proData;
+
+                        var mesInfo = document.getElementById("mes-temp").innerHTML;
+                        var mesTemplate = Handlebars.compile(mesInfo);
+                        var mesData = mesTemplate(<%=this.json%>);
+                        document.getElementById("pro-div").innerHTML += mesData;
                 </script>                
                
         </div>    
