@@ -115,10 +115,10 @@ background-image: url(../media/new/{{subjectID}}.png);border-top:solid #{{GetMas
                         <ul class="w3-ul">
                         {{#each sub}}
                             <li class="w3-padding-16">
-                                <i class="material-icons">announcement</i>
-                                <span class="w3-large">מחר פסח</span><br>
-                                <span>נא להגיע עם חולצות לבנות</span>,
-                                <span style="color:#3f51b5">שכבת יב</span>
+                                <i class="material-icons">{{icon}}</i>
+                                <span class="w3-large">{{title}}</span><br>
+                                <span>{{msg}}</span>,
+                                <span style="color:#3f51b5">{{kita}}</span>
                             </li>
                         {{/each}}
                         </ul>
@@ -194,7 +194,7 @@ background-image: url(../media/new/{{subjectID}}.png);border-top:solid #{{GetMas
 
                         var mesInfo = document.getElementById("mes-temp").innerHTML;
                         var mesTemplate = Handlebars.compile(mesInfo);
-                        var mesData = mesTemplate(<%=this.json%>);
+                        var mesData = mesTemplate(<%=this.jsonMes%>);
                         document.getElementById("pro-div").innerHTML += mesData;
                 </script>                
                
