@@ -114,17 +114,30 @@ background-image: url(../media/new/{{subjectID}}.png);border-top:solid #{{GetMas
                         <hr>
                         <ul class="w3-ul">
                         {{#each sub}}
+                             <div id="{{title}}" style="display:{{CheckClass kita title}}">
                             <li class="w3-padding-16">
                                 <i class="material-icons">{{icon}}</i>
                                 <span class="w3-large">{{title}}</span><br>
                                 <span>{{msg}}</span>,
                                 <span style="color:#3f51b5">{{kita}}</span>
                             </li>
+                            </div>
                         {{/each}}
                         </ul>
                     </div> 
                 </script>
                 <script type="text/javascript">
+                    Handlebars.registerHelper('CheckClass', function (kita,title){
+                        var kita = kita.split(",");
+                        var Mykita = "<%=Session["kita"]%>";
+                        for (var i = 0; i < kita.length; i++) {
+                            if(kita[i] == Mykita){
+                                return "initial";
+                                break;
+                            }
+                        }
+                        return "none";      
+                    });
                     Handlebars.registerHelper('GetMasterColor', function(master) {
                             if (master<25){
                                 return "red";
