@@ -100,7 +100,7 @@ public partial class login : System.Web.UI.Page
         for (int i = 0; i < table.Rows.Count; i++)
         {
             exp = table.Rows[i]["exp"].ToString();
-            DateTime dt = Convert.ToDateTime(exp);
+            DateTime dt = DateTime.ParseExact(exp,"dd/MM/yyyy", null);
             if (DateTime.Now > dt)
             {
                 string sqlDel = "DELETE FROM MSG WHERE title='" + table.Rows[i]["title"].ToString() + "' AND datec='" + table.Rows[i]["datec"].ToString() + "' AND exp='" + table.Rows[i]["exp"].ToString() + "';";

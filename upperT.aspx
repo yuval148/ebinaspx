@@ -41,6 +41,7 @@
         <a class="mdl-navigation__link" href="topsT.aspx">המובילים</a>
         <a class="mdl-navigation__link" href="DistributT.aspx">הפצת תרגילים</a>
         <a class="mdl-navigation__link" href="uploadT.aspx">העלאת תרגיל </a> 
+        <a class="mdl-navigation__link" href="msgT.aspx">הפצת הודעות</a>
         <a class="mdl-navigation__link" href="loginT.aspx">התחברות</a>
       </nav>
     </div>
@@ -52,6 +53,7 @@
         <a class="mdl-navigation__link" href="topsT.aspx">המובילים</a>
         <a class="mdl-navigation__link" href="DistributT.aspx">הפצת תרגילים</a>
         <a class="mdl-navigation__link" href="uploadT.aspx">העלאת תרגיל </a> 
+        <a class="mdl-navigation__link" href="msgT.aspx">הפצת הודעות</a>
         <a class="mdl-navigation__link" href="loginT.aspx">התחברות</a>
     </nav>
   </div>
