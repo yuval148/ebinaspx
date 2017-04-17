@@ -15,8 +15,6 @@
 <body style="font-family:Arial; text-align:center;">
 <br />
     <div id="form" style="opacity:100" runat="server">
-    <h1>
-        צפייה בטבלת הנקודות</h1>
     <form method="post">
      <table align="center">
             <tr>
@@ -51,6 +49,22 @@
             </table>
          <input type="submit" name="submit" id="Submit" value="צפה בתלמיד" />
             </form>
+        </div>
+    <!-- צריך להיות פה כפתור שרק בלחיצה עליו מפעיל את הדיב הבא !-->
+    <div id="changepass" style="opacity:0" runat="server">
+        <form id=pass method="post">
+            <table align="center">
+                <tr>
+                    <td>סיסמה</td>
+                    <td><input class="w3-input" type="text" name="userPass1" id="userPass1" placeholder="<%=userPass %>"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><span style="font-family:Heebo; font-weight:300">לעדכון סיסמה, הכנס את הסיסמה החדשה ולחץ עדכן.</span></td>
+                </tr>
+            </table>
+            <input type="submit" name="update" id="update" value="עדכן סיסמה" onClick="changepss" runat="server" />
+        </form>
         </div>
 </body>
 </html>

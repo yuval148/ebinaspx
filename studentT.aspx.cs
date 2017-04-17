@@ -8,6 +8,7 @@ using System.Web.UI.WebControls;
 public partial class culture : System.Web.UI.Page
 {
     public string json = "";
+    public string userPass;
     protected void Page_Load()
     {
         if (Session["userNameT"] == null)
@@ -28,13 +29,11 @@ public partial class culture : System.Web.UI.Page
                 string ID = Request.Form["ID"];
                 form.Style["opacity"] = "0";
                 string sql2 = "SELECT * FROM users WHERE ID='" + ID + "';";
-                DataTable dtu = MyAdoHelper.ExecuteDataTable(fileName, sql);
+                DataTable dtu = MyAdoHelper.ExecuteDataTable(fileName, sql2);
                 string sql3 = "SELECT * FROM ID" + ID + ";";
-                DataTable dtid = MyAdoHelper.ExecuteDataTable(fileName, sql);
-
-
-
-
+                DataTable dtid = MyAdoHelper.ExecuteDataTable(fileName, sql3);
+                changepass.Style["opacity"] = "100"; //רק בלחיצה על כפתור גילוי סיסמה
+                userPass = dtu.Rows[0]["userPass"].ToString();
 
             }
         }
@@ -46,6 +45,12 @@ public partial class culture : System.Web.UI.Page
             JSONString = Newtonsoft.Json.JsonConvert.SerializeObject(new { Class = table });
             return JSONString;
         }
+    }
+    public void changepss()
+    {
+        string userPass1 = Request.Form["userPass1"];
+        string sql4 = "UPDATE users SET userPass='" + userPass1 + "' WHERE ID='" + ID + "';"; //לא עובד!
+        MyAdoHelper.DoQuery("db1.mdb", sql4);
     }
 
 }

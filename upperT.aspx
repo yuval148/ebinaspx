@@ -39,7 +39,13 @@
       <!-- Navigation. We hide it in small screens. -->
       <nav class="mdl-navigation mdl-layout--large-screen-only">
         <a class="mdl-navigation__link" href="homeT.aspx">בית</a>
-        <a class="mdl-navigation__link" href="topsT.aspx">המובילים</a>
+          <div class="w3-dropdown-hover w3-right" >
+               <button class="w3-button" style="font-family:Heebo; font-weight:500">דוחות</button>
+                    <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                        <a class="w3-bar-item w3-button" href="topsT.aspx">מצב הנקודות</a>
+                        <a class="w3-bar-item w3-button" href="subjectT.aspx">צפייה בתלמיד</a>
+                        </div>
+              </div>
         <a class="mdl-navigation__link" href="DistributT.aspx">הפצת תרגילים</a>
         <a class="mdl-navigation__link" href="uploadT.aspx">העלאת תרגיל </a> 
         <a class="mdl-navigation__link" href="msgT.aspx">הפצת הודעות</a>
@@ -51,7 +57,13 @@
     <span class="mdl-layout-title"><img src="media/LOGO.png" style="height:10% ; width: 10%; position:absolute;"/></span>
     <nav class="mdl-navigation">
       <a class="mdl-navigation__link" href="homeT.aspx">בית</a>
-        <a class="mdl-navigation__link" href="topsT.aspx">המובילים</a>
+          <div class="w3-dropdown-hover w3-right" >
+               <button class="w3-button" style="font-family:Heebo; font-weight:500">דוחות</button>
+                    <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                        <a class="w3-bar-item w3-button" href="topsT.aspx">מצב הנקודות</a>
+                        <a class="w3-bar-item w3-button" href="subjectT.aspx">צפייה בתלמיד</a>
+                        </div>
+              </div>
         <a class="mdl-navigation__link" href="DistributT.aspx">הפצת תרגילים</a>
         <a class="mdl-navigation__link" href="uploadT.aspx">העלאת תרגיל </a> 
         <a class="mdl-navigation__link" href="msgT.aspx">הפצת הודעות</a>
