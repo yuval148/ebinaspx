@@ -19,7 +19,7 @@ public partial class msgT : System.Web.UI.Page
         {
             Response.Redirect("loginT.aspx");
         }
-        string icon = "", title = "", msg = "", kita, exp,dd,mm,yyyy;                                                            
+        string icon = "", title = "", msg = "", kita, exp,dd,mm,yyyy,byy;                                                            
         string sqlkita = "SELECT DISTINCT kita FROM users;";// כיתה
         DataTable dtkita = MyAdoHelper.ExecuteDataTable("db1.mdb", sqlkita); 
         json = Json(dtkita);
@@ -33,6 +33,7 @@ public partial class msgT : System.Web.UI.Page
             mm = Request.Form["mm"];
             yyyy = Request.Form["yyyy"];
             exp = dd + "/" + mm + "/" + yyyy;
+            byy = Session["nameT"].ToString();
             if (title == "" || kita == "")
             {
                 Session["ErrIsertForm"] = "נתונים לא מולאו כשורה";
@@ -41,7 +42,7 @@ public partial class msgT : System.Web.UI.Page
             else
             { 
                 string fileName = "db1.mdb";       //SQLSTUF START
-                string sql = "INSERT INTO MSG (icon, title, msg, kita, datec, exp) VALUES('" + icon + "','" + title + "','" + msg + "','" + kita + "','" + datec + "','" + exp + "');";
+                string sql = "INSERT INTO MSG (icon, title, msg, kita, datec, exp, byy) VALUES('" + icon + "','" + title + "','" + msg + "','" + kita + "','" + datec + "','" + exp + "','" + byy + "');";
                 MyAdoHelper.DoQuery(fileName, sql);
                 Session["ErrIsertForm"] = "הפעולה הושלמה בהצלחה!";
             }
