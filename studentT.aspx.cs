@@ -4,11 +4,13 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.Services;
 
 public partial class culture : System.Web.UI.Page
 {
-    public string json = "",json2="";
-    public string userPass;
+    public string json = "", json2 = "", json3 = "",ID;
+    public string userPass, userName;
+
     protected void Page_Load()
     {
         if (Session["userNameT"] == null)
@@ -26,15 +28,20 @@ public partial class culture : System.Web.UI.Page
             json = Json(users);
             if (Request.Form["submit"] != null)
             {
-                string ID = Request.Form["ID"];
+                ID = Request.Form["ID"];
                 form.Style["opacity"] = "0";
+                stuopc.Style["opacity"] = "100";
                 string sql2 = "SELECT * FROM users WHERE ID='" + ID + "';";
                 DataTable dtu = MyAdoHelper.ExecuteDataTable(fileName, sql2);
+                json3 = Json(dtu);
                 string sql3 = "SELECT * FROM ID" + ID + ";";
                 DataTable dtid = MyAdoHelper.ExecuteDataTable(fileName, sql3);
                 changepass.Style["opacity"] = "100"; //רק בלחיצה על כפתור גילוי סיסמה
                 userPass = dtu.Rows[0]["userPass"].ToString();
+                userName = dtu.Rows[0]["userName"].ToString();
                 json2 = Json(dtid);
+
+             
             }
         }
     }
@@ -46,11 +53,13 @@ public partial class culture : System.Web.UI.Page
             return JSONString;
         }
     }
-    public void changepss()
+    [WebMethod]
+    public static void changepss(string userPass1, string ID)
     {
-        string userPass1 = Request.Form["userPass1"];
+        userPass1 = userPass1.ToString();
         string sql4 = "UPDATE users SET userPass='" + userPass1 + "' WHERE ID='" + ID + "';"; //לא עובד!
-        MyAdoHelper.DoQuery("db1.mdb", sql4);
+        string filename = "db1.mdb";
+        MyAdoHelper.DoQuery(filename, sql4);
     }
 
 }

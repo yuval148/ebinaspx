@@ -9,6 +9,13 @@
                 background-size: 100%, 100%;
                 background-repeat: no-repeat;
             }
+       @media screen and (max-width: 480px) {
+
+           body {
+               background: url("media/bgphoneT.png");
+               background-size: 100%;
+           }
+       }
             .mdl-components__warning {
     width: 100%;
     max-width: 640px;
