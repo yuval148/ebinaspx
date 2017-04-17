@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 public partial class culture : System.Web.UI.Page
 {
-    public string json = "";
+    public string json = "",json2="";
     public string userPass;
     protected void Page_Load()
     {
@@ -34,7 +34,7 @@ public partial class culture : System.Web.UI.Page
                 DataTable dtid = MyAdoHelper.ExecuteDataTable(fileName, sql3);
                 changepass.Style["opacity"] = "100"; //רק בלחיצה על כפתור גילוי סיסמה
                 userPass = dtu.Rows[0]["userPass"].ToString();
-
+                json2 = Json(dtid);
             }
         }
     }
@@ -42,7 +42,7 @@ public partial class culture : System.Web.UI.Page
     {
         {
             string JSONString = string.Empty;
-            JSONString = Newtonsoft.Json.JsonConvert.SerializeObject(new { Class = table });
+            JSONString = Newtonsoft.Json.JsonConvert.SerializeObject(new { stu = table });
             return JSONString;
         }
     }
