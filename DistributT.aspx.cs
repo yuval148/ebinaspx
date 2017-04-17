@@ -21,6 +21,7 @@ public partial class Distribut : System.Web.UI.Page
         }
         string subject = "", diff = "", kita="", numof1;
         string dd, mm, yyyy, exp;
+        string icon = "note_add", title = "", msg = "";
         int numof;
         string sqlkita = "SELECT DISTINCT kita FROM users;";
         DataTable dtkita = MyAdoHelper.ExecuteDataTable("db1.mdb", sqlkita); //יונתן תציל אותי ותעביר לפרונט
@@ -49,9 +50,9 @@ public partial class Distribut : System.Web.UI.Page
                 DataTable dtat;
                 DataTable dtatu;
                 dt1 = MyAdoHelper.ExecuteDataTable(fileName7, sql2);//users
-                int i = 0,x,f,rand,b=0;
+                int i = 0,x,f,rand,b=0,d=0;
                 Random rnd = new Random();
-                string ID,sql1,sql3,sql4,sql5,sql6,sql7,sql8;
+                string ID,sql1,sql3,sql4,sql5,sql6,sql7,sql8,sql9;
                 string TALMIDMAAGARSQL;
                 bool found = false;
                 sql3 = "SELECT * FROM TAT" + subject + " WHERE diff='" + diff + "';"; //מאגר
@@ -75,6 +76,7 @@ public partial class Distribut : System.Web.UI.Page
                                     x = 0;
                                     f = 0;
                                     b = 0;
+                                    d = 0;
                                     while (x < dtat.Rows.Count)//עבור כל תרגיל
                                     {
                                         found = false;
@@ -101,10 +103,12 @@ public partial class Distribut : System.Web.UI.Page
                                         }
                                         x++;
                                     }
-                                    b = b + int.Parse(dtu.Rows[0][2].ToString());
-                                    sql7 = "UPDATE ID" + ID + " SET ctargil='" + b.ToString() + "' WHERE subjectID='" + subject + "';";//הוספת התרגילים החדשים לסיתרגיל
+                                    d = b + int.Parse(dtu.Rows[0][2].ToString());
+                                    sql7 = "UPDATE ID" + ID + " SET ctargil='" + d.ToString() + "' WHERE subjectID='" + subject + "';";//הוספת התרגילים החדשים לסיתרגיל
                                     MyAdoHelper.DoQuery(fileName7, sql7);
-
+                                    title = "נוספו " + b.ToString() + " תרגילים חדשים ב" + xpstuf.IDsubject(subject); //msg
+                                    sql9 = "INSERT INTO MSG (icon, title, msg, kita, datec, exp) VALUES('" + icon + "','" + title + "','" + msg + "','" + kita + "','" + datec + "','" + exp + "');";
+                                    MyAdoHelper.DoQuery(fileName7, sql9);
                                 }
                                 else
                                 {
@@ -114,6 +118,7 @@ public partial class Distribut : System.Web.UI.Page
                                     x = 0;
                                     f = 0;
                                     b = 0;
+                                    d = 0;
                                     while (x < numof)//עבור כל תרגיל
                                     {
                                         sql5 = "SELECT * FROM TAT" + subject + "_" + ID + ";";  //מאגר אישי מעודכן למניעת כפילויות
@@ -139,9 +144,12 @@ public partial class Distribut : System.Web.UI.Page
                                         b++;
                                         x++;
                                     }
-                                    b = b + int.Parse(dtu.Rows[0][2].ToString());
-                                    sql7 = "UPDATE ID" + ID + " SET ctargil='" + b.ToString() + "' WHERE subjectID='" + subject + "';";//הוספת התרגילים החדשים לסיתרגיל
+                                    d = b + int.Parse(dtu.Rows[0][2].ToString());
+                                    sql7 = "UPDATE ID" + ID + " SET ctargil='" + d.ToString() + "' WHERE subjectID='" + subject + "';";//הוספת התרגילים החדשים לסיתרגיל
                                     MyAdoHelper.DoQuery(fileName7, sql7);
+                                    title = "נוספו " + b.ToString() + " תרגילים חדשים ב" + xpstuf.IDsubject(subject); //msg
+                                    sql9 = "INSERT INTO MSG (icon, title, msg, kita, datec, exp) VALUES('" + icon + "','" + title + "','" + msg + "','" + kita + "','" + datec + "','" + exp + "');";
+                                    MyAdoHelper.DoQuery(fileName7, sql9);
                                 }
                                 i++;
                             }
@@ -158,6 +166,9 @@ public partial class Distribut : System.Web.UI.Page
                             {
                                 sql4 = "INSERT INTO ID" + ID + " (subject, subjectID, ctargil, diff, cou)values('" + xpstuf.IDsubject(subject) + "','" + subject + "','" + dtat.Rows.Count.ToString() + "','" + diff + "','0');";
                                 MyAdoHelper.DoQuery(fileName7, sql4);
+                                title = "נוספו " + dtat.Rows.Count.ToString() + " תרגילים חדשים ב" + xpstuf.IDsubject(subject); //msg
+                                sql9 = "INSERT INTO MSG (icon, title, msg, kita, datec, exp) VALUES('" + icon + "','" + title + "','" + msg + "','" + kita + "','" + datec + "','" + exp + "');";
+                                MyAdoHelper.DoQuery(fileName7, sql9);
                                 //sendthemall
                                 x = 0;
                                 while (x < dtat.Rows.Count)//עבור כל תרגיל
@@ -172,6 +183,9 @@ public partial class Distribut : System.Web.UI.Page
                                 x = 0;
                                 sql4 = "INSERT INTO ID" + ID + " (subject, subjectID, ctargil, diff, cou)values('" + xpstuf.IDsubject(subject) + "','" + subject + "','" + numof1 + "','" + diff + "','0');";
                                 MyAdoHelper.DoQuery(fileName7, sql4);
+                                title = "נוספו " + numof1 + " תרגילים חדשים ב" + xpstuf.IDsubject(subject); //msg
+                                sql9 = "INSERT INTO MSG (icon, title, msg, kita, datec, exp) VALUES('" + icon + "','" + title + "','" + msg + "','" + kita + "','" + datec + "','" + exp + "');";
+                                MyAdoHelper.DoQuery(fileName7, sql9);
                                 //random
                                 sql5 = "SELECT * FROM TAT" + subject + "_" + ID + ";";  //מאגר אישי
                                 dtatu = MyAdoHelper.ExecuteDataTable(fileName7, sql5);

@@ -22,7 +22,7 @@
          <select id="icon" name="icon" class="w3-select">
              <option value="0">בחר סוג</option>
            <option value="announcement">דחופה</option>
-             <option value="note add">משימה חדשה</option>
+             <option value="note_add">משימה חדשה</option>
              <option value="event">תאריך</option>
              <option value="info">התראה</option>
                 </select> 

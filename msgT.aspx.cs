@@ -33,7 +33,7 @@ public partial class msgT : System.Web.UI.Page
             mm = Request.Form["mm"];
             yyyy = Request.Form["yyyy"];
             exp = dd + "/" + mm + "/" + yyyy;
-            if (title == "" || msg == "" || kita == "")
+            if (title == "" || kita == "")
             {
                 Session["ErrIsertForm"] = "נתונים לא מולאו כשורה";
                 // Response.Redirect("form.aspx");
