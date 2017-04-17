@@ -73,7 +73,6 @@ public partial class login : System.Web.UI.Page
                 Session["level"] = xpstuf.level(xpp1);
                 level = xpstuf.level(xpp1);
                 opc = 100;
-                Session["ErrLogin"] = sql2;
                 Session["ErrLogin"] = " שלום " + name + " מקבוצת " + team + " יש לך " + xpp1.ToString() + " נקודות " + "  ואתה בשלב " + level.ToString();
                 Response.Redirect("home.aspx");
             }
