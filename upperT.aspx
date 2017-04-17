@@ -43,7 +43,7 @@
                <button class="w3-button" style="font-family:Heebo; font-weight:500">דוחות</button>
                     <div class="w3-dropdown-content w3-bar-block w3-card-4">
                         <a class="w3-bar-item w3-button" href="topsT.aspx">מצב הנקודות</a>
-                        <a class="w3-bar-item w3-button" href="subjectT.aspx">צפייה בתלמיד</a>
+                        <a class="w3-bar-item w3-button" href="studentT.aspx">צפייה בתלמיד</a>
                         </div>
               </div>
         <a class="mdl-navigation__link" href="DistributT.aspx">הפצת תרגילים</a>
@@ -61,7 +61,7 @@
                <button class="w3-button" style="font-family:Heebo; font-weight:500">דוחות</button>
                     <div class="w3-dropdown-content w3-bar-block w3-card-4">
                         <a class="w3-bar-item w3-button" href="topsT.aspx">מצב הנקודות</a>
-                        <a class="w3-bar-item w3-button" href="subjectT.aspx">צפייה בתלמיד</a>
+                        <a class="w3-bar-item w3-button" href="studentT.aspx">צפייה בתלמיד</a>
                         </div>
               </div>
         <a class="mdl-navigation__link" href="DistributT.aspx">הפצת תרגילים</a>
