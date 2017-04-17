@@ -22,19 +22,19 @@ public class xpstuf
         {
             r = 1;
         }
-        if (xpp >= 100 && xpp < 250)
+        else if(xpp >= 100 && xpp < 250)
         {
             r = 2;
         }
-        if (xpp >= 250 && xpp < 500)
+        else if(xpp >= 250 && xpp < 500)
         {
             r = 3;
         }
-        if (xpp >= 500 && xpp < 900)
+        else if(xpp >= 500 && xpp < 900)
         {
             r = 4;
         }
-        if (xpp >= 1250 && xpp < 1450)
+        else if(xpp >= 900 && xpp < 1400)
         {
             r = 5;
         }
@@ -45,6 +45,82 @@ public class xpstuf
         //if (xpp <= 00 && xpp > 00)
         //{
         //    r = 7;
+        //}
+        return r;
+    }
+    public static int precxp(int xpp)
+    {
+        int r = 0; ;
+        double r1=0;
+        if (xpp >= 0 && xpp < 100)
+        {
+            r = xpp;
+        }
+        else if(xpp >= 100 && xpp < 250)
+        {
+            r1 = xpp-100;
+            r1 = r1 / 150;
+            r1 = r1 * 100;
+            r = (int) r1;
+        }
+        else if(xpp >= 250 && xpp < 500)
+        {
+            r1 = xpp - 250;
+            r1 = r1 / 250;
+            r1 = r1 * 100;
+            r = (int)r1;
+        }
+        else if(xpp >= 500 && xpp < 900)
+        {
+            r1 = xpp - 500;
+            r1 = r1 / 400;
+            r1 = r1 * 100;
+            r = (int)r1;
+        }
+        else if(xpp >= 900 && xpp < 1400)
+        {
+            r1 = xpp - 900;
+            r1 = r1 / 500;
+            r1 = r1 * 100;
+            r = (int)r1;
+        }
+        //if (xpp <= 00 && xpp > 00)
+        //{
+        // }
+        //if (xpp <= 00 && xpp > 00)
+        //{
+        //}
+        return r;
+    }
+    public static int xptilnext(int xpp)
+    {
+        int r = 0; ;
+        if (xpp >= 0 && xpp < 100)
+        {
+            r = 100- xpp;
+        }
+        else if (xpp >= 100 && xpp < 250)
+        {
+            r = 250 - xpp;
+        }
+        else if (xpp >= 250 && xpp < 500)
+        {
+            r = 500- xpp;
+
+        }
+        else if(xpp >= 500 && xpp < 900)
+        {
+            r = 900 - xpp;
+        }
+        else if(xpp >= 900 && xpp < 1400)
+        {
+            r = 1400 - xpp;
+        }
+        //if (xpp <= 00 && xpp > 00)
+        //{
+        // }
+        //if (xpp <= 00 && xpp > 00)
+        //{
         //}
         return r;
     }

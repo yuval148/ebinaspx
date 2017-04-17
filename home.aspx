@@ -99,9 +99,11 @@ background-image: url(../media/new/{{subjectID}}.png);border-top:solid #{{GetMas
                             <span style="font-size:20px; font-weight:bold"> {{name}} </span><hr /><br>
                             <span style="font-size:20px; line-height:70%" >קבוצת  {{team}} </span><hr /> <br>
                             <div class="w3-light-grey w3-round-xlarge">
-                                <div class="w3-container w3-indigo w3-round-xlarge" style="width:25%">25%</div>
+                                <div class="w3-container w3-indigo w3-round-xlarge" id=progi style="width:25%" runat="server"><%=prog.ToString()%>%</div>
                             </div><br />                                
-                            <span style="font-size:20px;line-height:20%"> {{xpp}} נקודות</span><hr /> <br>
+                            <span style="font-size:20px;line-height:20%"> {{xpp}} נקודות</span><br>
+                            <span style="font-size:10px;line-height:20%"> <%=tilnext.ToString()%> נקודות עד הרמה הבאה</span>
+                            <hr /> <br>
                             <span style="font-size:20px; line-height:80%" >שלב  <span class="mdl-badge" data-badge="{{GetLevel xpp}}"></span> </span><hr /> <br>
                             <span style="font-size:20px; line-height:80%" >{{kita}}<br><br></span>
                         </div>
@@ -189,7 +191,7 @@ background-image: url(../media/new/{{subjectID}}.png);border-top:solid #{{GetMas
                         {
                             r = 4;
                         }
-                        if (xp >= 1250 && xp < 1450)
+                        if (xp >= 900 && xp < 1450)
                         {
                             r = 5;
                         }

@@ -11,32 +11,22 @@ using System.Data;
 public partial class home : System.Web.UI.Page
 {
     public string json = "", jsonPro = "",jsonMes="";
-
+    public int prog;
+    public int tilnext;
     protected void Page_Load(object sender, EventArgs e)
     {
         if (Session["userName"] == null)
         {
             Response.Redirect("login.aspx");
         }
-        //חישוב XP TODO
-        //חיבור כל הCOU
-        //ללא עמודת XPP בטבלה USERS
 
-        //חישוב שליטה בחומר
-        //COU
-        //לחלק
-        //בCTARGIL
-        // *100
-
-        //TODO!
-        double prog = 50;
         int level = Int32.Parse(Session["level"].ToString());
-        double curxp = Double.Parse(Session["xpp"].ToString()) - 250;
-        prog = (curxp / 250) * 100;
-        Session["prog"] = prog;
+        int xpp = Int32.Parse(Session["xpp"].ToString());
+        prog = xpstuf.precxp(xpp);  //אחוז נקודות בשלב
+        tilnext = xpstuf.xptilnext(xpp); // מספר נקודות עד הרמה הבאה
+        progi.Style["width"] = String.Format("{0}%", prog);
 
         DataTable dt, dt2, dtPro,dtMes;
-        Session["sendr"] = "";
         string sendr = "";
         int f = 0;
         string sql = "", sql2 = "", sqlPro = "",sqlMes="";
