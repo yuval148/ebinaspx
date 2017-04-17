@@ -121,7 +121,7 @@ background-image: url(../media/new/{{subjectID}}.png);border-top:solid #{{GetMas
                                 <i class="material-icons">{{icon}}</i>
                                 <span class="w3-large">{{title}}</span><br>
                                 <span>{{msg}}</span>,
-                                <span style="color:#3f51b5">{{kita}}</span>
+                                <span style="color:#3f51b5">{{kita}}</span><br>
                                 <span style="color:#9e9e9e; font-size:10px;">{{datec}}</span>
                                 <span style="color:#9e9e9e; font-size:10px;">{{byy}}</span>
                                 
