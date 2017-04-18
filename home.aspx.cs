@@ -20,6 +20,22 @@ public partial class home : System.Web.UI.Page
             Response.Redirect("login.aspx");
         }
 
+        //התחלת חישוב XP שוב
+        string fileName = "db1.mdb"; //שם המסד
+        string sql1 = "SELECT * FROM ID" + Session["ID"].ToString() + ";";
+        DataTable dtid = MyAdoHelper.ExecuteDataTable(fileName, sql1);
+        int xpp1 = 0;
+        for (int i = 0; i < dtid.Rows.Count; i++)
+        {
+            xpp1 += int.Parse(dtid.Rows[i]["cou"].ToString());
+        }
+        xpp1 = xpp1 * 10;
+        string sqlxpp = "UPDATE users SET xpp='" + xpp1.ToString() + "' WHERE userName='" + Session["userName"].ToString() + "' AND ID='" + Session["ID"].ToString() + "';";
+        MyAdoHelper.DoQuery(fileName, sqlxpp);
+
+        //סוף הפעולה
+        Session["xpp"] = xpp1.ToString();
+        Session["level"] = xpstuf.level(xpp1);
         int level = Int32.Parse(Session["level"].ToString());
         int xpp = Int32.Parse(Session["xpp"].ToString());
         prog = xpstuf.precxp(xpp);  //אחוז נקודות בשלב
@@ -31,7 +47,6 @@ public partial class home : System.Web.UI.Page
         int f = 0;
         string sql = "", sql2 = "", sqlPro = "",sqlMes="";
         string tableName = "ID" + Session["ID"];//שם הטבלה
-        string fileName = "db1.mdb"; //שם המסד
         //טעינת הנתונים ממסד הנתונים
         sql = "select DISTINCT subjectID from " + tableName;//sql  יצירת מחרוזת שליפה מטבלה ואיחסונה במשתנה
         sql2 = "select *from " + tableName;
