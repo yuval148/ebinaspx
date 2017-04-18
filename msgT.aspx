@@ -13,6 +13,12 @@
     </style>
   </head>
 <body style="font-family:Arial, Helvetica, Sans-Serif; text-align:center;">
+                       <!-- <div style="display:inline-block" id="someId">
+                            <asp:CheckBoxList ID="CBList" runat="server" CssClass="cbl"> 
+                            </asp:CheckBoxList>
+
+                        </div> !-->
+
     <h3 style="font-family:Heebo;">מערכת הפצת הודעות</h3>
     <form method="post">
         <table align=center>
@@ -107,29 +113,25 @@
             <tr>
                 <td>כיתה</td>
                 <td>
-              <script type="text/javascript">
-      /*  $(document).ready(function () {
-            var newInput = document.createElement('input');
-            newInput.id="kita";
-            newInput.name="kita";
-            newInput.type="checkbox" //תתקן!
-            new //<input class="w3-check" type="checkbox" name="kita" id = kita><label>יב חרטא</label>
-            newInput.className="w3-check"
-            var selectHTML = "";
-            var data = (< % = this.json%>); //לצמצם רווחים
-            var choices = $.map(data, function(el) { return el; })
-            for (i = 0; i < choices.length; i = i + 1) {
-                var x = choices[i]["kita"];
-                selectHTML += "<option value='" + x + "'>" + x + "</option>";
-            }
-            selectHTML += "</select>";
 
-            newInput.innerHTML = selectHTML;
-            document.getElementById('class_selection').appendChild(newInput);
+              <script type="text/javascript">                  /*          
+                  $(document).ready(function () {
+                      var data = (< %=this.json%>); //לצמצם רווחים
+                      var counter = data.Class.length; alert(counter);
+                      for (var i = 0; i < counter; i++) {
+                          $('<asp:ListItem', {
+                              Class: "w3-check",
+                              name: 'name' + data.Class[i].kita,
+                              value:  data.Class[i].kita,
+                              style:'display:inline-block',
+                          })
+                          .appendTo("#CBList");
+                          $("</asp:ListItem>"+"<p style='display:inline-block'>"+data.Class[i].kita+"</p>"+"<br/>").appendTo( "#someId" );
+                      }
+                  
 
-
-        }); */
-
+        }); 
+        */
  </script>
               <script type="text/javascript">
         $(document).ready(function () {
