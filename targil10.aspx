@@ -173,7 +173,7 @@
                    var text = "תשובה נכונה, כל הכבוד!";
                    $.ajax({
                     type: "POST",
-                    url: "targil3.aspx/change",
+                    url: "targil10.aspx/change",
                     data:'{"tatID":'+id+',"ID":'+<%=Session["ID"]%>+' }',
                     contentType: "application/json; charset=utf-8",
                     success: function() {

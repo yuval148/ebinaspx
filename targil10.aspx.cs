@@ -30,6 +30,8 @@ public partial class targil10 : System.Web.UI.Page
             sql = "select * from " + tableName;
             DataTable dt;
             dt = MyAdoHelper.ExecuteDataTable(fileName, sql);
+            CheckDatemsg(dt);
+            dt = MyAdoHelper.ExecuteDataTable(fileName, sql);
             json = Json(dt);
         }
         else
@@ -44,6 +46,21 @@ public partial class targil10 : System.Web.UI.Page
                 ;
             JSONString = Newtonsoft.Json.JsonConvert.SerializeObject(new { sub = table });
             return JSONString;
+        }
+    }
+    public void CheckDatemsg(DataTable table)
+    {
+        string exp;
+        string fileName = "db1.mdb";
+        for (int i = 0; i < table.Rows.Count; i++)
+        {
+            exp = table.Rows[i]["exp"].ToString();
+            DateTime dt = DateTime.ParseExact(exp, "dd/MM/yyyy", null);
+            if (DateTime.Now >= dt)
+            {
+                string sqlDel = "DELETE FROM TAT10_" + Session["ID"] + " WHERE ID='" + table.Rows[i]["ID"].ToString() + "' AND datec='" + table.Rows[i]["datec"].ToString() + "' AND exp='" + table.Rows[i]["exp"].ToString() + "';";
+                MyAdoHelper.DoQuery(fileName, sqlDel);
+            }
         }
     }
     [WebMethod]
