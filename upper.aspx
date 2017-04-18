@@ -2,13 +2,12 @@
 <!doctype html>
 <html dir="rtl">
     <head> 
-                                <!-- ver 001.0045.001--!>
+                                <!-- ver 001.005.001--!>
         <!--mobile confg-->
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <!--handlebars-->
         <script src="js/handlebars-v4.0.5.js"></script>
-        <script src="js/main.js"></script>
         <!--javascript & css-->
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Heebo:300,500,700,900&amp;subset=hebrew">

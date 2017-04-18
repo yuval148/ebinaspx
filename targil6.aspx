@@ -67,7 +67,7 @@
 </head>
 <body>
      <main class="mdl-layout__content" id="container" >
-                  <div id="exercise" class="demo-card-square mdl-card mdl-shadow--2dp"></div>
+        <div id="exercise" class="demo-card-square mdl-card mdl-shadow--2dp"></div>
          <div  id="ansBtn">
          <form id="ans">
   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
@@ -76,16 +76,12 @@
     <span class="mdl-textfield__error">X צריך להיות מספר</span> <!--עודדדדדד!-->
   </div>
 </form>
-         <button id="Btn" class="mdl-button mdl-js-button mdl-button--raised"  onclick="check()" type="button">בדוק תשובה</button>
-<div id="demo-toast-example" class="mdl-js-snackbar mdl-snackbar">
-  <div class="mdl-snackbar__text"></div>
-  <button class="mdl-snackbar__action" type="button"></button>
-</div>
+         <button id="Btn" class="w3-button w3-indigo" type="button">בדוק תשובה</button>
              </div>
 
          <div id="infoDiv" class="demo-card-square mdl-card mdl-shadow--2dp">
             <div class="mdl-card__title mdl-card--expand">
-                <h2 class="mdl-card__title-text">6מידע שימושי</h2>
+                <h2 class="mdl-card__title-text">מידע שימושי</h2>
             </div>
 
             <div class="mdl-card__supporting-text">
@@ -115,62 +111,102 @@
             </div>
 
         </div>
-         <!--
-         <div class="demo-card-image mdl-card mdl-shadow--2dp">
-  <div class="mdl-card__title mdl-card--expand"></div>
-  <div class="mdl-card__actions">
-    <span class="demo-card-image__filename"><a  target="_blank" href="https://youtu.be/umRfjSqHyQs?t=1m51s">צריך עזרה?</a></span>
+            <button id="skip">דלג</button>      
+<div id="modal">
+    <div id="id01" class="w3-modal w3-animate-opacity w3-center">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-indigo"> 
+        <span onclick="document.getElementById('id01').style.display='none'" 
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>תשובה נכונה!</h2>
+      </header>
+      <div class="w3-container">
+        <p>כל הכבוד! אני בטוח שאמא גאה</p>
+      </div>
+      <footer class="w3-container w3-indigo">
+   <button id="next">לתרגיל הבא</button>      
+      </footer>
+    </div>
   </div>
-</div>
-         -->
-         
-        <!-- Colored raised button -->
-         
-    
-   <button id="next">Next</button>      
+         <div id="id02" class="w3-modal">
+    <div class="w3-modal-content w3-card-4 w3-center">
+      <header class="w3-container w3-red"> 
+        <span onclick="document.getElementById('id02').style.display='none'" 
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>אוי לא!</h2>
+      </header>
+      <div class="w3-container">
+        <p>על יוסיברטיסה כבר שמעת?</p>
+      </div>
+      <footer class="w3-container w3-red">
+          <button id="skip2">נסה שוב</button>      
+
+      </footer>
+    </div>
+  </div>
+    </div>
    </main>  
    <script type="text/javascript">
        var images = '';
-       var button = document.querySelector("#next");
-       var imagePointer = 0;
-       var answerPointer = 0;
+       var nextBtn = document.querySelector("#next"); var skipBtn =document.querySelector("#skip"); var skipBtn2 =document.querySelector("#skip2");
+       var imagePointer = 0; var answerPointer = 0;
        var data = (<%=this.json%>); var count = data.sub.length;
        var ans = data.sub[answerPointer].answ;
        var isC = false;
        var id=(data.sub[imagePointer].ID);
 
+       updateImage();
+       updateAnswer();
+       imagePointer++;
+       answerPointer++;
+
        function updateImage() {
            if(imagePointer >= count) imagePointer = 0;
            images = '<img class="img" src="' + data.sub[imagePointer].location+'" />';
            document.getElementById( 'exercise' ).innerHTML = images;
-           alert(exercise.innerHTML);
+           //alert(exercise.innerHTML);
            id =(data.sub[imagePointer].ID);
        }
        function updateAnswer() {
            if(answerPointer >= count) answerPointer = 0;
            answers = data.sub[answerPointer].answ ; 
            ans = answers;
-           alert(ans);
+           //alert(ans);
        }
-       button.addEventListener('click', function() {
+
+       nextBtn.addEventListener('click', function() {
+           $( "#modal" ).click(function() {
+               $( "#id01" ).fadeOut();
+           });
            updateImage();
            updateAnswer();
            imagePointer++;
            answerPointer++;
 
        });
+
+       skipBtn.addEventListener('click', function() {
+           updateImage();
+           updateAnswer();
+           imagePointer++;
+           answerPointer++;
+
+       });
+       skipBtn2.addEventListener('click', function() {
+           $( "#modal" ).click(function() {
+               $( "#id02" ).fadeOut();
+           });
+
+       });
        (function check () {
-           'use strict';
             
-           var snackbarContainer = document.querySelector('#demo-toast-example');
-           var showToastButton = document.querySelector('#Btn');
-           showToastButton.addEventListener('click', function () {
+           var btn = document.querySelector('#Btn');
+           btn.addEventListener('click', function () {
                'use strict';
                
                var x = document.getElementById("numb").value;
                if (x == ans) {
-                  
-                   var text = "תשובה נכונה, כל הכבוד!";
+                   document.getElementById('id01').style.display='block';
                    $.ajax({
                     type: "POST",
                     url: "targil6.aspx/change",
@@ -185,10 +221,10 @@
                 });
                }
                else {
-                   var text = "טעות, נסה שוב!";
+                   document.getElementById('id02').style.display='block';
+
                }
-               var data = { message: text};
-               snackbarContainer.MaterialSnackbar.showSnackbar(data);
+
            });
        }());
   </script>

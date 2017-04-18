@@ -7,7 +7,7 @@
 <html dir="rtl">
     <head> 
         <link rel="stylesheet" href="css/circle.css">
-        <link href="css/home.css" rel="stylesheet" />
+        <link href="css/homeT.css" rel="stylesheet" />
         <title></title>
         <style>
         </style>
