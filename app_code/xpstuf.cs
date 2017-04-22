@@ -133,7 +133,7 @@ public class xpstuf
             case "פרבולות": return 1;
             case "טריגונומטריה": return 2;
             case "אלגברה": return 3;
-            case "סטטיסטיקה והסתברות": return 4;
+            case "הסתברות": return 4;
             case "פיזיקה": return 5;
             case "אזרחות": return 6;
             case "היסטוריה": return 7;
@@ -152,7 +152,7 @@ public class xpstuf
             case "1": return "פרבולות";
             case "2": return "טריגונומטריה";
             case "3": return "אלגברה";
-            case "4": return "סטטיסטיקה והסתברות";
+            case "4": return "הסתברות";
             case "5": return "פיזיקה";
             case "6": return "אזרחות";
             case "7": return "היסטוריה";
