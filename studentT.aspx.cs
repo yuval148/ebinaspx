@@ -6,7 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.Services;
 
-public partial class culture : System.Web.UI.Page
+public partial class studentT : System.Web.UI.Page
 {
     public string json = "", json2 = "", json3 = "",ID;
     public string userPass, userName;

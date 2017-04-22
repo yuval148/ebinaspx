@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="kitaT.aspx.cs" Inherits="culture" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="kitaT.aspx.cs" Inherits="kitaT" %>
 <!--#include file="upperT.aspx"-->
 <html>
 <head>

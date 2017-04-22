@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="tatmT.aspx.cs" Inherits="culture" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="tatmT.aspx.cs" Inherits="tatmT" %>
 <!--#include file="upperT.aspx"-->
 <html>
 <head>

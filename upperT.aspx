@@ -2,7 +2,7 @@
 <!doctype html>
 <html dir="rtl">
     <head> 
-        <!-- ver 001.006.003--!>
+        <!-- ver 001.007.003--!>
         <!--mobile confg-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -46,6 +46,7 @@
                         <a class="w3-bar-item w3-button" href="studentT.aspx">צפייה בתלמיד</a>
                         <a class="w3-bar-item w3-button" href="kitaT.aspx">צפייה בכיתה</a>
                         <a class="w3-bar-item w3-button" href="tatmT.aspx">צפייה במאגר התרגילים האישי</a>
+                        <a class="w3-bar-item w3-button" href="maagarT.aspx">צפייה בכל התרגילים בנושא</a>
                         </div>
               </div>
         <a class="mdl-navigation__link" href="DistributT.aspx">הפצת תרגילים</a>
@@ -66,6 +67,7 @@
                         <a class="w3-bar-item w3-button" href="studentT.aspx">צפייה בתלמיד</a>
                         <a class="w3-bar-item w3-button" href="kitaT.aspx">צפייה בכיתה</a>
                         <a class="w3-bar-item w3-button" href="tatmT.aspx">צפייה במאגר התרגילים האישי</a>
+                        <a class="w3-bar-item w3-button" href="maagarT.aspx">צפייה בכל התרגילים בנושא</a>
                         </div>
               </div>
         <a class="mdl-navigation__link" href="DistributT.aspx">הפצת תרגילים</a>
