@@ -8,7 +8,7 @@ using System.Web.Services;
 
 public partial class studentT : System.Web.UI.Page
 {
-    public string json = "", json2 = "", json3 = "",ID;
+    public string json = "", json2 = "", json3 = "", ID;
     public string userPass, userName;
 
     protected void Page_Load()
@@ -29,7 +29,6 @@ public partial class studentT : System.Web.UI.Page
             if (Request.Form["submit"] != null)
             {
                 ID = Request.Form["ID"];
-                form.Style["opacity"] = "0";
                 stuopc.Style["opacity"] = "100";
                 string sql2 = "SELECT * FROM users WHERE ID='" + ID + "';";
                 DataTable dtu = MyAdoHelper.ExecuteDataTable(fileName, sql2);
@@ -41,7 +40,7 @@ public partial class studentT : System.Web.UI.Page
                 userName = dtu.Rows[0]["userName"].ToString();
                 json2 = Json(dtid);
 
-             
+
             }
         }
     }

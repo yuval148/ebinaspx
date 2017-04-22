@@ -91,8 +91,7 @@
                     for (i = 0; i < arr.length; ++i) {
                         arr[i].className = arr[i].className.replace(" w3-show", "");
                     }
-                }
-                
+                }   
                 var classInfo = document.getElementById("class-temp").innerHTML;
                 var classTemplate = Handlebars.compile(classInfo);
                 var classData = classTemplate(<%=this.json%>);

@@ -9,76 +9,66 @@
                 background-size: 100%, 100%;
                 background-repeat: no-repeat;
             }
-            #stu-div{
-                margin:10px;
+            table.w3-table-all td {
+                text-align:center;
+            }
+            table.w3-table-all th {
+                text-align:center;
             }
     </style>
-
+    <link href="css/homeT.css" rel="stylesheet" />
 </head>
 <body>
-    <div class="w3-row">
-    <div id="pro-div" class="w3-panel w3-row w3-right w3-half"></div>
-    <div id="changepass" style="opacity:0;float:right; margin-top:60px; font-family:Heebo" class="w3-quarter w3-panel" runat="server">
-
-        <div id="pass" style="opacity:0" runat="server">
-            <table align="center">
-                <tr>
-                    <td style="font-weight:700">שם משתמש</td>
-                    <td><span style="color:#9c9c9c"><%=userName %></span></td>
-                </tr>
-                <tr>
-                    <td style="font-weight:700">סיסמה</td>
-                    <td><input class="w3-input" type="text" name="userPass1" id="userPass1" placeholder="<%=userPass %>"></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td><span style="font-family:Heebo; font-weight:300">לעדכון סיסמה, הכנס את הסיסמה החדשה ולחץ עדכן.</span></td>
-                </tr>
-            </table> 
-            <button name="update" id="update">עדכון סיסמה</button>
-        </div>
-        <br />
-        <button type="button" 
-onclick="document.getElementById('pass').style.opacity = '100'" class="w3-button w3-red">
-הצג סיסמה</button>
-        </div>
-        </div>
- <div id="form" style="opacity:100; text-align:center" runat="server">
-    <form method="post">
-     <table align="center">
-            <tr>
-                <td>תלמיד</td>
-                <td>
-              
-                    <div id="student_selection">
-    </div>
-                    </td></tr>
-            </table>
-         <input type="submit" name="submit" id="Submit" value="צפה בתלמיד" />
+    <div id="page-wrap">
+        <div id="form" class="w3-panel w3-card-4 " style="opacity:100">
+            <form method="post">
+                <div class="w3-cell">
+                    <h5 class="">בחר תלמיד לצפייה</h5>
+                    <div style="width:200px" id="student_selection"></div><br />
+                    <input class="w3-button w3-red w3-hover-red" type="submit" name="submit" id="Submit" value="צפה בתלמיד" />
+                </div>
             </form>
         </div>
-    <div id="stuopc" style="opacity:0;width:80%;margin-left:auto;margin-right:auto" class="w3-responsive" runat="server">
-        <div id="stu-div"></div>
-</div>
-                 
-
-    
-    <!-- צריך להיות פה כפתור שרק בלחיצה עליו מפעיל את הדיב הבא !-->
-    
-
+        <hr />
+        <div class="w3-row">
+            <div id="pro-div" class="w3-panel w3-row w3-right w3-half">
+                
+            </div>
+            <div id="changepass" style="opacity:0;float:right; margin-top:60px; font-family:Heebo" class="w3-panel w3-half" runat="server">
+                    <div id="pass" style="opacity:0" runat="server">
+                        <table align="center">
+                            <tr>
+                                <td style="font-weight:700">שם משתמש</td>
+                                <td><span style="color:#9c9c9c"><%=userName %></span></td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight:700">סיסמה</td>
+                                <td><input class="w3-input" type="text" name="userPass1" id="userPass1" placeholder="<%=userPass %>"></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td><span style="font-family:Heebo; font-weight:300">לעדכון סיסמה, הכנס את הסיסמה החדשה ולחץ עדכן.</span></td>
+                            </tr>
+                        </table> 
+                        <button name="update" id="update">עדכון סיסמה</button>
+                    </div>
+                    <br />
+                </div>
+            <div id="stuopc" style="opacity:0;width:80%;margin-left:auto;margin-right:auto" class="w3-responsive" runat="server">
+            <div class="w3-panel" style="text-align:right"id="stu-div"></div>
+        </div>
+            </div>
         <script id="pro-temp" type="text/x-handlebars-template">
                     {{#each stu}}
-                    <div class="w3-half" style="top:200px">
+                                <img src="media/{{pic}}" style="width:120px; height:120px;margin:10px;" class="w3-circle w3-right w3-half">
+                    <div class="w3-half w3-right w3-cell w3-cell-middle" style="top:200px;line-height:normal">
                         <span style="font-size:50px;font-weight:700;font-family:Heebo;"> {{name}} </span>
                         <br />
-                        <span style="font-size:20px; font-weight:300;font-family:Heebo; line-height:80%; text-align:right">{{kita}}, קבוצת  {{team}}</span>                     
-
+                        <span style="font-size:20px; font-weight:300;font-family:Heebo; line-height:80%; text-align:right">{{kita}}, קבוצת  {{team}}</span><br>
+                       <div class="w3-left"><button type="button" onclick="document.getElementById('pass').style.opacity = '100'" class="w3-button w3-center w3-red w3-hover-red">הצג סיסמה</button></div>
                     </div>
-                               <img src="media/{{pic}}" style="width:120px; height:120px;margin:10px;" class="w3-circle w3-center w3-half">
                     {{/each}}
                 </script>
-    
-
     <script id="stu-temp" type="text/x-handlebars-template">
         <table class="w3-table-all w3-card">
             <tr>
@@ -104,7 +94,7 @@ onclick="document.getElementById('pass').style.opacity = '100'" class="w3-button
             var newSelect = document.createElement('select');
             newSelect.id="ID";
             newSelect.name="ID";
-            newSelect.className="w3-select"
+            newSelect.className="w3-select";
             var selectHTML = "";
             var data = (<%=this.json%>);
             var choices = $.map(data, function(el) { return el; })
