@@ -6,9 +6,6 @@
 <!doctype html>
 <html dir="rtl">
     <head> 
-        <script type="text/javascript">
-            
-        </script>
         <link rel="stylesheet" href="css/circle.css">
         <link href="css/homeT.css" rel="stylesheet" />
         <title></title>
@@ -77,6 +74,7 @@
                 document.querySelector('body').addEventListener('click', function(event){
                     if (event.target.tagName.toLowerCase() === 'li') {
                         var id = event.target.id;
+                        CloseAll();
                         myFunction1(id);
                     }
                 });
@@ -88,6 +86,13 @@
                         x.className = x.className.replace(" w3-show", "");
                     }
                 }
+                function CloseAll() {
+                    var arr = document.querySelectorAll('.w3-hide'), i;
+                    for (i = 0; i < arr.length; ++i) {
+                        arr[i].className = arr[i].className.replace(" w3-show", "");
+                    }
+                }
+                
                 var classInfo = document.getElementById("class-temp").innerHTML;
                 var classTemplate = Handlebars.compile(classInfo);
                 var classData = classTemplate(<%=this.json%>);
