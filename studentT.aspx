@@ -50,7 +50,7 @@
                                 <td><span style="font-family:Heebo; font-weight:300">לעדכון סיסמה, הכנס את הסיסמה החדשה ולחץ עדכן.</span></td>
                             </tr>
                         </table> 
-                        <button name="update" id="update">עדכון סיסמה</button>
+                        <button style="margin-right:62.5%" class="w3-button w3-red w3-hover-red" name="update" id="update">עדכון סיסמה</button>
                     </div>
                     <br />
                 </div>
@@ -64,8 +64,8 @@
                     <div class="w3-half w3-right w3-cell w3-cell-middle" style="top:200px;line-height:normal">
                         <span style="font-size:50px;font-weight:700;font-family:Heebo;"> {{name}} </span>
                         <br />
-                        <span style="font-size:20px; font-weight:300;font-family:Heebo; line-height:80%; text-align:right">{{kita}}, קבוצת  {{team}}</span><br>
-                       <div class="w3-left"><button type="button" onclick="document.getElementById('pass').style.opacity = '100'" class="w3-button w3-center w3-red w3-hover-red">הצג סיסמה</button></div>
+                        <span style="font-size:20px; font-weight:300;font-family:Heebo; line-height:80%; text-align:right">{{kita}}, קבוצת  {{team}}</span><br />
+                       <div style="margin:10px" class="w3-right"><button type="button" onclick="document.getElementById('pass').style.opacity = '100'" class="w3-button w3-center w3-red w3-hover-red">הצג סיסמה</button></div>
                     </div>
                     {{/each}}
                 </script>
