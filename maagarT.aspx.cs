@@ -9,7 +9,7 @@ using System.Web.Services;
 
 public partial class maagarT : System.Web.UI.Page
 {
-    public string json = "", json2 = "", json3 = "",ID;
+    public string json = "", json2 = "", json3 = "",ID, errform;
     public string userPass, userName;
 
     protected void Page_Load()
@@ -22,14 +22,14 @@ public partial class maagarT : System.Web.UI.Page
             string dd, mm, yyyy, drm , subject;
         if (Request.Form["submit"] != null)
         {
-            Session["errform"] = "";
+            errform = "";
             dd = Request.Form["dd"];
             mm = Request.Form["mm"];
             yyyy = Request.Form["yyyy"];
             subject = Request.Form["subject"];
             if (dd == "0" || mm == "0" || yyyy == "0" || subject == "0")
             {
-                Session["errform"] = "הטופס לא מולא כשורה.";
+                errform = "הטופס לא מולא כשורה.";
             }
             else
             {
@@ -87,11 +87,11 @@ public partial class maagarT : System.Web.UI.Page
                     }
                     json = Json(result);
                     json2 = Json(tat);
-                    Session["errform"] = "הפעולה הושלמה בהצלחה.";
+                    errform = "הפעולה הושלמה בהצלחה.";
                 }
                 else
                 {
-                    Session["errform"] = "לא נמצאו תרגילים במאגר המבוקש.";
+                    errform = "לא נמצאו תרגילים במאגר המבוקש.";
                 }
             }
 
