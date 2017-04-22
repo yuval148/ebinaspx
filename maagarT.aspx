@@ -188,6 +188,6 @@
         });
 
     </script>
-            <%=Session["errform"] %>
+            <%=errform%>
 </body>
 </html>
