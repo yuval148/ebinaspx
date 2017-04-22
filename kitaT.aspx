@@ -80,8 +80,8 @@
     </script>
     <script type="text/javascript">
         $(document).ready(function () {
-
-     
+        
+         
         var stuInfo = document.getElementById("stu-temp").innerHTML;
         var stuTemplate = Handlebars.compile(stuInfo);
         var stuData = stuTemplate(<%=this.json3%>);

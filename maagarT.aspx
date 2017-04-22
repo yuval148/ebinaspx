@@ -114,10 +114,9 @@
         <div id="tat-div"></div>
         </div>
 
-
      <script id="stu-temp" type="text/x-handlebars-template">
-        <table class="w3-table-all w3-card">
-            <tr>
+        <table id="table" class="w3-table-all w3-card">
+                <tr>
                 <th>מספר סידורי של תרגיל</th>
                 <th>האם נפתר</th>
                 <th>תאריך הפצה</th>
@@ -128,7 +127,7 @@
                 <th>תמונה</th>
             </tr>
             {{#each stu}}
-            <tr>
+            <tr id="{{ID}}">
                 <td>{{ID}}</td>
                 <td> <i class="material-icons">{{Geticon iscomplete}}</i></td>
                 <td>{{datec}}</td>
@@ -149,44 +148,68 @@
                 <th>תשובה</th>
                 <th>דרגת קושי</th>
             </tr>
-            {{#each stu}}
-            <tr>
-                <td>{{ID}}</td>
-                <td><a href="{{location}}">צפייה בתרגיל</a></td>
-                <td>{{answ}}</td>
-                <td>{{diff}} יח"ל</td>
-            </tr>
+            {{#each stu}}         
+                <tr>
+                    <td>{{ID}}</td>
+                    <td><a href="{{location}}">צפייה בתרגיל</a></td>
+                    <td>{{answ}}</td>
+                    <td>{{diff}} יח"ל</td>
+                </tr>
             {{/each}}
         </table>
     </script>
     <script type="text/javascript">
         $(document).ready(function () {
 
-     
-        var stuInfo = document.getElementById("stu-temp").innerHTML;
-        var stuTemplate = Handlebars.compile(stuInfo);
-        var stuData = stuTemplate(<%=this.json%>);
-            document.getElementById("stu-div").innerHTML += stuData;
+            
+            var stuInfo = document.getElementById("stu-temp").innerHTML;
+            var stuTemplate = Handlebars.compile(stuInfo);
+            var stuData = stuTemplate(<%=this.json%>);
+                document.getElementById("stu-div").innerHTML += stuData;
 
-        var tatInfo = document.getElementById("tat-temp").innerHTML;
-        var tatTemplate = Handlebars.compile(tatInfo);
-        var tatData = tatTemplate(<%=this.json2%>);
-        document.getElementById("tat-div").innerHTML += tatData;
-
-        });
-        Handlebars.registerHelper('Geticon', function (iscomplete) {
-            if (iscomplete == "true" || iscomplete == "1" || iscomplete == "True") {
-                var r = "done";
-            }
-            else if (iscomplete == "false" || iscomplete == "0" || iscomplete == "False") {
-                var r = "clear";
-            }
-            else {
-                var r = "texture";
-            }
-            return r;
-        });
-
+            var tatInfo = document.getElementById("tat-temp").innerHTML;
+            var tatTemplate = Handlebars.compile(tatInfo);
+            var tatData = tatTemplate(<%=this.json2%>);
+            document.getElementById("tat-div").innerHTML += tatData;
+            /*
+            var array = [];
+            var headers = [];
+            $('#table th').each(function (index, item) {
+                headers[index] = $(item).html();
+            });
+            $('#table tr').has('td').each(function () {
+                var arrayItem = {};
+                $('td', $(this)).each(function (index, item) {
+                    arrayItem[headers[index]] = $(item).html();
+                });
+                array.push(arrayItem);
+            });
+            array = JSON.stringify(array);
+            alert(array);
+                
+            document.getElementById("btn").addEventListener('click', function myFunction() {
+                var x = document.getElementById("Demo2");
+                if (x.className.indexOf("w3-show") == -1) {
+                    x.className += " w3-show";
+                } else {
+                    x.className = x.className.replace(" w3-show", "");
+                }
+            });*/
+            });
+            Handlebars.registerHelper('Geticon', function (iscomplete) {
+                if (iscomplete == "true" || iscomplete == "1" || iscomplete == "True") {
+                    var r = "done";
+                }
+                else if (iscomplete == "false" || iscomplete == "0" || iscomplete == "False") {
+                    var r = "clear";
+                }
+                else {
+                    var r = "texture";
+                }
+                return r;
+               
+            });
+           
     </script>
             <%=Session["errform"] %>
 </body>
