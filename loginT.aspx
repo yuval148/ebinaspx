@@ -13,7 +13,7 @@
 
            body {
                background: url("media/bgphoneT.png");
-               background-size: 100%;
+               background-size: 100% 100%;
            }
        }
             .mdl-components__warning {

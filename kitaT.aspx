@@ -9,6 +9,13 @@
                 background-size: 100%, 100%;
                 background-repeat: no-repeat;
             }
+                   @media screen and (max-width: 480px) {
+
+           body {
+               background: url("media/bgphoneT.png");
+               background-size: 100% 100%;
+           }
+       }
             #stu-div{
                 margin:10px;
             }

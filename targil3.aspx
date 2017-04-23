@@ -16,6 +16,13 @@
                 background-size: 100%, 100%;
                 background-repeat: no-repeat; /*יש לך למטה*/
             }
+                            @media screen and (max-width: 480px) {
+
+           body {
+               background: url("media/bgphone.png");
+               background-size: 100% 100%;
+           }
+       }
          #info{
                 margin-top:50px;
                 margin-right:20px;

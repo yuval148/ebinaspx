@@ -10,6 +10,13 @@
                 background-size: 100%, 100%;
                 background-repeat: no-repeat;
             }
+               @media screen and (max-width: 480px) {
+
+           body {
+               background: url("media/bgphoneT.png");
+               background-size: 100% 100%;
+           }
+       }
     </style>
   </head>
 <body style="font-family:Arial, Helvetica, Sans-Serif; text-align:center;">
