@@ -9,7 +9,7 @@ using System.Data;
 using System.Web.Services;
 
 
-public partial class home : System.Web.UI.Page
+public partial class homeT2 : System.Web.UI.Page
 {
     public string json = "";
     protected void Page_Load(object sender, EventArgs e)
@@ -21,7 +21,7 @@ public partial class home : System.Web.UI.Page
         DataTable dt;
         string sql = "";
         string fileName = "db1.mdb"; //שם המסד
-        sql = "select * from users";
+        sql = "SELECT DISTINCT kita FROM users;";
         dt = MyAdoHelper.ExecuteDataTable(fileName, sql);
         json = Json(dt);
 
@@ -33,5 +33,18 @@ public partial class home : System.Web.UI.Page
             JSONString = Newtonsoft.Json.JsonConvert.SerializeObject(new { stu = table });
             return JSONString;
         }
+    }
+    [WebMethod]
+    public static string getkita(string kita)
+    {
+        string json3 = string.Empty;
+        if (kita != "")
+        {
+            string sql2 = "SELECT * FROM users WHERE kita='" + kita + "';";
+            string filename = "db1.mdb";
+            DataTable dtu = MyAdoHelper.ExecuteDataTable(filename, sql2);
+            json3 = Newtonsoft.Json.JsonConvert.SerializeObject(new { kitaa = dtu });
+        }
+        return json3;
     }
 }

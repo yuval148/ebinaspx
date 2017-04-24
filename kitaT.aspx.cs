@@ -46,14 +46,7 @@ public partial class kitaT : System.Web.UI.Page
             return JSONString;
         }
     }
-    [WebMethod]
-    public static void changepss(string userPass1, string ID)
-    {
-        userPass1 = userPass1.ToString();
-        string sql4 = "UPDATE users SET userPass='" + userPass1 + "' WHERE ID='" + ID + "';"; //לא עובד!
-        string filename = "db1.mdb";
-        MyAdoHelper.DoQuery(filename, sql4);
-    }
+
 
 }
 
