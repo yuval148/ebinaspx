@@ -138,30 +138,18 @@
             <tr>
                 <td>כיתה</td>
                 <td>
-              <script type="text/javascript">
+                          <script type="text/javascript">
         $(document).ready(function () {
-            var newSelect = document.createElement('select');
-            newSelect.id="kita";
-            newSelect.name="kita";
-            newSelect.className="w3-select"
-            var selectHTML = "";
             var data = (<%=this.json%>);
-            var choices = $.map(data, function(el) { return el; })
-            for (i = 0; i < choices.length; i = i + 1) {
-                var x = choices[i]["kita"];
-                selectHTML += "<option value='" + x + "'>" + x + "</option>";
+            for (i = 0; i < data.Class.length; i++) {
+                var checkbox = $('<input type="checkbox" class="w3-check w3-panel" value="'+data.Class[i].kita+'" name="kita'+i+'">'+data.Class[i].kita+'</input>');
+                checkbox.appendTo('#target');
             }
-            selectHTML += "</select>";
-
-            newSelect.innerHTML = selectHTML;
-            document.getElementById('class_selection').appendChild(newSelect);
-
-
+             
         });
 
     </script>
-                    <div id="class_selection">
-    </div>
+    <div id="target"></div>
                     </td></tr>
     </table>
         <br />

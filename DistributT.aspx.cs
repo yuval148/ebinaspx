@@ -26,26 +26,49 @@ public partial class Distribut : System.Web.UI.Page
         string sqlkita = "SELECT DISTINCT kita FROM users;";
         DataTable dtkita = MyAdoHelper.ExecuteDataTable("db1.mdb", sqlkita); //יונתן תציל אותי ותעביר לפרונט
         json = Json(dtkita);
+        int iikaptin = 0;
+        string k = "kita";
         if (Request.Form["submit"] != null)
         {
+            foreach (DataRow row in dtkita.Rows)
+            {
+                k = "kita" + iikaptin.ToString();
+                kita = kita + Request.Form[k] + ",";
+                iikaptin++;
+            }
             subject = Request.Form["subject"];
             numof1 = Request.Form["numof"];
             diff = Request.Form["diff"];
-            kita= Request.Form["kita"];
             dd = Request.Form["dd"];
             mm = Request.Form["mm"];
             yyyy = Request.Form["yyyy"];
             exp = dd + "/" + mm + "/" + yyyy;
             byy = Session["nameT"].ToString();
-            if (subject == "0" || numof1 == "" || numof1=="0" || diff == "0")
+            if (subject == "0" || numof1 == "" || numof1 == "0" || diff == "0" || kita == "")
             {
                 Session["ErrIsertForm"] = "נתונים לא מולאו כשורה";
             }
             else
             {
+                string[] kitot = kita.Split(',');
                 numof = int.Parse(numof1);
+                string sql2 ="";
                 string fileName7 = "db1.mdb";       //SQLSTUF START
-                string sql2 = "SELECT * FROM users WHERE kita='" + kita +"';";
+                iikaptin = 1;
+                if (kitot.Length==1)
+                {
+                    sql2 = "SELECT * FROM users WHERE kita='" + kitot[0] + "';";
+                }
+                else if(kitot.Length >1)
+                {
+                    sql2 = "SELECT * FROM users WHERE kita='" + kitot[0] + "'";
+                    while (iikaptin<kitot.Length)
+                    {
+                        sql2 += " OR kita='" + kitot[iikaptin] + "'";
+                        iikaptin++;
+                    }
+                    sql2 += ";";
+                }
                 DataTable dt1;
                 DataTable dtu;
                 DataTable dtat;

@@ -19,16 +19,23 @@ public partial class msgT : System.Web.UI.Page
         {
             Response.Redirect("loginT.aspx");
         }
-        string icon = "", title = "", msg = "", kita, exp,dd,mm,yyyy,byy;                                                            
+        string icon = "", title = "", msg = "", kita="", exp,dd,mm,yyyy,byy;                                                            
         string sqlkita = "SELECT DISTINCT kita FROM users;";// כיתה
         DataTable dtkita = MyAdoHelper.ExecuteDataTable("db1.mdb", sqlkita); 
         json = Json(dtkita);
+        int i = 0;
+        string k = "kita";
         if (Request.Form["submit"] != null)
         {
+            foreach (DataRow row in dtkita.Rows)
+            {
+                k = "kita" + i.ToString();
+                kita = kita + Request.Form[k] + ",";
+                i++;
+            }
             icon = Request.Form["icon"];
             title = Request.Form["title"];
             msg = Request.Form["msg"];
-            kita = Request.Form["kita"];
             dd = Request.Form["dd"];
             mm = Request.Form["mm"];
             yyyy = Request.Form["yyyy"];
