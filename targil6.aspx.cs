@@ -27,12 +27,25 @@ public partial class targil6 : System.Web.UI.Page
             string sql = "";
             string tableName = "TAT" + "6_" + Session["ID"];
 
-            sql = "select * from " + tableName;
+            sql = "SELECT * FROM " + tableName + " WHERE iscomplete=false;";
             DataTable dt;
             dt = MyAdoHelper.ExecuteDataTable(fileName, sql);
+            if (dt.Rows.Count == 0)
+            {
+                Response.Redirect("dinial.aspx");
+            }
             CheckDatemsg(dt);
             dt = MyAdoHelper.ExecuteDataTable(fileName, sql);
-            json = Json(dt);
+            if (dt.Rows.Count == 0)
+            {
+                Response.Redirect("dinial.aspx");
+            }
+            else
+            {
+                CheckDatemsg(dt);
+                dt = MyAdoHelper.ExecuteDataTable(fileName, sql);
+                json = Json(dt);
+            }
         }
         else
         {
