@@ -1,4 +1,5 @@
 ﻿body {
+    background: url("/media/bg5.jpg");
     background-size: 100%, 100%;
     background-repeat: no-repeat;
 }
@@ -6,6 +7,9 @@
      width:80%;
      margin: 0 auto;
      margin-top:10px;
+}
+#infoDiv{
+    margin-bottom:15px;
 }
 img.img {
     display: block;
