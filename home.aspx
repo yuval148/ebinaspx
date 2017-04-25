@@ -86,7 +86,7 @@ background-image: url(../media/new/{{subjectID}}.png);border-top:solid #{{GetMas
                             <hr />
                         </div>
                         <footer class="w3-container w3-center">
-                           <a href="targil{{subjectID}}.aspx" style="color:white" class="w3-button">Link Button</a>
+                           <a href="targil{{subjectID}}.aspx" style="color:white" class="w3-button w3-hover-indigo">לתרגילים</a>
                          </footer>
                     </div>
                     {{/each}}

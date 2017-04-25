@@ -1,0 +1,37 @@
+﻿body {
+    background-size: 100%, 100%;
+    background-repeat: no-repeat;
+}
+#page-wrap {
+     width:80%;
+     margin: 0 auto;
+     margin-top:10px;
+}
+img.img {
+    display: block;
+    margin: auto;
+    height: auto;
+    width: auto;
+    max-height: 700px;
+    max-width: 700px;
+}
+#exercise {
+    width: 100%; /*Use this to control width of the parent container, hence the image*/
+    margin: auto;
+}
+#ans {
+    display: inline-block;
+}
+@media screen and (max-width: 480px) {
+    body {
+        background: url("media/bgphone.png");
+        background-size: 100% 100%;
+    }
+}
+@media screen and (max-width: 1280px) {
+    #page-wrap {
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 10px;
+    }
+}

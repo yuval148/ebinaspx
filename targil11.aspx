@@ -8,121 +8,54 @@
 <html dir="rtl">
    
 <head>
-    <title></title> 
-       
-  <style>
-         body {
-                background: url("media/bg5.jpg");
-                background-size: 100%, 100%;
-                background-repeat: no-repeat; /*יש לך למטה*/
-            }
-                            @media screen and (max-width: 480px) {
-
-           body {
-               background: url("media/bgphone.png");
-               background-size: 100% 100%;
-           }
-       }
-         #info{
-                margin-top:50px;
-                margin-right:20px;
-         }
-         #photo{
-             width:400px;
-             height:400px;
-         }
-         .demo-list-icon {
-  width: 300px;
-}
-.demo-card-image > .mdl-card__actions {
-  height: 52px;
-  padding: 16px;
-  background: rgba(0, 0, 0, 0.2);
-}
-.demo-card-image__filename {
-  color: #fff;
-  font-size: 14px;
-  font-weight: 500;
-}
-#infoDiv{
-    display:block;
-    margin-right:60%; /*עוד*/
-    margin-top:10px;
-}
-
-             #infoDiv{
-             }
-             img.img {
-			      width: 65%; /*Tells image to fit to width of parent container*/
-                  display:block;
-                          margin: auto;
-
-			}
-    #exercise {
-        width: 75%; /*Use this to control width of the parent container, hence the image*/
-        margin: auto;
-        margin-top: 45px;
-    }
-    #ansBtn{
-        margin-right:54%;
-    }
-    #ans{
-        display:inline-block;
-    }
-    
-    </style>  
+    <title>תרגולית-פרבולות</title>
+    <link href="css/targil.css" rel="stylesheet" />
 </head>
 <body>
-     <main class="mdl-layout__content" id="container" >
-                  <div id="exercise" class="demo-card-square mdl-card mdl-shadow--2dp"></div>
-         <div  id="ansBtn">
-         <form id="ans">
-  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="numb">
-    <label class="mdl-textfield__label" for="sample4">הכנס ערך X</label>
-    <span class="mdl-textfield__error">X צריך להיות מספר</span> <!--עודדדדדד!-->
-  </div>
-</form>
-<button id="Btn" class="w3-button w3-indigo" type="button">בדוק תשובה</button>
-<div id="demo-toast-example" class="mdl-js-snackbar mdl-snackbar">
-  <div class="mdl-snackbar__text"></div>
-  <button class="mdl-snackbar__action" type="button"></button>
-</div>
-             </div>
-
-         <div id="infoDiv" class="demo-card-square mdl-card mdl-shadow--2dp">
-            <div class="mdl-card__title mdl-card--expand">
-                <h2 class="mdl-card__title-text">10מידע שימושי</h2>
+    <div id="page-wrap">
+        <div id="exercise" class="w3-card w3-panel"></div><hr />
+        <div class="w3-row">
+            <div id="ansBtn" dir="ltr" class="w3-col" style="width:auto">
+                    <button class="w3-btn w3-gray" id="skip">דלג</button>
+                    <button id="Btn" class="w3-button w3-indigo" type="button">בדוק תשובה</button>
+                    <div id="demo-toast-example" class="mdl-js-snackbar mdl-snackbar">
+                        <div class="mdl-snackbar__text"></div>
+                        <button class="mdl-snackbar__action" type="button"></button>
+                    </div>
+                <form id="ans">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="numb">
+                            <label class="mdl-textfield__label" for="sample4">הכנס ערך X</label>
+                        <span class="mdl-textfield__error">X צריך להיות מספר</span>
+                    </div>
+                </form>     <br />
             </div>
-
-            <div class="mdl-card__supporting-text">
-                <!-- Icon List -->
-
-<ul class="demo-list-icon mdl-list">
-  <li class="mdl-list__item">
-    <span class="mdl-list__item-primary-content">
-    <i class="material-icons mdl-list__item-icon">info</i>
-</span>
-      <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/42efe5c6f302eb75186b3d5b782129850bfa04d1" />
-  </li>
-  <li class="mdl-list__item">
-    <span class="mdl-list__item-primary-content">
-    <i class="material-icons mdl-list__item-icon">info</i>
-    סכום זוויות במשלוש 180
-  </span>
-  </li>
-  <li class="mdl-list__item">
-    <span class="mdl-list__item-primary-content">
-    <i class="material-icons mdl-list__item-icon">info</i> <!--למטה אחי זה בסוף!-->
-    אל תשכח לקנות חלב
-  </span>
-  </li>
-</ul>
-              
-            </div>
-
+            <div id="infoDiv" class="w3-card w3-third w3-right">   
+                <ul class="w3-ul">
+                    <li class="w3-padding-16">
+                        <i class="material-icons">info</i>
+                        <span class="w3-large">נוסחת השורשים</span><br>
+                        <span>שימוש בנוסחאת השורשים נעשה כאשר יש משוואה משתי מעלות<br />
+                            <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a62e1c4fb012beb24706443a8482872d6c36b667" alt="{\displaystyle x_{1,2}={\frac {-b\pm {\sqrt {b^{2}-4ac}}}{2a}}}"/></span>
+                    </li>
+                    <li class="w3-padding-16">
+                        <i class="material-icons">error_outline</i>
+                        <span class="w3-large">לא לשכוח לסדר את המשוואה</span><br>
+                        <span> חשוב לשים לב שהמשוואה מסודרת כראוי<br />
+                            <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/23e70cfa003f402d108ec04d97983fb62f69536e" alt="{\displaystyle ax^{2}+bx+c=0}"/></span>
+                    </li>
+                    <li class="w3-padding-16">
+                        <i class="material-icons">help</i>
+                        <span class="w3-large">עדיין מתקשה?</span><br>
+                        <span>צפה בסרטון לדוגמא על הנושא
+                            <button class="w3-button w3-indigo"><a style="text-decoration:none;color:white" href="https://www.youtube.com/watch?v=38_XIEnjo80">לחץ כאן</a></button>
+                        </span>
+                    </li>
+                </ul>
+             </div>   
         </div>
-           <button id="skip">דלג</button>      
+        
+                  
 <div id="modal">
     <div id="id01" class="w3-modal w3-animate-opacity w3-center">
     <div class="w3-modal-content w3-card-4">
@@ -132,10 +65,10 @@
         <h2>תשובה נכונה!</h2>
       </header>
       <div class="w3-container">
-        <p>כל הכבוד! אני בטוח שאמא גאה</p>
+        <p>כל הכבוד! עבודה קשה משתלמת</p>
       </div>
       <footer class="w3-container w3-indigo">
-   <button id="next">לתרגיל הבא</button>      
+   <button class="w3-button w3-indigo w3-hover-indigo" id="next">לתרגיל הבא</button>      
       </footer>
     </div>
   </div>
@@ -144,20 +77,20 @@
       <header class="w3-container w3-red"> 
         <span onclick="document.getElementById('id02').style.display='none'" 
         class="w3-button w3-display-topright">&times;</span>
-        <h2>אוי לא!</h2>
+        <h2>תשובה שגויה</h2>
       </header>
       <div class="w3-container">
-        <p>על יוסיברטיסה כבר שמעת?</p>
+        <p>לא נורא, תמיד אפשר לנסות שוב!</p>
       </div>
       <footer class="w3-container w3-red">
-          <button id="skip2">נסה שוב</button>      
+          <button class="w3-button" id="skip2">נסה שוב</button>      
 
       </footer>
     </div>
   </div>
-    </div>     
-   </main>  
-  <script type="text/javascript">
+    </div>
+        </div>     
+   <script type="text/javascript">
        var images = '';
        var nextBtn = document.querySelector("#next"); var skipBtn =document.querySelector("#skip"); var skipBtn2 =document.querySelector("#skip2");
        var imagePointer = 0; var answerPointer = 0;
@@ -173,7 +106,7 @@
 
        function updateImage() {
            if(imagePointer >= count) imagePointer = 0;
-           images = '<img class="img" src="' + data.sub[imagePointer].location+'" />';
+           images = '<img class="img w3-center" src="' + data.sub[imagePointer].location+'" />';
            document.getElementById( 'exercise' ).innerHTML = images;
            //alert(exercise.innerHTML);
            id =(data.sub[imagePointer].ID);
@@ -220,7 +153,7 @@
                    document.getElementById('id01').style.display='block';
                    $.ajax({
                     type: "POST",
-                    url: "targil11.aspx/change",
+                    url: "targil1.aspx/change",
                     data:'{"tatID":'+id+',"ID":'+<%=Session["ID"]%>+' }',
                     contentType: "application/json; charset=utf-8",
                     success: function() {
