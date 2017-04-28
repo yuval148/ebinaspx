@@ -214,6 +214,11 @@ background-image: url(../media/new/{{subjectID}}.png);border-top:solid #{{GetMas
                         var mesTemplate = Handlebars.compile(mesInfo);
                         var mesData = mesTemplate(<%=this.jsonMes%>);
                         document.getElementById("pro-div").innerHTML += mesData;
+                        if ("<%=Session["userName"]%>" != null)
+                        {
+                            document.getElementById("login").innerHTML="התנתק";  
+                            document.getElementById("signup").style.display="none"
+                        }
                 </script>                
                
         </div>    
