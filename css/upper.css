@@ -1,6 +1,7 @@
 ﻿.topnav {
   overflow: hidden;
   background-color:rgb(63,81,181);
+  height:70px;
 }
 
 .topnav a {
@@ -11,6 +12,12 @@
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
+  top: 50%;
+  transform: translateY(25%);
+}
+.topnav img{
+  top: 50%;
+  transform: translateY(-25%);
 }
 
 .topnav a:hover {
@@ -20,16 +27,29 @@
 .topnav .icon {
   display: none;
 }
-
-@media screen and (max-width: 600px) {
-  .topnav a:not(:first-child) {display: none;}
-  .topnav a.icon {
-    float: right;
-    display: block;
+#login,#signup{
+      float:left;
   }
- .topnav .dropbtn div{display: none;}
-}
+#login{
+          margin-left:50px;
 
+}
+@media screen and (max-width: 600px) {
+    .topnav a:not(:first-child) {
+        display: none;
+    }
+
+    .topnav a.icon {
+        float: right;
+        display: block;
+    }
+    #login,#signup{
+      float:none;
+  }
+    .topnav{
+        height:initial;
+    }
+} 
 @media screen and (max-width: 600px) {
   .topnav.responsive {position: relative;}
   .topnav.responsive .icon {
@@ -48,6 +68,7 @@
     right: 0;
     top: 0;
   }
+
 }
 container {
     overflow: hidden;

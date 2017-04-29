@@ -19,17 +19,17 @@
         <link rel="stylesheet" href="css/upper.css">
     </head>
     <body dir="rtl">
-        <div class="topnav" id="myTopnav" style="font-family: 'Heebo', sans-serif; font-weight:300;">
+        <div class="topnav w3-card-4" id="myTopnav" style="font-family: 'Heebo', sans-serif; font-weight:300;">
             <a> <img src="media/LOGO.png" style="float:right; width:128px;"/></a>
             <a href="home.aspx">בית</a>
             <a href="tops.aspx">המובילים</a>
             <a class="dropbtn" onclick="myFunction()">תרגילים</a>   
-            <a href="login.aspx" id="login" style="float:left">התחברות</a>
-            <a href="signup.aspx"  id="signup" style="float:left">הרשמה</a>
-            <a href="javascript:void(0);" style="font-size:15px;float:left" class="icon" onclick="myFunction()">&#9776;</a>      
+            <a href="login.aspx" id="login">התחברות</a>
+            <a href="signup.aspx"  id="signup" >הרשמה</a>
+            <a href="javascript:void(0);" style="font-size:15px;float:left" class="icon" onclick="open()">&#9776;</a>      
             </div>
           <script>
-              function myFunction() {
+              function open() {
                   var x = document.getElementById("myTopnav");
                   if (x.className === "topnav") {
                       x.className += " responsive";
@@ -37,7 +37,6 @@
                       x.className = "topnav";
                   }
               }
-
         </script>
     </body>
     </html>
