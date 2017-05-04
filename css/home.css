@@ -7,6 +7,7 @@ body {
 	background: url("/media/bg5.jpg");
 	background-size: 100%, 100%;
     background-repeat: no-repeat;
+    background-attachment: fixed;
 	}
 .sub{
 	margin:2px;

@@ -153,7 +153,7 @@
                    document.getElementById('id01').style.display='block';
                    $.ajax({
                     type: "POST",
-                    url: "targil1.aspx/change",
+                    url: "targil10.aspx/change",
                     data:'{"tatID":'+id+',"ID":'+<%=Session["ID"]%>+' }',
                     contentType: "application/json; charset=utf-8",
                     success: function() {

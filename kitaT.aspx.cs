@@ -23,7 +23,7 @@ public partial class kitaT : System.Web.UI.Page
             string sql = "";
             string fileName = "db1.mdb"; //שם המסד
 
-            sql = "SELECT * FROM users";//USERS
+            sql = "SELECT DISTINCT kita FROM users";//USERS
             DataTable users = MyAdoHelper.ExecuteDataTable(fileName, sql);
             json = Json(users);
             if (Request.Form["submit"] != null)

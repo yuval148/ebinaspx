@@ -4,6 +4,7 @@
 <html>
   <head>
   <title>הרשמה</title>
+  <link href="css/signup.css" rel="stylesheet" />
   <style>
         body {
                 background: url("media/bg5.jpg");
@@ -19,6 +20,9 @@
        }
     </style>
       <script type="text/javascript">
+          function update() {
+              document.getElementById("2").className = "active";
+          }
           function check() {
               var formValid = true;
               name = document.f.name.value;
@@ -46,6 +50,15 @@
       </script>
   </head>
 <body style="font-family:Arial, Helvetica, Sans-Serif; text-align:center;">
+     <div class="container">
+        <ul class="progressbar">
+            <li class="active">login</li>
+            <li id="2">choose interest</li>
+            <li>add friends</li>
+            <li>View map</li>
+        </ul>
+     </div>
+    <button onclick="update()">לחץ עליי</button>
     <form name="f" method="post" onsubmit="return check();">
      
      <table align=center>
@@ -79,7 +92,7 @@
     </table>
     </form>
     
-
+    
 
 <p align="center" style="height: 96px ;font-size:50px"></p>
 <div class="mdl-components__warning"><%=Session["ErrIsertForm"] %></div>

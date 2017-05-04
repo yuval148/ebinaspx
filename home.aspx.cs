@@ -43,8 +43,6 @@ public partial class home : System.Web.UI.Page
         progi.Style["width"] = String.Format("{0}%", prog);
 
         DataTable dt, dt2, dtPro,dtMes;
-        string sendr = "";
-        int f = 0;
         string sql = "", sql2 = "", sqlPro = "",sqlMes="";
         string tableName = "ID" + Session["ID"];//שם הטבלה
         //טעינת הנתונים ממסד הנתונים
@@ -53,21 +51,9 @@ public partial class home : System.Web.UI.Page
         sqlPro = "SELECT * FROM users WHERE ID='" + Session["ID"] + "';";
         sqlMes="SELECT * FROM MSG;";
 
-        dt = MyAdoHelper.ExecuteDataTable(fileName, sql);
         dt2 = MyAdoHelper.ExecuteDataTable(fileName, sql2);
         dtPro = MyAdoHelper.ExecuteDataTable(fileName, sqlPro);
         dtMes = MyAdoHelper.ExecuteDataTable(fileName, sqlMes);
-        foreach (DataRow Row in dt.Rows)
-        {
-            if (dt.Rows[f][0].ToString() == "0")
-                f++;
-            else
-            {
-                sendr = sendr + dt.Rows[f][0].ToString() + ".";
-                f++;
-            }
-        }
-        sendr = sendr.Remove(sendr.Length - 1);
         json = Json(dt2);
         jsonPro = Json(dtPro);
         jsonMes = Json(dtMes);
