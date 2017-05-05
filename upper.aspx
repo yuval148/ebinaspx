@@ -2,7 +2,7 @@
 <!doctype html>
 <html dir="rtl">
     <head> 
-    <!-- ver 004.010.007--!>
+    <!-- ver 004.010.008--!>
         <!--mobile confg-->
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">

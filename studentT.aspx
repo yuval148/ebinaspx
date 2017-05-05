@@ -3,73 +3,9 @@
 <html>
 <head>
     <title></title>
-    <script src="js/jquery.flot.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            var graphData = [{
-                // Visits
-                data: [ [6, 1300], [7, 1600], [8, 1900], [9, 2100], [10, 2500], [11, 2200], [12, 2000], [13, 1950], [14, 1900], [15, 2000] ],
-                color: '#71c73e'
-            }, {
-                // Returning Visits
-                data: [ [6, 500], [7, 600], [8, 550], [9, 600], [10, 800], [11, 900], [12, 800], [13, 850], [14, 830], [15, 1000] ],
-                color: '#77b7c5',
-                points: { radius: 4, fillColor: '#77b7c5' }
-            }
-            ];
+   <script>
        
-        $.plot($('#graph-lines'), graphData, {
-            series: {
-                points: {
-                    show: true,
-                    radius: 5
-                },
-                lines: {
-                    show: true
-                },
-                shadowSize: 0
-            },
-            grid: {
-                color: '#646464',
-                borderColor: 'transparent',
-                borderWidth: 20,
-                hoverable: true
-            },
-            xaxis: {
-                tickColor: 'transparent',
-                tickDecimals: 2
-            },
-            yaxis: {
-                tickSize: 1000
-            }
-        });
- 
-        // Bars
-        $.plot($('#graph-bars'), graphData, {
-            series: {
-                bars: {
-                    show: true,
-                    barWidth: .9,
-                    align: 'center'
-                },
-                shadowSize: 0
-            },
-            grid: {
-                color: '#646464',
-                borderColor: 'transparent',
-                borderWidth: 20,
-                hoverable: true
-            },
-            xaxis: {
-                tickColor: 'transparent',
-                tickDecimals: 2
-            },
-            yaxis: {
-                tickSize: 1000
-            }
-        });
-        });
-</script>
+    </script>
  <style>
             body {
                 background: url("/media/bfg5.jpg");
@@ -89,66 +25,16 @@
             table.w3-table-all th {
                 text-align:center;
             }
-            .graph-container,
-.graph-container div,
-.graph-container a,
-.graph-container span {
-    margin: 0;
-    padding: 0;
-}
-            .graph-container, #tooltip, .graph-info a {
-    background: #ffffff;
-    background: -moz-linear-gradient(top, #ffffff 0%, #f9f9f9 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#f9f9f9));
-    background: -webkit-linear-gradient(top, #ffffff 0%,#f9f9f9 100%);
-    background: -o-linear-gradient(top, #ffffff 0%,#f9f9f9 100%);
-    background: -ms-linear-gradient(top, #ffffff 0%,#f9f9f9 100%);
-    background: linear-gradient(to bottom, #ffffff 0%,#f9f9f9 100%);
- 
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-}
-            .graph-container {
-    position: relative;
-    width: 550px;
-    height: 300px;
-    padding: 20px;
- 
-    -webkit-box-shadow: 0px 1px 2px rgba(0,0,0,.1);
-    -moz-box-shadow: 0px 1px 2px rgba(0,0,0,.1);
-    box-shadow: 0px 1px 2px rgba(0,0,0,.1);
-}
- 
-.graph-container > div {
-    position: absolute;
-    width: inherit;
-    height: inherit;
-    top: 10px;
-    left: 25px;
-}
- 
-.graph-info {
-    width: 590px;
-    margin-bottom: 10px;
-}
+            #div{
+                 width:500px;
+                 height:250px;
+            }
     </style>
     <link href="css/homeT.css" rel="stylesheet" />
 </head>
 <body>
-    <div id="graph-wrapper">
-<div class="graph-info">
-        <a href="javascript:void(0)" class="visitors">Visitors</a>
-        <a href="javascript:void(0)" class="returning">Returning Visitors</a>
-        <a href="#" id="bars"><span></span></a>
-        <a href="#" id="lines" class="active"><span></span></a>
-    </div>
-<div class="graph-container">
-<div id="graph-lines"></div>
-<div id="graph-bars"></div>
-    </div>
-</div>
     <div id="page-wrap">
+        <div id="div"><canvas id="myChart"></canvas></div>
         <div id="form" class="w3-panel w3-card-4 " style="opacity:100">
             <form method="post">
                 <div class="w3-cell">
@@ -218,81 +104,134 @@
             {{/each}}
         </table>
     </script>
+        <script src="js/studentT.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
-            var newSelect = document.createElement('select');
-            newSelect.id="ID";
-            newSelect.name="ID";
-            newSelect.className="w3-select";
-            var selectHTML = "";
-            var data = (<%=this.json%>);
-            var choices = $.map(data, function(el) { return el; })
-            for (i = 0; i < choices.length; i = i + 1) {
-                var x = choices[i]["ID"];
-                var y = choices[i]["name"];
-                selectHTML += "<option value='" + x + "'>" + y + "</option>";
-            }
-            selectHTML += "</select>";
+    var newSelect = document.createElement('select');
+    newSelect.id="ID";
+    newSelect.name="ID";
+    newSelect.className="w3-select";
+    var selectHTML = "";
+    var data = (<%=this.json%>);
+    var choices = $.map(data, function(el) { return el; })
+    for (i = 0; i < choices.length; i = i + 1) {
+        var x = choices[i]["ID"];
+        var y = choices[i]["name"];
+        selectHTML += "<option value='" + x + "'>" + y + "</option>";
+    }
+    selectHTML += "</select>";
 
-            newSelect.innerHTML = selectHTML;
-            document.getElementById('student_selection').appendChild(newSelect);
-             Handlebars.registerHelper('GetMasterPrecent', function (cou, ctargil) {
-            var pre = parseInt(cou) / parseInt(ctargil);
-            var final = pre * 100;
-            return parseInt(final);
+    newSelect.innerHTML = selectHTML;
+    document.getElementById('student_selection').appendChild(newSelect);
+    Handlebars.registerHelper('GetMasterPrecent', function (cou, ctargil) {
+        var pre = parseInt(cou) / parseInt(ctargil);
+        var final = pre * 100;
+        return parseInt(final);
 
-             });
-             Handlebars.registerHelper('GetLevel', function (xp) {
-                 if (xp >= 0 && xp < 100)
-                 {
-                     r = 1;
-                 }
-                 if (xp >= 100 && xp < 250)
-                 {
-                     r = 2;
-                 }
-                 if (xp >= 250 && xp < 500)
-                 {
-                     r = 3;
-                 }
-                 if (xp >= 500 && xp < 900)
-                 {
-                     r = 4;
-                 }
-                 if (xp >= 900 && xp < 1450)
-                 {
-                     r = 5;
-                 }
-                 return r;
-             });
-        var stuInfo = document.getElementById("stu-temp").innerHTML;
-        var stuTemplate = Handlebars.compile(stuInfo);
-        var stuData = stuTemplate(<%=this.json2%>);
-        document.getElementById("stu-div").innerHTML += stuData;
+    });
+    Handlebars.registerHelper('GetLevel', function (xp) {
+        if (xp >= 0 && xp < 100)
+        {
+            r = 1;
+        }
+        if (xp >= 100 && xp < 250)
+        {
+            r = 2;
+        }
+        if (xp >= 250 && xp < 500)
+        {
+            r = 3;
+        }
+        if (xp >= 500 && xp < 900)
+        {
+            r = 4;
+        }
+        if (xp >= 900 && xp < 1450)
+        {
+            r = 5;
+        }
+        return r;
+    });
+    var stuInfo = document.getElementById("stu-temp").innerHTML;
+    var stuTemplate = Handlebars.compile(stuInfo);
+    var stuData = stuTemplate(<%=this.json2%>);
+    document.getElementById("stu-div").innerHTML += stuData;
 
-        var proInfo = document.getElementById("pro-temp").innerHTML;
-        var proTemplate = Handlebars.compile(proInfo);
-        var proData = proTemplate(<%=this.json3%>);
-        document.getElementById("pro-div").innerHTML += proData;
+    var proInfo = document.getElementById("pro-temp").innerHTML;
+    var proTemplate = Handlebars.compile(proInfo);
+    var proData = proTemplate(<%=this.json3%>);
+    document.getElementById("pro-div").innerHTML += proData;
         
-        document.getElementById("update").onclick = function() {send()};
-        function send(){
-            var ID="<%=ID%>";
-            var up = document.getElementById("userPass1").value;
-            up = '"' + up+'"';
-            $.ajax({
-                        type: "POST",
-                        url: "studentT.aspx/changepss",
-                        data:'{"userPass1":'+up+',"ID":'+ID+' }',
-                        contentType: "application/json; charset=utf-8",
-                        success: function() {
-                            alert("yayyyy");
-                        },
-                        failure: function() {
-                            alert("oy");
-                        }
-            });
+    document.getElementById("update").onclick = function() {send()};
+    function send(){
+        var ID="<%=ID%>";
+        var up = document.getElementById("userPass1").value;
+        up = '"' + up+'"';
+        $.ajax({
+            type: "POST",
+            url: "studentT.aspx/changepss",
+            data:'{"userPass1":'+up+',"ID":'+ID+' }',
+            contentType: "application/json; charset=utf-8",
+            success: function() {
+                alert("yayyyy");
+            },
+            failure: function() {
+                alert("oy");
             }
+        });
+    }
+        });
+        var canvas = document.getElementById('myChart');
+        var yLabels = {
+            0 : 'בכלל לא',
+            4 : 'טיפה',
+            10 : 'ערב קוקטיילים',
+            14 : 'האדמין האשכנזי',
+            16 : 'תכנית אירוח של צביקה הדר',
+            20 : 'הקומיט הזה'
+        }
+        var data = {
+            labels: ["January", "February", "March", "April", "May", "June", "July"],
+            datasets: [
+                {
+                    label: "כמה גרוע אתה בגרף ובאיזה חודשים",
+                    fill: false,
+                    lineTension: 0.1,
+                    backgroundColor: "rgba(75,192,192,0.4)",
+                    borderColor: "rgba(75,192,192,1)",
+                    borderCapStyle: 'butt',
+                    borderDash: [],
+                    borderDashOffset: 0.0,
+                    borderJoinStyle: 'miter',
+                    pointBorderColor: "rgba(75,192,192,1)",
+                    pointBackgroundColor: "#fff",
+                    pointBorderWidth: 1,
+                    pointHoverRadius: 5,
+                    pointHoverBackgroundColor: "rgba(75,192,192,1)",
+                    pointHoverBorderColor: "rgba(220,220,220,1)",
+                    pointHoverBorderWidth: 2,
+                    pointRadius: 5,
+                    pointHitRadius: 10,
+                    data: [0,20, 16, 10, 4, 7,14],//להחליף בג'ייסון
+                }
+            ]
+        };
+
+        var option = {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true,
+                        callback: function(value, index, values) {
+                            return yLabels[value];
+                        }
+                    }
+                }]
+            }
+        };
+        var myLineChart = Chart.Line(canvas,{
+            data:data,
+            options:option
         });
     </script>
 </body>

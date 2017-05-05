@@ -2,7 +2,7 @@
 <!doctype html>
 <html dir="rtl">
     <head> 
-    <!-- ver 004.010.007--!>
+    <!-- ver 004.010.008--!>
         <!--mobile confg-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -14,6 +14,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Heebo:300,500,700,900&amp;subset=hebrew">
         <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
         <!--colors-->
         <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.red-pink.min.css" />
         <!--rtl-->
