@@ -1,5 +1,19 @@
+﻿var c = -1;
+var counter = 0;
 function update() {
-    document.getElementById("2").className = "active";
+    document.getElementById("btn").innerHTML = "הבא";
+    var list = document.getElementsByTagName("UL")[0];
+    var x = document.getElementById(counter);
+    var pre = document.getElementById(c);
+    list.getElementsByTagName("LI")[counter].className = "active";//מקדם את הבר
+    if (list.getElementsByTagName("LI")[counter].className == "active") {//מראה את הדיב
+        x.className += " w3-show";
+    }
+    if (c != -1) {
+        pre.className = pre.className.replace(" w3-show", "");
+    }
+    counter++;
+    c++;
 }
 function check() {
     var formValid = true;
