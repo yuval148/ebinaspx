@@ -73,6 +73,7 @@
                 <th>שם תלמיד</th>
                 <th>קבוצה</th>
                 <th>ת.ז</th>
+                <th>שליטה כללית בחומר</th>
                 <th>תמונה</th>
             </tr>
             {{#each stu}}
@@ -80,6 +81,7 @@
                 <td>{{name}}</td>
                 <td>{{team}}</td>
                 <td>{{ID}}</td>
+                <td>{{shlita}}%</td>
                 <td><img src="media/{{pic}}" style="width:60px; height:60px;margin:10px;" class="w3-circle w3-center w3-half"></td>
             </tr>
             {{/each}}

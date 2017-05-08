@@ -33,6 +33,14 @@ public partial class kitaT : System.Web.UI.Page
                 stuopc.Style["opacity"] = "100";
                 string sql2 = "SELECT * FROM users WHERE kita='" + kita + "';";
                 DataTable dtu = MyAdoHelper.ExecuteDataTable(fileName, sql2);
+                DataColumn shlita = new DataColumn("shlita", typeof(int));
+                shlita.AllowDBNull = true;
+                dtu.Columns.Add(shlita);
+                for (int iii =0; iii<dtu.Rows.Count; iii++)
+                {
+                    dtu.Rows[iii]["shlita"] = xpstuf.memuza(dtu.Rows[iii]["ID"].ToString());
+                }
+                shlita.AllowDBNull = false;
                 json3 = Json(dtu);
              
             }
