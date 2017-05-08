@@ -72,6 +72,22 @@ public partial class login : System.Web.UI.Page
                 Session["xpp"] = xpp1.ToString();
                 Session["level"] = xpstuf.level(xpp1);
                 level = xpstuf.level(xpp1);
+                //פעולה להכנסת הגרף
+                DateTime today = DateTime.Today;
+                string datee = today.ToString("dd/MM/yyyy");
+                int shlita = xpstuf.memuza(ID);
+                string sql4 ="SELECT * FROM GRA"+ID + " WHERE datee='"+datee+"';";
+                if (MyAdoHelper.IsExist(fileName, sql4)) //אם כבר יש בתאריך הזה
+                {
+                    string sql5 = "UPDATE GRA" + ID + " SET shlita=" + shlita + " WHERE datee='" + datee + "';";
+                    MyAdoHelper.DoQuery(fileName, sql5);
+                }
+                else
+                {
+                    string sql3 = "INSERT INTO GRA" + ID + " (shlita, datee) VALUES(" + shlita + " ,'" + datee + "');";
+                    MyAdoHelper.DoQuery(fileName, sql3);
+                }
+                //סוף
                 opc = 100;
                 Session["ErrLogin"] = " שלום " + name + " מקבוצת " + team + " יש לך " + xpp1.ToString() + " נקודות " + "  ואתה בשלב " + level.ToString();
                 Response.Redirect("home.aspx");

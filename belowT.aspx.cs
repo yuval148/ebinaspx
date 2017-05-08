@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -30,7 +31,10 @@ public partial class belowT : System.Web.UI.Page
             result.Columns.Add("kita", typeof(string));
             result.Columns.Add("shlita", typeof(int));
             result.Columns.Add("pic", typeof(string));
+            DateTime today = DateTime.Today;
+            string datee = today.ToString("dd/MM/yyyy");
             //יוצר טבלה של כל המשתמשים עם שליטה כללית מתחת ל55
+            //ומעדכן שליטה בגרף
             for (int t = 0; t < dt.Rows.Count; t++)//עבור כל תלמיד
             {
                 if(xpstuf.memuza(dt.Rows[t]["ID"].ToString())<=55)
@@ -44,6 +48,20 @@ public partial class belowT : System.Web.UI.Page
                     to["pic"] = dt.Rows[t]["pic"].ToString();
                     result.Rows.Add(to);//הכנסת השורה לריזולטס.
                 }
+                //update gra
+                int shlitagra = xpstuf.memuza(dt.Rows[t]["ID"].ToString());
+                string sql4 = "SELECT * FROM GRA" + dt.Rows[t]["ID"].ToString() + " WHERE datee='" + datee + "';";
+                if (MyAdoHelper.IsExist(fileName, sql4)) //אם כבר יש בתאריך הזה
+                {
+                    string sqlgra2 = "UPDATE GRA" + dt.Rows[t]["ID"].ToString() + " SET shlita=" + shlitagra + " WHERE datee='" + datee + "';";
+                    MyAdoHelper.DoQuery(fileName, sqlgra2);
+                }
+                else
+                {
+                    string sqlgra1 = "INSERT INTO GRA" + dt.Rows[t]["ID"].ToString() + " (shlita, datee) VALUES(" + shlitagra + " ,'" + datee + "');";
+                    MyAdoHelper.DoQuery(fileName, sqlgra1);
+                }
+                //end update 
             }
             json = Json(result);
         }

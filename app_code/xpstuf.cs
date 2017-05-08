@@ -171,20 +171,24 @@ public class xpstuf
         string sql = "SELECT * FROM ID" + ID + ";";
         DataTable dt = MyAdoHelper.ExecuteDataTable("db1.mdb", sql);
         int r;
-        double result , cou = 0, ctargil = 0 ; 
-        cou = double.Parse(dt.Rows[0]["cou"].ToString());
-        ctargil = double.Parse(dt.Rows[0]["ctargil"].ToString());
-        result = (cou / ctargil);
-        for(int i=1; i < dt.Rows.Count;i++)
+        double result , cou = 0, ctargil = 0 ;
+        if (dt.Rows.Count > 0)
         {
-            cou = double.Parse(dt.Rows[i]["cou"].ToString());
-            ctargil = double.Parse(dt.Rows[i]["ctargil"].ToString());
-            result = result + (cou / ctargil);
+            cou = double.Parse(dt.Rows[0]["cou"].ToString());
+            ctargil = double.Parse(dt.Rows[0]["ctargil"].ToString());
+            result = (cou / ctargil);
+            for (int i = 1; i < dt.Rows.Count; i++)
+            {
+                cou = double.Parse(dt.Rows[i]["cou"].ToString());
+                ctargil = double.Parse(dt.Rows[i]["ctargil"].ToString());
+                result = result + (cou / ctargil);
+            }
+            result = result * 100;
+            result = result / dt.Rows.Count;
+            r = Convert.ToInt32(result);
+            return r;
         }
-        result = result * 100;
-        result = result / dt.Rows.Count;
-        r = Convert.ToInt32(result);
-        return r;
+        return 0;
     }
     public enum TzStatus
     {

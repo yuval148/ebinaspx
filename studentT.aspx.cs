@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -30,6 +31,20 @@ public partial class studentT : System.Web.UI.Page
             {
                 ID = Request.Form["ID"];
                 stuopc.Style["opacity"] = "100";
+                DateTime today = DateTime.Today;
+                string datee = today.ToString("dd/MM/yyyy");
+                int shlita = xpstuf.memuza(ID);
+                string sql4 = "SELECT * FROM GRA" + ID + " WHERE datee='" + datee + "';";
+                if (MyAdoHelper.IsExist(fileName, sql4)) //אם כבר יש בתאריך הזה
+                {
+                    string sqlgra2 = "UPDATE GRA" + ID + " SET shlita=" + shlita + " WHERE datee='" + datee + "';";
+                    MyAdoHelper.DoQuery(fileName, sqlgra2);
+                }
+                else
+                {
+                    string sqlgra1 = "INSERT INTO GRA" + ID + " (shlita, datee) VALUES(" + shlita + " ,'" + datee + "');";
+                    MyAdoHelper.DoQuery(fileName, sqlgra1);
+                }
                 string sql2 = "SELECT * FROM users WHERE ID='" + ID + "';";
                 DataTable dtu = MyAdoHelper.ExecuteDataTable(fileName, sql2);
                 json3 = Json(dtu);

@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -36,9 +37,25 @@ public partial class kitaT : System.Web.UI.Page
                 DataColumn shlita = new DataColumn("shlita", typeof(int));
                 shlita.AllowDBNull = true;
                 dtu.Columns.Add(shlita);
+                DateTime today = DateTime.Today;
+                string datee = today.ToString("dd/MM/yyyy");
                 for (int iii =0; iii<dtu.Rows.Count; iii++)
                 {
-                    dtu.Rows[iii]["shlita"] = xpstuf.memuza(dtu.Rows[iii]["ID"].ToString());
+                    dtu.Rows[iii]["shlita"] = xpstuf.memuza(dtu.Rows[iii]["ID"].ToString());  //insert to new cullum
+                    //update gra
+                    int shlitagra = xpstuf.memuza(dtu.Rows[iii]["ID"].ToString());
+                    string sql4 = "SELECT * FROM GRA" + dtu.Rows[iii]["ID"].ToString() + " WHERE datee='" + datee + "';";
+                    if (MyAdoHelper.IsExist(fileName, sql4)) //אם כבר יש בתאריך הזה
+                    {
+                        string sqlgra2 = "UPDATE GRA" + dtu.Rows[iii]["ID"].ToString() + " SET shlita=" + shlitagra + " WHERE datee='" + datee + "';";
+                        MyAdoHelper.DoQuery(fileName, sqlgra2);
+                    }
+                    else
+                    {
+                        string sqlgra1 = "INSERT INTO GRA" + dtu.Rows[iii]["ID"].ToString() + " (shlita, datee) VALUES(" + shlitagra + " ,'" + datee + "');";
+                        MyAdoHelper.DoQuery(fileName, sqlgra1);
+                    }
+                    //end update 
                 }
                 shlita.AllowDBNull = false;
                 json3 = Json(dtu);

@@ -64,6 +64,8 @@ public partial class signup : System.Web.UI.Page
                     // Response.Redirect("form.aspx");
                     string sql2 = "CREATE TABLE ID" + ID + " (subject varchar(255), subjectID varchar(255), ctargil varchar(255), diff varchar(255), cou varchar(255));";
                     MyAdoHelper.DoQuery(fileName, sql2);
+                    string sql5 = "CREATE TABLE GRA" + ID + " (shlita int, datee varchar(255));";
+                    MyAdoHelper.DoQuery(fileName, sql5);
                     Session["ErrIsertForm"] += "<br> ההרשמה בוצעה בהצלחה";
                 }
 
