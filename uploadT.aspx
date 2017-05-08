@@ -93,8 +93,8 @@
      
     </table>
         <br />
-        <asp:Button ID="btnUpload" runat="server" Text="העלה"  
-           OnClientClick = "return ValidateFile()" class="w3-button w3-red" type="submit" value="שלח" name="submit"  />
+        <asp:FileUpload ID="FileUpload2" runat="server" />
+<asp:Button ID="btnUpload" runat="server" Text="Upload" OnClick="Upload" />
 
         <asp:Label ID="Label1" runat="server" Text="" />
     </form>

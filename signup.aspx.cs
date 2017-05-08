@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.IO;
 
 public partial class signup : System.Web.UI.Page
 {
@@ -72,5 +73,15 @@ public partial class signup : System.Web.UI.Page
             }
         }
     }
-}       
-    
+    protected void Upload(object sender, EventArgs e)
+    {
+        if (FileUpload1.HasFile)
+        {
+            string fileName = Path.GetFileName(FileUpload1.PostedFile.FileName);
+            FileUpload1.PostedFile.SaveAs(Server.MapPath("~/Profiles/") + fileName);
+            Response.Redirect(Request.Url.AbsoluteUri);
+        }
+    }
+
+}
+

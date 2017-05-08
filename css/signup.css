@@ -1,11 +1,11 @@
 ﻿body {
-    background: url("media/bg5.jpg");
+    background: url("/media/bg5.jpg");
     background-size: 100%, 100%;
     background-repeat: no-repeat;
 }
 @media screen and (max-width: 480px) {
     body {
-        background: url("media/bgphone.png");
+        background: url("/media/bgphone.png");
         background-size: 100% 100%;
     }
 }

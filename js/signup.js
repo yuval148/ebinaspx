@@ -1,5 +1,6 @@
 ﻿var c = -1;
 var counter = 0;
+var info = ["זה המידע של שלב 1", "זה המידע של שלב 2", "זה המידע של שלב 3", "זה המידע של שלב 4"]
 function update() {
     document.getElementById("btn").innerHTML = "הבא";
     var list = document.getElementsByTagName("UL")[0];
@@ -12,8 +13,13 @@ function update() {
     if (c != -1) {
         pre.className = pre.className.replace(" w3-show", "");
     }
+    document.getElementById("info").innerHTML = info[counter];
     counter++;
     c++;
+    if (document.getElementById("p").innerHTML != " ") {
+        document.getElementById("p-alert").className += " w3-show";
+
+    }
 }
 function check() {
     var formValid = true;
