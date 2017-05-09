@@ -33,7 +33,7 @@
     <br />
     <br /><!-- Textfield with Floating Label -->
 
-  <form id="myform1" method="post" dir="rtl">
+  <form id="myform1" class="w3-card w3-white" style="width:350px;margin:auto" method="post" dir="rtl">
   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
     <input class="mdl-textfield__input" type="text" id="userName" name="userName">
     <label class="mdl-textfield__label" for="sample3">שם משתמש</label>
