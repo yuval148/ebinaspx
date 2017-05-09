@@ -37,7 +37,7 @@
                 <p><label>שם משתמש</label> <input type="text" class="w3-input" id="userName" name="userName" maxlength="145" size="15"/></p> 
                 <p><label>סיסמה</label> <input type="password"  class="w3-input" id="userPass" name="userPass"  maxlength="16" size="15" /></p> 
                 <p><label>קבוצה</label> <input type="text" class="w3-input" id="team" name="team" maxlength="16" size="15" /></p> 
-                <input type="submit" class="w3-button w3-indigo" onclick="profile()" value="הירשם" name="submit" />
+                <input type="submit" class="w3-button w3-indigo" onclick="update()" value="הירשם" name="submit" />
             </div>
             <div id="2" class="w3-hide w3-animate-left">
                      <asp:FileUpload ID="FileUpload1" runat="server"/>
