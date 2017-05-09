@@ -8,7 +8,7 @@
 <html dir="rtl">
    
 <head>
-    <title>תרגולית-הסתברות</title>
+    <title>פלייגראונד-הסתברות</title>
     <link href="css/targil.css" rel="stylesheet" />
 </head>
 <body>

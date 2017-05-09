@@ -5,7 +5,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head >
-    <title>tirgulit הגישה נדחתה</title>
+    <title>פלייגראונד - הגישה נדחתה</title>
     <meta name="theme-color" content="#3f51b5"/>
     <style>
         body {

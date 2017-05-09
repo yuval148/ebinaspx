@@ -37,7 +37,7 @@
                 <ul class="w3-ul w3-card-4">
                     {{#each stu}}
                         <li class="w3-padding-16">
-                            <img src="media/{{pic}}" class="w3-right w3-circle w3-margin-right" style="width:50px">
+                            <img src="{{pic}}" class="w3-right w3-circle w3-margin-right" style="width:50px">
                             <span class="w3-large">{{name}}</span><br>
                             <span><b>פרבולות</b>, {{kita}}, {{team}}</span>
                         </li>
@@ -49,7 +49,7 @@
             <ul class="w3-ul w3-card-4">
                 {{#each stu}}
                     <li class="w3-padding-16">
-                        <img src="media/{{pic}}" class="w3-right w3-circle w3-margin-right" style="width:50px">
+                        <img src="{{pic}}" class="w3-right w3-circle w3-margin-right" style="width:50px">
                         <span class="w3-large">{{name}}</span><br>
                         <span><b>פרבולות</b>,{{kita}}, {{team}}</span>
                     </li>

@@ -8,7 +8,7 @@
 <html dir="rtl">
    
 <head>
-    <title>תרגולית-טריגונומטריה</title>
+    <title>פלייגראונד-טריגונומטריה</title>
     <link href="css/targil.css" rel="stylesheet" />
 </head>
 <body>

@@ -9,11 +9,13 @@ using System.Web.Services;
 
 public partial class studentT : System.Web.UI.Page
 {
-    public string json = "", json2 = "", json3 = "", ID;
+    public string json = "", json2 = "", json3 = "", ID, jsondate="",jsonshlit="";
     public string userPass, userName;
+    
 
     protected void Page_Load()
     {
+        Session["errform"] = "null";
         if (Session["userNameT"] == null)
         {
             Response.Redirect("loginT.aspx");
@@ -30,6 +32,7 @@ public partial class studentT : System.Web.UI.Page
             if (Request.Form["submit"] != null)
             {
                 ID = Request.Form["ID"];
+                Session["errform"] = ID;
                 stuopc.Style["opacity"] = "100";
                 DateTime today = DateTime.Today;
                 string datee = today.ToString("dd/MM/yyyy");
@@ -50,6 +53,12 @@ public partial class studentT : System.Web.UI.Page
                 json3 = Json(dtu);
                 string sql3 = "SELECT * FROM ID" + ID + ";";
                 DataTable dtid = MyAdoHelper.ExecuteDataTable(fileName, sql3);
+                string sqlgsh = "SELECT shlita FROM GRA"+ID+";";
+                string sqlgda = "SELECT datee FROM GRA" + ID + ";";
+                DataTable grsh = MyAdoHelper.ExecuteDataTable(fileName,sqlgsh);
+                DataTable grda = MyAdoHelper.ExecuteDataTable(fileName, sqlgda);
+                jsondate = Json(grda);
+                jsonshlit = Json(grsh);
                 changepass.Style["opacity"] = "100"; //רק בלחיצה על כפתור גילוי סיסמה
                 userPass = dtu.Rows[0]["userPass"].ToString();
                 userName = dtu.Rows[0]["userName"].ToString();

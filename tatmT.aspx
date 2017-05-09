@@ -78,7 +78,7 @@
                         <span style="font-size:20px; font-weight:300;font-family:Heebo; line-height:80%; text-align:right">{{kita}}, קבוצת  {{team}}</span>                     
 
                     </div>
-                               <img src="media/{{pic}}" style="width:120px; height:120px;margin:10px;" class="w3-circle w3-center w3-half">
+                               <img src="{{pic}}" style="width:120px; height:120px;margin:10px;" class="w3-circle w3-center w3-half">
                     {{/each}}
                 </script>
     

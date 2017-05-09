@@ -45,7 +45,7 @@
                 <td>{{ID}}</td>
                 <td>{{kita}}</td>
                 <td>{{shlita}}%</td>
-                <td><img src="media/{{pic}}" style="width:60px; height:60px;margin:10px;" class="w3-circle w3-center w3-half"></td>
+                <td><img src="{{pic}}" style="width:60px; height:60px;margin:10px;" class="w3-circle w3-center w3-half"></td>
             </tr>
             {{/each}}
         </table>

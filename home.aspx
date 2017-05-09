@@ -5,55 +5,34 @@
 <!doctype html>
 <html dir="rtl">
     <head>
-        <title>תרגולית-בית</title>         
+        <title>פלייגראונד-בית</title>         
         <link rel="stylesheet" href="css/circle.css">
         <link href="css/home.css" rel="stylesheet" />
     </head>
     <body>
-        <div class="w3-row w3-mobile" id="page-wrap"><!-- נותן מסגרת לאתר !-->
-            <div id="welcome" class="w3-container w3-row w3-mobile w3-white w3-card w3-cell w3-quarter">              
-                <div id="c" class="w3-third w3-center">    
-                    <header class="w3-container">
-                        <h5>צריך עזרה?</h5>
+        <div class="w3-row w3-mobile" id="page-wrap">
+            <div id="welcome" class="w3-container w3-row w3-mobile w3-white w3-card w3-cell w3-quarter">
+                <div id="a" class="w3-third">    
+                    <header class="w3-container w3-center">
+                        <h5> שליטה כללית בחומר</h5>
                     </header> 
-                    <div class="w3-container">
-                        <div class="c100 small p23 red">
-                            <span>23%</span>
-                            <div class="slice"><div class="bar"></div><div class="fill"></div></div>
-                        </div>
-                        <p>מילים מילים מילים מילים מילים מילים?</p>
+                    <div id="master-div" class="w3-container w3-panel">
+                           
                     </div>
                     <footer class="w3-container">
-                        <button class="w3-button w3-indigo">כניסה לפורום    </button>
-                    </footer>
-                </div>
-                 <div id="b" class="w3-third w3-center">    
-                    <header class="w3-container">
-                        <h5>צריך עזרה?</h5>
-                    </header> 
-                    <div class="w3-container">
-                        <div class="c100 small p89 green">
-                            <span>89%</span>
-                            <div class="slice"><div class="bar"></div><div class="fill"></div></div>
-                        </div>
-                        <p>מילים מילים מילים מילים מילים מילים?</p>
-                    </div>
-                    <footer class="w3-container w3-center">
-                        <button class="w3-button w3-indigo">שתף</button>
-                    </footer>
-                </div>
-                    <div id="a" class="w3-third">    
-                        <header class="w3-container  w3-center">
-                            <h5>צריך עזרה?</h5>
-                        </header> 
-                        <div class="w3-container">
-                            משהו משהו משהו משהו
-                         </div>
-                        <footer class="w3-container">
                             
-                        </footer>        
-                    </div>     
-                </div>             
+                    </footer>        
+                 </div>                 
+                 <div id="b" class="w3-twothird w3-contanier w3-display-container">    
+                   <h2 id="hh2">ברוכים הבאים לפלייגרואנד!</h2>
+                     <h5 style="font-style: italic">מערכת לימודית שעוצבה לתלמידים, על ידי תלמידים.</h5>
+                     <p >שחקו ושפרו את שליטכם בחומר הנלמד בכיתה ועזרו לקבוצה שלכם להגיע לראש טבלת המובילים!
+                            הפלייגראונד נועד לעזור לך לתרגל, ללמוד, ולשפר את החוויה הלימודית שלך.                   
+                     </p><br>
+                    <img id="logo"  class="w3-display-bottomleft w3-panel" src="media/LOGO1b.png" />
+
+                 </div>         
+             </div>             
                 <div id="pro-div" style="font-family:'Heebo'">
                    
                 </div>
@@ -68,6 +47,15 @@
                         <!--מכאן!-->
 
                 <script src="js/handlebars-v4.0.5.js"></script>
+            <script id="master-temp" type="text/x-handlebars-template">
+                 <div id="master" class="c100 dark small p<%=Session["shlita"] %> {{GetMasterColor <%=Session["shlita"] %>}} center" > <!-- צריך לחלק פה סאיו בסיתרגיל! !-->
+                                <span><%=Session["shlita"] %>%</span>
+                                <div class="slice">
+                                    <div class="bar"></div>
+                                    <div class="fill"></div>
+                                </div>
+                            </div>
+            </script>
                 <script id="sub-temp" type="text/x-handlebars-template">
                     {{#each sub}}
                     <div class="sub w3-quarter w3-card w3-container w3-cell w3-center w3-mobile w3-white" style="background-size:cover; background-position: center; 
@@ -83,6 +71,8 @@ background-image: url(../media/new/{{subjectID}}.png);border-top:solid #{{GetMas
                                     <div class="fill"></div>
                                 </div>
                             </div>
+                            <br />
+                            <span style="font-family:Heebo;font-size:15px;color:#ffffff">נותרו {{GetLeft cou ctargil}} תרגילים</span>
                             <hr />
                         </div>
                         <footer class="w3-container w3-center">
@@ -94,7 +84,7 @@ background-image: url(../media/new/{{subjectID}}.png);border-top:solid #{{GetMas
                 <script id="pro-temp" type="text/x-handlebars-template">
                     {{#each sub}}
                     <div class="w3-container w3-mobile w3-center w3-white w3-card w3-cell w3-quarter">
-                        <img src="media/{{pic}}" class="img-circle">
+                        <img src="{{pic}}" class="img-circle">
                         <div>
                             <span style="font-size:20px; font-weight:bold"> {{name}} </span><hr /><br>
                             <span style="font-size:20px; line-height:70%" >קבוצת  {{team}} </span><hr /> <br>
@@ -177,6 +167,10 @@ background-image: url(../media/new/{{subjectID}}.png);border-top:solid #{{GetMas
                         return parseInt(final);
 
                     });
+                    Handlebars.registerHelper('GetLeft', function (cou, ctargil) {
+                        var left = parseInt(ctargil) - parseInt(cou);
+                        return parseInt(left);
+                    });
                     Handlebars.registerHelper('GetLevel', function (xp) {
                         if (xp >= 0 && xp < 100)
                         {
@@ -214,11 +208,26 @@ background-image: url(../media/new/{{subjectID}}.png);border-top:solid #{{GetMas
                         var mesTemplate = Handlebars.compile(mesInfo);
                         var mesData = mesTemplate(<%=this.jsonMes%>);
                         document.getElementById("pro-div").innerHTML += mesData;
+
+                        var masterInfo = document.getElementById("master-temp").innerHTML;
+                        var masterTemplate = Handlebars.compile(masterInfo);
+                        var masterData = masterTemplate(<%=this.jsonPro%>);
+                    document.getElementById("master-div").innerHTML += masterData;
                         if ("<%=Session["userName"]%>" != null)
                         {
                             document.getElementById("login").innerHTML="התנתק";  
                             document.getElementById("signup").style.display="none"
                         }
+                    var x;
+                    function isEmpty(el) {
+                        return !$.trim(el.html())
+                    }
+                    if (isEmpty($('#sub-div'))) {
+                        var data = "לא נמצאו תרגילים כרגע";
+                        var dataLight = "הרבה לא יודעים אבל השטח פרסום הזה למכירה";
+                        document.getElementById("sub-div").innerHTML = "<h2 style='font-family:Heebo; color:#888888;font-weight:300'>" + dataLight + "</h2>";
+                        document.getElementById("sub-div").innerHTML += "<h1 style='font-family:Heebo; color:#888888'>" + data + "</h1>";
+                    }
                 </script>                
                
         </div>    

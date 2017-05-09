@@ -34,7 +34,6 @@
 </head>
 <body>
     <div id="page-wrap">
-        <div id="div"><canvas id="myChart"></canvas></div>
         <div id="form" class="w3-panel w3-card-4 " style="opacity:100">
             <form method="post">
                 <div class="w3-cell">
@@ -46,9 +45,7 @@
         </div>
         <hr />
         <div class="w3-row">
-            <div id="pro-div" class="w3-panel w3-row w3-right w3-half">
-                
-            </div>
+            <div id="pro-div" class="w3-panel w3-row w3-right w3-half"></div>
             <div id="changepass" style="opacity:0;float:right; margin-top:60px; font-family:Heebo" class="w3-panel w3-half" runat="server">
                     <div id="pass" style="opacity:0" runat="server">
                         <table align="center">
@@ -69,13 +66,14 @@
                     </div>
                     <br />
                 </div>
-            <div id="stuopc" style="opacity:0;width:80%;margin-left:auto;margin-right:auto" class="w3-responsive" runat="server">
-            <div class="w3-panel" style="text-align:right"id="stu-div"></div>
-        </div>
             </div>
+         <div id="stuopc" style="opacity:0;width:80%;margin-left:auto;margin-right:auto" class="w3-row" runat="server">
+            <div class="w3-half w3-panel" style="text-align:right;float:right"id="stu-div"></div>
+            <div id="div" class="w3-half  w3-container"><canvas id="myChart"></canvas></div>
+        </div>
         <script id="pro-temp" type="text/x-handlebars-template">
                     {{#each stu}}
-                                <img src="media/{{pic}}" style="width:120px; height:120px;margin:10px;" class="w3-circle w3-right w3-half">
+                                <img src="{{pic}}" style="width:120px; height:120px;margin:10px;" class="w3-circle w3-right w3-half">
                     <div class="w3-half w3-right w3-cell w3-cell-middle" style="top:200px;line-height:normal">
                         <span style="font-size:50px;font-weight:700;font-family:Heebo;"> {{name}} </span>
                         <br />
@@ -104,7 +102,6 @@
             {{/each}}
         </table>
     </script>
-        <script src="js/studentT.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
     var newSelect = document.createElement('select');
@@ -181,58 +178,87 @@
         });
     }
         });
-        var canvas = document.getElementById('myChart');
-        var yLabels = {
-            0 : 'בכלל לא',
-            4 : 'טיפה',
-            10 : 'ערב קוקטיילים',
-            14 : 'האדמין האשכנזי',
-            16 : 'תכנית אירוח של צביקה הדר',
-            20 : 'הקומיט הזה'
-        }
-        var data = {
-            labels: ["January", "February", "March", "April", "May", "June", "July"],
-            datasets: [
-                {
-                    label: "כמה גרוע אתה בגרף ובאיזה חודשים",
-                    fill: false,
-                    lineTension: 0.1,
-                    backgroundColor: "rgba(75,192,192,0.4)",
-                    borderColor: "rgba(75,192,192,1)",
-                    borderCapStyle: 'butt',
-                    borderDash: [],
-                    borderDashOffset: 0.0,
-                    borderJoinStyle: 'miter',
-                    pointBorderColor: "rgba(75,192,192,1)",
-                    pointBackgroundColor: "#fff",
-                    pointBorderWidth: 1,
-                    pointHoverRadius: 5,
-                    pointHoverBackgroundColor: "rgba(75,192,192,1)",
-                    pointHoverBorderColor: "rgba(220,220,220,1)",
-                    pointHoverBorderWidth: 2,
-                    pointRadius: 5,
-                    pointHitRadius: 10,
-                    data: [0,20, 16, 10, 4, 7,14],//להחליף בג'ייסון
-                }
-            ]
-        };
-
-        var option = {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true,
-                        callback: function(value, index, values) {
-                            return yLabels[value];
-                        }
+        $(document).ready(function () { 
+            var x = '<%=jsondate%>';
+                if ( x != "") {
+                    var canvas = document.getElementById('myChart');
+                    var yLabels = {
+                        0:0,
+                        20:20,
+                        40:40,
+                        60:60,
+                        80:80,
+                        100:100,
                     }
-                }]
-            }
-        };
-        var myLineChart = Chart.Line(canvas,{
-            data:data,
-            options:option
-        });
+
+                    var json = '<%=jsondate%>';
+                    var json2 =' <%=jsonshlit%>';
+                    var json = JSON.parse(json);
+                    var json2 = JSON.parse(json2);
+                    var arr = []; var arr2 = [];
+                for(var i =0; i< json.stu.length; i++){
+                    var x = json.stu[i].datee;
+                    var x = x.replace("/", "-");
+                    var x = x.replace("/", "-");
+                    arr.push(x);
+                };
+                for(var i =0; i< json2.stu.length; i++){
+                    var x = (json2.stu[i].shlita);
+                        arr2.push(x);
+                };
+                console.log(arr);
+                console.log(arr2);
+                var data = {
+                    labels: arr,
+                    datasets: [
+                        {
+                            label: "רמת שליטה כללית בחומר לאורך זמן",
+                            fill: false,
+                            lineTension: 0.1,
+                            backgroundColor: "rgba(255,70,56,0.4)",
+                            borderColor: "rgba(244,67,54,1)",
+                            borderCapStyle: 'butt',
+                            borderDash: [],
+                            borderDashOffset: 0.0,
+                            borderJoinStyle: 'miter',
+                            pointBorderColor: "rgba(255,70,56,0.4)",
+                            pointBackgroundColor: "#fff",
+                            pointBorderWidth: 1,
+                            pointHoverRadius: 5,
+                            pointHoverBackgroundColor: "rgba(244,67,54,1)",
+                            pointHoverBorderColor: "rgba(255,70,56,0.4)",
+                            pointHoverBorderWidth: 2,
+                            pointRadius: 5,
+                            pointHitRadius: 10,
+                            data: arr2, 
+                        }
+                    ]
+                };
+
+                var option = {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                min: 0,
+                                max: 100,
+                                beginAtZero: true,
+                                callback: function(value, index, values) {
+                                    return yLabels[value];
+                                    
+                                }
+                            }
+                        }]
+                    }
+                };
+                var myLineChart = Chart.Line(canvas,{
+                    data:data,
+                    options:option
+                });
+                }
+            
+            });
+        
     </script>
+        </div>
 </body>
 </html>

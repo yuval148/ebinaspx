@@ -1043,20 +1043,20 @@
   height: 0.92em;
 }
 .c100.dark {
-  background-color: #777777;
+  background-color: #eeeeee;
 }
 .c100.dark .bar,
 .c100.dark .fill {
-  border-color: #c6ff00 !important;
+  border-color: #eeeeee !important;
 }
 .c100.dark > span {
   color: #777777;
 }
 .c100.dark:after {
-  background-color: #666666;
+  background-color: #dddddd;
 }
 .c100.dark:hover > span {
-  color: #c6ff00;
+  color: #dddddd;
 }
 .c100.green .bar,
 .c100.green .fill {
@@ -1082,7 +1082,7 @@
 }
 .c100.orange.dark .bar,
 .c100.orange.dark .fill {
-  border-color: #e08833 !important;
+  border-color: #dddddd !important;
 }
 .c100.orange.dark:hover > span {
   color: #e08833;

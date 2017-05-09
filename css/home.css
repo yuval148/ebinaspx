@@ -13,14 +13,28 @@ body {
 	margin:2px;
     width:24%;
 	}
+h5, h2{
+        font-family: Heebo;
+}
+h2{
+    font-weight:700;
+}
+#master{
+
+}
 #subs{
-    margin-top:-30%;
+    margin-top:-27.5%;
 }
 #welcome{
     width:74%;
     margin-right:1%;
 }
-
+#hh2{
+    font-size:3.0vw;
+}
+#logo{
+    width:20%;
+}
 .img-circle {
 	border-radius: 50%;
 	width:120px;
@@ -34,7 +48,7 @@ body {
 }
 #b{
 	border-left: solid #DCDCDC;
-    border-right: solid #DCDCDC;
+    height:215px;
 
 }
 #container {
@@ -63,8 +77,16 @@ body {
     #b{
     border: none;
     }
-    #b,#c{
-    border-bottom: solid #DCDCDC;
+    #hh2{
+    font-size:35px;
+    font-weight:900;
+}
+    #b{
+    border-top: solid #DCDCDC;
+    height:auto;
+    }
+    #logo{
+      width:40%;
     }
     #welcome{
     margin-bottom:5%;
@@ -89,5 +111,10 @@ body {
      width:90%;
      margin: 0 auto;
      margin-top:10px;
+}
+}
+@media screen and (min-width: 1750px) {
+    #subs{
+    margin-top:-20%;
 }
 }

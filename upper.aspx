@@ -2,7 +2,7 @@
 <!doctype html>
 <html dir="rtl">
     <head> 
-    <!-- ver 004.012.009--!>
+    <!-- ver 005.001.001--!>
         <!--mobile confg-->
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -20,7 +20,7 @@
     </head>
     <body dir="rtl">
         <div class="topnav w3-card-4" id="myTopnav" style="font-family: 'Heebo', sans-serif; font-weight:300;">
-            <a> <img src="media/LOGO.png" style="float:right; width:128px;"/></a>
+            <a> <img src="media/LOGO.png" style="float:right; width:170px;"/></a>
             <a href="home.aspx">בית</a>
             <a href="tops.aspx">המובילים</a>
             <a class="dropbtn" onclick="myFunction()">תרגילים</a>   

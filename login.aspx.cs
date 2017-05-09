@@ -87,6 +87,7 @@ public partial class login : System.Web.UI.Page
                     string sql3 = "INSERT INTO GRA" + ID + " (shlita, datee) VALUES(" + shlita + " ,'" + datee + "');";
                     MyAdoHelper.DoQuery(fileName, sql3);
                 }
+                Session["shlita"] = shlita;
                 //סוף
                 opc = 100;
                 Session["ErrLogin"] = " שלום " + name + " מקבוצת " + team + " יש לך " + xpp1.ToString() + " נקודות " + "  ואתה בשלב " + level.ToString();

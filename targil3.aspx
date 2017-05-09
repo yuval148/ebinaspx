@@ -8,7 +8,7 @@
 <html dir="rtl">
    
 <head>
-    <title>תרגולית-אלגברה</title>
+    <title>פלייגראונד-אלגברה</title>
     <link href="css/targil.css" rel="stylesheet" />
 </head>
 <body>
