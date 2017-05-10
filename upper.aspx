@@ -2,7 +2,7 @@
 <!doctype html>
 <html dir="rtl">
     <head> 
-    <!-- ver 005.001.001--!>
+    <!-- ver 005.001.002--!>
         <!--mobile confg-->
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -20,23 +20,23 @@
     </head>
     <body dir="rtl">
         <div class="topnav w3-card-4" id="myTopnav" style="font-family: 'Heebo', sans-serif; font-weight:300;">
-            <a> <img src="media/LOGO.png" style="float:right; width:170px;"/></a>
-            <a href="home.aspx">בית</a>
-            <a href="tops.aspx">המובילים</a>
-            <a class="dropbtn" onclick="myFunction()">תרגילים</a>   
-            <a href="login.aspx" id="login">התחברות</a>
-            <a href="signup.aspx"  id="signup" >הרשמה</a>
-            <a href="javascript:void(0);" style="font-size:15px;float:left" class="icon" onclick="open()">&#9776;</a>      
-            </div>
-          <script>
-              function open() {
-                  var x = document.getElementById("myTopnav");
-                  if (x.className === "topnav") {
-                      x.className += " responsive";
-                  } else {
-                      x.className = "topnav";
-                  }
-              }
-        </script>
+  <a> <img src="media/LOGO.png" style="float:right; width:170px;"/></a>
+  <a href="home.aspx">בית</a>
+  <a href="tops.aspx">המובילים</a>
+  <a href="login.aspx" id="login">התחברות</a>
+  <a href="signup.aspx" id="signup">הרשמה</a>
+  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+</div>
+
+<script>
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+</script>
     </body>
     </html>
