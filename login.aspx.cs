@@ -14,13 +14,23 @@ public partial class login : System.Web.UI.Page
     {
         Session["userName"] = null;
         string tableName = "users";//שם הטבלה
+        string fileName = "db1.mdb";
         string userName, userPass, name, team;
         string userName2, ID, kita, pic;
         int level = 0;
         opc = 0;
-  
-        
-        
+        string ip = xpstuf.GetUserIPAddress();
+        string userAgent = xpstuf.GetUserEnvironment(Request);
+        userAgent += " from login";
+        DateTime timeUtc = DateTime.UtcNow;
+        TimeZoneInfo easternZone = TimeZoneInfo.FindSystemTimeZoneById("Israel Standard Time");
+        DateTime datehortod = TimeZoneInfo.ConvertTimeFromUtc(timeUtc, easternZone);
+        string dathour = datehortod.ToString("dd/MM/yyyy HH:mm:ss");
+        string sqlcouner = "INSERT INTO entrys (ip, userAgent, dathour) VALUES ('" + ip + "','" + userAgent + "','" + dathour + "');";
+        MyAdoHelper.DoQuery(fileName, sqlcouner);
+
+
+
         userName = Request.Form["userName"];
         userPass = Request.Form["userPass"];
         if (Request.Form["userName"] == "" || Request.Form["userPass"] == "")
@@ -31,7 +41,6 @@ public partial class login : System.Web.UI.Page
         }
         else
         {
-            string fileName ="db1.mdb";
             string sql = "select * from "+ tableName + " where userName='" + Request.Form["userName"] + "'";
             sql += "AND userPass ='" + Request.Form["userPass"] + "'";
             if (MyAdoHelper.IsExist(fileName, sql)) //שימוש בפעולה אם המשתמש קיים 
