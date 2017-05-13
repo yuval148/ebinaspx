@@ -31,6 +31,13 @@ public partial class secretT : System.Web.UI.Page
         }
     }
 
+    protected void del(Object sender, EventArgs e)
+    {
+        string fileName = "db1.mdb";
+        string sqldel = "DELETE * FROM entrys;";
+        MyAdoHelper.DoQuery(fileName, sqldel);
+    }
+
 }
 
 

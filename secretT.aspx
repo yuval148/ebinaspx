@@ -27,8 +27,12 @@
     <div id="jsn1" style="width:80%;margin-left:auto;margin-right:auto" class="w3-responsive">
         <div id="stu-div"></div>
         </div>
-
-     <script id="stu-temp" type="text/x-handlebars-template">
+    <form runat="server" align="center">
+          <asp:Button ID="btn" class="w3-button  w3-red w3-hover-red" runat="server" Text="מחיקת כל הרשומות" OnClick="del"  UseSubmitBehavior="false"  /> 
+    <br />
+        <span style="font-family:Heebo; font-weight:300">אזהרה: כפתור זה מוחק את כל הרשומות ללא אפשרות שחזור.</span>
+        </form>
+    <script id="stu-temp" type="text/x-handlebars-template">
         <table id="table" class="w3-table-all w3-card">
                 <tr>
                 <th>IP</th>
