@@ -2,7 +2,7 @@
 <!doctype html>
 <html dir="rtl">
     <head> 
-    <!-- ver 005.002.002--!>
+    <!-- ver 005.003.002--!>
         <!--mobile confg-->
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -17,6 +17,7 @@
         <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-blue.min.css" /> 
 
         <link rel="stylesheet" href="css/upper.css">
+        <script src="js/google_a.js"></script>
     </head>
     <body dir="rtl">
         <div class="topnav w3-card-4" id="myTopnav" style="font-family: 'Heebo', sans-serif; font-weight:300;">

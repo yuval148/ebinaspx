@@ -2,7 +2,7 @@
 <!doctype html>
 <html dir="rtl">
     <head> 
-        <!-- ver 005.002.002--!>
+        <!-- ver 005.003.002--!>
         <!--mobile confg-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -28,6 +28,7 @@
         <script>
             $(document).click(function () {if ($(".mdl-layout__drawer").hasClass("is-visible")) {$(".mdl-layout__drawer").removeClass("hide-drawer");$(".mdl-layout__drawer").addClass("right-drawer");}else {$(".mdl-layout__drawer").removeClass("right-drawer");$(".mdl-layout__drawer").addClass("hide-drawer");}});
         </script>
+        <script src="js/google_a.js"></script>
     </head>
     <body dir="rtl">
      <!-- Always shows a header, even in smaller screens. -->
