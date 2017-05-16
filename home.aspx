@@ -43,10 +43,23 @@
                 <h2 style="font-family:'Heebo';font-weight:900;font-size:45px">נושאים</h2><hr />
                 <div class="w3-cell-row" id="sub-div"></div>
             </div>
-               
-                        <!--מכאן!-->
+                              <div id="not-div"></div>
 
+                        <!--מכאן!-->
                 <script src="js/handlebars-v4.0.5.js"></script>
+            <script id="not-temp" type="text/x-handlebars-template">
+                 <div id="notifications">
+                    <h3>התראות</h3>
+                    <div style="height:300px;">
+                       {{#each sub}}
+                                <i style="float:right" class="material-icons">{{icon}}</i><h5>{{title}}</h5>
+                                <span >{{msg}}</span>
+                                <hr />
+                        {{/each}}
+                    </div>
+                    <div class="seeAll"><a href="#">See All</a></div>
+                </div>
+            </script>
             <script id="master-temp" type="text/x-handlebars-template">
                  <div id="master" class="c100 dark small p<%=Session["shlita"] %> {{GetMasterColor <%=Session["shlita"] %>}} center" > <!-- צריך לחלק פה סאיו בסיתרגיל! !-->
                                 <span><%=Session["shlita"] %>%</span>
@@ -122,6 +135,8 @@ background-image: url(../media/new/{{subjectID}}.png);border-top:solid #{{GetMas
                     </div> 
                 </script>
                 <script type="text/javascript">
+                    var data = '<ul><li id="noti_Container"><div id="noti_Counter"></div><div id="noti_Button"></div></li></ul>';
+                    $(data).insertAfter($("#after"));
                     Handlebars.registerHelper('CheckClass', function (kita,title){
                         var kita = kita.split(",");
                         var Mykita = "<%=Session["kita"]%>";
@@ -209,6 +224,11 @@ background-image: url(../media/new/{{subjectID}}.png);border-top:solid #{{GetMas
                         var mesData = mesTemplate(<%=this.jsonMes%>);
                         document.getElementById("pro-div").innerHTML += mesData;
 
+                        var notInfo = document.getElementById("not-temp").innerHTML;
+                        var notTemplate = Handlebars.compile(notInfo);
+                        var notData = notTemplate(<%=this.jsonMes%>);
+                        document.getElementById("not-div").innerHTML += notData;
+
                         var masterInfo = document.getElementById("master-temp").innerHTML;
                         var masterTemplate = Handlebars.compile(masterInfo);
                         var masterData = masterTemplate(<%=this.jsonPro%>);
@@ -228,8 +248,42 @@ background-image: url(../media/new/{{subjectID}}.png);border-top:solid #{{GetMas
                         document.getElementById("sub-div").innerHTML = "<h2 style='font-family:Heebo; color:#888888;font-weight:300'>" + dataLight + "</h2>";
                         document.getElementById("sub-div").innerHTML += "<h1 style='font-family:Heebo; color:#888888'>" + data + "</h1>";
                     }
+                    $(document).ready(function () {
+
+                        // ANIMATEDLY DISPLAY THE NOTIFICATION COUNTER.
+                        $('#noti_Counter')
+                            .css({ opacity: 0 })
+                            .text('7')// ערך דינמי
+                            .css({ top: '-10px' })
+                            .animate({ top: '-2px', opacity: 1 }, 500);
+
+                        $('#noti_Button').click(function () {
+
+                            $('#notifications').fadeToggle('fast', 'linear', function () {
+                                if ($('#notifications').is(':hidden')) {
+                                    $('#noti_Button').css('background-color', '#2E467C');
+                                }
+                                else $('#noti_Button').css('background-color', '#FFF');
+                            });
+
+                            $('#noti_Counter').fadeOut('slow');                
+
+                            return false;
+                        });
+
+                        $(document).click(function () {
+                            $('#notifications').hide();
+
+                            if ($('#noti_Counter').is(':hidden')) {
+                                $('#noti_Button').css('background-color', '#2E467C');
+                            }
+                        });
+
+                        $('#notifications').click(function () {
+                            return false; 
+                        });
+                    });
                 </script>                
-               
         </div>    
 </body>
 </html>
