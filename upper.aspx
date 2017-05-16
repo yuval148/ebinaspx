@@ -15,7 +15,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <!--colors-->
         <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-blue.min.css" /> 
-
+        <link href="css/notiflications.css" rel="stylesheet" />
         <link rel="stylesheet" href="css/upper.css">
         <script src="js/google_a.js"></script>
     </head>
@@ -26,7 +26,7 @@
   <a href="tops.aspx">המובילים</a>
   <a href="login.aspx" id="login">התחברות</a>
   <a href="signup.aspx" id="signup">הרשמה</a>
-  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+  <a href="javascript:void(0);" style="font-size:15px;" id="after" class="icon" onclick="myFunction()">&#9776;</a>
 </div>
 
 <script>
