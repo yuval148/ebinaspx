@@ -33,9 +33,7 @@
 
                  </div>         
              </div>             
-                <div id="pro-div" style="font-family:'Heebo'">
-                   
-                </div>
+                <div id="pro-div" style="font-family:'Heebo'"></div>
                 <br />
                 <br />
             <!--מכאן!-->
@@ -120,10 +118,9 @@ background-image: url(../media/new/{{subjectID}}.png);border-top:solid #{{GetMas
                     <div style="float:right;margin-top:10px;margin-bottom:10px" class="w3-container w3-white w3-card w3-quarter">
                         <h3 style="font-family:'Heebo';font-weight:700; text-align:center;">הודעות</h3>
                         <hr>
-                        <ul class="w3-ul">
                         {{#each sub}}
-                             <div id="{{title}}" style="display:{{CheckClass kita title}}">
-                            <li class="w3-padding-16">
+                             <div id="{{title}}" style="display:{{CheckClass kita title}};">
+                            <div class="w3-padding-16">
                                 <i class="material-icons">{{icon}}</i>
                                 <span class="w3-large">{{title}}</span><br>
                                 <span>{{msg}}</span>,
@@ -131,10 +128,9 @@ background-image: url(../media/new/{{subjectID}}.png);border-top:solid #{{GetMas
                                 <span style="color:#9e9e9e; font-size:10px;">{{datec}}</span>
                                 <span style="color:#9e9e9e; font-size:10px;">{{byy}}</span>
                                 
-                            </li>
+                            </div>
                             </div>
                         {{/each}}
-                        </ul>
                     </div> 
                 </script>
                 <script type="text/javascript">
