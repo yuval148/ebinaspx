@@ -50,14 +50,17 @@
             <script id="not-temp" type="text/x-handlebars-template">
                  <div id="notifications">
                     <h3>התראות</h3>
-                    <div style="height:300px;">
-                       {{#each sub}}
-                                <i style="float:right" class="material-icons">{{icon}}</i><h5>{{title}}</h5>
-                                <span >{{msg}}</span>
-                                <hr />
-                        {{/each}}
+                    <div style="height:300px;padding:8px;">
+                           {{#each_upto sub 6}}
+                              <div class="noti-div">
+                                  <i style="float:right" class="material-icons">{{icon}}</i><span>{{title}}</span>
+                                <span>{{msg}}</span>
+                                <span style="color:#9e9e9e; font-size:10px;"> {{datec}}</span>
+                                  <hr />
+                              </div>                         
+                        {{/each_upto}}
                     </div>
-                    <div class="seeAll"><a href="#">See All</a></div>
+                    <div class="seeAll"><a href="#">הראה את כולם</a></div>
                 </div>
             </script>
             <script id="master-temp" type="text/x-handlebars-template">
@@ -147,6 +150,15 @@ background-image: url(../media/new/{{subjectID}}.png);border-top:solid #{{GetMas
                             }
                         }
                         return "none";      
+                    });
+                    Handlebars.registerHelper('each_upto', function (ary, max, options) {
+                        if (!ary || ary.length == 0)
+                            return options.inverse(this);
+
+                        var result = [];
+                        for (var i = 0; i < max && i < ary.length; ++i)
+                            result.push(options.fn(ary[i]));
+                        return result.join('');
                     });
                     Handlebars.registerHelper('GetMasterColor', function(master) {
                             if (master<25){
