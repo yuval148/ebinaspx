@@ -100,7 +100,7 @@ background-image: url(../media/new/{{subjectID}}.png);border-top:solid #{{GetMas
                 <script id="pro-temp" type="text/x-handlebars-template">
                     {{#each sub}}
                     <div class="w3-container w3-mobile w3-center w3-white w3-card w3-cell w3-quarter">
-                        <img src="{{pic}}" class="img-circle">
+                        <img src="{{pic}}" id="img" class="img-circle">
                         <div>
                             <span style="font-size:20px; font-weight:bold"> {{name}} </span><hr /><br>
                             <span style="font-size:20px; line-height:70%" >קבוצת  {{team}} </span><hr /> <br>
@@ -228,6 +228,8 @@ background-image: url(../media/new/{{subjectID}}.png);border-top:solid #{{GetMas
                         var proTemplate = Handlebars.compile(proInfo);
                         var proData = proTemplate(<%=this.jsonPro%>);
                         document.getElementById("pro-div").innerHTML += proData;
+                        var img = document.getElementById("img").src;
+                        $('<img style="width:23px;height:23px;line-height:23px;border-radius:50%;margin-top:5px" src="' + img + '"/>').appendTo("#noti_Button");
 
                         var mesInfo = document.getElementById("mes-temp").innerHTML;
                         var mesTemplate = Handlebars.compile(mesInfo);

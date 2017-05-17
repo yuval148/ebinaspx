@@ -26,7 +26,6 @@
         position:relative;
     }
        
-    /* A CIRCLE LIKE BUTTON IN THE TOP MENU. */
     #noti_Button {
         width:22px;
         height:22px;
@@ -39,7 +38,6 @@
         cursor:pointer;
     }
         
-    /* THE POPULAR RED NOTIFICATIONS COUNTER. */
     #noti_Counter {
         display:block;
         position:absolute;
@@ -55,7 +53,6 @@
         z-index:1;
     }
         
-    /* THE NOTIFICAIONS WINDOW. THIS REMAINS HIDDEN WHEN THE PAGE LOADS. */
     #notifications {
         overflow-y:scroll;
         display:none;
@@ -69,7 +66,6 @@
         z-index: 2;
         max-height:420px;
     }
-    /* AN ARROW LIKE STRUCTURE JUST OVER THE NOTIFICATIONS WINDOW */
     #notifications:before {         
         content: '';
         display:block;
