@@ -14,10 +14,10 @@ body {
     width:24%;
 	}
 h5, h2{
-        font-family: Heebo;
+        font-family: Heebo!important;
 }
 h2{
-    font-weight:700;
+    font-weight:700!important;
 }
 #master{
 
@@ -64,7 +64,7 @@ h2{
 	width: 300px;
 }
 .subH{
-     font-family:'Heebo';
+     font-family:'Heebo'!important;
      font-weight:300;
      color:white;
      font-size:2.1vw;
