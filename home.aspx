@@ -7,7 +7,9 @@
     <head>
         <title>פלייגראונד-בית</title>         
         <link rel="stylesheet" href="css/circle.css">
-        <link href="css/home.css" rel="stylesheet" />
+        <link href="css/home.css" rel="stylesheet" /> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/0.6.10/css/perfect-scrollbar.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/0.6.10/js/perfect-scrollbar.jquery.js"></script>
     </head>
     <body>
         <div class="w3-row w3-mobile" id="page-wrap">
@@ -291,6 +293,7 @@ background-image: url(../media/new/{{subjectID}}.png);border-top:solid #{{GetMas
                             return false; 
                         });
                     });
+                    $('#notifications').perfectScrollbar();
                 </script>                
         </div>    
 </body>
