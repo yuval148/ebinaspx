@@ -1,52 +1,274 @@
 ﻿<%@ Page Language="C#" CodeFile="home.aspx.cs" Inherits="home" %>
 <%@ Import Namespace="System.Data" %>
 <%@ Import Namespace="System.Data.OleDb" %>
-<!--#include file="upper.aspx"-->
-<!doctype html>
-<html dir="rtl">
-    <head>
-        <title>פלייגראונד-בית</title>         
-        <link rel="stylesheet" href="css/circle.css">
-        <link href="css/home.css" rel="stylesheet" /> 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/0.6.10/css/perfect-scrollbar.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/0.6.10/js/perfect-scrollbar.jquery.js"></script>
-    </head>
-    <body>
-        <div class="w3-row w3-mobile" id="page-wrap">
-            <div id="welcome" class="w3-container w3-row w3-mobile w3-white w3-card w3-cell w3-quarter">
-                <div id="a" class="w3-third">    
-                    <header class="w3-container w3-center">
-                        <h5> שליטה כללית בחומר</h5>
-                    </header> 
-                    <div id="master-div" class="w3-container w3-panel">
-                           
-                    </div>
-                    <footer class="w3-container">
-                            
-                    </footer>        
-                 </div>                 
-                 <div id="b" class="w3-twothird w3-contanier w3-display-container">    
-                   <h2 id="hh2">ברוכים הבאים לפלייגרואנד!</h2>
-                     <h5 style="font-style: italic">מערכת לימודית שעוצבה לתלמידים, על ידי תלמידים.</h5>
-                     <p >שחקו ושפרו את שליטכם בחומר הנלמד בכיתה ועזרו לקבוצה שלכם להגיע לראש טבלת המובילים!
-                            הפלייגראונד נועד לעזור לך לתרגל, ללמוד, ולשפר את החוויה הלימודית שלך.                   
-                     </p><br>
-                    <img id="logo"  class="w3-display-bottomleft w3-panel" src="media/LOGO1b.png" />
+<!DOCTYPE html>
+<html lang="heb" dir="rtl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Dashboard">
+    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-                 </div>         
-             </div>             
-                <div id="pro-div" style="font-family:'Heebo'"></div>
-                <br />
-                <br />
-            <!--מכאן!-->
-            <div id="subs" class="w3-container w3-mobile w3-threequarter">
+    <title>DASHGUM - FREE Bootstrap Admin Template</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <!--external css-->
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="assets/css/zabuto_calendar.css">
+    <link rel="stylesheet" type="text/css" href="assets/js/gritter/css/jquery.gritter.css" />
+    <link rel="stylesheet" type="text/css" href="assets/lineicons/style.css">    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
+    
+    <!-- Custom styles for this template -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/style-responsive.css" rel="stylesheet">
+
+    <script src="assets/js/chart-master/Chart.js"></script>
+    
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+  <section id="container" >
+      <!-- **********************************************************************************************************************************************************
+      TOP BAR CONTENT & NOTIFICATIONS
+      *********************************************************************************************************************************************************** -->
+      <!--header start-->
+      <header class="header black-bg">
+              <div class="sidebar-toggle-box">
+                  <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+              </div>
+            <!--logo start-->
+            <a href="home.aspx" class="logo"><b>Playground</b></a>
+            <!--logo end-->
+            <div class="nav notify-row" id="top_menu">
+                <!--  notification start -->
+                <ul class="nav top-menu">
+                    <!-- settings start -->
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="home.aspx#">
+                            <i class="fa fa-tasks"></i>
+                            <span class="badge bg-theme">4</span>
+                        </a>
+                        <ul id="taskbar-ul" class="dropdown-menu extended tasks-bar">
+                            
+                        </ul>
+                    </li>
+                    <!-- settings end -->
+                    <!-- inbox dropdown start-->
+                    <li id="header_inbox_bar" class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="home.aspx#">
+                            <i class="fa fa-envelope-o"></i>
+                            <span class="badge bg-theme">5</span>
+                        </a>
+                        <ul class="dropdown-menu extended inbox">
+                            <div class="notify-arrow notify-arrow-green"></div>
+                            <li>
+                                <p class="green">You have 5 new messages</p>
+                            </li>
+                            <li>
+                                <a href="home.aspx#">
+                                    <span class="photo"><img alt="avatar" src="assets/img/ui-zac.jpg"></span>
+                                    <span class="subject">
+                                    <span class="from">Zac Snider</span>
+                                    <span class="time">Just now</span>
+                                    </span>
+                                    <span class="message">
+                                        Hi mate, how is everything?
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="home.aspx#">
+                                    <span class="photo"><img alt="avatar" src="assets/img/ui-divya.jpg"></span>
+                                    <span class="subject">
+                                    <span class="from">Divya Manian</span>
+                                    <span class="time">40 mins.</span>
+                                    </span>
+                                    <span class="message">
+                                     Hi, I need your help with this.
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="home.aspx#">
+                                    <span class="photo"><img alt="avatar" src="assets/img/ui-danro.jpg"></span>
+                                    <span class="subject">
+                                    <span class="from">Dan Rogers</span>
+                                    <span class="time">2 hrs.</span>
+                                    </span>
+                                    <span class="message">
+                                        Love your new Dashboard.
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="home.aspx#">
+                                    <span class="photo"><img alt="avatar" src="assets/img/ui-sherman.jpg"></span>
+                                    <span class="subject">
+                                    <span class="from">Dj Sherman</span>
+                                    <span class="time">4 hrs.</span>
+                                    </span>
+                                    <span class="message">
+                                        Please, answer asap.
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="home.aspx#">See all messages</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- inbox dropdown end -->
+                </ul>
+                <!--  notification end -->
+            </div>
+            <div class="top-menu">
+            	<ul class="nav pull-left top-menu">
+                    <li><a class="logout" href="login.aspx">התנתק</a></li>
+            	</ul>
+            </div>
+        </header>
+         <!-- **********************************************************************************************************************************************************
+      MAIN SIDEBAR MENU
+      *********************************************************************************************************************************************************** -->
+      <!--sidebar start-->
+      <aside>
+          <div id="sidebar"  class="nav-collapse ">
+              <!-- sidebar menu start-->
+              <ul class="sidebar-menu" id="nav-accordion">        
+              	  
+              </ul>
+              <!-- sidebar menu end-->
+          </div>
+      </aside>
+      <!--sidebar end--> 
+
+            <!-- **********************************************************************************************************************************************************
+      MAIN CONTENT
+      *********************************************************************************************************************************************************** -->
+      <!--main content start-->
+      <section id="main-content">
+          <section class="wrapper">
+                    <div id="subs" class="w3-container w3-mobile w3-threequarter">
                 <h2 style="font-family:'Heebo';font-weight:900;font-size:45px">נושאים</h2><hr />
                 <div class="w3-cell-row" id="sub-div"></div>
             </div>
-                              <div id="not-div"></div>
+              <div class="row">
+                  <!-- **********************************************************************************************************************************************************
+      RIGHT SIDEBAR CONTENT
+      *********************************************************************************************************************************************************** -->                  
+                  
+                  <div class="col-lg-3 ds">
+                      <div id="mes-div">
+                      </div>
 
-                        <!--מכאן!-->
+
+                       <!-- USERS ONLINE SECTION -->
+						<h3>TEAM MEMBERS</h3>
+                      <!-- First Member -->
+                      <div class="desc">
+                      	<div class="thumb">
+                      		<img class="img-circle" src="assets/img/ui-divya.jpg" width="35px" height="35px" align="">
+                      	</div>
+                      	<div class="details">
+                      		<p><a href="#">DIVYA MANIAN</a><br/>
+                      		   <muted>Available</muted>
+                      		</p>
+                      	</div>
+                      </div>
+                      <!-- Second Member -->
+                      <div class="desc">
+                      	<div class="thumb">
+                      		<img class="img-circle" src="assets/img/ui-sherman.jpg" width="35px" height="35px" align="">
+                      	</div>
+                      	<div class="details">
+                      		<p><a href="#">DJ SHERMAN</a><br/>
+                      		   <muted>I am Busy</muted>
+                      		</p>
+                      	</div>
+                      </div>
+                      <!-- Third Member -->
+                      <div class="desc">
+                      	<div class="thumb">
+                      		<img class="img-circle" src="assets/img/ui-danro.jpg" width="35px" height="35px" align="">
+                      	</div>
+                      	<div class="details">
+                      		<p><a href="#">DAN ROGERS</a><br/>
+                      		   <muted>Available</muted>
+                      		</p>
+                      	</div>
+                      </div>
+                      <!-- Fourth Member -->
+                      <div class="desc">
+                      	<div class="thumb">
+                      		<img class="img-circle" src="assets/img/ui-zac.jpg" width="35px" height="35px" align="">
+                      	</div>
+                      	<div class="details">
+                      		<p><a href="#">Zac Sniders</a><br/>
+                      		   <muted>Available</muted>
+                      		</p>
+                      	</div>
+                      </div>
+                      <!-- Fifth Member -->
+                      <div class="desc">
+                      	<div class="thumb">
+                      		<img class="img-circle" src="assets/img/ui-sam.jpg" width="35px" height="35px" align="">
+                      	</div>
+                      	<div class="details">
+                      		<p><a href="#">Marcel Newman</a><br/>
+                      		   <muted>Available</muted>
+                      		</p>
+                      	</div>
+                      </div>
+
+                        <!-- CALENDAR-->
+                        <div id="calendar" class="mb">
+                            <div class="panel green-panel no-margin">
+                                <div class="panel-body">
+                                    <div id="date-popover" class="popover top" style="cursor: pointer; disadding: block; margin-left: 33%; margin-top: -50px; width: 175px;">
+                                        <div class="arrow"></div>
+                                        <h3 class="popover-title" style="disadding: none;"></h3>
+                                        <div id="date-popover-content" class="popover-content"></div>
+                                    </div>
+                                    <div id="my-calendar"></div>
+                                </div>
+                            </div>
+                        </div><!-- / calendar -->
+                      
+                  </div><!-- /col-lg-3 -->
                 <script src="js/handlebars-v4.0.5.js"></script>
+            <script id="taskbar-temp" type="text/x-handlebars-template">
+                <div class="notify-arrow notify-arrow-green"></div>
+                            <li>
+                                <p class="green">יש לך 4 משימות שלא הושלמו</p>
+                            </li>
+                            {{#each sub}}
+                            <li>
+                                <a href="home.aspx#">
+                                    <div class="task-info">
+                                        <div class="desc">DashGum Admin Panel</div>
+                                        <div class="percent">40%</div>
+                                    </div>
+                                    <div class="progress progress-striped">
+                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                            <span class="sr-only">40% Complete (success)</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            {{/each}}
+                            <li class="external">
+                                <a href="#">See All Tasks</a>
+                            </li>
+            </script>
             <script id="not-temp" type="text/x-handlebars-template">
                  <div id="notifications">
                     <h3>התראות</h3>
@@ -74,6 +296,36 @@
             </script>
                 <script id="sub-temp" type="text/x-handlebars-template">
                     {{#each sub}}
+                    <div class="col-md-4 col-sm-4 mb">
+                      		<div class="white-panel pn">
+                      			<div class="white-header">
+						  			<h5>{{subject}}</h5>
+                      			</div>
+								<canvas id="serverstatus02" height="120" width="120"></canvas>
+								<script>
+									var doughnutData = [
+											{
+												value: 60,
+												color:"#1c9ca7"
+											},
+											{
+												value : 40,
+												color : "#f68275"
+											}
+										];
+										var myDoughnut = new Chart(document.getElementById("serverstatus02").getContext("2d")).Doughnut(doughnutData);
+								</script>
+								<p>April 17, 2014</p>
+								<footer>
+									<div class="pull-left">
+										<h5><i class="fa fa-hdd-o"></i> 17 GB</h5>
+									</div>
+									<div class="pull-right">
+										<h5>60% Used</h5>
+									</div>
+								</footer>
+                      		</div>
+                      	</div>
                     <div class="sub w3-quarter w3-card w3-container w3-cell w3-center w3-mobile w3-white" style="background-size:cover; background-position: center; 
 background-image: url(../media/new/{{subjectID}}.png);border-top:solid #{{GetMasterColor2 (GetMasterPrecent cou ctargil)}} 7.5px">
                         <header class="w3-container w3-center">
@@ -98,46 +350,134 @@ background-image: url(../media/new/{{subjectID}}.png);border-top:solid #{{GetMas
                     {{/each}}
                 </script>
                 <script id="pro-temp" type="text/x-handlebars-template">
+                    
                     {{#each sub}}
-                    <div class="w3-container w3-mobile w3-center w3-white w3-card w3-cell w3-quarter">
-                        <img src="{{pic}}" id="img" class="img-circle">
-                        <div>
-                            <span style="font-size:20px; font-weight:bold"> {{name}} </span><hr /><br>
-                            <span style="font-size:20px; line-height:70%" >קבוצת  {{team}} </span><hr /> <br>
-                            <div class="w3-light-grey w3-round-xlarge">
-                                <div class="w3-container w3-indigo w3-round-xlarge" id=progi style="width:25%" runat="server"><%=prog.ToString()%>%</div>
-                            </div><br />                                
-                            <span style="font-size:20px;line-height:20%"> {{xpp}} נקודות</span><br>
-                            <span style="font-size:10px;line-height:20%"> <%=tilnext.ToString()%> נקודות עד הרמה הבאה</span>
-                            <hr /> <br>
-                            <span style="font-size:20px; line-height:80%" >שלב  <span class="mdl-badge" data-badge="{{GetLevel xpp}}"></span> </span><hr /> <br>
-                            <span style="font-size:20px; line-height:80%" >{{kita}}<br><br></span>
-                        </div>
-                    </div>
+                    <p class="centered"><img src="{{pic}}" class="img-circle" width="60"></a></p>
+              	    <h5 class="centered">{{name}}</h5>
+                    <div class="progress" style="margin:5px">
+						  <div class="progress-bar progress-bar-info" role="progressbar" id=progi runat="server" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+						    <span class="sr-only"><%=prog.ToString()%>%</span>
+						  </div>
+						</div>
+                    <h5 class="centered" style="font-size:10px;line-height:20%"> <%=tilnext.ToString()%> נקודות עד הרמה הבאה</h5>             	  	
+                    <li class="mt">
+                      <a class="active" href="index.html">
+                          <i class="fa fa-dashboard"></i>
+                          <span>דף הבית</span>
+                      </a>
+                    </li>
+                    
+                        <li class="sub-menu">
+                        <a href="javascript:;" >
+                            <i class="fa fa-desktop"></i>
+                            <span>UI Elements</span>
+                        </a>
+                        <ul class="sub">
+                            <li><a  href="general.html">General</a></li>
+                            <li><a  href="buttons.html">Buttons</a></li>
+                            <li><a  href="panels.html">Panels</a></li>
+                        </ul>
+                    </li>
                     {{/each}}
                 </script>
                 <script id="mes-temp" type="text/x-handlebars-template">
-                    <div style="float:right;margin-top:10px;margin-bottom:10px" class="w3-container w3-white w3-card w3-quarter">
-                        <h3 style="font-family:'Heebo';font-weight:700; text-align:center;">הודעות</h3>
-                        <hr>
+                    	<h3>הודעות</h3>
                         {{#each sub}}
-                             <div id="{{title}}" style="display:{{CheckClass kita title}};">
-                            <div class="w3-padding-16">
-                                <i class="material-icons">{{icon}}</i>
-                                <span class="w3-large">{{title}}</span><br>
-                                <span>{{msg}}</span>,
-                                <span style="color:#3f51b5">{{kita}}</span><br>
-                                <span style="color:#9e9e9e; font-size:10px;">{{datec}}</span>
-                                <span style="color:#9e9e9e; font-size:10px;">{{byy}}</span>
-                                
-                            </div>
-                            </div>
+                    <div id="{{title}}" style="display:{{CheckClass kita title}}">
+                        <div class="desc" >
+                      	    <div class="thumb">
+                      		    <span class="badge bg-theme"><i class="material-icons">{{icon}}</i></span>
+                      	    </div>
+                      	<div class="details">
+                      		<p><muted>{{kita}}</muted><br/>
+                      		   {{title}} {{msg}}<br/>
+                               {{byy}} {{datec}}<br/>                      		
+                      		</p>
+                      	</div>
+                      </div>
+                    </div>
+                       
                         {{/each}}
-                    </div> 
                 </script>
+            <!-- js placed at the end of the document so the pages load faster -->
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/jquery-1.8.3.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="assets/js/jquery.scrollTo.min.js"></script>
+    <script src="assets/js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="assets/js/jquery.sparkline.js"></script>
+
+
+    <!--common script for all pages-->
+    <script src="assets/js/common-scripts.js"></script>
+    
+    <script type="text/javascript" src="assets/js/gritter/js/jquery.gritter.js"></script>
+    <script type="text/javascript" src="assets/js/gritter-conf.js"></script>
+
+    <!--script for this page-->
+    <script src="assets/js/sparkline-chart.js"></script>    
+	<script src="assets/js/zabuto_calendar.js"></script>	
+	
+	<script type="text/javascript">
+        $(document).ready(function () {
+        var unique_id = $.gritter.add({
+            // (string | mandatory) the heading of the notification
+            title: 'ליונתן היה ממש משעמם!',
+            // (string | mandatory) the text inside the notification
+            text: 'ההתראה הזאת יכולה להישאר פה עד שסוגרים אותה או אחרי כמה שניות! דרך אגב ממש צריך לסדר את הפונטים בעברית',
+            // (string | optional) the image to display on the right
+            image: 'media/0pres.png',
+            // (bool | optional) if you want it to fade out on its own or just sit there
+            sticky: false,
+            // (int | optional) the time you want it to be alive for before fading out
+            time: '10000',
+            // (string | optional) the class name you want to apply to that specific message
+            class_name: 'my-sticky-class',
+            position: 'top-left',
+        });
+
+        return false;
+        });
+	</script>
+	
+	<script type="application/javascript">
+        $(document).ready(function () {
+            $("#date-popover").popover({html: true, trigger: "manual"});
+            $("#date-popover").hide();
+            $("#date-popover").click(function (e) {
+                $(this).hide();
+            });
+        
+            $("#my-calendar").zabuto_calendar({
+                action: function () {
+                    return myDateFunction(this.id, false);
+                },
+
+                action_nav: function () {
+                    return myNavFunction(this.id);
+                },
+                ajax: {
+                    url: "show_data.php?action=1",
+                    modal: true
+                },
+                legend: [
+                    {type: "text", label: "Special event", badge: "00"},
+                    {type: "block", label: "Regular event", }
+                ]
+            });
+        });
+        
+        
+        function myNavFunction(id) {
+            $("#date-popover").hide();
+            var nav = $("#" + id).data("navigation");
+            var to = $("#" + id).data("to");
+            console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
+        }
+    </script>
                 <script type="text/javascript">
                     var data = '<ul><li id="noti_Container"><div id="noti_Counter"></div><div id="noti_Button"></div></li></ul>';
-                    $(data).insertAfter($("#after"));
                     Handlebars.registerHelper('CheckClass', function (kita,title){
                         var kita = kita.split(",");
                         var Mykita = "<%=Session["kita"]%>";
@@ -227,75 +567,37 @@ background-image: url(../media/new/{{subjectID}}.png);border-top:solid #{{GetMas
                         var proInfo = document.getElementById("pro-temp").innerHTML;
                         var proTemplate = Handlebars.compile(proInfo);
                         var proData = proTemplate(<%=this.jsonPro%>);
-                        document.getElementById("pro-div").innerHTML += proData;
-                        var img = document.getElementById("img").src;
-                        $('<img style="width:23px;height:23px;line-height:23px;border-radius:50%;margin-top:5px" src="' + img + '"/>').appendTo("#noti_Button");
+                        document.getElementById("nav-accordion").innerHTML += proData;
 
                         var mesInfo = document.getElementById("mes-temp").innerHTML;
                         var mesTemplate = Handlebars.compile(mesInfo);
                         var mesData = mesTemplate(<%=this.jsonMes%>);
-                        document.getElementById("pro-div").innerHTML += mesData;
+                    document.getElementById("mes-div").innerHTML += mesData;
 
                         var notInfo = document.getElementById("not-temp").innerHTML;
                         var notTemplate = Handlebars.compile(notInfo);
                         var notData = notTemplate(<%=this.jsonMes%>);
                         document.getElementById("not-div").innerHTML += notData;
 
-                        var masterInfo = document.getElementById("master-temp").innerHTML;
+                        /*var masterInfo = document.getElementById("master-temp").innerHTML;
                         var masterTemplate = Handlebars.compile(masterInfo);
-                        var masterData = masterTemplate(<%=this.jsonPro%>);
-                    document.getElementById("master-div").innerHTML += masterData;
+                        var masterData = masterTemplate(< %=this.jsonPro%>);
+                        document.getElementById("master-div").innerHTML += masterData;
+                        */
+                        var taskbarInfo = document.getElementById("taskbar-temp").innerHTML;
+                        var taskbarTemplate = Handlebars.compile(taskbarInfo);
+                        var taskbarData = taskbarTemplate(<%=this.json%>);
+                        document.getElementById("taskbar-ul").innerHTML += taskbarData;
                         if ("<%=Session["userName"]%>" != null)
                         {
-                            document.getElementById("login").innerHTML="התנתק";  
-                            document.getElementById("signup").style.display="none"
+                            
                         }
                     var x;
                     function isEmpty(el) {
                         return !$.trim(el.html())
                     }
-                    if (isEmpty($('#sub-div'))) {
-                        var data = "לא נמצאו תרגילים כרגע";
-                        var dataLight = "הרבה לא יודעים אבל השטח פרסום הזה למכירה";
-                        document.getElementById("sub-div").innerHTML = "<h2 style='font-family:Heebo; color:#888888;font-weight:300'>" + dataLight + "</h2>";
-                        document.getElementById("sub-div").innerHTML += "<h1 style='font-family:Heebo; color:#888888'>" + data + "</h1>";
-                    }
-                    $(document).ready(function () {
 
-                        // ANIMATEDLY DISPLAY THE NOTIFICATION COUNTER.
-                        $('#noti_Counter')
-                            .css({ opacity: 0 })
-                            .text('7')// ערך דינמי
-                            .css({ top: '-10px' })
-                            .animate({ top: '-2px', opacity: 1 }, 500);
-
-                        $('#noti_Button').click(function () {
-
-                            $('#notifications').fadeToggle('fast', 'linear', function () {
-                                if ($('#notifications').is(':hidden')) {
-                                    $('#noti_Button').css('background-color', '#2E467C');
-                                }
-                                else $('#noti_Button').css('background-color', '#FFF');
-                            });
-
-                            $('#noti_Counter').fadeOut('slow');                
-
-                            return false;
-                        });
-
-                        $(document).click(function () {
-                            $('#notifications').hide();
-
-                            if ($('#noti_Counter').is(':hidden')) {
-                                $('#noti_Button').css('background-color', '#2E467C');
-                            }
-                        });
-
-                        $('#notifications').click(function () {
-                            return false; 
-                        });
-                    });
-                    $('#notifications').perfectScrollbar();
+                   
                 </script>                
         </div>    
 </body>
