@@ -10,7 +10,7 @@
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <title>DASHGUM - FREE Bootstrap Admin Template</title>
+    <title>Playground</title>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -19,9 +19,8 @@
     <link rel="stylesheet" type="text/css" href="assets/css/zabuto_calendar.css">
     <link rel="stylesheet" type="text/css" href="assets/js/gritter/css/jquery.gritter.css" />
     <link rel="stylesheet" type="text/css" href="assets/lineicons/style.css">    
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+    <link href="css/circle.css" rel="stylesheet" />
     
     <!-- Custom styles for this template -->
     <link href="assets/css/style.css" rel="stylesheet">
@@ -43,7 +42,7 @@
       <!--header start-->
       <header class="header black-bg">
               <div class="sidebar-toggle-box">
-                  <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+                  <div class="fa fa-bars tooltips" data-placement="left" data-original-title="הסתר פרופיל"></div>
               </div>
             <!--logo start-->
             <a href="home.aspx" class="logo"><b>Playground</b></a>
@@ -157,10 +156,6 @@
       <!--main content start-->
       <section id="main-content">
           <section class="wrapper">
-                    <div id="subs" class="w3-container w3-mobile w3-threequarter">
-                <h2 style="font-family:'Heebo';font-weight:900;font-size:45px">נושאים</h2><hr />
-                <div class="w3-cell-row" id="sub-div"></div>
-            </div>
               <div class="row">
                   <!-- **********************************************************************************************************************************************************
       RIGHT SIDEBAR CONTENT
@@ -244,6 +239,8 @@
                         </div><!-- / calendar -->
                       
                   </div><!-- /col-lg-3 -->
+                  <div id="sub-div" class="col-lg-9 main-chart"></div>
+
                 <script src="js/handlebars-v4.0.5.js"></script>
             <script id="taskbar-temp" type="text/x-handlebars-template">
                 <div class="notify-arrow notify-arrow-green"></div>
@@ -295,64 +292,37 @@
                             </div>
             </script>
                 <script id="sub-temp" type="text/x-handlebars-template">
+                    					<div class="row mtbox">
+                                            <h1>נושאים</h1>
                     {{#each sub}}
-                    <div class="col-md-4 col-sm-4 mb">
-                      		<div class="white-panel pn">
-                      			<div class="white-header">
-						  			<h5>{{subject}}</h5>
-                      			</div>
-								<canvas id="serverstatus02" height="120" width="120"></canvas>
-								<script>
-									var doughnutData = [
-											{
-												value: 60,
-												color:"#1c9ca7"
-											},
-											{
-												value : 40,
-												color : "#f68275"
-											}
-										];
-										var myDoughnut = new Chart(document.getElementById("serverstatus02").getContext("2d")).Doughnut(doughnutData);
-								</script>
-								<p>April 17, 2014</p>
-								<footer>
-									<div class="pull-left">
-										<h5><i class="fa fa-hdd-o"></i> 17 GB</h5>
-									</div>
-									<div class="pull-right">
-										<h5>60% Used</h5>
-									</div>
-								</footer>
-                      		</div>
-                      	</div>
-                    <div class="sub w3-quarter w3-card w3-container w3-cell w3-center w3-mobile w3-white" style="background-size:cover; background-position: center; 
+                    <div class="col-lg-4 col-md-4 col-sm-4 mb">
+							<div class="content-panel pn">
+								<div id="blog-bg" style="background-size:cover; background-position: center; 
 background-image: url(../media/new/{{subjectID}}.png);border-top:solid #{{GetMasterColor2 (GetMasterPrecent cou ctargil)}} 7.5px">
-                        <header class="w3-container w3-center">
-                            <h2 class="subH">{{subject}}</h2>
-                        </header>
-                        <div class="w3-container w3-center">                            
-                            <div class="c100 small p{{GetMasterPrecent cou ctargil}} {{GetMasterColor (GetMasterPrecent cou ctargil)}} center" > <!-- צריך לחלק פה סאיו בסיתרגיל! !-->
-                                <span>{{GetMasterPrecent cou ctargil}}%</span>
+									<div style="margin-top:8px" class="c100 small p{{GetMasterPrecent cou ctargil}} {{GetMasterColor (GetMasterPrecent cou ctargil)}} center">
+                                        <span>{{GetMasterPrecent cou ctargil}}%
+                                </span> <!-- צריך לחלק פה סאיו בסיתרגיל! !-->              
                                 <div class="slice">
                                     <div class="bar"></div>
                                     <div class="fill"></div>
                                 </div>
-                            </div>
-                            <br />
-                            <span style="font-family:Heebo;font-size:15px;color:#ffffff">נותרו {{GetLeft cou ctargil}} תרגילים</span>
-                            <hr />
-                        </div>
-                        <footer class="w3-container w3-center">
-                           <a href="targil{{subjectID}}.aspx" style="color:white" class="w3-button w3-hover-indigo">לתרגילים</a>
-                         </footer>
-                    </div>
+                            </div></div>
+									<div class="blog-title">{{subject}}</div>
+								<div class="blog-text">
+                                  <span>נותרו {{GetLeft cou ctargil}} תרגילים</span><br />
+                                                <a href="targil{{subjectID}}.aspx">לתרגילים</a>
+
+
+								</div>
+							</div>
+						</div>
                     {{/each}}
+                                            </div>
                 </script>
                 <script id="pro-temp" type="text/x-handlebars-template">
                     
                     {{#each sub}}
-                    <p class="centered"><img src="{{pic}}" class="img-circle" width="60"></a></p>
+                    <p class="centered"><img src="{{pic}}" class="img-circle" width="60"></p>
               	    <h5 class="centered">{{name}}</h5>
                     <div class="progress" style="margin:5px">
 						  <div class="progress-bar progress-bar-info" role="progressbar" id=progi runat="server" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
@@ -577,7 +547,7 @@ background-image: url(../media/new/{{subjectID}}.png);border-top:solid #{{GetMas
                         var notInfo = document.getElementById("not-temp").innerHTML;
                         var notTemplate = Handlebars.compile(notInfo);
                         var notData = notTemplate(<%=this.jsonMes%>);
-                        document.getElementById("not-div").innerHTML += notData;
+                      // document.getElementById("not-div").innerHTML += notData;
 
                         /*var masterInfo = document.getElementById("master-temp").innerHTML;
                         var masterTemplate = Handlebars.compile(masterInfo);
