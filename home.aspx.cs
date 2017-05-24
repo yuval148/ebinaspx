@@ -10,8 +10,9 @@ using System.Data;
 
 public partial class home : System.Web.UI.Page
 {
-    public string json = "", jsonPro = "",jsonMes="";
+    public string json = "", jsonPro = "", jsonMes = "", jsonnotifi = "";
     public int prog;
+    public int notifi=0;
     public int tilnext;
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -42,21 +43,26 @@ public partial class home : System.Web.UI.Page
         tilnext = xpstuf.xptilnext(xpp); // מספר נקודות עד הרמה הבאה
         progi.Style["width"] = String.Format("{0}%", prog);
 
-        DataTable dt, dt2, dtPro,dtMes;
-        string sql = "", sql2 = "", sqlPro = "",sqlMes="";
+        DataTable dt, dt2, dtPro,dtMes, dtnotif;
+        string sql = "", sql2 = "", sqlPro = "", sqlMes = "", sqlnotifi = "" ;
         string tableName = "ID" + Session["ID"];//שם הטבלה
         //טעינת הנתונים ממסד הנתונים
         sql = "select DISTINCT subjectID from " + tableName;//sql  יצירת מחרוזת שליפה מטבלה ואיחסונה במשתנה
         sql2 = "select *from " + tableName;
         sqlPro = "SELECT * FROM users WHERE ID='" + Session["ID"] + "';";
         sqlMes="SELECT * FROM MSG;";
+        sqlnotifi = "SELECT * FROM notifi WHERE ID='" + Session["ID"] + "';";
+        string sqlintnotifi = "UPDATE notifi SET seen=True WHERE seen=False AND ID='"+ Session["ID"] + "';";
+        notifi = MyAdoHelper.RowsAffected(fileName, sqlintnotifi);//קבלת מספר ההתראות החדשות
 
+        dtnotif = MyAdoHelper.ExecuteDataTable(fileName, sqlnotifi);
         dt2 = MyAdoHelper.ExecuteDataTable(fileName, sql2);
         dtPro = MyAdoHelper.ExecuteDataTable(fileName, sqlPro);
         dtMes = MyAdoHelper.ExecuteDataTable(fileName, sqlMes);
         json = Json(dt2);
         jsonPro = Json(dtPro);
         jsonMes = Json(dtMes);
+        jsonnotifi = Json(dtnotif);
     }
     public string Json(DataTable table)
     {

@@ -21,7 +21,7 @@ public partial class Distribut : System.Web.UI.Page
         }
         string subject = "", diff = "", kita="", numof1, byy;
         string dd, mm, yyyy, exp;
-        string icon = "note_add", title = "", msg = "";
+        string icon = "note_add", title = "";
         int numof;
         string sqlkita = "SELECT DISTINCT kita FROM users;";
         DataTable dtkita = MyAdoHelper.ExecuteDataTable("db1.mdb", sqlkita); //יונתן תציל אותי ותעביר לפרונט
@@ -131,7 +131,7 @@ public partial class Distribut : System.Web.UI.Page
                                     sql7 = "UPDATE ID" + ID + " SET ctargil='" + d.ToString() + "' WHERE subjectID='" + subject + "';";//הוספת התרגילים החדשים לסיתרגיל
                                     MyAdoHelper.DoQuery(fileName7, sql7);
                                     title = "נוספו " + b.ToString() + " תרגילים חדשים ב" + xpstuf.IDsubject(subject); //msg
-                                    sql9 = "INSERT INTO MSG (icon, title, msg, kita, datec, exp, byy) VALUES('" + icon + "','" + title + "','" + msg + "','" + kita + "','" + datec + "','" + exp + "','" + byy+ "');";
+                                    sql9 = "INSERT INTO notifi (icon, title, ID, datec, exp, seen) VALUES('" + icon + "','" + title + "','" + ID + "','" + datec + "','" + exp + "',False);";
                                     MyAdoHelper.DoQuery(fileName7, sql9);
                                 }
                                 else
@@ -172,7 +172,7 @@ public partial class Distribut : System.Web.UI.Page
                                     sql7 = "UPDATE ID" + ID + " SET ctargil='" + d.ToString() + "' WHERE subjectID='" + subject + "';";//הוספת התרגילים החדשים לסיתרגיל
                                     MyAdoHelper.DoQuery(fileName7, sql7);
                                     title = "נוספו " + b.ToString() + " תרגילים חדשים ב" + xpstuf.IDsubject(subject); //msg
-                                    sql9 = "INSERT INTO MSG (icon, title, msg, kita, datec, exp, byy) VALUES('" + icon + "','" + title + "','" + msg + "','" + kita + "','" + datec + "','" + exp + "','"+ byy +"');";
+                                    sql9 = "INSERT INTO notifi (icon, title, ID, datec, exp, seen) VALUES('" + icon + "','" + title + "','" + ID + "','" + datec + "','" + exp + "',False);";
                                     MyAdoHelper.DoQuery(fileName7, sql9);
                                 }
                                 i++;
@@ -191,7 +191,7 @@ public partial class Distribut : System.Web.UI.Page
                                 sql4 = "INSERT INTO ID" + ID + " (subject, subjectID, ctargil, diff, cou)values('" + xpstuf.IDsubject(subject) + "','" + subject + "','" + dtat.Rows.Count.ToString() + "','" + diff + "','0');";
                                 MyAdoHelper.DoQuery(fileName7, sql4);
                                 title = "נוספו " + dtat.Rows.Count.ToString() + " תרגילים חדשים ב" + xpstuf.IDsubject(subject); //msg
-                                sql9 = "INSERT INTO MSG (icon, title, msg, kita, datec, exp, byy) VALUES('" + icon + "','" + title + "','" + msg + "','" + kita + "','" + datec + "','" + exp + "','"+ byy +"');";
+                                sql9 = "INSERT INTO notifi (icon, title, ID, datec, exp, seen) VALUES('" + icon + "','" + title + "','" + ID + "','" + datec + "','" + exp + "',False);";
                                 MyAdoHelper.DoQuery(fileName7, sql9);
                                 //sendthemall
                                 x = 0;
@@ -208,7 +208,7 @@ public partial class Distribut : System.Web.UI.Page
                                 sql4 = "INSERT INTO ID" + ID + " (subject, subjectID, ctargil, diff, cou)values('" + xpstuf.IDsubject(subject) + "','" + subject + "','" + numof1 + "','" + diff + "','0');";
                                 MyAdoHelper.DoQuery(fileName7, sql4);
                                 title = "נוספו " + numof1 + " תרגילים חדשים ב" + xpstuf.IDsubject(subject); //msg
-                                sql9 = "INSERT INTO MSG (icon, title, msg, kita, datec, exp, byy) VALUES('" + icon + "','" + title + "','" + msg + "','" + kita + "','" + datec + "','" + exp + "','"+ byy +"');";
+                                sql9 = "INSERT INTO notifi (icon, title, ID, datec, exp, seen) VALUES('" + icon + "','" + title + "','" + ID + "','" + datec + "','" + exp + "',False);";
                                 MyAdoHelper.DoQuery(fileName7, sql9);
                                 //random
                                 sql5 = "SELECT * FROM TAT" + subject + "_" + ID + ";";  //מאגר אישי

@@ -65,9 +65,12 @@ public partial class login : System.Web.UI.Page
                 //חשב את כל הcou מהטבלה האישית והשם בXPP
                 string sql1 = "SELECT * FROM ID" + ID + ";";
                 string sqlMes = "SELECT * FROM MSG;";
+                string sqlnotifi = "SELECT * FROM notifi;";
                 DataTable dtid = MyAdoHelper.ExecuteDataTable(fileName, sql1);
                 DataTable dtMes = MyAdoHelper.ExecuteDataTable(fileName, sqlMes);
+                DataTable dtnotifi = MyAdoHelper.ExecuteDataTable(fileName, sqlnotifi);
                 CheckDatemsg(dtMes);//קורא לפעולה
+                CheckDatenotifi(dtnotifi);//קורא לפעולה
                 int xpp1=0;
                 for(int i=0;i<dtid.Rows.Count;i++)
                     {
@@ -129,6 +132,21 @@ public partial class login : System.Web.UI.Page
             if (DateTime.Now >= dt)
             {
                 string sqlDel = "DELETE FROM MSG WHERE title='" + table.Rows[i]["title"].ToString() + "' AND datec='" + table.Rows[i]["datec"].ToString() + "' AND exp='" + table.Rows[i]["exp"].ToString() + "';";
+                MyAdoHelper.DoQuery(fileName, sqlDel);
+            }
+        }
+    }
+    public void CheckDatenotifi(DataTable table)
+    {
+        string exp;
+        string fileName = "db1.mdb";
+        for (int i = 0; i < table.Rows.Count; i++)
+        {
+            exp = table.Rows[i]["exp"].ToString();
+            DateTime dt = DateTime.ParseExact(exp, "dd/MM/yyyy", null);
+            if (DateTime.Now >= dt)
+            {
+                string sqlDel = "DELETE FROM notifi WHERE title='" + table.Rows[i]["title"].ToString() + "' AND datec='" + table.Rows[i]["datec"].ToString() + "' AND exp='" + table.Rows[i]["exp"].ToString() + "';";
                 MyAdoHelper.DoQuery(fileName, sqlDel);
             }
         }

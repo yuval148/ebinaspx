@@ -60,7 +60,7 @@ public class MyAdoHelper
     /// To Execute update / insert / delete queries
     ///  הפעולה מקבלת שם קובץ ומשפט לביצוע ומחזירה את מספר השורות שהושפעו מביצוע הפעולה
     /// </summary>
-    public int RowsAffected(string fileName, string sql)//הפעולה מקבלת מסלול מסד נתונים ופקודת עדכון
+    public static int RowsAffected(string fileName, string sql)//הפעולה מקבלת מסלול מסד נתונים ופקודת עדכון
     //ומבצעת את הפקודה על המסד הפיזי
     {
 

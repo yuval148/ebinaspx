@@ -54,7 +54,6 @@
                            {{#each_upto sub 6}}
                               <div class="noti-div">
                                   <i style="float:right" class="material-icons">{{icon}}</i><span>{{title}}</span>
-                                <span>{{msg}}</span>
                                 <span style="color:#9e9e9e; font-size:10px;"> {{datec}}</span>
                                   <hr />
                               </div>                         
@@ -238,7 +237,7 @@ background-image: url(../media/new/{{subjectID}}.png);border-top:solid #{{GetMas
 
                         var notInfo = document.getElementById("not-temp").innerHTML;
                         var notTemplate = Handlebars.compile(notInfo);
-                        var notData = notTemplate(<%=this.jsonMes%>);
+                        var notData = notTemplate(<%=this.jsonnotifi%>);
                         document.getElementById("not-div").innerHTML += notData;
 
                         var masterInfo = document.getElementById("master-temp").innerHTML;
@@ -265,7 +264,7 @@ background-image: url(../media/new/{{subjectID}}.png);border-top:solid #{{GetMas
                         // ANIMATEDLY DISPLAY THE NOTIFICATION COUNTER.
                         $('#noti_Counter')
                             .css({ opacity: 0 })
-                            .text('7')// ערך דינמי
+                            .text('<%=this.notifi.ToString()%>')// ערך דינמי
                             .css({ top: '-10px' })
                             .animate({ top: '-2px', opacity: 1 }, 500);
 
