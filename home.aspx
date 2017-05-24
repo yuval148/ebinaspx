@@ -293,7 +293,6 @@
             </script>
                 <script id="sub-temp" type="text/x-handlebars-template">
                     					<div class="row mtbox">
-                                            <h1 style="font-family:Rubik;font-weight:700">נושאים</h1>
                     {{#each sub}}
                     <div class="col-lg-4 col-md-4 col-sm-4 mb">
 							<div class="content-panel pn">
