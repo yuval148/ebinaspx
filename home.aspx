@@ -283,7 +283,7 @@
                 </div>
             </script>
             <script id="master-temp" type="text/x-handlebars-template">
-                 <div id="master" class="c100 dark small p<%=Session["shlita"] %> {{GetMasterColor <%=Session["shlita"] %>}} center" > <!-- צריך לחלק פה סאיו בסיתרגיל! !-->
+                 <div id="master" class="c100 dark small p<%=Session["shlita"] %> white center" > <!-- צריך לחלק פה סאיו בסיתרגיל! !-->
                                 <span><%=Session["shlita"] %>%</span>
                                 <div class="slice">
                                     <div class="bar"></div>
@@ -298,8 +298,8 @@
                     <div class="col-lg-4 col-md-4 col-sm-4 mb">
 							<div class="content-panel pn">
 								<div id="blog-bg" style="background-size:cover; background-position: center; 
-background-image: url(../media/new/{{subjectID}}.png);border-top:solid #{{GetMasterColor2 (GetMasterPrecent cou ctargil)}} 7.5px">
-									<div style="margin-top:8px" class="c100 small p{{GetMasterPrecent cou ctargil}} {{GetMasterColor (GetMasterPrecent cou ctargil)}} center">
+background-image: url(../media/new/opc/{{subjectID}}.png);background-color:#{{GetMasterColor2 (GetMasterPrecent cou ctargil)}}; border-top:solid #{{GetMasterColor2 (GetMasterPrecent cou ctargil)}} 7.5px">
+									<div style="margin-top:8px" class="c100 small p{{GetMasterPrecent cou ctargil}} white center">
                                         <span>{{GetMasterPrecent cou ctargil}}%
                                 </span> <!-- צריך לחלק פה סאיו בסיתרגיל! !-->              
                                 <div class="slice">
