@@ -34,7 +34,7 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body>
+  <body style="font-family:Rubik">
   <section id="container" >
       <!-- **********************************************************************************************************************************************************
       TOP BAR CONTENT & NOTIFICATIONS
@@ -45,7 +45,7 @@
                   <div class="fa fa-bars tooltips" data-placement="left" data-original-title="הסתר פרופיל"></div>
               </div>
             <!--logo start-->
-            <a href="home.aspx" class="logo"><b>Playground</b></a>
+            <a href="home.aspx" class="logo"><img src="media/LOGOr.png" style="float:right; width:170px;" /></a>
             <!--logo end-->
             <div class="nav notify-row" id="top_menu">
                 <!--  notification start -->
@@ -293,7 +293,7 @@
             </script>
                 <script id="sub-temp" type="text/x-handlebars-template">
                     					<div class="row mtbox">
-                                            <h1>נושאים</h1>
+                                            <h1 style="font-family:Rubik;font-weight:700">נושאים</h1>
                     {{#each sub}}
                     <div class="col-lg-4 col-md-4 col-sm-4 mb">
 							<div class="content-panel pn">
@@ -307,9 +307,9 @@ background-image: url(../media/new/{{subjectID}}.png);border-top:solid #{{GetMas
                                     <div class="fill"></div>
                                 </div>
                             </div></div>
-									<div class="blog-title">{{subject}}</div>
+									<div class="blog-title" style="font-family:Rubik;font-weight:300;font-size:20px">{{subject}}</div>
 								<div class="blog-text">
-                                  <span>נותרו {{GetLeft cou ctargil}} תרגילים</span><br />
+                                  <span style="font-family:Rubik;font-weight:400">נותרו {{GetLeft cou ctargil}} תרגילים</span><br />
                                                 <a href="targil{{subjectID}}.aspx">לתרגילים</a>
 
 
@@ -323,13 +323,13 @@ background-image: url(../media/new/{{subjectID}}.png);border-top:solid #{{GetMas
                     
                     {{#each sub}}
                     <p class="centered"><img src="{{pic}}" class="img-circle" width="60"></p>
-              	    <h5 class="centered">{{name}}</h5>
+              	    <h5 class="centered" style="font-family:Rubik;font-weight:700; font-size:20px">{{name}}</h5>
                     <div class="progress" style="margin:5px">
 						  <div class="progress-bar progress-bar-info" role="progressbar" id=progi runat="server" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
 						    <span class="sr-only"><%=prog.ToString()%>%</span>
 						  </div>
 						</div>
-                    <h5 class="centered" style="font-size:10px;line-height:20%"> <%=tilnext.ToString()%> נקודות עד הרמה הבאה</h5>             	  	
+                    <h5 class="centered" style="font-family:Rubik;font-size:15px;line-height:20%;font-weight:400"> <%=tilnext.ToString()%> נקודות עד הרמה הבאה</h5>             	  	
                     <li class="mt">
                       <a class="active" href="index.html">
                           <i class="fa fa-dashboard"></i>
@@ -351,17 +351,18 @@ background-image: url(../media/new/{{subjectID}}.png);border-top:solid #{{GetMas
                     {{/each}}
                 </script>
                 <script id="mes-temp" type="text/x-handlebars-template">
-                    	<h3>הודעות</h3>
+                    	<h3 style="font-family:Rubik;font-weight:900;font-size:25px">הודעות</h3>
                         {{#each sub}}
                     <div id="{{title}}" style="display:{{CheckClass kita title}}">
                         <div class="desc" >
                       	    <div class="thumb">
                       		    <span class="badge bg-theme"><i class="material-icons">{{icon}}</i></span>
                       	    </div>
-                      	<div class="details">
-                      		<p><muted>{{kita}}</muted><br/>
-                      		   {{title}} {{msg}}<br/>
-                               {{byy}} {{datec}}<br/>                      		
+                      	<p class="details">
+                      		<p style="font-family:Rubik;font-weight:700">{{kita}}<br/>
+                      		   <p style="font-family:Rubik;font-weight:500">{{title}}</p>
+                                  <p style="font-family:Rubik;font-weight:400">{{msg}}</p>
+                               <p style="font-family:Rubik;font-weight:300">{{byy}} {{datec}}  </p>                    		
                       		</p>
                       	</div>
                       </div>
