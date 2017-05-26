@@ -21,7 +21,8 @@
     <link rel="stylesheet" type="text/css" href="assets/lineicons/style.css">    
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
     <link href="css/circle.css" rel="stylesheet" />
-    
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+
     <!-- Custom styles for this template -->
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/style-responsive.css" rel="stylesheet">
@@ -157,6 +158,7 @@
       <section id="main-content">
           <section class="wrapper">
               <div class="row">
+                 
                   <!-- **********************************************************************************************************************************************************
       RIGHT SIDEBAR CONTENT
       *********************************************************************************************************************************************************** -->                  
@@ -239,7 +241,52 @@
                         </div><!-- / calendar -->
                       
                   </div><!-- /col-lg-3 -->
-                  <div id="sub-div" class="col-lg-9 main-chart"></div>
+						
+                  <div id="sub-div" class="col-lg-9 main-chart">
+                      <div class="row mtbox">
+                  		<div class="col-md-2 col-sm-2 col-md-offset-1 box0">
+                  			<div class="box1">
+					  			<span class="lnr lnr-map"></span>
+					  			<h3>אירועים</h3>
+                  			</div>
+					  			<p>טיול שנתי 27/10/2017</p>
+                              	<p>מוזיאון תל אביב לאומנות כותב שם ממש ארוך לבדוק מה יקרה 27/10/2017</p>
+                  		</div>
+                  		<div class="col-md-2 col-sm-2 box0">
+                  			<div class="box1">
+					  			<span class="lnr lnr-graduation-hat"></span>
+					  			<h3>מבחנים</h3>
+                  			</div>
+					  			<p>שכבת יב - מתמטיקה</p>
+                                <p>שכבת יב - מתמטיקה</p>
+                                <p>שכבת יב - מתמטיקה</p>
+                                <p>שכבת יב - מתמטיקה</p>
+                                <p>שכבת יב - מתמטיקה</p>
+                  		</div>
+                  		<div class="col-md-2 col-sm-2 box0">
+                  			<div class="box1">
+					  			<span class="lnr lnr-star"></span>
+					  			<h3>אלגברה</h3>
+                  			</div>
+					  			<p>המקצוע הכי טוב שלך הוא אלגברה!</p>
+                  		</div>
+                  		<div class="col-md-2 col-sm-2 box0">
+                  			<div class="box1">
+					  			<span class="lnr lnr-sad"></span>
+					  			<h3>פרבולות</h3>
+                  			</div>
+					  			<p>נראה שאתה מסתבך טיפה עם פרבולות</p>
+                  		</div>
+                  		<div class="col-md-2 col-sm-2 box0">
+                  			<div class="box1">
+					  			<span class="lnr lnr-star-half"></span>
+					  			<h3>90</h3>
+                  			</div>
+					  			<p>רק 90 נקודות עד הרמה הבאה!</p>
+                  		</div>
+                  	
+                  	</div><!-- /row mt -->	
+                  </div>
 
                 <script src="js/handlebars-v4.0.5.js"></script>
             <script id="taskbar-temp" type="text/x-handlebars-template">
@@ -330,8 +377,8 @@ background-image: url(../media/new/opc/{{subjectID}}.png);background-color:#{{Ge
 						</div>
                     <h5 class="centered" style="font-family:Rubik;font-size:15px;line-height:20%;font-weight:400"> <%=tilnext.ToString()%> נקודות עד הרמה הבאה</h5>             	  	
                     <li class="mt">
-                      <a class="active" href="index.html">
-                          <i class="fa fa-dashboard"></i>
+                      <a class="active" href="home.aspx">
+                          <i class="fa fa-home"></i>
                           <span>דף הבית</span>
                       </a>
                     </li>
@@ -569,6 +616,8 @@ background-image: url(../media/new/opc/{{subjectID}}.png);background-color:#{{Ge
 
                    
                 </script>                
-        </div>    
+        </div>
+              </section> 
+          </section>    
 </body>
 </html>

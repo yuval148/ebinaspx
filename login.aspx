@@ -8,7 +8,7 @@
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <title>DASHGUM - Bootstrap Admin Template</title>
+    <title>Playground</title>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -39,7 +39,7 @@
 		                </span>
 		         </label>
                 <button class="btn btn-theme btn-block" type="submit" id="loginbtn" name="submit">
-                    היכנס<i class="fa fa-lock"></i>
+                    היכנס <i class="fa fa-lock"></i>
                 </button>
                 <hr>
                 <div class="registration">
