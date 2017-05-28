@@ -74,7 +74,7 @@ a, a:hover, a:focus {
 /*Theme Backgrounds*/
 
 .bg-theme {
-	background-color: #68dff0;
+	background-color: #03a9f4;
 }
 
 .bg-theme02 {
@@ -210,7 +210,7 @@ hr {
 }
 
 .bg-theme {
-	background-color: #68dff0;
+	background-color: #03a9f4;
 }
 
 ul.top-menu > li > .logout {
@@ -218,10 +218,10 @@ ul.top-menu > li > .logout {
 	font-size: 12px;
 	border-radius: 4px;
 	-webkit-border-radius: 4px;
-	border: 1px solid #536dfe !important;
+	border: 1px solid #e51c23 !important;
 	padding: 5px 15px;
 	margin-right: 15px;
-	background: #536dfe;
+	background: #e51c23;
 	margin-top: 15px;
 }
 
@@ -367,7 +367,7 @@ ul.sidebar-menu li a{
 }
 
 ul.sidebar-menu li a.active, ul.sidebar-menu li a:hover, ul.sidebar-menu li a:focus {
-    background: #68dff0;
+    background: #03a9f4;
     color: #fff;
     display: block;
 
@@ -417,7 +417,7 @@ ul.sidebar-menu li a.active i {
 
 .black-bg {
   background-color:rgb(63,81,181);
-    border-bottom: 1px solid #5c6bc0;
+    border-bottom: 1px solid #303f9f;
 }
 
 .wrapper {
@@ -627,7 +627,7 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
     float: right;
     text-align: center;
     width: 100%;
-    background: #a9d96c;
+    background: #e51c23;
     border-radius: 0 0 3px 3px;
 }
 
@@ -787,7 +787,7 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
 	line-height: 60px;
 	height: 60px;
 	margin: 0;
-	background: #ff865c;
+	background: #03a9f4;
 	text-align: center;
 }
 
