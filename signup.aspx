@@ -1,73 +1,262 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="signup.aspx.cs" Inherits="signup" %>
-<!--#include file="upper.aspx"-->
-<html>
- <head>
-    <title>הרשמה</title>
-    <link href="css/signup.css" rel="stylesheet" />
- </head>
-<body style="font-family:Arial, Helvetica, Sans-Serif">
-    <div id="page-wrap">
-        <div class="w3-panel w3-card">
-            <header class="w3-container">
-                <h2 style="font-family:Heebo;">ברוך הבא</h2>
-            </header>     
-            <article class="w3-container"> 
-               <div class="w3-panel w3-rightbar w3-border-blue">
- <p id="info">ברוכים הבאים לפלייגראונד! 
-     <br />
-     .על מנת להירשם לאתר, לחצו על הכפתור "בוא נתחיל" ועקבו אחרי השלבים
- </p></div>
-            </article>        
-            <hr />
-            <footer class="w3-container">
-                <ul class="progressbar">
-                    <li> הכנסת פרטים בסיסיים</li>
-                    <li>בחירת שם משתמש וסיסמא</li>
-                    <li>העלאת תמונת פרופיל</li>
-                    <li>סיום ההרשמה</li>
-                </ul>
-            </footer>
-        </div>
-        <div id="signupForm" class="w3-card w3-white w3-panel" style="text-align:center">
+<html dir="rtl">
+	<head>
+
+		<style>
+		    /*custom font*/
+			@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+			/*basic reset*/
+			* {margin: 0; padding: 0;}
+
+			html {
+				height: 100%;
+				/*Image only BG fallback*/
+				
+				/*background = gradient + image pattern combo*/
+				background: 
+					linear-gradient(rgba(196, 102, 0, 0.6), rgba(155, 89, 182, 0.6));
+			}
+
+			body {
+				font-family: montserrat, arial, verdana;
+			}
+			/*form styles*/
+			#f {
+				width: 400px;
+				margin: 50px auto;
+				text-align: center;
+				position: relative;
+			}
+			#f fieldset {
+				background: white;
+				border: 0 none;
+				border-radius: 3px;
+				box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+				padding: 20px 30px;
+				box-sizing: border-box;
+				width: 80%;
+				margin: 0 10%;
+				
+				/*stacking fieldsets above each other*/
+				position: relative;
+			}
+			/*Hide all except first fieldset*/
+			#f fieldset:not(:first-of-type) {
+				display: none;
+			}
+			/*inputs*/
+			#f input, #f textarea {
+				padding: 15px;
+				border: 1px solid #ccc;
+				border-radius: 3px;
+				margin-bottom: 10px;
+				width: 100%;
+				box-sizing: border-box;
+				font-family: montserrat;
+				color: #2C3E50;
+				font-size: 13px;
+			}
+			/*buttons*/
+			#f .action-button {
+				width: 100px;
+				background: #27AE60;
+				font-weight: bold;
+				color: white;
+				border: 0 none;
+				border-radius: 1px;
+				cursor: pointer;
+				padding: 10px 5px;
+				margin: 10px 5px;
+			}
+			#f .action-button:hover, #f .action-button:focus {
+				box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
+			}
+			/*headings*/
+			.fs-title {
+				font-size: 15px;
+				text-transform: uppercase;
+				color: #2C3E50;
+				margin-bottom: 10px;
+			}
+			.fs-subtitle {
+				font-weight: normal;
+				font-size: 13px;
+				color: #666;
+				margin-bottom: 20px;
+			}
+			/*progressbar*/
+			#progressbar {
+				margin-bottom: 30px;
+				overflow: hidden;
+				/*CSS counters to number the steps*/
+				counter-reset: step;
+			}
+			#progressbar li {
+				list-style-type: none;
+				color: white;
+				text-transform: uppercase;
+				font-size: 9px;
+				width: 33.33%;
+				float: left;
+				position: relative;
+			}
+			#progressbar li:before {
+				content: counter(step);
+				counter-increment: step;
+				width: 20px;
+				line-height: 20px;
+				display: block;
+				font-size: 10px;
+				color: #333;
+				background: white;
+				border-radius: 3px;
+				margin: 0 auto 5px auto;
+			}
+			/*progressbar connectors*/
+			#progressbar li:after {
+				content: '';
+				width: 100%;
+				height: 2px;
+				background: white;
+				position: absolute;
+				left: -50%;
+				top: 9px;
+				z-index: -1; /*put it behind the numbers*/
+			}
+			#progressbar li:first-child:after {
+				/*connector not needed before the first step*/
+				content: none; 
+			}
+			/*marking active/completed steps green*/
+			/*The number of the step and the connector before it = green*/
+			#progressbar li.active:before,  #progressbar li.active:after{
+				background: #27AE60;
+				color: white;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- multistep form -->
         <form name="f" id="f" method="post" class="w3-container" runat="server" onsubmit="return check();">
-            <div id="0" class="w3-hide w3-animate-left">
-                <p><label>שם</label> <input type="text" class="w3-input" id="name" name="name" maxlength="50" size="15"/></p> 
-                <p><label>כיתה</label> <input type="text" class="w3-input" id="kita" name="kita" maxlength="4" size="15"/></p>
-                <p><label>מספר ת.ז</label> <input type="text" class="w3-input" id="ID" name="ID" maxlength="9" size="9" /></p>  
-            </div>  
-            <div id="1" class="w3-hide w3-animate-left"> 
-                <p><label id="lname">שם משתמש</label> <input type="text" class="w3-input" id="userName" name="userName" maxlength="145" size="15"/></p> 
-                <p><label>סיסמה</label> <input type="password"  class="w3-input" id="userPass" name="userPass"  maxlength="16" size="15" /></p> 
-                <p><label>קבוצה</label> <input type="text" class="w3-input" id="team" name="team" maxlength="16" size="15" /></p> 
-            </div>
-            <div id="2" class="w3-hide w3-animate-left">
-                     <asp:FileUpload ID="FileUpload1" runat="server"/>
-                <asp:Button ID="btnUpload" class="w3-button w3-indigo" runat="server" Text="סיים" type="submit"  onclientclick="update()" OnClick="submit"  />
-            </div>
-                
-    </form>  
-   <button id="btn" class="w3-button w3-teal" onclick="update()">בוא נתחיל</button>
-            <div id="p-alert" class="w3-panel w3-card w3-hide w3-round">
-                <h3>הודעה!</h3>
-                    <p id="p"> <%=errform %></p>
-                </div>
-            </div>  
-        </div>
-        <script src="js/signup.js" charset="utf-8"></script>
-        <script type="text/javascript">
-            function isEmpty(el) {
-                return !$.trim(el.html())
-            }
-            var x =document.getElementById("p-alert");
-            if (!isEmpty($('#p'))) {
-                if (document.getElementById("p").innerHTML != "<br> ההרשמה בוצעה בהצלחה") {
-                    x.className += " w3-red";
-                }
-                else {
-                    x.className += " w3-green";
-                }
-                x.className += " w3-show";
-            }
-        </script>
-</body>
+		  <!-- progressbar -->
+		  <ul id="progressbar">
+			<li class="active">Account Setup</li>
+			<li>Social Profiles</li>
+			<li>Personal Details</li>
+		  </ul>
+		  <!-- fieldsets -->
+		  <fieldset>
+			<h2 class="fs-title">Create your account</h2>
+			<h3 class="fs-subtitle">This is step 1</h3>
+			<input placeholder="שם מלא" type="text" id="name" name="name" maxlength="50" size="15"/> 
+            <input placeholder="כיתה" type="text" id="kita" name="kita" maxlength="4" size="15"/>
+            <input placeholder="מספר תעודת זהות" type="text" id="ID" name="ID" maxlength="9" size="9" />
+			<input type="button" name="next" class="next action-button" value="הבא" />
+		  </fieldset>
+		  <fieldset>
+			<h2 class="fs-title">Social Profiles</h2>
+			<h3 class="fs-subtitle">Your presence on the social network</h3>
+			<input placeholder="שם משתמש" type="text" id="userName" name="userName" maxlength="145" size="15"/>
+            <input placeholder="סיסמא" type="password" id="userPass" name="userPass"  maxlength="16" size="15" />
+            <input placeholder="שם קבוצה" type="text" id="team" name="team" maxlength="16" size="15" />
+			<input type="button" name="previous" class="previous action-button" value="הקודם" />
+			<input type="button" name="next" class="next action-button" value="הבא" />
+		  </fieldset>
+		  <fieldset>
+			<h2 class="fs-title">Personal Details</h2>
+			<h3 class="fs-subtitle">We will never sell it</h3>
+            <asp:FileUpload ID="FileUpload1" runat="server"/>
+			<input type="button" name="previous" class="previous action-button" value="הקודם" />
+            <asp:Button ID="btnUpload" class="submit action-button" runat="server" text="הירשם" type="submit"  onclientclick="update()" OnClick="submit"  />
+		  </fieldset>
+		</form>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+		<script type="text/javascript">					
+			//jQuery time
+			var current_fs, next_fs, previous_fs; //fieldsets
+			var left, opacity, scale; //fieldset properties which we will animate
+			var animating; //flag to prevent quick multi-click glitches
+
+			$(".next").click(function(){
+				if(animating) return false;
+				animating = true;
+				
+				current_fs = $(this).parent();
+				next_fs = $(this).parent().next();
+				
+				//activate next step on progressbar using the index of next_fs
+				$("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+				
+				//show the next fieldset
+				next_fs.show(); 
+				//hide the current fieldset with style
+				current_fs.animate({opacity: 0}, {
+					step: function(now, mx) {
+						//as the opacity of current_fs reduces to 0 - stored in "now"
+						//1. scale current_fs down to 80%
+						scale = 1 - (1 - now) * 0.2;
+						//2. bring next_fs from the right(50%)
+						left = (now * 50)+"%";
+						//3. increase opacity of next_fs to 1 as it moves in
+						opacity = 1 - now;
+						current_fs.css({
+					'transform': 'scale('+scale+')',
+					'position': 'absolute'
+				  });
+						next_fs.css({'left': left, 'opacity': opacity});
+					}, 
+					duration: 800, 
+					complete: function(){
+						current_fs.hide();
+						animating = false;
+					}, 
+					//this comes from the custom easing plugin
+					easing: 'easeInOutBack'
+				});
+			});
+
+			$(".previous").click(function(){
+				if(animating) return false;
+				animating = true;
+				
+				current_fs = $(this).parent();
+				previous_fs = $(this).parent().prev();
+				
+				//de-activate current step on progressbar
+				$("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
+				
+				//show the previous fieldset
+				previous_fs.show(); 
+				//hide the current fieldset with style
+				current_fs.animate({opacity: 0}, {
+					step: function(now, mx) {
+						//as the opacity of current_fs reduces to 0 - stored in "now"
+						//1. scale previous_fs from 80% to 100%
+						scale = 0.8 + (1 - now) * 0.2;
+						//2. take current_fs to the right(50%) - from 0%
+						left = ((1-now) * 50)+"%";
+						//3. increase opacity of previous_fs to 1 as it moves in
+						opacity = 1 - now;
+						current_fs.css({'left': left});
+						previous_fs.css({'transform': 'scale('+scale+')', 'opacity': opacity});
+					}, 
+					duration: 800, 
+					complete: function(){
+						current_fs.hide();
+						animating = false;
+					}, 
+					//this comes from the custom easing plugin
+					easing: 'easeInOutBack'
+				});
+			});
+
+			$(".submit").click(function(){
+				return false;
+			})
+		</script>
+	</body>
 </html>
+

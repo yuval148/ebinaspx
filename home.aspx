@@ -66,65 +66,9 @@
                     <li id="header_inbox_bar" class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="home.aspx#">
                             <i class="fa fa-envelope-o"></i>
-                            <span class="badge bg-theme">5</span>
+                            <span id="notBadge" class="badge bg-theme"><%=this.notifi.ToString()%></span>
                         </a>
-                        <ul class="dropdown-menu extended inbox">
-                            <div class="notify-arrow notify-arrow-green"></div>
-                            <li>
-                                <p class="green">You have 5 new messages</p>
-                            </li>
-                            <li>
-                                <a href="home.aspx#">
-                                    <span class="photo"><img alt="avatar" src="assets/img/ui-zac.jpg"></span>
-                                    <span class="subject">
-                                    <span class="from">Zac Snider</span>
-                                    <span class="time">Just now</span>
-                                    </span>
-                                    <span class="message">
-                                        Hi mate, how is everything?
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="home.aspx#">
-                                    <span class="photo"><img alt="avatar" src="assets/img/ui-divya.jpg"></span>
-                                    <span class="subject">
-                                    <span class="from">Divya Manian</span>
-                                    <span class="time">40 mins.</span>
-                                    </span>
-                                    <span class="message">
-                                     Hi, I need your help with this.
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="home.aspx#">
-                                    <span class="photo"><img alt="avatar" src="assets/img/ui-danro.jpg"></span>
-                                    <span class="subject">
-                                    <span class="from">Dan Rogers</span>
-                                    <span class="time">2 hrs.</span>
-                                    </span>
-                                    <span class="message">
-                                        Love your new Dashboard.
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="home.aspx#">
-                                    <span class="photo"><img alt="avatar" src="assets/img/ui-sherman.jpg"></span>
-                                    <span class="subject">
-                                    <span class="from">Dj Sherman</span>
-                                    <span class="time">4 hrs.</span>
-                                    </span>
-                                    <span class="message">
-                                        Please, answer asap.
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="home.aspx#">See all messages</a>
-                            </li>
-                        </ul>
+                        <ul id="not-div" class="dropdown-menu extended inbox"></ul>
                     </li>
                     <!-- inbox dropdown end -->
                 </ul>
@@ -314,20 +258,22 @@
                             </li>
             </script>
             <script id="not-temp" type="text/x-handlebars-template">
-                 <div id="notifications">
-                    <h3>התראות</h3>
-                    <div style="height:300px;padding:8px;">
-                           {{#each_upto sub 6}}
-                              <div class="noti-div">
-                                  <i style="float:right" class="material-icons">{{icon}}</i><span>{{title}}</span>
-                                <span>{{msg}}</span>
-                                <span style="color:#9e9e9e; font-size:10px;"> {{datec}}</span>
-                                  <hr />
-                              </div>                         
-                        {{/each_upto}}
-                    </div>
-                    <div class="seeAll"><a href="#">הראה את כולם</a></div>
-                </div>
+                <li>
+                    <p class="green">You have <%=this.notifi.ToString()%> new messages</p>
+                </li>
+                {{#each_upto sub 6}}
+                <li>
+                    <a href="home.aspx#">
+                        <span class="photo"><i class="material-icons">{{icon}}</i></span>
+                        <span class="subject">
+                            <span class="from">{{datec}}</span><br />
+                            <span class="time">{{title}}</span>
+                        </span>
+                        <span class="message">
+                        </span>
+                    </a>
+                </li> 
+                {{/each_upto}}    
             </script>
             <script id="master-temp" type="text/x-handlebars-template">
                  <div id="master" class="c100 dark small p<%=Session["shlita"] %> white center" > <!-- צריך לחלק פה סאיו בסיתרגיל! !-->
@@ -413,9 +359,9 @@ background-image: url(../media/new/opc/{{subjectID}}.png);background-color:#{{Ge
                       	</div>
                       </div>
                     </div>
-                       
                         {{/each}}
-                </script>
+              </script>
+              </section>
             <!-- js placed at the end of the document so the pages load faster -->
     <script src="assets/js/jquery.js"></script>
     <script src="assets/js/jquery-1.8.3.min.js"></script>
@@ -593,7 +539,8 @@ background-image: url(../media/new/opc/{{subjectID}}.png);background-color:#{{Ge
 
                         var notInfo = document.getElementById("not-temp").innerHTML;
                         var notTemplate = Handlebars.compile(notInfo);
-                        var notData = notTemplate(<%=this.jsonMes%>);
+                        var notData = notTemplate(<%=this.jsonnotifi%>);
+                        document.getElementById("not-div").innerHTML += notData;
                       // document.getElementById("not-div").innerHTML += notData;
 
                         /*var masterInfo = document.getElementById("master-temp").innerHTML;
@@ -613,10 +560,13 @@ background-image: url(../media/new/opc/{{subjectID}}.png);background-color:#{{Ge
                     function isEmpty(el) {
                         return !$.trim(el.html())
                     }
-
-                   
+                    $(document).ready(function() {
+                        if ($('notBadge').text() == '')
+                        {
+                            document.getElementById('notBadge').style.display = 'none';
+                        }
+                    });
                 </script>                
-        </div>
               </section> 
           </section>    
 </body>
