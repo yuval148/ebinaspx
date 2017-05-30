@@ -1,4 +1,4 @@
-using System;
+ο»Ώusing System;
 using System.Data;
 using System.Configuration;
 using System.Linq;
@@ -13,8 +13,8 @@ using System.Data.OleDb;
 
 /// <summary>
 /// Summary description for MyAdoHelper
-/// τςεμεϊ ςζψ μωιξεω αξργ πϊεπιν ξρεβ ΰχρρ
-///  App_Data δξργ ξξεχν αϊχιδ 
+/// Γ΄Γ²Γ¥Γ¬Γ¥ΓΊ Γ²Γ¦ΓΈ Γ¬ΓΉΓ©Γ®Γ¥ΓΉ Γ΅Γ®Γ±Γ£ Γ°ΓΊΓ¥Γ°Γ©Γ­ Γ®Γ±Γ¥ΓΆ Γ Γ·Γ±Γ±
+///  App_Data Γ¤Γ®Γ±Γ£ Γ®Γ®Γ¥Γ·Γ­ Γ΅ΓΊΓ·Γ©Γ¤ 
 /// </summary>
 
 public class MyAdoHelper
@@ -29,21 +29,21 @@ public class MyAdoHelper
 
     public static OleDbConnection ConnectToDb(string fileName)
     {
-        string path = HttpContext.Current.Server.MapPath("App_Data/");//ξιχεν ξργ ατεψειιχθ
+        string path = HttpContext.Current.Server.MapPath("App_Data/");//Γ®Γ©Γ·Γ¥Γ­ Γ®Γ±Γ£ Γ΅Γ΄Γ¥ΓΈΓ¥Γ©Γ©Γ·Γ¨
         path += fileName;
-        //string path = HttpContext.Current.Server.MapPath("App_Data/" + fileName);//ξΰϊψ ΰϊ ξιχεν ξργ δπϊεπιν ξδωεψω εςγ δϊχιιδ αδ ξξεχν δξργ
-        string connString = "Provider=Microsoft.Jet.OLEDB.4.0;Data source=" + path;//πϊεπι δδϊηαψεϊ δλεμμιν ξιχεν ερεβ δξργ
+        //string path = HttpContext.Current.Server.MapPath("App_Data/" + fileName);//Γ®Γ ΓΊΓΈ Γ ΓΊ Γ®Γ©Γ·Γ¥Γ­ Γ®Γ±Γ£ Γ¤Γ°ΓΊΓ¥Γ°Γ©Γ­ Γ®Γ¤ΓΉΓ¥ΓΈΓΉ Γ¥Γ²Γ£ Γ¤ΓΊΓ·Γ©Γ©Γ¤ Γ΅Γ¤ Γ®Γ®Γ¥Γ·Γ­ Γ¤Γ®Γ±Γ£
+        string connString = "Provider=Microsoft.Jet.OLEDB.4.0;Data source=" + path;//Γ°ΓΊΓ¥Γ°Γ© Γ¤Γ¤ΓΊΓ§Γ΅ΓΈΓ¥ΓΊ Γ¤Γ«Γ¥Γ¬Γ¬Γ©Γ­ Γ®Γ©Γ·Γ¥Γ­ Γ¥Γ±Γ¥ΓΆ Γ¤Γ®Γ±Γ£
         OleDbConnection conn = new OleDbConnection(connString);
         return conn;
     }
 
     /// <summary>
     /// To Execute update / insert / delete queries
-    ///  δτςεμδ ξχαμϊ ων χεαυ εξωτθ μαιφες εξαφςϊ ΰϊ δτςεμδ ςμ δξργ
+    ///  Γ¤Γ΄Γ²Γ¥Γ¬Γ¤ Γ®Γ·Γ΅Γ¬ΓΊ ΓΉΓ­ Γ·Γ¥Γ΅Γµ Γ¥Γ®ΓΉΓ΄Γ¨ Γ¬Γ΅Γ©Γ¶Γ¥Γ² Γ¥Γ®Γ΅Γ¶Γ²ΓΊ Γ ΓΊ Γ¤Γ΄Γ²Γ¥Γ¬Γ¤ Γ²Γ¬ Γ¤Γ®Γ±Γ£
     /// </summary>
 
-    public static void DoQuery(string fileName, string sql)//δτςεμδ ξχαμϊ ων ξργ πϊεπιν εξηψεζϊ ξηιχδ/ δερτδ/ ςγλεο
-    //εξαφςϊ ΰϊ δτχεγδ ςμ δξργ δτιζι
+    public static void DoQuery(string fileName, string sql)//Γ¤Γ΄Γ²Γ¥Γ¬Γ¤ Γ®Γ·Γ΅Γ¬ΓΊ ΓΉΓ­ Γ®Γ±Γ£ Γ°ΓΊΓ¥Γ°Γ©Γ­ Γ¥Γ®Γ§ΓΈΓ¥Γ¦ΓΊ Γ®Γ§Γ©Γ·Γ¤/ Γ¤Γ¥Γ±Γ΄Γ¤/ Γ²Γ£Γ«Γ¥Γ―
+    //Γ¥Γ®Γ΅Γ¶Γ²ΓΊ Γ ΓΊ Γ¤Γ΄Γ·Γ¥Γ£Γ¤ Γ²Γ¬ Γ¤Γ®Γ±Γ£ Γ¤Γ΄Γ©Γ¦Γ©
     {
 
         OleDbConnection conn = ConnectToDb(fileName);
@@ -58,10 +58,10 @@ public class MyAdoHelper
 
     /// <summary>
     /// To Execute update / insert / delete queries
-    ///  δτςεμδ ξχαμϊ ων χεαυ εξωτθ μαιφες εξηζιψδ ΰϊ ξρτψ δωεψεϊ ωδεωτςε ξαιφες δτςεμδ
+    ///  Γ¤Γ΄Γ²Γ¥Γ¬Γ¤ Γ®Γ·Γ΅Γ¬ΓΊ ΓΉΓ­ Γ·Γ¥Γ΅Γµ Γ¥Γ®ΓΉΓ΄Γ¨ Γ¬Γ΅Γ©Γ¶Γ¥Γ² Γ¥Γ®Γ§Γ¦Γ©ΓΈΓ¤ Γ ΓΊ Γ®Γ±Γ΄ΓΈ Γ¤ΓΉΓ¥ΓΈΓ¥ΓΊ ΓΉΓ¤Γ¥ΓΉΓ΄Γ²Γ¥ Γ®Γ΅Γ©Γ¶Γ¥Γ² Γ¤Γ΄Γ²Γ¥Γ¬Γ¤
     /// </summary>
-    public int RowsAffected(string fileName, string sql)//δτςεμδ ξχαμϊ ξρμεμ ξργ πϊεπιν ετχεγϊ ςγλεο
-    //εξαφςϊ ΰϊ δτχεγδ ςμ δξργ δτιζι
+    public static int RowsAffected(string fileName, string sql)//Γ¤Γ΄Γ²Γ¥Γ¬Γ¤ Γ®Γ·Γ΅Γ¬ΓΊ Γ®Γ±Γ¬Γ¥Γ¬ Γ®Γ±Γ£ Γ°ΓΊΓ¥Γ°Γ©Γ­ Γ¥Γ΄Γ·Γ¥Γ£ΓΊ Γ²Γ£Γ«Γ¥Γ―
+    //Γ¥Γ®Γ΅Γ¶Γ²ΓΊ Γ ΓΊ Γ¤Γ΄Γ·Γ¥Γ£Γ¤ Γ²Γ¬ Γ¤Γ®Γ±Γ£ Γ¤Γ΄Γ©Γ¦Γ©
     {
 
         OleDbConnection conn = ConnectToDb(fileName);
@@ -73,9 +73,9 @@ public class MyAdoHelper
     }
 
     /// <summary>
-    /// δτςεμδ ξχαμϊ ων χεαυ εξωτθ μηιτεω ςψκ - ξηζιψδ ΰξϊ ΰν δςψκ πξφΰ εωχψ ΰηψϊ
+    /// Γ¤Γ΄Γ²Γ¥Γ¬Γ¤ Γ®Γ·Γ΅Γ¬ΓΊ ΓΉΓ­ Γ·Γ¥Γ΅Γµ Γ¥Γ®ΓΉΓ΄Γ¨ Γ¬Γ§Γ©Γ΄Γ¥ΓΉ Γ²ΓΈΓª - Γ®Γ§Γ¦Γ©ΓΈΓ¤ Γ Γ®ΓΊ Γ Γ­ Γ¤Γ²ΓΈΓª Γ°Γ®Γ¶Γ  Γ¥ΓΉΓ·ΓΈ Γ Γ§ΓΈΓΊ
     /// </summary>
-    public static bool IsExist(string fileName, string sql)//δτςεμδ ξχαμϊ ων χεαυ εξωτθ αηιψϊ πϊεο εξηζιψδ ΰξϊ ΰν δπϊεπιν χιιξιν εωχψ ΰηψϊ
+    public static bool IsExist(string fileName, string sql)//Γ¤Γ΄Γ²Γ¥Γ¬Γ¤ Γ®Γ·Γ΅Γ¬ΓΊ ΓΉΓ­ Γ·Γ¥Γ΅Γµ Γ¥Γ®ΓΉΓ΄Γ¨ Γ΅Γ§Γ©ΓΈΓΊ Γ°ΓΊΓ¥Γ― Γ¥Γ®Γ§Γ¦Γ©ΓΈΓ¤ Γ Γ®ΓΊ Γ Γ­ Γ¤Γ°ΓΊΓ¥Γ°Γ©Γ­ Γ·Γ©Γ©Γ®Γ©Γ­ Γ¥ΓΉΓ·ΓΈ Γ Γ§ΓΈΓΊ
     {
 
         OleDbConnection conn = ConnectToDb(fileName);
@@ -83,13 +83,13 @@ public class MyAdoHelper
         OleDbCommand com = new OleDbCommand(sql, conn);
         OleDbDataReader data = com.ExecuteReader();
         bool found;
-        found = (bool)data.Read();// ΰν ιω πϊεπιν μχψιΰδ ιεων ΰξϊ ΰηψϊ ωχψ - δςψκ χιιν αξργ δπϊεπιν
+        found = (bool)data.Read();// Γ Γ­ Γ©ΓΉ Γ°ΓΊΓ¥Γ°Γ©Γ­ Γ¬Γ·ΓΈΓ©Γ Γ¤ Γ©Γ¥ΓΉΓ­ Γ Γ®ΓΊ Γ Γ§ΓΈΓΊ ΓΉΓ·ΓΈ - Γ¤Γ²ΓΈΓª Γ·Γ©Γ©Γ­ Γ΅Γ®Γ±Γ£ Γ¤Γ°ΓΊΓ¥Γ°Γ©Γ­
         conn.Close();
         return found;
 
     }
-    //ψεςι
-    //ξι ζδ ψεςι?
+    //ΓΈΓ¥Γ²Γ©
+    //Γ®Γ© Γ¦Γ¤ ΓΈΓ¥Γ²Γ©?
     public static DataTable ExecuteDataTable(string fileName, string sql)
     {
         OleDbConnection conn = ConnectToDb(fileName);
@@ -110,7 +110,7 @@ public class MyAdoHelper
         conn.Close();
     }
 
-    public static string printDataTable(string fileName, string sql)//δτςεμδ ξχαμϊ ων χεαυ εξωτθ αηιψϊ πϊεο εξηζιψδ ΰξϊ ΰν δπϊεπιν χιιξιν εωχψ ΰηψϊ
+    public static string printDataTable(string fileName, string sql)//Γ¤Γ΄Γ²Γ¥Γ¬Γ¤ Γ®Γ·Γ΅Γ¬ΓΊ ΓΉΓ­ Γ·Γ¥Γ΅Γµ Γ¥Γ®ΓΉΓ΄Γ¨ Γ΅Γ§Γ©ΓΈΓΊ Γ°ΓΊΓ¥Γ― Γ¥Γ®Γ§Γ¦Γ©ΓΈΓ¤ Γ Γ®ΓΊ Γ Γ­ Γ¤Γ°ΓΊΓ¥Γ°Γ©Γ­ Γ·Γ©Γ©Γ®Γ©Γ­ Γ¥ΓΉΓ·ΓΈ Γ Γ§ΓΈΓΊ
     {
 
 
@@ -134,4 +134,3 @@ public class MyAdoHelper
     }
 
 }
-
