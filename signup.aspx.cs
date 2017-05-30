@@ -8,13 +8,13 @@ using System.IO;
 
 public partial class signup : System.Web.UI.Page
 {
-    public string errform = "";
     protected void Page_Load(object sender, EventArgs e)
     {
 
     }
     protected void submit(Object sender, EventArgs e)
     {
+        myLabel.Text = "my text";
         string name = "", userPass = "", userName = "", team = "", kita = "", ID = "";
         int xpp = 0;
         name = Request.Form["name"];
@@ -26,7 +26,7 @@ public partial class signup : System.Web.UI.Page
 
         if (name == "" || userPass == "" || ID == "")
         {
-            errform = "נתונים לא מולאו כשורה";
+            myLabel.Text = "נתונים לא מולאו כשורה";
             // Response.Redirect("form.aspx");
         }
         else
@@ -46,17 +46,17 @@ public partial class signup : System.Web.UI.Page
 
             if (MyAdoHelper.IsExist(fileName7, sql)) //שימוש בפעולה לבדיקה אם המשתמש קיים 
             {
-                errform = "משתמש קיים";
+                myLabel.Text = "משתמש קיים";
                 // Response.Redirect("form.aspx");
 
             }
             else if (MyAdoHelper.IsExist(fileName7, sql3))
             {
-                errform = "משתמש קיים";
+                myLabel.Text = "משתמש קיים";
             }
             else if (xpstuf.ValidateID(ID) == xpstuf.TzStatus.R_NOT_VALID || xpstuf.ValidateID(ID) == xpstuf.TzStatus.R_ELEGAL_INPUT)
             {
-                errform = "מספר ת.ז לא תקין";
+                myLabel.Text  = "מספר ת.ז לא תקין";
             }
 
             else
@@ -76,7 +76,7 @@ public partial class signup : System.Web.UI.Page
                     MyAdoHelper.DoQuery(fileName7, sql2);
                     string sql5 = "CREATE TABLE GRA" + ID + " (shlita int, datee varchar(255));";
                     MyAdoHelper.DoQuery(fileName7, sql5);
-                    errform = "<br> ההרשמה בוצעה בהצלחה";
+                    myLabel.Text = "<br> ההרשמה בוצעה בהצלחה";
 
 
 
@@ -91,7 +91,7 @@ public partial class signup : System.Web.UI.Page
                     MyAdoHelper.DoQuery(fileName7, sql2);
                     string sql5 = "CREATE TABLE GRA" + ID + " (shlita int, datee varchar(255));";
                     MyAdoHelper.DoQuery(fileName7, sql5);
-                    errform = "<br> ההרשמה בוצעה בהצלחה";
+                    myLabel.Text = "<br> ההרשמה בוצעה בהצלחה";
                 }
 
             }

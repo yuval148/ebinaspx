@@ -224,9 +224,9 @@
                   		<div class="col-md-2 col-sm-2 box0">
                   			<div class="box1">
 					  			<span class="lnr lnr-star-half"></span>
-					  			<h3>90</h3>
+					  			<h3><%=tilnext.ToString()%></h3>
                   			</div>
-					  			<p>רק 90 נקודות עד הרמה הבאה!</p>
+					  			<p>רק <%=tilnext.ToString()%> נקודות עד הרמה הבאה!</p>
                   		</div>
                   	
                   	</div><!-- /row mt -->	
