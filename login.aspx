@@ -29,7 +29,7 @@
     <div id="login-page">
 	<div class="container">
         <form id="myform1" class="form-login"  method="post" dir="rtl">
-            <h2 class="form-login-heading">היכנס עכשיו</h2>
+            <h2 class="form-login-heading"><img src="media/LOGOr.png" style="align-content:center; width:200px;" /></h2>
             <div class="login-wrap">
                 <input class="form-control" placeholder="שם משתמש" type="text" id="userName" name="userName">
                 <input class="form-control" placeholder="סיסמא" type="password" id="userPass" name="userPass" >
@@ -58,8 +58,8 @@
     <script src="assets/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="assets/js/jquery.backstretch.min.js"></script>
       <script>
-          $.backstretch("media/0pres.png", {speed: 500});
-          $.backstretch("assets/img/login-bg.jpg", {speed: 500});
+          $.backstretch("media/0pres.png", {speed: 300});
+          $.backstretch("media/login-bg.jpg", {speed: 500});
 
             var opc = <%=opc%>;
             document.getElementById( 'errorDiv' ).style.opacity = opc;

@@ -6,9 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="Dashboard">
-    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+
 
     <title>Playground</title>
 
@@ -43,7 +41,7 @@
       <!--header start-->
       <header class="header black-bg">
               <div class="sidebar-toggle-box">
-                  <div class="fa fa-bars tooltips" data-placement="left" data-original-title="הסתר פרופיל"></div>
+                  <div class="fa fa-bars tooltips" style="color:#ffffff!important" data-placement="left" data-original-title="הסתר פרופיל"></div>
               </div>
             <!--logo start-->
             <a href="home.aspx" class="logo"><img src="media/LOGOr.png" style="float:right; width:170px;" /></a>
