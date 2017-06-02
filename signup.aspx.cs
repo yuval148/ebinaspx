@@ -76,7 +76,7 @@ public partial class signup : System.Web.UI.Page
                     MyAdoHelper.DoQuery(fileName7, sql2);
                     string sql5 = "CREATE TABLE GRA" + ID + " (shlita int, datee varchar(255));";
                     MyAdoHelper.DoQuery(fileName7, sql5);
-                    myLabel.Text = "<br> ההרשמה בוצעה בהצלחה";
+                    myLabel.Text = "ההרשמה בוצעה בהצלחה";
 
 
 

@@ -139,7 +139,7 @@
 	</head>
 	<body>
 		<!-- multistep form -->
-        <form name="f" id="f" method="post" class="w3-container" data-toggle="validator" runat="server" onsubmit="return check();">
+         <form name="f" id="f" method="post" runat="server" onsubmit="return check();">
 		  <!-- progressbar -->
 		  <ul id="progressbar">
 			<li class="active">פרטים אישיים</li>
@@ -153,7 +153,9 @@
 			<input placeholder="שם מלא" type="text" id="name" name="name" maxlength="50" size="15"/> 
             <input placeholder="כיתה" type="text" id="kita" name="kita" maxlength="4" size="15"/>
             <input placeholder="מספר תעודת זהות" type="text" id="ID" name="ID" maxlength="9" size="9" />
-			<input type="button" name="next" id="next1" class="next action-button" value="הבא" />
+			<input type="button" name="next" id="next1" class="next action-button" runat="server" value="הבא" />
+            <asp:label id="myLabel" runat="server" />
+
 		  </fieldset>
 		  <fieldset>
 			<h2 class="fs-title">כותרת גדולה</h2>
@@ -171,9 +173,7 @@
 			<h3 class="fs-subtitle">We will never sell it</h3>
             <asp:FileUpload ID="FileUpload1" runat="server"/>
 			<input type="button" name="previous" class="previous action-button" value="הקודם" />
-               <asp:label id="myLabel" runat="server" />
-
-            <asp:Button ID="btnUpload" class="submit action-button" runat="server" text="הירשם" type="submit" OnClick="submit"  />
+               <asp:Button ID="Button1" class="submit action-button" runat="server" Text="סיים" type="submit"  OnClick="submit"  />
 		  </fieldset>
 		</form>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -326,10 +326,6 @@
 					easing: 'easeInOutBack'
 				});
 			});
-
-			$(".submit").click(function(){
-				return false;
-			})
 		</script>
 	</body>
 </html>
