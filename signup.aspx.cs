@@ -39,8 +39,7 @@ public partial class signup : System.Web.UI.Page
 
 
 
-            sql = "select * from " + tableName + " where name='" + name + "'";
-            sql += " AND userPass ='" + userPass + "'";
+            sql = "select * from " + tableName + " where userName='" + userName + "'";
             sql3 = "select * from " + tableName + " where ID='" + ID + "'";
             // string path = Server.MapPath("App_Data/db1.mdb");
 
@@ -71,12 +70,12 @@ public partial class signup : System.Web.UI.Page
                     pic = "media/pic/" + ID + extension;
                     sql = "insert into users(name, userName, userPass, team, xpp, ID, kita, pic)values('" + name + "','" + userName + "','" + userPass + "','" + team + "','" + xpp + "','" + ID + "','" + kita + "','" + pic + "');";
                     MyAdoHelper.DoQuery(fileName7, sql);
-                    // Response.Redirect("form.aspx");
                     string sql2 = "CREATE TABLE ID" + ID + " (subject varchar(255), subjectID varchar(255), ctargil varchar(255), diff varchar(255), cou varchar(255));";
                     MyAdoHelper.DoQuery(fileName7, sql2);
                     string sql5 = "CREATE TABLE GRA" + ID + " (shlita int, datee varchar(255));";
                     MyAdoHelper.DoQuery(fileName7, sql5);
                     myLabel.Text = "ההרשמה בוצעה בהצלחה";
+                    Response.Redirect("login.aspx");
 
 
 
@@ -86,12 +85,12 @@ public partial class signup : System.Web.UI.Page
                 {
                     sql = "insert into users(name, userName, userPass, team, xpp, ID, kita, pic)values('" + name + "','" + userName + "','" + userPass + "','" + team + "','" + xpp + "','" + ID + "','" + kita + "','" + "media/pic/123456782.png" + "');";
                     MyAdoHelper.DoQuery(fileName7, sql);
-                    // Response.Redirect("form.aspx");
                     string sql2 = "CREATE TABLE ID" + ID + " (subject varchar(255), subjectID varchar(255), ctargil varchar(255), diff varchar(255), cou varchar(255));";
                     MyAdoHelper.DoQuery(fileName7, sql2);
                     string sql5 = "CREATE TABLE GRA" + ID + " (shlita int, datee varchar(255));";
                     MyAdoHelper.DoQuery(fileName7, sql5);
-                    myLabel.Text = "<br> ההרשמה בוצעה בהצלחה";
+                    myLabel.Text = "ההרשמה בוצעה בהצלחה";
+                    Response.Redirect("login.aspx");
                 }
 
             }
