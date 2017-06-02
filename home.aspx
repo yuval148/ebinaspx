@@ -12,6 +12,8 @@
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
+<link rel="stylesheet" href="//cdn.rawgit.com/morteza/bootstrap-rtl/v3.3.4/dist/css/bootstrap-rtl.min.css">
+
     <!--external css-->
     <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="assets/css/zabuto_calendar.css">
@@ -101,6 +103,54 @@
           <section class="wrapper">
               <div class="row">
 						<div id="modal-div"></div>
+                  
+						
+                  <div id="sub-div" class="col-lg-9 main-chart">
+
+                      <div class="row mtbox">
+                  		<div class="col-md-2 col-sm-2 col-md-offset-1 box0">
+                  			<div class="box1">
+					  			<span class="lnr lnr-map"></span>
+					  			<h3>אירועים</h3>
+                  			</div>
+					  			<p>טיול שנתי 27/10/2017</p>
+                              	<p>מוזיאון תל אביב לאומנות כותב שם ממש ארוך לבדוק מה יקרה 27/10/2017</p>
+                  		</div>
+                  		<div class="col-md-2 col-sm-2 box0">
+                  			<div class="box1">
+					  			<span class="lnr lnr-graduation-hat"></span>
+					  			<h3>מבחנים</h3>
+                  			</div>
+					  			<p>שכבת יב - מתמטיקה</p>
+                                <p>שכבת יב - מתמטיקה</p>
+                                <p>שכבת יב - מתמטיקה</p>
+                                <p>שכבת יב - מתמטיקה</p>
+                                <p>שכבת יב - מתמטיקה</p>
+                  		</div>
+                  		<div class="col-md-2 col-sm-2 box0">
+                  			<div class="box1">
+					  			<span class="lnr lnr-star"></span>
+					  			<h3>אלגברה</h3>
+                  			</div>
+					  			<p>המקצוע הכי טוב שלך הוא אלגברה!</p>
+                  		</div>
+                  		<div class="col-md-2 col-sm-2 box0">
+                  			<div class="box1">
+					  			<span class="lnr lnr-sad"></span>
+					  			<h3>פרבולות</h3>
+                  			</div>
+					  			<p>נראה שאתה מסתבך טיפה עם פרבולות</p>
+                  		</div>
+                  		<div class="col-md-2 col-sm-2 box0">
+                  			<div class="box1">
+					  			<span class="lnr lnr-star-half"></span>
+					  			<h3><%=tilnext.ToString()%></h3>
+                  			</div>
+					  			<p>רק <%=tilnext.ToString()%> נקודות עד הרמה הבאה!</p>
+                  		</div>
+                  	
+                  	</div><!-- /row mt -->	
+                  </div>
                   <!-- **********************************************************************************************************************************************************
       RIGHT SIDEBAR CONTENT
       *********************************************************************************************************************************************************** -->                  
@@ -185,53 +235,6 @@
                         </div><!-- / calendar -->
                       
                   </div><!-- /col-lg-3 -->
-						
-                  <div id="sub-div" class="col-lg-9 main-chart">
-                      <div class="row mtbox">
-                  		<div class="col-md-2 col-sm-2 col-md-offset-1 box0">
-                  			<div class="box1">
-					  			<span class="lnr lnr-map"></span>
-					  			<h3>אירועים</h3>
-                  			</div>
-					  			<p>טיול שנתי 27/10/2017</p>
-                              	<p>מוזיאון תל אביב לאומנות כותב שם ממש ארוך לבדוק מה יקרה 27/10/2017</p>
-                  		</div>
-                  		<div class="col-md-2 col-sm-2 box0">
-                  			<div class="box1">
-					  			<span class="lnr lnr-graduation-hat"></span>
-					  			<h3>מבחנים</h3>
-                  			</div>
-					  			<p>שכבת יב - מתמטיקה</p>
-                                <p>שכבת יב - מתמטיקה</p>
-                                <p>שכבת יב - מתמטיקה</p>
-                                <p>שכבת יב - מתמטיקה</p>
-                                <p>שכבת יב - מתמטיקה</p>
-                  		</div>
-                  		<div class="col-md-2 col-sm-2 box0">
-                  			<div class="box1">
-					  			<span class="lnr lnr-star"></span>
-					  			<h3>אלגברה</h3>
-                  			</div>
-					  			<p>המקצוע הכי טוב שלך הוא אלגברה!</p>
-                  		</div>
-                  		<div class="col-md-2 col-sm-2 box0">
-                  			<div class="box1">
-					  			<span class="lnr lnr-sad"></span>
-					  			<h3>פרבולות</h3>
-                  			</div>
-					  			<p>נראה שאתה מסתבך טיפה עם פרבולות</p>
-                  		</div>
-                  		<div class="col-md-2 col-sm-2 box0">
-                  			<div class="box1">
-					  			<span class="lnr lnr-star-half"></span>
-					  			<h3><%=tilnext.ToString()%></h3>
-                  			</div>
-					  			<p>רק <%=tilnext.ToString()%> נקודות עד הרמה הבאה!</p>
-                  		</div>
-                  	
-                  	</div><!-- /row mt -->	
-                  </div>
-
                 <script src="js/handlebars-v4.0.5.js"></script>
                   <script id="modal-temp" type="text/x-handlebars-template">
                       <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
