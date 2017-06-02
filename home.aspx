@@ -259,7 +259,7 @@
             </script>
             <script id="not-temp" type="text/x-handlebars-template">
                 <li>
-                    <p class="green">You have <%=this.notifi.ToString()%> new messages</p>
+                    <p style="text-align:right;" class="green">יש לך <%=this.notifi.ToString()%> הודעות חדשות</p>
                 </li>
                 {{#each_upto sub 6}}
                 <li>
@@ -286,17 +286,19 @@
             </script>
                 <script id="sub-temp" type="text/x-handlebars-template">
                     					<div class="row mtbox">
+                                            <h2>נושאים</h2>
+                                            <hr />
                     {{#each sub}}
                     <div class="col-lg-4 col-md-4 col-sm-4 mb">
 							<div class="content-panel pn">
 								<div id="blog-bg" style="background-size:cover; background-position: center; 
 background-image: url(../media/new/opc/{{subjectID}}.png);background-color:#{{GetMasterColor2 (GetMasterPrecent cou ctargil)}}; border-top:solid #{{GetMasterColor2 (GetMasterPrecent cou ctargil)}} 7.5px">
-									<div style="margin-top:8px" class="c100 small p{{GetMasterPrecent cou ctargil}} white center">
-                                        <span>{{GetMasterPrecent cou ctargil}}%
+									<div style="margin-top:8px;" class="c100 small p{{GetMasterPrecent cou ctargil}} white centers {{GetMasterColorClass (GetMasterPrecent cou ctargil)}}">
+                                        <span >{{GetMasterPrecent cou ctargil}}%
                                 </span> <!-- צריך לחלק פה סאיו בסיתרגיל! !-->              
-                                <div class="slice">
+                                <div class="slice" >
                                     <div class="bar"></div>
-                                    <div class="fill"></div>
+                                    <div class="fill" ></div>
                                 </div>
                             </div></div>
 									<div class="blog-title" style="font-family:Rubik;font-weight:300;font-size:20px">{{subject}}</div>
@@ -350,11 +352,10 @@ background-image: url(../media/new/opc/{{subjectID}}.png);background-color:#{{Ge
                       	    <div class="thumb">
                       		    <span class="badge bg-theme"><i class="material-icons">{{icon}}</i></span>
                       	    </div>
-                      	<p class="details">
-                      		<p style="font-family:Rubik;font-weight:700">{{kita}}<br/>
-                      		   <p style="font-family:Rubik;font-weight:500">{{title}}</p>
-                                  <p style="font-family:Rubik;font-weight:400">{{msg}}</p>
-                               <p style="font-family:Rubik;font-weight:300">{{byy}} {{datec}}  </p>                    		
+                      		<p style="font-family:Rubik;font-weight:700;text-align:right">{{title}}<br/>
+                      		   <p style="font-family:Rubik;font-weight:500">{{msg}}</p>
+                                  <p style="font-family:Rubik;font-weight:400">{{kita}}</p>
+                               <p style="font-family:Rubik;font-weight:300">{{byy}} {{exp}}  </p>                    		
                       		</p>
                       	</div>
                       </div>
@@ -487,6 +488,20 @@ background-image: url(../media/new/opc/{{subjectID}}.png);background-color:#{{Ge
                         }
                         else if (master >= 75) {
                             return "5fd400";
+                        }
+                    });
+                    Handlebars.registerHelper('GetMasterColorClass', function (master) {
+                        if (master < 25) {
+                            return "c100r";
+                        }
+                        else if (master < 50) {
+                            return "c100y";
+                        }
+                        else if (master < 75) {
+                            return "c100o";
+                        }
+                        else if (master >= 75) {
+                            return "c100g";
                         }
                     });
                     Handlebars.registerHelper('GetMasterPrecent', function (cou, ctargil) {

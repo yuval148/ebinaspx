@@ -282,7 +282,6 @@
   display: block;
   content: " ";
   border-radius: 50%;
-  background-color: #3b4caf;
   width: 0.84em;
   height: 0.84em;
   -webkit-transition-property: all;
@@ -305,7 +304,6 @@
   display: block;
   content: " ";
   border-radius: 50%;
-  background-color: #3b4caf;
   width: 0.84em;
   height: 0.84em;
   -webkit-transition-property: all;
@@ -320,6 +318,18 @@
   -moz-transition-timing-function: ease-in;
   -o-transition-timing-function: ease-in;
   transition-timing-function: ease-in;
+}
+.c100r:after {
+  background-color:#e53935;
+}
+.c100y:after {
+  background-color:#ff6d00;
+}
+.c100o:after {
+  background-color:#fbc02d;
+}
+.c100g:after {
+  background-color:#5fd400;
 }
 .c100 .slice {
   position: absolute;
