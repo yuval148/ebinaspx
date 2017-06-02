@@ -480,7 +480,7 @@
 									var doughnutData = [
 											{
 												value: 70,
-												color:"#68dff0"
+												color:"#00bcd4"
 											},
 											{
 												value : 30,
@@ -547,7 +547,7 @@
 									var doughnutData = [
 											{
 												value: 60,
-												color:"#68dff0"
+												color:"#00bcd4"
 											},
 											{
 												value : 40,

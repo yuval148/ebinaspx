@@ -111,10 +111,10 @@
                       <div id="mes-div">
                       </div>
 
-
-                       <!-- USERS ONLINE SECTION -->
+                      <!-- 
+                       <!-- USERS ONLINE SECTION 
 						<h3>TEAM MEMBERS</h3>
-                      <!-- First Member -->
+                      <!-- First Member 
                       <div class="desc">
                       	<div class="thumb">
                       		<img class="img-circle" src="assets/img/ui-divya.jpg" width="35px" height="35px" align="">
@@ -125,7 +125,7 @@
                       		</p>
                       	</div>
                       </div>
-                      <!-- Second Member -->
+                      <!-- Second Member
                       <div class="desc">
                       	<div class="thumb">
                       		<img class="img-circle" src="assets/img/ui-sherman.jpg" width="35px" height="35px" align="">
@@ -136,7 +136,7 @@
                       		</p>
                       	</div>
                       </div>
-                      <!-- Third Member -->
+                      <!-- Third Member
                       <div class="desc">
                       	<div class="thumb">
                       		<img class="img-circle" src="assets/img/ui-danro.jpg" width="35px" height="35px" align="">
@@ -147,7 +147,7 @@
                       		</p>
                       	</div>
                       </div>
-                      <!-- Fourth Member -->
+                      <!-- Fourth Member 
                       <div class="desc">
                       	<div class="thumb">
                       		<img class="img-circle" src="assets/img/ui-zac.jpg" width="35px" height="35px" align="">
@@ -158,7 +158,7 @@
                       		</p>
                       	</div>
                       </div>
-                      <!-- Fifth Member -->
+                      <!-- Fifth Member
                       <div class="desc">
                       	<div class="thumb">
                       		<img class="img-circle" src="assets/img/ui-sam.jpg" width="35px" height="35px" align="">
@@ -169,6 +169,8 @@
                       		</p>
                       	</div>
                       </div>
+                      -->
+                      
 
                         <!-- CALENDAR-->
                         <div id="calendar" class="mb">
@@ -312,15 +314,15 @@
             </script>
             <script id="not-temp" type="text/x-handlebars-template">
                 <li>
-                    <p style="text-align:right;" class="green">יש לך <%=this.notifi.ToString()%> הודעות חדשות</p>
+                    <p style="text-align:right;" class="green">יש לך <%=this.notifi.ToString()%> התראות חדשות</p>
                 </li>
                 {{#each_upto sub 6}}
                 <li>
                     <a href="home.aspx#">
-                        <span class="photo"><i class="material-icons">{{icon}}</i></span>
+                       <span class="photo"><i class="material-icons" style="font-size:15px">{{icon}}</i></span>
                         <span class="subject">
-                            <span class="from">{{datec}}</span><br />
-                            <span class="time">{{title}}</span>
+                            <span class="from" style="font-family:Rubik;font-weight:700;text-align:right">{{title}}</span><br />
+                            <span class="time" style="font-family:Rubik;font-weight:300">{{datec}}</span>
                         </span>
                         <span class="message">
                         </span>
@@ -329,7 +331,7 @@
                 {{/each_upto}}    
             </script>
             <script id="master-temp" type="text/x-handlebars-template">
-                 <div id="master" class="c100 dark small p<%=Session["shlita"] %> white center" > <!-- צריך לחלק פה סאיו בסיתרגיל! !-->
+                 <div id="master" class="c100 dark small p<%=Session["shlita"] %> white center" >
                                 <span><%=Session["shlita"] %>%</span>
                                 <div class="slice">
                                     <div class="bar"></div>
@@ -348,7 +350,7 @@
 background-image: url(../media/new/opc/{{subjectID}}.png);background-color:#{{GetMasterColor2 (GetMasterPrecent cou ctargil)}}; border-top:solid #{{GetMasterColor2 (GetMasterPrecent cou ctargil)}} 7.5px">
 									<div style="margin-top:8px;" class="c100 small p{{GetMasterPrecent cou ctargil}} white center {{GetMasterColorClass (GetMasterPrecent cou ctargil)}}">
                                         <span style="color:white">{{GetMasterPrecent cou ctargil}}%
-                                </span> <!-- צריך לחלק פה סאיו בסיתרגיל! !-->              
+                                </span>         
                                 <div class="slice" >
                                     <div class="bar"></div>
                                     <div class="fill" ></div>
@@ -410,12 +412,12 @@ background-image: url(../media/new/opc/{{subjectID}}.png);background-color:#{{Ge
                     <div id="{{title}}" style="display:{{CheckClass kita title}}">
                         <div class="desc" >
                       	    <div class="thumb">
-                      		    <span class="badge bg-theme"><i class="material-icons">{{icon}}</i></span>
+                      		    <span class="badge bg-theme"><i class="material-icons" style="font-size:15px">{{icon}}</i></span>
                       	    </div>
                       		<p style="font-family:Rubik;font-weight:700;text-align:right">{{title}}<br/>
                       		   <p style="font-family:Rubik;font-weight:500">{{msg}}</p>
                                   <p style="font-family:Rubik;font-weight:400">{{kita}}</p>
-                               <p style="font-family:Rubik;font-weight:300">{{byy}} {{exp}}  </p>                    		
+                               <p style="font-family:Rubik;font-weight:300">{{byy}},  {{datec}}  </p>                    		
                       		</p>
                       	</div>
                       </div>
