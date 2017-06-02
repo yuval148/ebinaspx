@@ -162,7 +162,7 @@
 			<h3 class="fs-subtitle">כותרת משנה</h3>         
             <input placeholder="שם משתמש" type="text" id="userName" name="userName" maxlength="145" size="15"/>
             <input placeholder="סיסמא" type="password" id="userPass" name="userPass"  maxlength="16" size="15" />
-            <input placeholder="חזור שנית על הסיסמא" type="password" id="userPass2" name="userPass"  maxlength="16" size="15" />
+            <input placeholder="חזור שנית על הסיסמא" type="password" id="userPass2" name="userPass2"  maxlength="16" size="15" />
 
             <input placeholder="שם קבוצה" type="text" id="team" name="team" maxlength="16" size="15" />
 			<input type="button" name="previous" class="previous action-button" value="הקודם" />

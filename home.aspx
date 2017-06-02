@@ -444,6 +444,7 @@ background-image: url(../media/new/opc/{{subjectID}}.png);background-color:#{{Ge
 	<script src="assets/js/zabuto_calendar.js"></script>	
 	
 	<script type="text/javascript">
+        /*
         $(document).ready(function () {
         var unique_id = $.gritter.add({
             // (string | mandatory) the heading of the notification
@@ -463,6 +464,7 @@ background-image: url(../media/new/opc/{{subjectID}}.png);background-color:#{{Ge
 
         return false;
         });
+        */
 	</script>
 	
 	<script type="application/javascript">
@@ -640,9 +642,8 @@ background-image: url(../media/new/opc/{{subjectID}}.png);background-color:#{{Ge
                     function isEmpty(el) {
                         return !$.trim(el.html())
                     }
-                    $(document).ready(function() {
-                        if ($('notBadge').text() == '')
-                        {
+                    $(document).ready(function () {
+                        if (document.getElementById('notBadge').innerHTML == 0) {
                             document.getElementById('notBadge').style.display = 'none';
                         }
                     });
