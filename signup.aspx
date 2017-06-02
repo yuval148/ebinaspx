@@ -5,7 +5,7 @@
         <title></title>
 		<style>
 		    /*custom font*/
-			@import url(https://fonts.googleapis.com/css?family=Montserrat);
+			@import url(https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900);
 
 			/*basic reset*/
 			* {margin: 0; padding: 0;}
@@ -20,7 +20,7 @@
 			}
 
 			body {
-				font-family: montserrat, arial, verdana;
+				font-family: Rubik, arial;
 			}
 			/*form styles*/
 			#f {
@@ -75,16 +75,20 @@
 			}
 			/*headings*/
 			.fs-title {
-				font-size: 15px;
+				font-size: 20px;
 				text-transform: uppercase;
 				color: #2C3E50;
 				margin-bottom: 10px;
+                font-family: Rubik;
+                font-weight:700
 			}
 			.fs-subtitle {
 				font-weight: normal;
 				font-size: 13px;
 				color: #666;
 				margin-bottom: 20px;
+                font-family: Rubik;
+                font-weight:400
 			}
 			/*progressbar*/
 			#progressbar {
@@ -135,9 +139,28 @@
 				background: #27AE60;
 				color: white;
 			}
+             ::-webkit-input-placeholder {
+               font-family:Rubik;
+               font-weight:300;
+             }
+ 
+             :-moz-placeholder { /* Firefox 18- */
+               font-family:Rubik;
+              font-weight:300;
+             }
+ 
+             ::-moz-placeholder {  /* Firefox 19+ */
+               font-family:Rubik;
+               font-weight:300;
+             }
+ 
+             :-ms-input-placeholder {  
+               font-family:Rubik;
+               font-weight:300;
+             }
 		</style>
 	</head>
-	<body>
+	<body style="font-family:Rubik">
 		<!-- multistep form -->
          <form name="f" id="f" method="post" runat="server" onsubmit="return check();">
 		  <!-- progressbar -->
@@ -148,18 +171,18 @@
 		  </ul>
 		  <!-- fieldsets -->
 		  <fieldset>
-			<h2 class="fs-title">Create your account</h2>
-			<h3 class="fs-subtitle">This is step 1</h3>
+			<h2 class="fs-title">ברוכים הבאים לפלייגראונד! </h2>
+			<h3 class="fs-subtitle">בשלב זה הכניסו את שמכם, הכיתה ומספר תעודת הזהות.<br/>כשתסיימו, לחצו הבא כדי לעבור לשלב בחירת שם המשתמש והסיסמה.</h3>
 			<input placeholder="שם מלא" type="text" id="name" name="name" maxlength="50" size="15"/> 
             <input placeholder="כיתה" type="text" id="kita" name="kita" maxlength="4" size="15"/>
             <input placeholder="מספר תעודת זהות" type="text" id="ID" name="ID" maxlength="9" size="9" />
 			<input type="button" name="next" id="next1" class="next action-button" runat="server" value="הבא" />
-            <asp:label id="myLabel" runat="server" />
+            <br /><asp:label id="myLabel" runat="server" />
 
 		  </fieldset>
 		  <fieldset>
-			<h2 class="fs-title">כותרת גדולה</h2>
-			<h3 class="fs-subtitle">כותרת משנה</h3>         
+			<h2 class="fs-title">כמעט סיימנו!</h2>
+			<h3 class="fs-subtitle">בשלב זה עליכם לבחור שם משתמש, סיסמה ושם לקבוצתכם. <br/> רצוי לבחור סיסמה ארוכה עם שילובי מספרים ואותיות. <br/> לחצו 'הבא' כדי לבחור תמונת פרופיל ולסיים את ההרשמה.</h3>         
             <input placeholder="שם משתמש" type="text" id="userName" name="userName" maxlength="145" size="15"/>
             <input placeholder="סיסמא" type="password" id="userPass" name="userPass"  maxlength="16" size="15" />
             <input placeholder="חזור שנית על הסיסמא" type="password" id="userPass2" name="userPass2"  maxlength="16" size="15" />
@@ -169,8 +192,8 @@
 			<input type="button" name="next" id="next2" class="next action-button" value="הבא" />
 		  </fieldset>
 		  <fieldset>
-			<h2 class="fs-title">Personal Details</h2>
-			<h3 class="fs-subtitle">We will never sell it</h3>
+			<h2 class="fs-title">זהו!</h2>
+			<h3 class="fs-subtitle">בשלב זה באפשרותך להעלות תמונת פרופיל שתייצג אותך באתר. <br/> לאחר ההעלאה לחצו על כפתור 'סיים' על מנת לסיים את ההרשמה. <br/> אין חובה להעלות תמונת פרופיל אך רצוי.</h3>
             <asp:FileUpload ID="FileUpload1" runat="server"/>
 			<input type="button" name="previous" class="previous action-button" value="הקודם" />
                <asp:Button ID="Button1" class="submit action-button" runat="server" Text="סיים" type="submit"  OnClick="submit"  />
