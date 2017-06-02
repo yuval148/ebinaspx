@@ -52,7 +52,7 @@
                     <!-- settings start -->
                     <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="home.aspx#">
-                            <i class="fa fa-tasks"></i>
+                            <i class="material-icons">toc</i>
                             <span class="badge bg-theme">4</span>
                         </a>
                         <ul id="taskbar-ul" class="dropdown-menu extended tasks-bar">
@@ -63,7 +63,7 @@
                     <!-- inbox dropdown start-->
                     <li id="header_inbox_bar" class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="home.aspx#">
-                            <i class="fa fa-envelope-o"></i>
+                            <i class="material-icons">notifications</i>
                             <span id="notBadge" class="badge bg-theme"><%=this.notifi.ToString()%></span>
                         </a>
                         <ul id="not-div" class="dropdown-menu extended inbox"></ul>
