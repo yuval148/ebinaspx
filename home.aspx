@@ -102,7 +102,7 @@
       <section id="main-content">
           <section class="wrapper">
               <div class="row">
-                 
+						<div id="modal-div"></div>
                   <!-- **********************************************************************************************************************************************************
       RIGHT SIDEBAR CONTENT
       *********************************************************************************************************************************************************** -->                  
@@ -233,6 +233,59 @@
                   </div>
 
                 <script src="js/handlebars-v4.0.5.js"></script>
+                  <script id="modal-temp" type="text/x-handlebars-template">
+                      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+						  <div class="modal-dialog">
+						    <div class="modal-content">
+						      <div class="modal-header">
+						        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						        <h4 class="modal-title" id="myModalLabel">דו קרב</h4>
+						      </div>
+						      <div class="modal-body">
+                                  <span>הזמן את חבריך לדו קרב</span>
+                                  <div class="content-panel">
+	                          <table class="table table-hover">
+	                  	  	  <h4>Hover Table</h4><i class="fa fa-user-plus"></i>
+	                  	  	  <hr>
+	                              <thead>
+	                              <tr>
+	                                  <th>#</th>
+	                                  <th>First Name</th>
+	                                  <th>Last Name</th>
+	                                  <th>Username</th>
+	                              </tr>
+	                              </thead>
+	                              <tbody>
+	                              <tr>
+	                                  <td>1</td>
+	                                  <td>Mark</td>
+	                                  <td>Otto</td>
+	                                  <td>@mdo</td>
+	                              </tr>
+	                              <tr>
+	                                  <td>2</td>
+	                                  <td>Jacob</td>
+	                                  <td>Thornton</td>
+	                                  <td>@fat</td>
+	                              </tr>
+	                              <tr>
+	                                  <td>3</td>
+	                                  <td>Simon</td>
+	                                  <td>Mosa</td>
+	                                  <td>@twitter</td>
+	                              </tr>
+	                              </tbody>
+	                          </table>
+	                  	  </div>
+						      </div>
+						      <div class="modal-footer">
+						        <button type="button" class="btn btn-default" data-dismiss="modal">סגור</button>
+						        <button type="button" class="btn btn-primary">שחק</button>
+						      </div>
+						    </div>
+						  </div>
+						</div> 
+                  </script>
             <script id="taskbar-temp" type="text/x-handlebars-template">
                 <div class="notify-arrow notify-arrow-green"></div>
                             <li>
@@ -330,7 +383,12 @@ background-image: url(../media/new/opc/{{subjectID}}.png);background-color:#{{Ge
                           <span>דף הבית</span>
                       </a>
                     </li>
-                    
+                    <li style="cursor:pointer" class="ml">
+                    <a  data-toggle="modal" data-target="#myModal">
+                            <i class="fa fa-trophy"></i>
+                            <span>דו קרב</span>
+                    </a>
+                    </li>
                         <li class="sub-menu">
                         <a href="javascript:;" >
                             <i class="fa fa-desktop"></i>
@@ -342,6 +400,8 @@ background-image: url(../media/new/opc/{{subjectID}}.png);background-color:#{{Ge
                             <li><a  href="panels.html">Panels</a></li>
                         </ul>
                     </li>
+                    
+
                     {{/each}}
                 </script>
                 <script id="mes-temp" type="text/x-handlebars-template">
@@ -566,7 +626,12 @@ background-image: url(../media/new/opc/{{subjectID}}.png);background-color:#{{Ge
                         var taskbarInfo = document.getElementById("taskbar-temp").innerHTML;
                         var taskbarTemplate = Handlebars.compile(taskbarInfo);
                         var taskbarData = taskbarTemplate(<%=this.json%>);
-                        document.getElementById("taskbar-ul").innerHTML += taskbarData;
+                    document.getElementById("taskbar-ul").innerHTML += taskbarData;
+
+                    var modalInfo = document.getElementById("modal-temp").innerHTML;
+                    var modalTemplate = Handlebars.compile(modalInfo);
+                    var modalData = modalTemplate(<%=this.json%>);
+                    document.getElementById("modal-div").innerHTML += modalData;
                         if ("<%=Session["userName"]%>" != null)
                         {
                             
