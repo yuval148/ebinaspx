@@ -1,12 +1,14 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="signup.aspx.cs" Inherits="signup" %>
 <html dir="rtl">
 	<head>
-        <link href="css/bootstrapValidator.min.css" rel="stylesheet" />
+ <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
         <title></title>
 		<style>
+            
 		    /*custom font*/
 			@import url(https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900);
-
+            
 			/*basic reset*/
 			* {margin: 0; padding: 0;}
 
@@ -201,7 +203,6 @@
 		</form>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-        <script src="js/bootstrapValidator.min.js"></script>
 		<script type="text/javascript">					
 			//jQuery time
 			var current_fs, next_fs, previous_fs; //fieldsets
