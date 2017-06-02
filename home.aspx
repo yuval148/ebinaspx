@@ -293,8 +293,8 @@
 							<div class="content-panel pn">
 								<div id="blog-bg" style="background-size:cover; background-position: center; 
 background-image: url(../media/new/opc/{{subjectID}}.png);background-color:#{{GetMasterColor2 (GetMasterPrecent cou ctargil)}}; border-top:solid #{{GetMasterColor2 (GetMasterPrecent cou ctargil)}} 7.5px">
-									<div style="margin-top:8px;" class="c100 small p{{GetMasterPrecent cou ctargil}} white centers {{GetMasterColorClass (GetMasterPrecent cou ctargil)}}">
-                                        <span >{{GetMasterPrecent cou ctargil}}%
+									<div style="margin-top:8px;" class="c100 small p{{GetMasterPrecent cou ctargil}} white center {{GetMasterColorClass (GetMasterPrecent cou ctargil)}}">
+                                        <span style="color:white">{{GetMasterPrecent cou ctargil}}%
                                 </span> <!-- צריך לחלק פה סאיו בסיתרגיל! !-->              
                                 <div class="slice" >
                                     <div class="bar"></div>
