@@ -15,10 +15,8 @@
 <link rel="stylesheet" href="//cdn.rawgit.com/morteza/bootstrap-rtl/v3.3.4/dist/css/bootstrap-rtl.min.css">
 
     <!--external css-->
-    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="assets/css/zabuto_calendar.css">
-    <link rel="stylesheet" type="text/css" href="assets/js/gritter/css/jquery.gritter.css" />
-    <link rel="stylesheet" type="text/css" href="assets/lineicons/style.css">    
+    <link rel="stylesheet" type="text/css" href="assets/js/gritter/css/jquery.gritter.css" /> 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
     <link href="css/circle.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
@@ -382,19 +380,19 @@ background-image: url(../media/new/opc/{{subjectID}}.png);background-color:#{{Ge
                     <h5 class="centered" style="font-family:Rubik;font-size:15px;line-height:20%;font-weight:400"> <%=tilnext.ToString()%> נקודות עד הרמה הבאה</h5>             	  	
                     <li class="mt">
                       <a class="active" href="home.aspx">
-                          <i class="fa fa-home"></i>
+                          <i class="material-icons">home</i>
                           <span>דף הבית</span>
                       </a>
                     </li>
                     <li style="cursor:pointer" class="ml">
                     <a  data-toggle="modal" data-target="#myModal">
-                            <i class="fa fa-trophy"></i>
+                            <i class="material-icons">videogame_asset</i>
                             <span>דו קרב</span>
                     </a>
                     </li>
                         <li class="sub-menu">
                         <a href="javascript:;" >
-                            <i class="fa fa-desktop"></i>
+                            <i class="material-icons">poll</i>
                             <span>UI Elements</span>
                         </a>
                         <ul class="sub">

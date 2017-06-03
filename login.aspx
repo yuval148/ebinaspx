@@ -5,19 +5,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
-    <meta name="author" content="Dashboard">
-    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
     <title>Playground</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
-    <!--external css-->
-    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
-        
+    <link href="assets/css/bootstrap.css" rel="stylesheet">   
     <!-- Custom styles for this template -->
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/style-responsive.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -39,7 +35,7 @@
 		                </span>
 		         </label>
                 <button class="btn btn-theme btn-block" type="submit" id="loginbtn" name="submit">
-                    היכנס <i class="fa fa-lock"></i>
+                    היכנס <i class="material-icons" style="font-size:14px">lock</i>
                 </button>
                 <hr>
                 <div class="registration">
@@ -51,7 +47,7 @@
             </div>
         </form>
   </div>
-          <div id="errorDiv" class="mdl-components__warning"><%=Session["ErrLogin"] %></div>
+          <div id="errorDiv" class="mdl-components__warning"><%=Session["ErrLogin"] %></div><!-- דרושה התייחסות!-->
                 </div>
 
          <script src="assets/js/jquery.js"></script>
