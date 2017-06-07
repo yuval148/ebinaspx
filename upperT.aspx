@@ -2,7 +2,7 @@
 <!doctype html>
 <html dir="rtl">
     <head> 
-        <!-- ver 005.005.003--!>
+        <!-- ver 006.000.000--!>
         <!--mobile confg-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -56,6 +56,7 @@
         <a class="mdl-navigation__link" href="uploadT.aspx">העלאת תרגיל </a> 
         <a class="mdl-navigation__link" href="msgT.aspx">הפצת הודעות</a>
         <a class="mdl-navigation__link" href="loginT.aspx">התחברות</a>
+          <a class="mdl-navigation__link" href="signupT.aspx">הרשמת מורה</a>
       </nav>
     </div>
   </header>
@@ -77,6 +78,7 @@
         <a class="mdl-navigation__link" href="uploadT.aspx">העלאת תרגיל </a> 
         <a class="mdl-navigation__link" href="msgT.aspx">הפצת הודעות</a>
         <a class="mdl-navigation__link" href="loginT.aspx">התחברות</a>
+        <a class="mdl-navigation__link" href="signupT.aspx">הרשמת מורה</a>
     </nav>
   </div>
     </body>

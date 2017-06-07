@@ -255,7 +255,7 @@ background-image: url(../media/new/{{subjectID}}.png);border-top:solid #{{GetMas
                     }
                     if (isEmpty($('#sub-div'))) {
                         var data = "לא נמצאו תרגילים כרגע";
-                        var dataLight = "הרבה לא יודעים אבל השטח פרסום הזה למכירה";
+                        var dataLight = "הרבה לא יודעים אבל השטח פרסום הזה למכירה.";
                         document.getElementById("sub-div").innerHTML = "<h2 style='font-family:Heebo; color:#888888;font-weight:300'>" + dataLight + "</h2>";
                         document.getElementById("sub-div").innerHTML += "<h1 style='font-family:Heebo; color:#888888'>" + data + "</h1>";
                     }

@@ -41,7 +41,7 @@ public partial class msgT : System.Web.UI.Page
             yyyy = Request.Form["yyyy"];
             exp = dd + "/" + mm + "/" + yyyy;
             byy = Session["nameT"].ToString();
-            if (title == "" || kita == "")
+            if (title == "" || kita == "" || dd == "" || mm == "" || yyyy == "")
             {
                 Session["ErrIsertForm"] = "נתונים לא מולאו כשורה";
                 // Response.Redirect("form.aspx");

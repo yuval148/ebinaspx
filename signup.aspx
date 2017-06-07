@@ -5,7 +5,7 @@
     <title>הרשמה</title>
     <link href="css/signup.css" rel="stylesheet" />
  </head>
-<body style="font-family:Arial, Helvetica, Sans-Serif">
+<body style="font-family:Arial, Heebo, Sans-Serif">
     <div id="page-wrap">
         <div class="w3-panel w3-card">
             <header class="w3-container">
