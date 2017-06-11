@@ -73,7 +73,7 @@
             </script>
                 <script id="sub-temp" type="text/x-handlebars-template">
                     {{#each sub}}
-                    <div class="sub w3-quarter w3-card w3-container w3-cell w3-center w3-mobile w3-white" style="background-size:cover; background-position: center; 
+                    <div class="sub w3-quarter w3-card w3-container w3-cell w3-center w3-mobile w3-indigo" style="background-size:cover; background-position: center; 
 background-image: url(../media/new/{{subjectID}}.png);border-top:solid #{{GetMasterColor2 (GetMasterPrecent cou ctargil)}} 7.5px">
                         <header class="w3-container w3-center">
                             <h2 class="subH">{{subject}}</h2>
