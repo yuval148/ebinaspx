@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="signup.aspx.cs" Inherits="signup" %>
 <html dir="rtl">
 	<head>
- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <title></title>
 		<style>
@@ -160,6 +160,7 @@
                font-family:Rubik;
                font-weight:300;
              }
+             @media screen and (max-width: 480px) {#f {width: initial;}}
 		</style>
 	</head>
 	<body style="font-family:Rubik">

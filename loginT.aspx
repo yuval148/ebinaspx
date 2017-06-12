@@ -1,62 +1,66 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="loginT.aspx.cs" Inherits="login" %>
-<!--#include file="upperT.aspx"-->
-  <html>  
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="loginT.aspx.cs" Inherits="login"%>
+<!DOCTYPE html>
+<html lang="heb">
   <head>
-  <title> התחברות</title>
-   <style>
-            body {
-                background: url("/media/bfg5.jpg");
-                background-size: 100%, 100%;
-                background-repeat: no-repeat;
-            }
-       @media screen and (max-width: 480px) {
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Dashboard">
+    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-           body {
-               background: url("media/bgphoneT.png");
-               background-size: 100% 100%;
-           }
-       }
-            .mdl-components__warning {
-    width: 100%;
-    max-width: 640px;
-    margin: 0 auto;
-    background-color: #FFF9C4;
-    padding: 16px;
-    border-radius: 2px;
-    color: #212121;
-    opacity:0;
+    <title>Playground</title>
 
-}
-    </style>
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <!--external css-->
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+        
+    <!-- Custom styles for this template -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/style-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
   </head>
-    <body style="font-family:Arial; text-align:center;">
-    <br />
-    <br /><!-- Textfield with Floating Label -->
-
-  <form id="myform1" method="post" dir="rtl">
-  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-    <input class="mdl-textfield__input" type="text" id="userName" name="userName">
-    <label class="mdl-textfield__label" for="sample3">שם משתמש</label>
+  <body style="font-family:Arial;">
+    <div id="login-page">
+	<div class="container">
+        <form id="myform1" class="form-login"  method="post" dir="rtl">
+            <h2 class="form-login-heading-t"><img src="media/LOGOr.png" style="align-content:center; width:200px;" /></h2>
+            <div class="login-wrap">
+                <input class="form-control" placeholder="שם משתמש" type="text" id="userName" name="userName">
+                <input class="form-control" placeholder="סיסמא" type="password" id="userPass" name="userPass" >
+                <label class="checkbox">
+		                <span class="pull-right">
+		                    <a href="login.aspx">תלמיד? לחץ כאן!</a>
+		                </span>
+		         </label>
+                <button class="btn btn-theme-t btn-block" type="submit" id="loginbtn" name="submit">
+                    היכנס <i class="fa fa-lock"></i>
+                </button>
+                <hr>
+                <div class="registration">
+		            אין לך חשבון עדיין?<br/>
+		            <a class="" href="signup.aspx">
+		               צור חשבון
+		            </a>
+		        </div>
+            </div>
+        </form>
   </div>
-      <br />
-      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-    <input class="mdl-textfield__input" type="password"id="userPass" name="userPass" >
-    <label class="mdl-textfield__label" for="sample3">סיסמה</label>
-  </div>
-      <br />
-      <!-- Colored raised button -->
-<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"type="submit" name="submit">
-  היכנס
-</button>
-      <br />
-      <br />
-       <button class="mdl-button mdl-js-button mdl-button--accent">
-          <a style="text-decoration:none" href="login.aspx">תלמיד? כנס כאן!</a>
-       </button>
-                <div id="errorDiv" class="mdl-components__warning"><%=Session["ErrLogin"] %></div>
+          <div id="errorDiv" class="mdl-components__warning"><%=Session["ErrLogin"] %></div>
+                </div>
 
-</form>
-   <script type="text/javascript">
+         <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.backstretch.min.js"></script>
+      <script>
+          $.backstretch("media/0pres.png", {speed: 300});
+          $.backstretch("media/login-bg.jpg", {speed: 500});
+
             var opc = <%=opc%>;
             document.getElementById( 'errorDiv' ).style.opacity = opc;
         </script>

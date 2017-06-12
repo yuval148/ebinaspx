@@ -7,13 +7,13 @@ Premium: http://www.gridgum.com
 */
 
 /* Import fonts */
-@import url(http://fonts.googleapis.com/css?family=Ruda:400,700,900);
+@import url(https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900);
 
 /* BASIC THEME CONFIGURATION */
 body {
     color: #797979;
 	background: #f2f2f2;
-    font-family: 'Ruda', sans-serif;
+    font-family: 'Rubik', sans-serif;
     padding: 0px !important;
     margin: 0px !important;
     font-size:13px;
@@ -94,6 +94,11 @@ a, a:hover, a:focus {
   color: #fff;
   background-color: #3f51b5;
   border-color: #536dfe;
+}
+.btn-theme-t {
+  color: #fff;
+  background-color: #66BB6A;
+  border-color: #A5D6A7;
 }
 .btn-theme:hover,
 .btn-theme:focus,
@@ -224,8 +229,18 @@ ul.top-menu > li > .logout {
 	background: #536dfe;
 	margin-top: 15px;
 }
+ul.top-menu > li > .logout-t{
+    color: #f2f2f2;
+	font-size: 12px;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+    background: #FF3D00;
+    border: 1px solid #FF3D00 !important;
+    padding: 5px 15px;
+	margin-right: 15px;
+    margin-top: 15px;
 
-
+}
 /*sidebar navigation*/
 
 #sidebar {
@@ -419,7 +434,10 @@ ul.sidebar-menu li a.active i {
   background-color:rgb(63,81,181);
     border-bottom: 1px solid #5c6bc0;
 }
-
+.black-bg-t {
+  background-color:#66BB6A;
+    border-bottom: 1px solid #A5D6A7;
+}
 .wrapper {
     display: inline-block;
     margin-top: 60px;
@@ -773,12 +791,10 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
 	padding-top: 20px;
     left:0;
 }
-
 .ds h4 {
 	font-size: 14px;
 	font-weight: 700;
 }
-
 .ds h3 {
 	color: #ffffff;
 	font-size: 16px;
@@ -1949,6 +1965,18 @@ label {
 	text-transform: uppercase;
 	font-weight: 300;
 }
+.form-login h2.form-login-heading-t {
+	margin: 0;
+	padding: 25px 20px;
+	text-align: center;
+	background: #66BB6A;
+	border-radius: 5px 5px 0 0;
+	-webkit-border-radius: 5px 5px 0 0;
+	color: #fff;
+	font-size: 20px;
+	text-transform: uppercase;
+	font-weight: 300;
+}
 .login-wrap {
 	padding: 20px;
 }
@@ -2245,4 +2273,6 @@ label {
     min-height: 900px;
 }
 
-
+.btn-play{
+    float: left;
+}

@@ -154,7 +154,6 @@
                   <!-- **********************************************************************************************************************************************************
       RIGHT SIDEBAR CONTENT
       *********************************************************************************************************************************************************** -->                  
-                  
                   <div class="col-lg-3 ds">
                       <div id="mes-div">
                       </div>
@@ -253,37 +252,27 @@
 	                              <thead>
 	                              <tr>
 	                                  <th>#</th>
-	                                  <th>First Name</th>
-	                                  <th>Last Name</th>
-	                                  <th>Username</th>
+	                                  <th>שם</th>
+	                                  <th>רמה</th>
+	                                  <th>עמודה שלישית</th>
 	                              </tr>
 	                              </thead>
 	                              <tbody>
+                                    {{#each sub}}
 	                              <tr>
 	                                  <td>1</td>
 	                                  <td>Mark</td>
 	                                  <td>Otto</td>
 	                                  <td>@mdo</td>
+                                      <td><button type="button" class="list-group-item btn-play">שחק עם Mark</button></td>
 	                              </tr>
-	                              <tr>
-	                                  <td>2</td>
-	                                  <td>Jacob</td>
-	                                  <td>Thornton</td>
-	                                  <td>@fat</td>
-	                              </tr>
-	                              <tr>
-	                                  <td>3</td>
-	                                  <td>Simon</td>
-	                                  <td>Mosa</td>
-	                                  <td>@twitter</td>
-	                              </tr>
+                                      {{/each}}
 	                              </tbody>
 	                          </table>
 	                  	  </div>
 						      </div>
 						      <div class="modal-footer">
 						        <button type="button" class="btn btn-default" data-dismiss="modal">סגור</button>
-						        <button type="button" class="btn btn-primary">שחק</button>
 						      </div>
 						    </div>
 						  </div>
