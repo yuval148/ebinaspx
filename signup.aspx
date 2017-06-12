@@ -226,6 +226,10 @@
 			        alert("תעודת הזהות צריכה להיות מספר!");
 			        animating = false;
 			    }
+			    else if ($('#kita').val().indexOf('.') !== -1 || $('#kita').val().indexOf(',') !== -1 || $('#kita').val().indexOf("'") !== -1 || $('#kita').val().indexOf('"') !== -1 || $('#kita').val().indexOf(';') !== -1) {
+			        alert("נא לא להשתמש בסימני פיסוק!");
+			        animating = false;
+			    }
 			    else {
 			            if (animating) return false;
 			            animating = true;
