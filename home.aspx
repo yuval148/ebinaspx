@@ -49,12 +49,12 @@
                 <script src="js/handlebars-v4.0.5.js"></script>
             <script id="not-temp" type="text/x-handlebars-template">
                  <div id="notifications">
-                    <h3>התראות</h3>
+                    <h3 style="font-family:Heebo;font-weight:700;text-align:center">התראות</h3>
                     <div style="height:300px;padding:8px;">
                            {{#each sub}}
                               <div class="noti-div">
-                                  <i style="float:right" class="material-icons">{{icon}}</i><span>{{title}}</span>
-                                <span style="color:#9e9e9e; font-size:10px;"> {{datec}}</span>
+                                  <i style="float:right" class="material-icons">{{icon}}</i><span style="font-family:Heebo;font-weight:500">{{title}}</span>
+                                <span style="color:#9e9e9e; font-size:10px;font-family:Heebo;font-weight:300;"> {{datec}}</span>
                                   <hr />
                               </div>                         
                         {{/each}}
