@@ -51,15 +51,14 @@
                  <div id="notifications">
                     <h3>התראות</h3>
                     <div style="height:300px;padding:8px;">
-                           {{#each_upto sub 6}}
+                           {{#each sub}}
                               <div class="noti-div">
                                   <i style="float:right" class="material-icons">{{icon}}</i><span>{{title}}</span>
                                 <span style="color:#9e9e9e; font-size:10px;"> {{datec}}</span>
                                   <hr />
                               </div>                         
-                        {{/each_upto}}
+                        {{/each}}
                     </div>
-                    <div class="seeAll"><a href="#">הראה את כולם</a></div>
                 </div>
             </script>
             <script id="master-temp" type="text/x-handlebars-template">
