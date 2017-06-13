@@ -399,18 +399,20 @@ background-image: url(../media/new/opc/{{subjectID}}.png);background-color:#{{Ge
                 <script id="mes-temp" type="text/x-handlebars-template">
                     	<h3 style="font-family:Rubik;font-weight:900;font-size:25px">הודעות</h3>
                         {{#each sub}}
-                    <div id="{{title}}" style="display:{{CheckClass kita title}}">
-                        <div class="desc" >
-                      	    <div class="thumb">
-                      		    <span class="badge bg-theme"><i class="material-icons" style="font-size:15px">{{icon}}</i></span>
+                    <div class="mes">
+                        <div id="{{title}}" style="display:{{CheckClass kita title}}">
+                            <div class="desc" >
+                      	        <div class="thumb">
+                      		        <span class="badge bg-theme"><i class="material-icons" style="font-size:15px">{{icon}}</i></span>
+                      	        </div>
+                      		    <p style="font-family:Rubik;font-weight:700;text-align:right">{{title}}<br/>
+                      		       <p style="font-family:Rubik;font-weight:500">{{msg}}</p>
+                                      <p style="font-family:Rubik;font-weight:400">{{kita}}</p>
+                                   <p style="font-family:Rubik;font-weight:300">{{byy}},  {{datec}}  </p>                    		
+                      		    </p>
                       	    </div>
-                      		<p style="font-family:Rubik;font-weight:700;text-align:right">{{title}}<br/>
-                      		   <p style="font-family:Rubik;font-weight:500">{{msg}}</p>
-                                  <p style="font-family:Rubik;font-weight:400">{{kita}}</p>
-                               <p style="font-family:Rubik;font-weight:300">{{byy}},  {{datec}}  </p>                    		
-                      		</p>
-                      	</div>
-                      </div>
+                          </div>
+                        </div>
                     </div>
                         {{/each}}
               </script>
@@ -471,7 +473,7 @@ background-image: url(../media/new/opc/{{subjectID}}.png);background-color:#{{Ge
                 action: function () {
                     return myDateFunction(this.id, false);
                 },
-
+                language: "heb" ,weekstartson: 0,
                 action_nav: function () {
                     return myNavFunction(this.id);
                 },

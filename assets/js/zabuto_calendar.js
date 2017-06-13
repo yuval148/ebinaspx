@@ -137,8 +137,8 @@ $.fn.zabuto_calendar = function (options) {
 
         function appendMonthHeader($calendarElement, $tableObj, year, month) {
             var navIcons = $calendarElement.data('navIcons');
-            var $prevMonthNavIcon = $('<span><span class="fa fa-chevron-left text-transparent"></span></span>');
-            var $nextMonthNavIcon = $('<span><span class="fa fa-chevron-right text-transparent"></span></span>');
+            var $prevMonthNavIcon = $('<span><span class="fa fa-chevron-right text-transparent"></span></span>');
+            var $nextMonthNavIcon = $('<span><span class="fa fa-chevron-left text-transparent"></span></span>');
             if (typeof(navIcons) === 'object') {
                 if ('prev' in navIcons) {
                     $prevMonthNavIcon.html(navIcons.prev);
@@ -551,10 +551,10 @@ $.fn.zabuto_calendar_language = function (lang) {
     }
 
     switch (lang.toLowerCase()) {
-        case 'de':
+        case 'heb':
             return {
-                month_labels: ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"],
-                dow_labels: ["Mo", "Di", "Mi", "Do", "Fr", "Sa", "So"]
+                month_labels: ["ינואר", "פברואר", "מרץ", "אפריל", "מאי", "יוני", "יולי", "אוגוסט", "ספטמבר", "אוקטובר", "נובמבר", "דצמבר"],
+                dow_labels: ["ב'", "ג'", "ד'", "ה'", "ו'", "ש'", "א'"]
             };
             break;
 

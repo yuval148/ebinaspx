@@ -355,7 +355,7 @@
                 <script id="mes-temp" type="text/x-handlebars-template">
                     	<h3 style="font-family:Rubik;font-weight:900;font-size:25px">הודעות</h3>
                         {{#each sub}}
-                    <div id="{{title}}" style="display:{{CheckClass kita title}}">
+                    <div id="{{title}}" class="mes" style="display:{{CheckClass kita title}}">
                         <div class="desc" >
                       	    <div class="thumb">
                       		    <span class="badge bg-theme"><i class="material-icons" style="font-size:15px">{{icon}}</i></span>
@@ -424,6 +424,7 @@
             });
         
             $("#my-calendar").zabuto_calendar({
+                language: "heb", weekstartson: 0,
                 action: function () {
                     return myDateFunction(this.id, false);
                 },
