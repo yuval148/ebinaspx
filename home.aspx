@@ -122,10 +122,8 @@
 					  			<h3>מבחנים</h3>
                   			</div>
 					  			<p>שכבת יב - מתמטיקה</p>
-                                <p>שכבת יב - מתמטיקה</p>
-                                <p>שכבת יב - מתמטיקה</p>
-                                <p>שכבת יב - מתמטיקה</p>
-                                <p>שכבת יב - מתמטיקה</p>
+                                <p>כיתה יב'4 - מדעי המחשב מועד ב' </p>
+                                <p>שכבת יב - היסטוריה קדם מתכונת</p>
                   		</div>
                   		<div class="col-md-2 col-sm-2 box0">
                   			<div class="box1">
@@ -254,17 +252,15 @@
 	                                  <th>#</th>
 	                                  <th>שם</th>
 	                                  <th>רמה</th>
-	                                  <th>עמודה שלישית</th>
 	                              </tr>
 	                              </thead>
 	                              <tbody>
                                     {{#each sub}}
 	                              <tr>
-	                                  <td>1</td>
-	                                  <td>Mark</td>
-	                                  <td>Otto</td>
-	                                  <td>@mdo</td>
-                                      <td><button type="button" class="list-group-item btn-play">שחק עם Mark</button></td>
+	                                  <td>{{idk}}</td>
+	                                  <td>{{name}}</td>
+	                                  <td>{{level}}</td>
+                                      <td><button type="button" class="list-group-item btn-play">שחק נגד {{name}}</button></td>
 	                              </tr>
                                       {{/each}}
 	                              </tbody>
@@ -383,8 +379,8 @@ background-image: url(../media/new/opc/{{subjectID}}.png);background-color:#{{Ge
                     </li>
                         <li class="sub-menu">
                         <a href="javascript:;" >
-                            <i class="fa fa-desktop"></i>
-                            <span>UI Elements</span>
+                            <i class="fa fa-group"></i>
+                            <span>הקבוצה שלי</span>
                         </a>
                         <ul class="sub">
                             <li><a  href="general.html">General</a></li>
@@ -626,7 +622,30 @@ background-image: url(../media/new/opc/{{subjectID}}.png);background-color:#{{Ge
 
                     var modalInfo = document.getElementById("modal-temp").innerHTML;
                     var modalTemplate = Handlebars.compile(modalInfo);
-                    var modalData = modalTemplate(<%=this.json%>);
+                    var modalData = modalTemplate({
+  "sub": [
+    {
+      "name": "יונתן רביצקי",
+      "level": "3",
+      "idk": "1"
+    },
+    {
+      "name": "יובל מרגלית",
+      "level": "2",
+      "idk": "2"
+    },
+    {
+      "name": "דריה ציגלר",
+      "level": "7",
+      "idk": "2"
+    },
+    {
+      "name": "ישראל ישראלי",
+      "level": "4",
+      "idk": "4"
+    }
+  ]
+});
                     document.getElementById("modal-div").innerHTML += modalData;
                         if ("<%=Session["userName"]%>" != null)
                         {
