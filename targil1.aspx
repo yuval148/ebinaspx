@@ -133,7 +133,10 @@
                 <div class="row">
 			        <div id="modal-div"></div>		
                     <div class="col-lg-9 main-chart">
-                         <div id="exercise" class="w3-card w3-panel"></div><hr />
+                         <div id="exercise" class="w3-card w3-panel"></div><br />
+                         <button class="btn btn-default"><a href="#">מתקשה עם התרגיל? שלח/י הודעה למורה</a></button>
+                         <button class="btn btn-default"><a href="#">בקש עזרה מחברים</a></button>
+                        <hr />
         <div class="row">
             <form class="col-lg-9"id="ans">
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
@@ -231,6 +234,7 @@
              </div>  
                   </div><!-- /col-lg-3 -->  
                     </div><!--row!-->
+
    <script type="text/javascript">
        var images = '';
        var nextBtn = document.querySelector("#next"); var skipBtn =document.querySelector("#skip"); var skipBtn2 =document.querySelector("#skip2");
