@@ -26,6 +26,8 @@ public partial class login : System.Web.UI.Page
         TimeZoneInfo easternZone = TimeZoneInfo.FindSystemTimeZoneById("Israel Standard Time");
         DateTime datehortod = TimeZoneInfo.ConvertTimeFromUtc(timeUtc, easternZone);
         string dathour = datehortod.ToString("dd/MM/yyyy HH:mm:ss");
+        DateTime today = DateTime.Today;
+        string datee = today.ToString("dd/MM/yyyy");
         string sqlcouner = "INSERT INTO entrys (ip, userAgent, dathour) VALUES ('" + ip + "','" + userAgent + "','" + dathour + "');";
         MyAdoHelper.DoQuery(fileName, sqlcouner);
 
@@ -60,6 +62,7 @@ public partial class login : System.Web.UI.Page
                 kita = dt.Rows[0]["kita"].ToString();
                 Session["pic"] = dt.Rows[0]["pic"].ToString();
                 pic = dt.Rows[0]["pic"].ToString();
+                int prexp = int.Parse(dt.Rows[0]["xpp"].ToString());
 
                 //פעולת xpp
                 //חשב את כל הcou מהטבלה האישית והשם בXPP
@@ -78,15 +81,20 @@ public partial class login : System.Web.UI.Page
                     }
                 xpp1 = xpp1 * 10;
                 string sql2 = "UPDATE users SET xpp='" + xpp1.ToString() + "' WHERE userName='" + userName + "' AND ID='" + ID+"';" ;
-                MyAdoHelper.DoQuery(fileName, sql2);
-                
+                if (xpp1 > prexp)
+                {
+                    prexp = xpp1 - prexp;
+                    string titl = "מספר הנקודות שלך עלה ב" + prexp.ToString() + " נקודות!";
+                    string exp = DateTime.Today.AddDays(7).ToString("dd/MM/yyyy"); ;
+                    string notifixpp = "INSERT INTO notifi (icon, title, ID, datec, exp, seen) VALUES ('trending_up','" + titl + "','" + ID + "','" + datee + "','" + exp + "',False);";
+                    MyAdoHelper.DoQuery(fileName, notifixpp);// הכנס התראה
+                    MyAdoHelper.DoQuery(fileName, sql2);
+                }
                 //סוף הפעולה
                 Session["xpp"] = xpp1.ToString();
                 Session["level"] = xpstuf.level(xpp1);
                 level = xpstuf.level(xpp1);
                 //פעולה להכנסת הגרף
-                DateTime today = DateTime.Today;
-                string datee = today.ToString("dd/MM/yyyy");
                 int shlita = xpstuf.memuza(ID);
                 string sql4 ="SELECT * FROM GRA"+ID + " WHERE datee='"+datee+"';";
                 if (MyAdoHelper.IsExist(fileName, sql4)) //אם כבר יש בתאריך הזה

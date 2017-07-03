@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-    <title>Playground</title>
+    <title>Playground- beta</title>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -344,6 +344,10 @@ background-image: url(../media/new/opc/{{subjectID}}.png);background-color:#{{Ge
 						  </div>
 						</div>
                     <h5 class="centered" style="font-family:Rubik;font-size:15px;line-height:20%;font-weight:400"> <%=tilnext.ToString()%> נקודות עד הרמה הבאה</h5>             	  	
+                    <br />
+                    <h5 class="centered" style="font-family:Rubik;font-size:15px;line-height:20%;font-weight:300"> {{xpp}} נקודות</h5>
+                    <h5 class="centered" style="font-family:Rubik;font-size:15px;line-height:20%;font-weight:300"> שלב  <span class="badge">{{GetLevel xpp}}</span></h5>           	  	
+                    
                     <li class="mt">
                       <a class="active" href="home.aspx">
                           <i class="fa fa-home"></i>
