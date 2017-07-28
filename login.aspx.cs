@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
+using System.Web.Services;
 
 
 public partial class login : System.Web.UI.Page
@@ -15,6 +16,8 @@ public partial class login : System.Web.UI.Page
         Session["userName"] = null;
         string tableName = "users";//שם הטבלה
         string fileName = "db1.mdb";
+        Label Label1 = new Label();
+        string error1 = "שם משתמש או סיסמא לא נכונים";
         string userName, userPass, name, team;
         string userName2, ID, kita, pic;
         int level = 0;
@@ -31,19 +34,17 @@ public partial class login : System.Web.UI.Page
         string sqlcouner = "INSERT INTO entrys (ip, userAgent, dathour) VALUES ('" + ip + "','" + userAgent + "','" + dathour + "');";
         MyAdoHelper.DoQuery(fileName, sqlcouner);
 
-
-
         userName = Request.Form["userName"];
         userPass = Request.Form["userPass"];
         if (Request.Form["userName"] == "" || Request.Form["userPass"] == "")
         {
             opc = 100;
             Session["ErrLogin"] = "יש למלא שם וסיסמה";
-            
+
         }
         else
         {
-            string sql = "select * from "+ tableName + " where userName='" + Request.Form["userName"] + "'";
+            string sql = "select * from " + tableName + " where userName='" + Request.Form["userName"] + "'";
             sql += "AND userPass ='" + Request.Form["userPass"] + "'";
             if (MyAdoHelper.IsExist(fileName, sql)) //שימוש בפעולה אם המשתמש קיים 
             {
@@ -52,7 +53,7 @@ public partial class login : System.Web.UI.Page
 
                 Session["userName"] = dt.Rows[0]["userName"].ToString();
                 userName2 = dt.Rows[0]["userName"].ToString();
-                Session["name"] = dt.Rows[0]["name"].ToString(); ;     
+                Session["name"] = dt.Rows[0]["name"].ToString(); ;
                 name = dt.Rows[0]["name"].ToString();
                 Session["team"] = dt.Rows[0]["team"].ToString();
                 team = dt.Rows[0]["team"].ToString();
@@ -74,13 +75,13 @@ public partial class login : System.Web.UI.Page
                 DataTable dtnotifi = MyAdoHelper.ExecuteDataTable(fileName, sqlnotifi);
                 CheckDatemsg(dtMes);//קורא לפעולה
                 CheckDatenotifi(dtnotifi);//קורא לפעולה
-                int xpp1=0;
-                for(int i=0;i<dtid.Rows.Count;i++)
-                    {
+                int xpp1 = 0;
+                for (int i = 0; i < dtid.Rows.Count; i++)
+                {
                     xpp1 += int.Parse(dtid.Rows[i]["cou"].ToString());
-                    }
+                }
                 xpp1 = xpp1 * 10;
-                string sql2 = "UPDATE users SET xpp='" + xpp1.ToString() + "' WHERE userName='" + userName + "' AND ID='" + ID+"';" ;
+                string sql2 = "UPDATE users SET xpp='" + xpp1.ToString() + "' WHERE userName='" + userName + "' AND ID='" + ID + "';";
                 if (xpp1 > prexp)
                 {
                     prexp = xpp1 - prexp;
@@ -96,7 +97,7 @@ public partial class login : System.Web.UI.Page
                 level = xpstuf.level(xpp1);
                 //פעולה להכנסת הגרף
                 int shlita = xpstuf.memuza(ID);
-                string sql4 ="SELECT * FROM GRA"+ID + " WHERE datee='"+datee+"';";
+                string sql4 = "SELECT * FROM GRA" + ID + " WHERE datee='" + datee + "';";
                 if (MyAdoHelper.IsExist(fileName, sql4)) //אם כבר יש בתאריך הזה
                 {
                     string sql5 = "UPDATE GRA" + ID + " SET shlita=" + shlita + " WHERE datee='" + datee + "';";
@@ -113,22 +114,13 @@ public partial class login : System.Web.UI.Page
                 Session["ErrLogin"] = " שלום " + name + " מקבוצת " + team + " יש לך " + xpp1.ToString() + " נקודות " + "  ואתה בשלב " + level.ToString();
                 Response.Redirect("home.aspx");
             }
-            else if (userName == "yuval" && userPass == "1234")
-            {
-                Session["ErrLogin"] = "  שלום  יובל";
-                Session["Admin"] = true;
-                Session["userName"] = "admin" ;//פתיחת חסימה גם לכל דפי המשתמש
-                Response.Redirect("admin.aspx");
-            }
-
             else
             {
-                opc = 0;
-                Session["ErrLogin"] = "";
-                
+                Label1.Text = error1;
             }
         }
-        }
+    }
+
     public void CheckDatemsg(DataTable table)
     {
         string exp;
@@ -136,7 +128,7 @@ public partial class login : System.Web.UI.Page
         for (int i = 0; i < table.Rows.Count; i++)
         {
             exp = table.Rows[i]["exp"].ToString();
-            DateTime dt = DateTime.ParseExact(exp,"dd/MM/yyyy", null);
+            DateTime dt = DateTime.ParseExact(exp, "dd/MM/yyyy", null);
             if (DateTime.Now >= dt)
             {
                 string sqlDel = "DELETE FROM MSG WHERE title='" + table.Rows[i]["title"].ToString() + "' AND datec='" + table.Rows[i]["datec"].ToString() + "' AND exp='" + table.Rows[i]["exp"].ToString() + "';";
@@ -157,6 +149,34 @@ public partial class login : System.Web.UI.Page
                 string sqlDel = "DELETE FROM notifi WHERE title='" + table.Rows[i]["title"].ToString() + "' AND datec='" + table.Rows[i]["datec"].ToString() + "' AND exp='" + table.Rows[i]["exp"].ToString() + "';";
                 MyAdoHelper.DoQuery(fileName, sqlDel);
             }
+        }
+    }
+    [WebMethod]
+    public static string Login(string userName, string userPass)
+    {
+        string tableName = "users";
+        string sql = "select * from " + tableName + " where userName='" + userName + "'";
+        sql += "AND userPass ='" + userPass + "'";
+        string sql2 = "select * from " + tableName + " where userName='" + userName + "'";
+        string fileName = "db1.mdb";
+        string empty = "שם משתמש או סיסמא ריקים!";
+        string diff = "סיסמא או שם משתמש שגויים!";
+        string NE = "משתמש לא קיים!";
+        if (userName == "" || userPass == "")
+        {
+            return empty;
+        }
+        else if (MyAdoHelper.IsExist(fileName, sql2) && !(MyAdoHelper.IsExist(fileName, sql)))
+        {
+            return diff;
+        }
+        else if(!(MyAdoHelper.IsExist(fileName, sql2)))
+        {
+            return NE;
+        }
+        else
+        {
+            return "noErr";
         }
     }
 }
