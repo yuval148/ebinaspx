@@ -188,6 +188,8 @@
 			<h3 class="fs-subtitle">בשלב זה עליכם לבחור שם משתמש, סיסמה ושם לקבוצתכם. <br/> רצוי לבחור סיסמה ארוכה עם שילובי מספרים ואותיות. <br/> לחצו 'הבא' כדי לבחור תמונת פרופיל ולסיים את ההרשמה.</h3>         
             <input placeholder="שם משתמש" type="text" id="userName" name="userName" maxlength="145" size="15"/>
             <input placeholder="סיסמא" type="password" id="userPass" name="userPass"  maxlength="16" size="15" />
+              <span id="password_strength"></span>
+
             <input placeholder="חזור שנית על הסיסמא" type="password" id="userPass2" name="userPass2"  maxlength="16" size="15" />
 
             <input placeholder="שם קבוצה" type="text" id="team" name="team" maxlength="16" size="15" />
@@ -356,6 +358,65 @@
 				});
 			});
 		</script>
+        <script type="text/javascript">
+    $(function () {
+        $("#userPass").bind("keyup", function () {
+            //TextBox left blank.
+            if ($(this).val().length == 0) {
+                $("#password_strength").html("");
+                return;
+            }
+ 
+            //Regular Expressions.
+            var regex = new Array();
+            regex.push("[A-Z]"); //Uppercase Alphabet.
+            regex.push("[a-z]"); //Lowercase Alphabet.
+            regex.push("[0-9]"); //Digit.
+            regex.push("[$@$!%*#?&]"); //Special Character.
+ 
+            var passed = 0;
+ 
+            //Validate for each Regular Expression.
+            for (var i = 0; i < regex.length; i++) {
+                if (new RegExp(regex[i]).test($(this).val())) {
+                    passed++;
+                }
+            }
+ 
+ 
+            //Validate for length of Password.
+            if (passed > 2 && $(this).val().length > 8) {
+                passed++;
+            }
+ 
+            //Display status.
+            var color = "";
+            var strength = "";
+            switch (passed) {
+                case 0:
+                case 1:
+                    strength = "סיסמא חלשה";
+                    color = "red";
+                    break;
+                case 2:
+                    strength = "סיסמא טובה";
+                    color = "darkorange";
+                    break;
+                case 3:
+                case 4:
+                    strength = "סיסמא חזקה";
+                    color = "green";
+                    break;
+                case 5:
+                    strength = "סיסמא חזקה מאוד";
+                    color = "darkgreen";
+                    break;
+            }
+            $("#password_strength").html(strength);
+            $("#password_strength").css("color", color);
+        });
+    });
+</script>
 	</body>
 </html>
 
