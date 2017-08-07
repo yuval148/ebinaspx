@@ -15,16 +15,17 @@ public partial class signup : System.Web.UI.Page
     protected void submit(Object sender, EventArgs e)
     {
         myLabel.Text = "my text";
-        string name = "", userPass = "", userName = "", team = "", kita = "", ID = "";
+        string name = "", userPass = "", userName = "", team = "", kita = "", ID = "",userPass1="";
         int xpp = 0;
         name = Request.Form["name"];
         userName = Request.Form["userName"];
-        userPass = Request.Form["userPass"];
+        userPass1 = Request.Form["userPass"];
+        userPass = SecurePasswordHasher.Hash(userPass1);
         team = Request.Form["team"];
         kita = Request.Form["kita"];
         ID = Request.Form["ID"];
 
-        if (name == "" || userPass == "" || ID == "")
+        if (name == "" || userPass1 == "" || ID == "")
         {
             myLabel.Text = "נתונים לא מולאו כשורה";
             // Response.Redirect("form.aspx");
