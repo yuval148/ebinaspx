@@ -41,7 +41,11 @@
                 <button class="btn btn-theme-t btn-block" type="submit" id="loginbtn" name="submit">
                     היכנס <i class="fa fa-lock"></i>
                 </button>
+                <div>
+                        <span id="error"></span>
+                    </div>
                 <hr>
+                
                 <div class="registration">
 		            אין לך חשבון עדיין?<br/>
 		            <a class="" href="signup.aspx">
@@ -51,18 +55,47 @@
             </div>
         </form>
   </div>
-          <div id="errorDiv" class="mdl-components__warning"><%=Session["ErrLogin"] %></div>
-                </div>
 
          <script src="assets/js/jquery.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="assets/js/jquery.backstretch.min.js"></script>
       <script>
           $.backstretch("media/0pres.png", {speed: 300});
-          $.backstretch("media/login-bg.jpg", {speed: 500});
+          $.backstretch("media/login-bg.jpg", { speed: 500 });
+          var btn = document.querySelector('#loginbtn');
 
-            var opc = <%=opc%>;
-            document.getElementById( 'errorDiv' ).style.opacity = opc;
+           btn.addEventListener('click', function () {
+            $.ajax({
+                type: "POST",
+                url: "loginT.aspx/Login",
+                data: '{"userName":' + '"' + document.getElementById("userName").value + '"' + ',"userPass":' + '"' + document.getElementById("userPass").value + '"' + ' }',
+                contentType: "application/json; charset=utf-8",
+                async: false, 
+                success: function (result) {
+                    x = false;
+                    if (result.d == "noErr") { }//כלום לא אמור לרוץ
+                    else {
+                        $("#error").empty();
+                        $("#error").insertBefore("</hr>");
+                        $("#error").append("<span>" + result.d + "</span>");
+                        x = true;
+                    }
+                },
+                error: function () {
+                    console.log("ajax error");
+                },
+            });
+                $("#myform1").submit(function (event) {
+                    if (x) {
+                        event.preventDefault();
+                    }
+                    else{
+                        $(this).unbind("submit").submit()
+
+                    }
+                });
+
+        });
         </script>
     </body>
    </html> 

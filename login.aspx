@@ -55,10 +55,6 @@
                 </div>
             </form>
         </div>
-        <div id="errorDiv" class="mdl-components__warning">
-            <asp:Label ID="Label1"
-                runat="server" />
-        </div>
     </div>
 
     <script src="assets/js/jquery.js"></script>

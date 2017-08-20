@@ -7,6 +7,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#3F51B5">
 
 
     <title>Playground- beta</title>
@@ -243,12 +244,12 @@
                         {{#each_upto sub 6}}
                 <li>
                     <a href="home.aspx#">
-                        <span class="photo"><i class="material-icons" style="font-size: 15px">{{icon}}</i></span>
-                        <span class="subject">
-                            <span class="from" style="font-family: Rubik; font-weight: 700; text-align: right">{{title}}</span><br />
-                            <span class="time" style="font-family: Rubik; font-weight: 300">{{datec}}</span>
-                        </span>
-                        <span class="message"></span>
+                            <span class="photo"><i class="material-icons" style="font-size: 15px">{{icon}}</i></span>
+                            <span class="subject">
+                                <span class="time" style="font-family: Rubik; font-weight: 300">{{datec}}</span>
+                            </span>
+                        <br />
+                            <span class="message">{{title}}</span>
                     </a>
                 </li>
                         {{/each_upto}}    
@@ -360,7 +361,8 @@
                             <h3>אירועים</h3>
                         </div>
                         {{#each sub}}
-                                    <p>טיול שנתי 27/10/2017</p> <!--{date},{name},{class}!-->
+                                    <p>טיול שנתי 27/10/2017</p>
+                        <!--{date},{name},{class}!-->
                         {{/each}}
                     </div>
                     <div class="col-md-2 col-sm-2 box0">
@@ -369,7 +371,8 @@
                             <h3>מבחנים</h3>
                         </div>
                         {{#each sub}}
-                                    <p>שכבת יב - מתמטיקה</p><!--{date},{name},{class}!-->
+                                    <p>שכבת יב - מתמטיקה</p>
+                        <!--{date},{name},{class}!-->
                         {{/each}}
                     </div>
                     <div class="col-md-2 col-sm-2 box0">
@@ -457,10 +460,16 @@
                         action_nav: function () {
                             return myNavFunction(this.id);
                         },
-                        ajax: {
-                            url: "show_data.php?action=1",
-                            modal: true
-                        },
+                        data: [
+                            {
+                                "date": "2017-08-25",
+                                "badge": true,
+                                "title": "Tonight",
+                                "body": "<p class=\"lead\">Party<\/p><p>Like it's 1999.<\/p>",
+                                "footer": "At Paisley Park",
+                                "classname": "purple-event"
+                            }
+                        ],
                         legend: [
                             { type: "text", label: "Special event", badge: "00" },
                             { type: "block", label: "Regular event", }

@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
+using System.Web.Services;
 
 
 public partial class login : System.Web.UI.Page
@@ -76,6 +77,34 @@ public partial class login : System.Web.UI.Page
             }
         }
         }
+    [WebMethod]
+    public static string Login(string userName, string userPass)
+    {
+        string tableName = "morim";
+        string sql = "select * from " + tableName + " where userName='" + userName + "'";
+        sql += "AND userPass ='" + userPass + "'";
+        string sql2 = "select * from " + tableName + " where userName='" + userName + "'";
+        string fileName = "db1.mdb";
+        string empty = "שם משתמש או סיסמא ריקים!";
+        string diff = "סיסמא או שם משתמש שגויים!";
+        string NE = "משתמש לא קיים!";
+        if (userName == "" || userPass == "")
+        {
+            return empty;
+        }
+        else if (MyAdoHelper.IsExist(fileName, sql2) && !(MyAdoHelper.IsExist(fileName, sql)))
+        {
+            return diff;
+        }
+        else if(!(MyAdoHelper.IsExist(fileName, sql2)))
+        {
+            return NE;
+        }
+        else
+        {
+            return "noErr";
+        }
+    }
     }
 
 
